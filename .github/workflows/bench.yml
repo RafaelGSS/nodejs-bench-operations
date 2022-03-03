@@ -26,4 +26,15 @@ jobs:
 
       - name: Run tests
         run: |
-          npm run test:ci
+          node bin.js
+
+      - name: commit and push updated results
+        uses: github-actions-x/commit@v2.8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'main'
+          commit-message: 'chore: update benchmark results'
+          force-add: 'true'
+          files: RESULTS*.md
+          name: Github Actions
+          email: <>
