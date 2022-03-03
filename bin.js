@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const { spawnSync } = require('child_process')
 
-const writter = fs.createWriteStream(`RESULTS-${process.version}.md`)
+const [majorVersion] = process.version.split('.')
+const writter = fs.createWriteStream(`RESULTS-${majorVersion}.md`)
 
 writter.write('# Node.js Benchmark Operations\n')
 
