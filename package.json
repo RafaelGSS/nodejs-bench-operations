@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-bench-operations",
+  "version": "1.0.0",
+  "description": "Is X faster than Y in Node.js vX.Z?",
+  "main": "bin.js",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelGSS/nodejs-bench-operations.git"
+  },
+  "keywords": [],
+  "author": "RafaelGSS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RafaelGSS/nodejs-bench-operations/issues"
+  },
+  "homepage": "https://github.com/RafaelGSS/nodejs-bench-operations#readme"
+}
