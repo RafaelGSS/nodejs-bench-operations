@@ -1,6 +1,6 @@
 # Node.js Benchmark Operations
 
-This repository benchmarks simple operations helping your decision toward a performatic solution.
+This repository benchmarks simple operations helping your decision towards a performatic solution.
 
 All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 
