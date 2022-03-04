@@ -34,9 +34,9 @@ jobs:
           node bin.js > ./bench-result.md
           # https://trstringer.com/github-actions-multiline-strings/
           result=$(cat ./bench-result.md)
-          result="${$result//'%'/'%25'}"
-          result="${$result//$'\n'/'%0A'}"
-          result="${$result//$'\r'/'%0D'}"
+          result="${result//'%'/'%25'}"
+          result="${result//$'\n'/'%0A'}"
+          result="${result//$'\r'/'%0D'}"
           echo "::set-output name=BENCH_RESULT${{matrix.node-version}}::$result"
 
   commit:
