@@ -4,8 +4,13 @@ on:
   push:
 
 jobs:
-  test:
+  bench:
     runs-on: ubuntu-latest
+    outputs:
+      BENCH-12: ${{ steps.benchmark.outputs.BENCH_RESULT12 }}
+      BENCH-14: ${{ steps.benchmark.outputs.BENCH_RESULT14 }}
+      BENCH-16: ${{ steps.benchmark.outputs.BENCH_RESULT16 }}
+      BENCH-17: ${{ steps.benchmark.outputs.BENCH_RESULT17 }}
 
     strategy:
       matrix:
@@ -24,8 +29,23 @@ jobs:
           npm install
 
       - name: Run tests
+        id: benchmark
         run: |
           node bin.js
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: [bench]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Result files
+        run: |
+          echo ${{ needs.bench.outputs.PR-BENCH-12 }} > RESULTS-v12.md
+          echo ${{ needs.bench.outputs.PR-BENCH-14 }} > RESULTS-v14.md
+          echo ${{ needs.bench.outputs.PR-BENCH-16 }} > RESULTS-v16.md
+          echo ${{ needs.bench.outputs.PR-BENCH-17 }} > RESULTS-v17.md
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.8
@@ -36,4 +56,4 @@ jobs:
           force-add: 'true'
           files: RESULTS*.md
           name: Github Actions
-          email: <>
+
