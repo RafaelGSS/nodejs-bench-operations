@@ -2,13 +2,14 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v16.14.0`
-* __Run:__ Fri Mar 04 2022 16:33:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Mar 04 2022 21:03:27 GMT+0000 (Coordinated Universal Time)
 
 ## private-property.js
 ```
-Raw usage private field x 8,845,353 ops/sec ±0.54% (94 runs sampled)
-Raw usage underscore usage x 7,342,102 ops/sec ±0.38% (94 runs sampled)
-Manipulating private properties using # x 2,698,709 ops/sec ±0.34% (96 runs sampled)
-Manipulating private properties using underscore(_) x 703,341,265 ops/sec ±0.12% (95 runs sampled)
-Manipulating private properties using Symbol x 701,951,369 ops/sec ±0.21% (94 runs sampled)
+Raw usage private field x 8,935,269 ops/sec ±0.22% (97 runs sampled)
+Raw usage underscore usage x 7,233,816 ops/sec ±0.34% (97 runs sampled)
+Manipulating private properties using # x 2,680,605 ops/sec ±0.33% (94 runs sampled)
+Manipulating private properties using underscore(_) x 701,427,230 ops/sec ±0.12% (96 runs sampled)
+Manipulating private properties using Symbol x 699,236,880 ops/sec ±0.10% (92 runs sampled)
+Manipulating private properties using PrivateSymbol x 698,732,183 ops/sec ±0.19% (99 runs sampled)
 ```
