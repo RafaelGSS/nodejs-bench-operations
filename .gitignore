@@ -1,3 +1,4 @@
 node_modules/
 tags
 package-lock.json
+bench-result.md
