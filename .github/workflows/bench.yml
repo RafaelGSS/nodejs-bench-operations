@@ -2,6 +2,8 @@ name: Benchmark
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   bench:
