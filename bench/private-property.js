@@ -3,8 +3,8 @@ const suite = new Benchmark.Suite;
 const kWidth = Symbol('width');
 const kHeight = Symbol('height');
 const PrivateSymbol = require('privsym');
-const pkWidth = Symbol('width');
-const pkHeight = Symbol('height');
+const pkWidth = PrivateSymbol('width');
+const pkHeight = PrivateSymbol('height');
 
 class A {
   #foo = 0;
