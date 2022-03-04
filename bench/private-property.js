@@ -1,5 +1,7 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const kWidth = Symbol('width');
+const kHeight = Symbol('height');
 
 class A {
   #foo = 0;
@@ -52,6 +54,24 @@ class A2 {
   }
 }
 
+class SymbolClass {
+  constructor() {
+    this[kWidth] = 20;
+    this[kHeight]= 10;
+    this.publicField = 0;
+  }
+  get dimension() {
+    return {
+      width: this[kWidth],
+      height: this[kHeight]
+    };
+  }
+  increaseSize() {
+    this[kWidth]++;
+    this[kHeight]++;
+  }
+}
+
 suite.add('Raw usage private field', function () {
   const a = new A();
   a.foo()
@@ -60,15 +80,22 @@ suite.add('Raw usage private field', function () {
   const b = new B();
   b.foo()
 })
-.add('Manipulating private properties', function () {
+.add('Manipulating private properties using #', function () {
   const a = new A2()
   a.publicField
   a.dimension
   a.increaseSize()
   a.dimension
 })
-.add('Manipulating underscore properties', function () {
+.add('Manipulating "private" properties using underscore(_)', function () {
   const b = new B2();
+  b.publicField
+  b.dimension
+  b.increaseSize()
+  b.dimension
+})
+.add('Manipulating "private" properties using Symbol', function () {
+  const b = new SymbolClass();
   b.publicField
   b.dimension
   b.increaseSize()
