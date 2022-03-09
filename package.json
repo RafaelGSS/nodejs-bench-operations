@@ -4,9 +4,9 @@
   "description": "Is X faster than Y in Node.js vX.Z?",
   "main": "bin.js",
   "dependencies": {
-    "benchmark": "^2.1.4"
+    "benchmark": "^2.1.4",
+    "privsym": "^1.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

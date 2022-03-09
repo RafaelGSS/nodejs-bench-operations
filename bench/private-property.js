@@ -2,6 +2,9 @@ const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
 const kWidth = Symbol('width');
 const kHeight = Symbol('height');
+const PrivateSymbol = require('privsym');
+const pkWidth = PrivateSymbol('width');
+const pkHeight = PrivateSymbol('height');
 
 class A {
   #foo = 0;
@@ -72,6 +75,24 @@ class SymbolClass {
   }
 }
 
+class PrivateSymbolClass {
+  constructor() {
+    this[pkWidth] = 20;
+    this[pkHeight]= 10;
+    this.publicField = 0;
+  }
+  get dimension() {
+    return {
+      width: this[pkWidth],
+      height: this[pkHeight]
+    };
+  }
+  increaseSize() {
+    this[pkWidth]++;
+    this[pkHeight]++;
+  }
+}
+
 suite.add('Raw usage private field', function () {
   const a = new A();
   a.foo()
@@ -96,6 +117,13 @@ suite.add('Raw usage private field', function () {
 })
 .add('Manipulating "private" properties using Symbol', function () {
   const b = new SymbolClass();
+  b.publicField
+  b.dimension
+  b.increaseSize()
+  b.dimension
+})
+.add('Manipulating private properties using PrivateSymbol', function () {
+  const b = new PrivateSymbolClass();
   b.publicField
   b.dimension
   b.increaseSize()
