@@ -3,33 +3,52 @@ const suite = new Benchmark.Suite;
 const { Readable } = require('stream')
 const { ReadableStream } = require('stream/web')
 
-suite.add('Stream native readable', {
+suite.add('streams.Readable reading 1e3 * "some data"', {
   defer: true,
-  fn: function (deferred) {
-    const readable = new Readable({
-      read: function * readImpl(_sizeT) {
-        let i = 0
-        while(i < 1e9) {
-          yield 'some data'
-          ++i
+  fn: async function (deferred) {
+    function * readImpl(_sizeT) {
+      let i = 0
+      while(i < 1e3) {
+        yield 'some data'
+        ++i
+      }
+    }
+    const readable = Readable.from(readImpl())
+
+    try {
+      for await (const _ of readable) {}
+      deferred.resolve()
+    } catch (e) {
+      deferred.reject(e)
+    }
+  }
+})
+.add('streams.web.Readable reading 1e3 * "some data"', {
+  defer: true,
+  fn: async function (deferred) {
+    let i = 0
+    const readable = new ReadableStream({
+      pull: function (controller) {
+        controller.enqueue('some data')
+        ++i
+        if (i >= 1e3) {
+          controller.close()
         }
-        yield null
       }
     })
 
-    readable.on('end', () => {
+    try {
+      for await (const _ of readable) {}
       deferred.resolve()
-    })
+    } catch (e) {
+      deferred.reject(e)
+    }
   }
 })
-// .add('WebStream native readable', function () {
-//   const test = new Function('test', 'return undefined');
-//   const a = test();
-// })
 .on('cycle', function (event) {
   console.log(String(event.target));
 })
-.on('complete', function () {
-  console.log('Done')
+.on('complete', function() {
+  console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run();
