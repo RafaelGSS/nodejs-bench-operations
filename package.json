@@ -4,7 +4,10 @@
   "description": "Is X faster than Y in Node.js vX.Z?",
   "main": "bin.js",
   "dependencies": {
+    "autocannon": "^7.7.1",
     "benchmark": "^2.1.4",
+    "fastify": "^3.27.4",
+    "on-net-listen": "^1.1.2",
     "privsym": "^1.0.0"
   },
   "scripts": {

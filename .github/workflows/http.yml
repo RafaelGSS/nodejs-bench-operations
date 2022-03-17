@@ -1,0 +1,66 @@
+name: Benchmark HTTP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    outputs:
+      BENCH-12: ${{ steps.benchmark.outputs.BENCH_RESULT12 }}
+      BENCH-14: ${{ steps.benchmark.outputs.BENCH_RESULT14 }}
+      BENCH-16: ${{ steps.benchmark.outputs.BENCH_RESULT16 }}
+      BENCH-17: ${{ steps.benchmark.outputs.BENCH_RESULT17 }}
+
+    strategy:
+      matrix:
+        node-version: [12, 14, 16, 17]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: |
+          npm install
+
+      - name: Run tests
+        id: benchmark
+        run: |
+          node bin.js > ./bench-result-http.md
+          # https://trstringer.com/github-actions-multiline-strings/
+          result=$(cat ./bench-result-http.md)
+          result="${result//'%'/'%25'}"
+          result="${result//$'\n'/'%0A'}"
+          result="${result//$'\r'/'%0D'}"
+          result="${result//$'`'/'\`'}"
+          echo "::set-output name=BENCH_RESULT${{matrix.node-version}}::$result"
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: [bench]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Result files
+        run: |
+          echo "${{ needs.bench.outputs.BENCH-12 }}" > RESULTS-HTTP-v12.md
+          echo "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-HTTP-v14.md
+          echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-HTTP-v16.md
+          echo "${{ needs.bench.outputs.BENCH-17 }}" > RESULTS-HTTP-v17.md
+
+      - name: commit and push updated results
+        uses: github-actions-x/commit@v2.8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'main'
+          commit-message: 'chore: update benchmark results'
+          force-add: 'true'
+          files: RESULTS*.md
+          name: Github Actions
+
