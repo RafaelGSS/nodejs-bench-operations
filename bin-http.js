@@ -1,4 +1,6 @@
-const { readdir } = require('fs/promises')
+const fs = require('fs')
+const { promisify } = require('util')
+const readdir = promisify(fs.readdir)
 const autocannon = require('autocannon')
 const { once } = require('events')
 const path = require('path')
