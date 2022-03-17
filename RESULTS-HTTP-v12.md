@@ -1,37 +1,46 @@
-# Node.js Benchmark Operations
+# Node.js Benchmark HTTP
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v12.22.10`
-* __Run:__ Thu Mar 17 2022 17:34:58 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Mar 17 2022 19:31:03 GMT+0000 (Coordinated Universal Time)
 
-## function-return.js
+## core.js
 ```
-Function returning null x 1,237,279 ops/sec ±0.70% (92 runs sampled)
-Function returning explicitly undefined x 1,225,122 ops/sec ±0.59% (96 runs sampled)
-Function returning implicitly undefined x 1,260,274 ops/sec ±0.82% (91 runs sampled)
-Function returning string x 1,242,716 ops/sec ±0.64% (92 runs sampled)
-Function returning integer x 1,214,720 ops/sec ±0.38% (97 runs sampled)
-Function returning float x 1,113,448 ops/sec ±0.29% (94 runs sampled)
-Function returning functions x 1,130,767 ops/sec ±1.26% (96 runs sampled)
-Function returning arrow functions x 1,248,180 ops/sec ±0.48% (96 runs sampled)
-Function returning empty object x 1,257,483 ops/sec ±0.78% (94 runs sampled)
-Function returning empty array x 1,248,331 ops/sec ±0.45% (93 runs sampled)
+┌─────────┬──────┬──────┬───────┬──────┬─────────┬────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev  │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼─────────┼────────┼───────┤
+│ Latency │ 1 ms │ 2 ms │ 4 ms  │ 5 ms │ 2.16 ms │ 1.1 ms │ 47 ms │
+└─────────┴──────┴──────┴───────┴──────┴─────────┴────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬──────────┬─────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg      │ Stdev   │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Req/Sec   │ 23519   │ 23519   │ 38047   │ 39103   │ 37438.81 │ 3273.02 │ 23505   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼──────────┼─────────┼─────────┤
+│ Bytes/Sec │ 3.62 MB │ 3.62 MB │ 5.86 MB │ 6.02 MB │ 5.77 MB  │ 504 kB  │ 3.62 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴──────────┴─────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 20
+
+749k requests in 20.04s, 115 MB read
 ```
-## possible-undefined-function.js
+## fastify.js
 ```
-```
-## private-property.js
-```
-Raw usage private field x 8,659,483 ops/sec ±0.26% (97 runs sampled)
-Raw usage underscore usage x 7,692,392 ops/sec ±0.52% (90 runs sampled)
-Manipulating private properties using # x 2,628,284 ops/sec ±0.26% (93 runs sampled)
-Manipulating private properties using underscore(_) x 470,100,871 ops/sec ±0.06% (96 runs sampled)
-Manipulating private properties using Symbol x 468,769,875 ops/sec ±0.18% (96 runs sampled)
-Manipulating private properties using PrivateSymbol x 31,494,579 ops/sec ±0.50% (96 runs sampled)
-```
-## stream-readable.js
-```
-```
-## stream-writable.js
-```
+┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+│ Latency │ 1 ms │ 2 ms │ 4 ms  │ 5 ms │ 2.14 ms │ 1.01 ms │ 34 ms │
+└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+│ Req/Sec   │ 22959   │ 22959   │ 38079   │ 39199   │ 37398   │ 3385   │ 22944   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼────────┼─────────┤
+│ Bytes/Sec │ 4.29 MB │ 4.29 MB │ 7.12 MB │ 7.33 MB │ 6.99 MB │ 633 kB │ 4.29 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 20
+
+748k requests in 20.02s, 140 MB read
 ```

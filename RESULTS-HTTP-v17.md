@@ -1,45 +1,46 @@
-# Node.js Benchmark Operations
+# Node.js Benchmark HTTP
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v17.7.1`
-* __Run:__ Thu Mar 17 2022 17:35:01 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Mar 17 2022 19:31:07 GMT+0000 (Coordinated Universal Time)
 
-## function-return.js
+## core.js
 ```
-Function returning null x 1,305,412 ops/sec ±1.42% (85 runs sampled)
-Function returning explicitly undefined x 1,293,497 ops/sec ±1.46% (84 runs sampled)
-Function returning implicitly undefined x 1,412,597 ops/sec ±0.99% (93 runs sampled)
-Function returning string x 1,424,550 ops/sec ±0.81% (91 runs sampled)
-Function returning integer x 1,455,459 ops/sec ±1.12% (91 runs sampled)
-Function returning float x 1,462,533 ops/sec ±0.99% (93 runs sampled)
-Function returning functions x 1,415,471 ops/sec ±0.83% (93 runs sampled)
-Function returning arrow functions x 1,450,821 ops/sec ±1.18% (87 runs sampled)
-Function returning empty object x 1,502,221 ops/sec ±1.06% (93 runs sampled)
-Function returning empty array x 1,467,826 ops/sec ±1.54% (92 runs sampled)
+┌─────────┬──────┬──────┬───────┬──────┬─────────┬─────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg     │ Stdev   │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼─────────┼─────────┼───────┤
+│ Latency │ 1 ms │ 2 ms │ 6 ms  │ 8 ms │ 2.52 ms │ 1.62 ms │ 72 ms │
+└─────────┴──────┴──────┴───────┴──────┴─────────┴─────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬────────┬─────────┬────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%  │ Avg     │ Stdev  │ Min     │
+├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼────────┼─────────┤
+│ Req/Sec   │ 16783   │ 16783   │ 34847   │ 35711  │ 32017.2 │ 6223   │ 16775   │
+├───────────┼─────────┼─────────┼─────────┼────────┼─────────┼────────┼─────────┤
+│ Bytes/Sec │ 2.58 MB │ 2.58 MB │ 5.37 MB │ 5.5 MB │ 4.93 MB │ 958 kB │ 2.58 MB │
+└───────────┴─────────┴─────────┴─────────┴────────┴─────────┴────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 20
+
+640k requests in 20.07s, 98.6 MB read
 ```
-## possible-undefined-function.js
+## fastify.js
 ```
-Using if to check function existence x 773,404 ops/sec ±2.73% (71 runs sampled)
-Using ? operator to avoid rejection x 812,521 ops/sec ±2.92% (75 runs sampled)
-```
-## private-property.js
-```
-Raw usage private field x 8,484,727 ops/sec ±0.78% (90 runs sampled)
-Raw usage underscore usage x 6,975,359 ops/sec ±0.80% (92 runs sampled)
-Manipulating private properties using # x 2,592,568 ops/sec ±0.74% (93 runs sampled)
-Manipulating private properties using underscore(_) x 671,381,043 ops/sec ±0.86% (94 runs sampled)
-Manipulating private properties using Symbol x 655,452,852 ops/sec ±0.82% (91 runs sampled)
-Manipulating private properties using PrivateSymbol x 26,852,545 ops/sec ±1.89% (87 runs sampled)
-```
-## stream-readable.js
-```
-streams.Readable reading 1e3 * some data x 1,917 ops/sec ±1.35% (84 runs sampled)
-streams.web.Readable reading 1e3 * some data x 439 ops/sec ±1.97% (83 runs sampled)
-Fastest is streams.Readable reading 1e3 * some data
-```
-## stream-writable.js
-```
-streams.Writable writing 1e3 * some data x 2,969 ops/sec ±1.58% (86 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 744 ops/sec ±16.79% (63 runs sampled)
-Fastest is streams.Writable writing 1e3 * some data
+┌─────────┬──────┬──────┬───────┬──────┬────────┬─────────┬───────┐
+│ Stat    │ 2.5% │ 50%  │ 97.5% │ 99%  │ Avg    │ Stdev   │ Max   │
+├─────────┼──────┼──────┼───────┼──────┼────────┼─────────┼───────┤
+│ Latency │ 1 ms │ 2 ms │ 5 ms  │ 6 ms │ 2.4 ms │ 1.39 ms │ 46 ms │
+└─────────┴──────┴──────┴───────┴──────┴────────┴─────────┴───────┘
+┌───────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+│ Stat      │ 1%      │ 2.5%    │ 50%     │ 97.5%   │ Avg     │ Stdev   │ Min     │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+│ Req/Sec   │ 17599   │ 17599   │ 33343   │ 35007   │ 32129.2 │ 3985.69 │ 17587   │
+├───────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+│ Bytes/Sec │ 3.29 MB │ 3.29 MB │ 6.23 MB │ 6.55 MB │ 6.01 MB │ 745 kB  │ 3.29 MB │
+└───────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 20
+
+643k requests in 20.02s, 120 MB read
 ```
