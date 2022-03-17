@@ -43,7 +43,8 @@ async function main () {
       const instance = autocannon({
         url: 'http://localhost:3000/',
         connections: 100,
-        duration: 20
+        duration: 20,
+        sampleInt: 1000
       }, (err, results) => {
         storeLoadResult(file, results)
         proc.kill('SIGTERM')
