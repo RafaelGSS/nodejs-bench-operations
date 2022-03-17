@@ -30,7 +30,7 @@ jobs:
       - name: Run tests
         id: benchmark
         run: |
-          node bin.js > ./bench-result-http.md
+          node bin-http.js > ./bench-result-http.md
           # https://trstringer.com/github-actions-multiline-strings/
           result=$(cat ./bench-result-http.md)
           result="${result//'%'/'%25'}"
