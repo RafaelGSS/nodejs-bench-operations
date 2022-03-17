@@ -2,44 +2,44 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v16.14.0`
-* __Run:__ Thu Mar 17 2022 17:25:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Mar 17 2022 17:42:22 GMT+0000 (Coordinated Universal Time)
 
 ## function-return.js
 ```
-Function returning null x 1,018,911 ops/sec ±0.51% (89 runs sampled)
-Function returning explicitly undefined x 991,581 ops/sec ±0.96% (86 runs sampled)
-Function returning implicitly undefined x 1,021,959 ops/sec ±0.74% (89 runs sampled)
-Function returning string x 1,011,561 ops/sec ±0.76% (92 runs sampled)
-Function returning integer x 1,009,286 ops/sec ±0.89% (92 runs sampled)
-Function returning float x 1,018,406 ops/sec ±0.58% (90 runs sampled)
-Function returning functions x 982,428 ops/sec ±0.66% (91 runs sampled)
-Function returning arrow functions x 989,254 ops/sec ±0.80% (90 runs sampled)
-Function returning empty object x 1,017,799 ops/sec ±0.67% (90 runs sampled)
-Function returning empty array x 1,022,181 ops/sec ±0.63% (88 runs sampled)
+Function returning null x 1,294,638 ops/sec ±0.31% (97 runs sampled)
+Function returning explicitly undefined x 1,268,093 ops/sec ±0.09% (93 runs sampled)
+Function returning implicitly undefined x 1,279,588 ops/sec ±0.34% (89 runs sampled)
+Function returning string x 1,278,815 ops/sec ±0.15% (98 runs sampled)
+Function returning integer x 1,306,374 ops/sec ±0.35% (96 runs sampled)
+Function returning float x 1,291,028 ops/sec ±0.17% (98 runs sampled)
+Function returning functions x 1,260,827 ops/sec ±0.33% (95 runs sampled)
+Function returning arrow functions x 1,246,163 ops/sec ±0.19% (94 runs sampled)
+Function returning empty object x 1,295,087 ops/sec ±0.17% (96 runs sampled)
+Function returning empty array x 1,276,466 ops/sec ±0.35% (93 runs sampled)
 ```
 ## possible-undefined-function.js
 ```
-Using if to check function existence x 613,364 ops/sec ±3.04% (73 runs sampled)
-Using ? operator to avoid rejection x 674,230 ops/sec ±2.54% (80 runs sampled)
+Using if to check function existence x 753,838 ops/sec ±2.84% (74 runs sampled)
+Using ? operator to avoid rejection x 824,893 ops/sec ±2.62% (80 runs sampled)
 ```
 ## private-property.js
 ```
-Raw usage private field x 6,638,339 ops/sec ±0.52% (88 runs sampled)
-Raw usage underscore usage x 5,408,653 ops/sec ±0.74% (92 runs sampled)
-Manipulating private properties using # x 2,007,004 ops/sec ±0.60% (91 runs sampled)
-Manipulating private properties using underscore(_) x 607,867,034 ops/sec ±0.55% (93 runs sampled)
-Manipulating private properties using Symbol x 607,068,243 ops/sec ±0.26% (93 runs sampled)
-Manipulating private properties using PrivateSymbol x 24,419,080 ops/sec ±2.53% (85 runs sampled)
+Raw usage private field x 8,977,202 ops/sec ±0.20% (97 runs sampled)
+Raw usage underscore usage x 7,370,229 ops/sec ±0.18% (96 runs sampled)
+Manipulating private properties using # x 2,670,378 ops/sec ±0.38% (95 runs sampled)
+Manipulating private properties using underscore(_) x 699,881,990 ops/sec ±0.11% (90 runs sampled)
+Manipulating private properties using Symbol x 698,675,283 ops/sec ±0.09% (98 runs sampled)
+Manipulating private properties using PrivateSymbol x 26,694,639 ops/sec ±1.03% (90 runs sampled)
 ```
 ## stream-readable.js
 ```
-streams.Readable reading 1e3 * some data x 1,242 ops/sec ±16.17% (84 runs sampled)
-streams.web.Readable reading 1e3 * some data x 275 ops/sec ±31.70% (85 runs sampled)
+streams.Readable reading 1e3 * some data x 1,544 ops/sec ±14.74% (85 runs sampled)
+streams.web.Readable reading 1e3 * some data x 398 ops/sec ±0.53% (88 runs sampled)
 Fastest is streams.Readable reading 1e3 * some data
 ```
 ## stream-writable.js
 ```
-streams.Writable writing 1e3 * some data x 2,201 ops/sec ±0.84% (89 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 695 ops/sec ±16.44% (52 runs sampled)
+streams.Writable writing 1e3 * some data x 2,606 ops/sec ±0.47% (93 runs sampled)
+streams.web.WritableStream writing 1e3 * some data x 980 ops/sec ±15.67% (54 runs sampled)
 Fastest is streams.Writable writing 1e3 * some data
 ```
