@@ -2,44 +2,53 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 3.8GB Mem
 * __Node:__ `v17.7.1`
-* __Run:__ Thu Mar 17 2022 20:44:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Mar 23 2022 14:00:31 GMT+0000 (Coordinated Universal Time)
 
+## compare-using-instanceof.js
+```
+[True conditional] Using instanceof only x 170,679 ops/sec ±5.07% (57 runs sampled)
+[True conditional] Using constructor name x 137,090 ops/sec ±0.67% (94 runs sampled)
+[True conditional] Check if property is valid then instanceof  x 138,787 ops/sec ±0.54% (91 runs sampled)
+[False conditional] Using instanceof only x 1,017,435,828 ops/sec ±0.37% (92 runs sampled)
+[False conditional] Using constructor name x 1,001,647,194 ops/sec ±0.60% (94 runs sampled)
+[False conditional] Check if property is valid then instanceof  x 998,800,064 ops/sec ±0.78% (94 runs sampled)
+```
 ## function-return.js
 ```
-Function returning null x 848,869 ops/sec ±0.65% (92 runs sampled)
-Function returning explicitly undefined x 852,701 ops/sec ±0.49% (91 runs sampled)
-Function returning implicitly undefined x 861,016 ops/sec ±0.59% (92 runs sampled)
-Function returning string x 858,427 ops/sec ±0.43% (92 runs sampled)
-Function returning integer x 873,582 ops/sec ±0.81% (95 runs sampled)
-Function returning float x 860,188 ops/sec ±1.34% (87 runs sampled)
-Function returning functions x 857,211 ops/sec ±0.41% (92 runs sampled)
-Function returning arrow functions x 853,631 ops/sec ±0.72% (92 runs sampled)
-Function returning empty object x 864,889 ops/sec ±0.34% (93 runs sampled)
-Function returning empty array x 870,992 ops/sec ±0.48% (94 runs sampled)
+Function returning null x 887,066 ops/sec ±0.66% (90 runs sampled)
+Function returning explicitly undefined x 883,729 ops/sec ±0.63% (91 runs sampled)
+Function returning implicitly undefined x 892,540 ops/sec ±0.73% (95 runs sampled)
+Function returning string x 887,840 ops/sec ±0.37% (90 runs sampled)
+Function returning integer x 902,011 ops/sec ±0.46% (94 runs sampled)
+Function returning float x 879,550 ops/sec ±0.54% (91 runs sampled)
+Function returning functions x 869,179 ops/sec ±0.53% (93 runs sampled)
+Function returning arrow functions x 865,679 ops/sec ±0.59% (93 runs sampled)
+Function returning empty object x 870,974 ops/sec ±0.52% (92 runs sampled)
+Function returning empty array x 873,811 ops/sec ±0.54% (91 runs sampled)
 ```
 ## possible-undefined-function.js
 ```
-Using if to check function existence x 564,278 ops/sec ±2.31% (80 runs sampled)
-Using ? operator to avoid rejection x 575,871 ops/sec ±2.36% (81 runs sampled)
+Using if to check function existence x 572,162 ops/sec ±2.06% (77 runs sampled)
+Using ? operator to avoid rejection x 583,455 ops/sec ±2.06% (82 runs sampled)
 ```
 ## private-property.js
 ```
-Raw usage private field x 7,789,375 ops/sec ±0.75% (86 runs sampled)
-Raw usage underscore usage x 6,636,852 ops/sec ±0.54% (92 runs sampled)
-Manipulating private properties using # x 2,461,959 ops/sec ±0.48% (92 runs sampled)
-Manipulating private properties using underscore(_) x 968,639,708 ops/sec ±0.55% (90 runs sampled)
-Manipulating private properties using Symbol x 974,449,587 ops/sec ±0.34% (92 runs sampled)
-Manipulating private properties using PrivateSymbol x 22,977,197 ops/sec ±0.43% (91 runs sampled)
+Raw usage private field x 7,950,990 ops/sec ±0.64% (89 runs sampled)
+Raw usage underscore usage x 6,704,523 ops/sec ±0.60% (88 runs sampled)
+Manipulating private properties using # x 2,437,294 ops/sec ±0.65% (91 runs sampled)
+Manipulating private properties using underscore(_) x 980,664,925 ops/sec ±0.47% (94 runs sampled)
+Manipulating private properties using Symbol x 973,421,962 ops/sec ±0.56% (90 runs sampled)
+Manipulating private properties using PrivateSymbol x 22,645,195 ops/sec ±0.64% (94 runs sampled)
 ```
 ## stream-readable.js
 ```
-streams.Readable reading 1e3 * some data x 1,295 ops/sec ±24.04% (83 runs sampled)
-streams.web.Readable reading 1e3 * some data x 305 ops/sec ±4.56% (85 runs sampled)
+streams.Readable reading 1e3 * some data x 1,270 ops/sec ±24.33% (84 runs sampled)
+streams.web.Readable reading 1e3 * some data x 327 ops/sec ±0.79% (86 runs sampled)
 Fastest is streams.Readable reading 1e3 * some data
 ```
 ## stream-writable.js
 ```
-streams.Writable writing 1e3 * some data x 3,066 ops/sec ±0.96% (88 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 682 ops/sec ±15.52% (61 runs sampled)
+streams.Writable writing 1e3 * some data x 3,019 ops/sec ±0.98% (85 runs sampled)
+streams.web.WritableStream writing 1e3 * some data x 550 ops/sec ±32.07% (30 runs sampled)
 Fastest is streams.Writable writing 1e3 * some data
 ```
