@@ -108,14 +108,14 @@ suite.add('Raw usage private field', function () {
   a.increaseSize()
   a.dimension
 })
-.add('Manipulating "private" properties using underscore(_)', function () {
+.add('Manipulating private properties using underscore(_)', function () {
   const b = new B2();
   b.publicField
   b.dimension
   b.increaseSize()
   b.dimension
 })
-.add('Manipulating "private" properties using Symbol', function () {
+.add('Manipulating private properties using Symbol', function () {
   const b = new SymbolClass();
   b.publicField
   b.dimension

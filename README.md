@@ -7,7 +7,7 @@ All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 - [v12](./RESULTS-v12.md)
 - [v14](./RESULTS-v14.md)
 - [v16](./RESULTS-v16.md)
-- [v17](./RESULTS-v17.md)
+- [v18](./RESULTS-v18.md)
 
 ## Performance Parity across node versions
 
@@ -16,4 +16,4 @@ These results aim to compare http libraries between versions of Node.js
 - [v12](./RESULTS-HTTP-v12.md)
 - [v14](./RESULTS-HTTP-v14.md)
 - [v16](./RESULTS-HTTP-v16.md)
-- [v17](./RESULTS-HTTP-v17.md)
+- [v18](./RESULTS-HTTP-v18.md)
