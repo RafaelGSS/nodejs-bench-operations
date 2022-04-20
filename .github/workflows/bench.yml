@@ -14,11 +14,11 @@ jobs:
       BENCH-12: ${{ steps.benchmark.outputs.BENCH_RESULT12 }}
       BENCH-14: ${{ steps.benchmark.outputs.BENCH_RESULT14 }}
       BENCH-16: ${{ steps.benchmark.outputs.BENCH_RESULT16 }}
-      BENCH-17: ${{ steps.benchmark.outputs.BENCH_RESULT17 }}
+      BENCH-18: ${{ steps.benchmark.outputs.BENCH_RESULT18 }}
 
     strategy:
       matrix:
-        node-version: [12, 14, 16, 17]
+        node-version: [12, 14, 16, 18]
 
     steps:
       - uses: actions/checkout@v3
@@ -34,6 +34,8 @@ jobs:
 
       - name: Run tests
         id: benchmark
+        env:
+          MATRIX_NODE_VERSION: ${{ matrix.node-version }}
         run: |
           node bin.js > ./bench-result.md
           # https://trstringer.com/github-actions-multiline-strings/
@@ -42,7 +44,7 @@ jobs:
           result="${result//$'\n'/'%0A'}"
           result="${result//$'\r'/'%0D'}"
           result="${result//$'`'/'\`'}"
-          echo "::set-output name=BENCH_RESULT${{matrix.node-version}}::$result"
+          echo "::set-output name=BENCH_RESULT$MATRIX_NODE_VERSION::$result"
 
   commit:
     runs-on: ubuntu-latest
@@ -56,7 +58,7 @@ jobs:
           echo "${{ needs.bench.outputs.BENCH-12 }}" > RESULTS-v12.md
           echo "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-v14.md
           echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-v16.md
-          echo "${{ needs.bench.outputs.BENCH-17 }}" > RESULTS-v17.md
+          echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-v18.md
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.8
