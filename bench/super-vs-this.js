@@ -21,15 +21,15 @@ class ThisClass extends Base {
   }
 }
 
-suite.add('Using super.*', function () {
+suite.add('Using super', function () {
   const cls = new SuperClass()
   const value = cls.bar()
 })
-.add('Using this.*', function () {
+.add('Using this', function () {
   const cls = new ThisClass()
   const value = cls.bar()
 })
 .on('cycle', function(event) {
   console.log(String(event.target));
 })
-.run({ 'async': false });
+.run();
