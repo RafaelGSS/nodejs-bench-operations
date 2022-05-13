@@ -44,7 +44,7 @@ jobs:
           result="${result//$'\n'/'%0A'}"
           result="${result//$'\r'/'%0D'}"
           result="${result//$'`'/'\`'}"
-          echo "::set-output name=BENCH_RESULT$MATRIX_NODE_VERSION::$result"
+          echo "::set-output name=BENCH_RESULT$MATRIX_NODE_VERSION::\"$result\""
 
   commit:
     runs-on: ubuntu-latest
