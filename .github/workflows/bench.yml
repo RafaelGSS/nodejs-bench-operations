@@ -37,6 +37,7 @@ jobs:
         env:
           MATRIX_NODE_VERSION: ${{ matrix.node-version }}
         run: |
+          echo "MATRIX_V: $MATRIX_NODE_VERSION"
           node bin.js > ./bench-result.md
           # https://trstringer.com/github-actions-multiline-strings/
           result=$(cat ./bench-result.md)
