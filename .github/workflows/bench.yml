@@ -55,10 +55,10 @@ jobs:
 
       - name: Create Result files
         run: |
-          $(echo "${{ needs.bench.outputs.BENCH-12 }}" > RESULTS-v12.md)
-          $(echo "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-v14.md)
-          $(echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-v16.md)
-          $(echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-v18.md)
+          $(printf "${{ needs.bench.outputs.BENCH-12 }}" > RESULTS-v12.md)
+          $(printf "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-v14.md)
+          $(printf "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-v16.md)
+          $(printf "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-v18.md)
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.8
