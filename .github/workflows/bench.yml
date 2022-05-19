@@ -60,12 +60,8 @@ jobs:
           # echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-v16.md;
           # echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-v18.md;
 
-      # https://github.com/actions/checkout/issues/760
-      - name: workaround
-        run: git config --global --add safe.directory /__w/nodejs-bench-operations
-
       - name: commit and push updated results
-        uses: github-actions-x/commit@v2.8
+        uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'main'
