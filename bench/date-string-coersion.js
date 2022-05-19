@@ -5,7 +5,7 @@ suite.add('Using String()', function () {
   const date = new Date()
   const value = String(date)
 })
-.add('Using `${}`', function () {
+.add('Using brackets {}', function () {
   const date = new Date()
   const value = `${date}`
 })
