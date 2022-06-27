@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('Error', function () {
   new Error('test');
@@ -11,6 +12,6 @@ suite.add('Error', function () {
   new RangeError('test');
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });

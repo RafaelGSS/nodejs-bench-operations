@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('Function returning null', function () {
   const test = new Function('test', 'return null');
@@ -42,6 +43,6 @@ suite.add('Function returning null', function () {
   const a = test();
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });

@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('Using String()', function () {
   const date = new Date()
@@ -18,6 +19,6 @@ suite.add('Using String()', function () {
   const value = date.toString()
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });

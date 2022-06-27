@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('using Array.includes', function () {
   const httpVersion = '1.1'
@@ -18,6 +19,6 @@ suite.add('using Array.includes', function () {
   const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });

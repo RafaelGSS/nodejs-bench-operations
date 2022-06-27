@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('[True conditional] Using instanceof only', function () {
   const err = new Error()
@@ -38,6 +39,6 @@ suite.add('[True conditional] Using instanceof only', function () {
   }
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });

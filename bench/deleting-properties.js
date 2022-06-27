@@ -1,5 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
+const { eventToMdTable } = require('../markdown')
 
 suite.add('Using delete property', function () {
   const data = { x: 1, y: 2, z: 3 }
@@ -18,6 +19,6 @@ suite.add('Using delete property', function () {
   data.z
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });
