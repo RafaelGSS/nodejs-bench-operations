@@ -2,75 +2,98 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v12.22.12`
-* __Run:__ Mon Jun 27 2022 00:28:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Jun 27 2022 02:12:18 GMT+0000 (Coordinated Universal Time)
 
 ## compare-using-instanceof
-```
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+
 ## date-string-coersion
-```
-Using String() x 520,463 ops/sec ±0.94% (89 runs sampled)
-Using brackets {} x 553,390 ops/sec ±1.04% (88 runs sampled)
-Using '' +  x 538,954 ops/sec ±1.38% (86 runs sampled)
-Using date.toString() x 557,950 ops/sec ±1.72% (86 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using String()|634,662|92|
+|Using brackets {}|658,858|94|
+|Using '' + |654,709|97|
+|Using date.toString()|712,706|91|
+
 ## deleting-properties
-```
-Using delete property x 1,881,254 ops/sec ±1.40% (83 runs sampled)
-Using undefined assignment x 749,838,712 ops/sec ±0.94% (86 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using delete property|2,359,334|94|
+|Using undefined assignment|595,503,691|97|
+
 ## error
-```
-Error x 244,846 ops/sec ±1.25% (83 runs sampled)
-NodeError x 243,128 ops/sec ±1.53% (83 runs sampled)
-NodeError Range x 240,042 ops/sec ±1.70% (78 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Error|282,499|90|
+|NodeError|282,523|87|
+|NodeError Range|283,119|86|
+
 ## function-return
-```
-Function returning null x 1,185,037 ops/sec ±1.24% (88 runs sampled)
-Function returning explicitly undefined x 1,160,537 ops/sec ±1.12% (88 runs sampled)
-Function returning implicitly undefined x 1,219,580 ops/sec ±1.44% (88 runs sampled)
-Function returning string x 1,180,640 ops/sec ±1.46% (89 runs sampled)
-Function returning integer x 1,185,545 ops/sec ±1.89% (83 runs sampled)
-Function returning float x 1,212,581 ops/sec ±1.35% (87 runs sampled)
-Function returning functions x 1,110,149 ops/sec ±1.79% (86 runs sampled)
-Function returning arrow functions x 1,192,616 ops/sec ±1.10% (86 runs sampled)
-Function returning empty object x 1,200,128 ops/sec ±1.17% (88 runs sampled)
-Function returning empty array x 1,150,713 ops/sec ±1.47% (86 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Function returning null|1,246,506|95|
+|Function returning explicitly undefined|1,216,692|96|
+|Function returning implicitly undefined|1,130,149|91|
+|Function returning string|1,240,472|92|
+|Function returning integer|1,247,221|95|
+|Function returning float|1,250,196|96|
+|Function returning functions|1,202,631|94|
+|Function returning arrow functions|1,228,195|93|
+|Function returning empty object|1,257,414|95|
+|Function returning empty array|1,241,921|94|
+
 ## includes-vs-raw-comparisson
-```
-using Array.includes x 772,181,955 ops/sec ±0.97% (85 runs sampled)
-using Array.includes (first item) x 739,340,450 ops/sec ±1.05% (89 runs sampled)
-Using raw comparisson x 739,333,517 ops/sec ±1.01% (90 runs sampled)
-Using raw comparisson (first item) x 749,812,427 ops/sec ±0.90% (89 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|using Array.includes|595,806,486|97|
+|using Array.includes (first item)|596,186,122|94|
+|Using raw comparisson|597,025,683|92|
+|Using raw comparisson (first item)|597,488,038|97|
+
 ## possible-undefined-function
-```
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+
 ## private-property
-```
-Raw usage private field x 6,180,380 ops/sec ±1.31% (86 runs sampled)
-Raw usage underscore usage x 5,328,865 ops/sec ±1.46% (86 runs sampled)
-Manipulating private properties using # x 1,821,118 ops/sec ±1.72% (86 runs sampled)
-Manipulating private properties using underscore(_) x 580,252,786 ops/sec ±1.16% (88 runs sampled)
-Manipulating private properties using Symbol x 588,019,037 ops/sec ±1.03% (86 runs sampled)
-Manipulating private properties using PrivateSymbol x 20,646,620 ops/sec ±1.20% (87 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Raw usage private field|8,989,302|92|
+|Raw usage underscore usage|7,957,539|94|
+|Manipulating private properties using #|2,699,756|93|
+|Manipulating private properties using underscore(_)|469,574,004|95|
+|Manipulating private properties using Symbol|468,515,759|92|
+|Manipulating private properties using PrivateSymbol|32,933,811|93|
+
 ## sort-map
-```
-Sort using default x 129,400 ops/sec ±1.27% (84 runs sampled)
-Sort using first char x 639,357 ops/sec ±1.61% (83 runs sampled)
-Sort using localeCompare x 347,843 ops/sec ±1.54% (84 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Sort using default|171,572|95|
+|Sort using first char|773,678|96|
+|Sort using localeCompare|420,986|98|
+
 ## stream-readable
-```
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+
 ## stream-writable
-```
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+
 ## super-vs-this
-```
-Using super x 14,469,244 ops/sec ±0.92% (89 runs sampled)
-Using this x 132,970,999 ops/sec ±2.37% (83 runs sampled)
-```
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using super|19,251,830|95|
+|Using this|108,367,013|96|
