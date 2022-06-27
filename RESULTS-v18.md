@@ -2,112 +2,105 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v18.4.0`
-* __Run:__ Mon Jun 27 2022 02:12:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Jun 27 2022 02:42:24 GMT+0000 (Coordinated Universal Time)
 
-## compare-using-instanceof
-
-|name|ops/sec|samples|
-|-|-|-|
-|[True conditional] Using instanceof only|170,515|57|
-|[True conditional] Using constructor name|137,772|86|
-|[True conditional] Check if property is valid then instanceof |137,051|86|
-|[False conditional] Using instanceof only|645,794,969|93|
-|[False conditional] Using constructor name|654,963,528|83|
-|[False conditional] Check if property is valid then instanceof |626,493,886|90|
-
-## date-string-coersion
+## Comparisson using `instanceof`
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|558,872|89|
-|Using brackets {}|587,326|90|
-|Using '' + |570,015|91|
-|Using date.toString()|628,675|89|
+|[True conditional] Using instanceof only|187,097|55|
+|[True conditional] Using constructor name|145,324|92|
+|[True conditional] Check if property is valid then instanceof |147,371|95|
+|[False conditional] Using instanceof only|710,183,370|96|
+|[False conditional] Using constructor name|710,847,962|98|
+|[False conditional] Check if property is valid then instanceof |711,654,549|95|
 
-## deleting-properties
-
-|name|ops/sec|samples|
-|-|-|-|
-|Using delete property|2,051,112|89|
-|Using undefined assignment|615,164,494|93|
-
-## error
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|169,463|57|
-|NodeError|130,889|88|
-|NodeError Range|127,449|92|
+|Using String()|641,616|97|
+|Using brackets {}|669,714|99|
+|Using '' + |676,149|94|
+|Using date.toString()|732,367|94|
 
-## function-return
-
-|name|ops/sec|samples|
-|-|-|-|
-|Function returning null|1,284,898|91|
-|Function returning explicitly undefined|1,324,580|91|
-|Function returning implicitly undefined|1,333,900|92|
-|Function returning string|1,316,434|94|
-|Function returning integer|1,322,822|89|
-|Function returning float|1,321,962|89|
-|Function returning functions|1,286,019|90|
-|Function returning arrow functions|1,302,928|91|
-|Function returning empty object|1,331,747|94|
-|Function returning empty array|1,334,953|92|
-
-## includes-vs-raw-comparisson
+## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|636,126,025|88|
-|using Array.includes (first item)|627,249,515|89|
-|Using raw comparisson|643,640,240|89|
-|Using raw comparisson (first item)|643,672,099|86|
+|Using delete property|2,406,427|93|
+|Using undefined assignment|709,994,714|99|
 
-## possible-undefined-function
+## Node.js Error
 
-|name|ops/sec|samples|
-|-|-|-|
-|Using if to check function existence|530,488|77|
-|Using ? operator to avoid rejection|576,770|79|
+[Function: createTableHeader]
+|Error|186,531|60|
+|NodeError|145,336|91|
+|NodeError Range|147,857|98|
 
-## private-property
+## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|223,850,936|88|
-|Raw usage underscore usage|229,105,886|91|
-|Manipulating private properties using #|159,986,230|88|
-|Manipulating private properties using underscore(_)|145,431,191|90|
-|Manipulating private properties using Symbol|137,385,219|89|
-|Manipulating private properties using PrivateSymbol|25,867,702|86|
+|Function returning null|1,494,324|97|
+|Function returning explicitly undefined|1,479,052|97|
+|Function returning implicitly undefined|1,507,966|92|
+|Function returning string|1,480,411|95|
+|Function returning integer|1,452,086|90|
+|Function returning float|1,493,972|97|
+|Function returning functions|1,457,927|99|
+|Function returning arrow functions|1,474,609|97|
+|Function returning empty object|1,498,064|98|
+|Function returning empty array|1,492,742|97|
 
-## sort-map
-
-|name|ops/sec|samples|
-|-|-|-|
-|Sort using default|151,313|90|
-|Sort using first char|665,286|89|
-|Sort using localeCompare|639,124|86|
-
-## stream-readable
+## Array.includes vs raw comparisson
 
 |name|ops/sec|samples|
 |-|-|-|
-streams.Readable reading 1e3 * some data x 1,642 ops/sec ±1.39% (83 runs sampled)
-streams.web.Readable reading 1e3 * some data x 427 ops/sec ±1.80% (80 runs sampled)
+|using Array.includes|346,763,744|47|
+|using Array.includes (first item)|218,304,938|90|
+|Using raw comparisson|220,160,628|91|
+|Using raw comparisson (first item)|219,839,078|89|
+
+
+## Private Property
+
+|name|ops/sec|samples|
+|-|-|-|
+|Raw usage private field|185,857,513|74|
+|Raw usage underscore usage|255,588,275|95|
+|Manipulating private properties using #|173,877,717|92|
+|Manipulating private properties using underscore(_)|143,492,450|89|
+|Manipulating private properties using Symbol|144,702,528|91|
+|Manipulating private properties using PrivateSymbol|30,251,302|91|
+
+## Sorting Map
+
+|name|ops/sec|samples|
+|-|-|-|
+|Sort using default|177,753|97|
+|Sort using first char|755,455|98|
+|Sort using localeCompare|716,059|96|
+
+## Stream.Readable
+
+```
+streams.Readable reading 1e3 * some data x 1,745 ops/sec ±0.62% (87 runs sampled)
+streams.web.Readable reading 1e3 * some data x 424 ops/sec ±0.48% (89 runs sampled)
 Fastest is streams.Readable reading 1e3 * some data
+```
 
-## stream-writable
+## Stream.Writable
 
-|name|ops/sec|samples|
-|-|-|-|
-streams.Writable writing 1e3 * some data x 3,091 ops/sec ±1.17% (87 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 786 ops/sec ±16.66% (57 runs sampled)
+```
+streams.Writable writing 1e3 * some data x 3,090 ops/sec ±0.39% (92 runs sampled)
+streams.web.WritableStream writing 1e3 * some data x 1,063 ops/sec ±15.92% (53 runs sampled)
 Fastest is streams.Writable writing 1e3 * some data
+```
 
-## super-vs-this
+## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|140,232,371|89|
-|Using this|142,922,517|92|
+|Using super|129,879,038|94|
+|Using this|130,491,913|93|
