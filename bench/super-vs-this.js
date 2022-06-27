@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
 const suite = new Benchmark.Suite;
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 class Base {
   foo () {
@@ -32,5 +38,9 @@ suite.add('Using super', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Super vs This'))
+  console.log(tableHeader)
 })
 .run();

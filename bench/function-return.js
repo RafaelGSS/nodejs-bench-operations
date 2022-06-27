@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 suite.add('Function returning null', function () {
   const test = new Function('test', 'return null');
@@ -44,5 +50,9 @@ suite.add('Function returning null', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Function return'))
+  console.log(tableHeader)
 })
 .run({ 'async': false });

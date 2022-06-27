@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 suite.add('Using String()', function () {
   const date = new Date()
@@ -20,5 +26,9 @@ suite.add('Using String()', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Date String coersion'))
+  console.log(tableHeader)
 })
 .run({ 'async': false });

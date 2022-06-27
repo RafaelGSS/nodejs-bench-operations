@@ -2,6 +2,7 @@ const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
 const { Writable } = require('stream')
 const { WritableStream } = require('stream/web')
+const { H2 } = require('../markdown')
 
 suite.add('streams.Writable writing 1e3 * "some data"', function () {
   const writable = new Writable({
@@ -32,7 +33,12 @@ suite.add('streams.Writable writing 1e3 * "some data"', function () {
 .on('cycle', function (event) {
   console.log(String(event.target));
 })
+.on('start', function() {
+  console.log(H2('Stream.Writable'))
+  console.log('```')
+})
 .on('complete', function() {
   console.log('Fastest is ' + this.filter('fastest').map('name'));
+  console.log('```')
 })
 .run();

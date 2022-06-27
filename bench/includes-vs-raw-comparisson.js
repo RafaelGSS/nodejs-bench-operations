@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 suite.add('using Array.includes', function () {
   const httpVersion = '1.1'
@@ -20,5 +26,9 @@ suite.add('using Array.includes', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Array.includes vs raw comparisson'))
+  console.log(tableHeader)
 })
 .run({ 'async': false });

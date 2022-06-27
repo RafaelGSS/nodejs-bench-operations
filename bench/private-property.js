@@ -5,7 +5,13 @@ const kHeight = Symbol('height');
 const PrivateSymbol = require('privsym');
 const pkWidth = PrivateSymbol('width');
 const pkHeight = PrivateSymbol('height');
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 class A {
   #foo = 0;
@@ -132,5 +138,9 @@ suite.add('Raw usage private field', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Private Property'))
+  console.log(tableHeader)
 })
 .run({ 'async': true });

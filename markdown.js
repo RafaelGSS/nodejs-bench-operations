@@ -14,7 +14,12 @@ function createTableHeader(columns) {
   return `${header}\n${headerSep}`
 }
 
+function H2(title) {
+  return `## ${title}\n`
+}
+
 module.exports = {
   eventToMdTable,
   createTableHeader,
+  H2,
 }

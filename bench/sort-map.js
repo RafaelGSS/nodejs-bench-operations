@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, createTableHeader } = require('../markdown')
 const suite = new Benchmark.Suite;
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 const map = new Map()
 map.set('aa', 1)
@@ -23,5 +29,9 @@ suite.add('Sort using default', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Sorting Map'))
+  console.log(tableHeader)
 })
 .run({ 'async': false });

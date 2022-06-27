@@ -1,6 +1,12 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { eventToMdTable } = require('../markdown')
+const { eventToMdTable, H2, tableHeader } = require('../markdown')
+
+const tableHeader = createTableHeader([
+  'name',
+  'ops/sec',
+  'samples'
+])
 
 suite.add('Using if to check function existence', function () {
   const emptyObject = Object.create({})
@@ -14,5 +20,9 @@ suite.add('Using if to check function existence', function () {
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
+})
+.on('start', function() {
+  console.log(H2('Possible undefined Function'))
+  console.log(tableHeader)
 })
 .run({ 'async': false });
