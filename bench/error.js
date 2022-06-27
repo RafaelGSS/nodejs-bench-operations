@@ -22,6 +22,6 @@ suite.add('Error', function () {
 })
 .on('start', function() {
   console.log(H2('Node.js Error'))
-  console.log(createTableHeader)
+  console.log(tableHeader)
 })
 .run({ 'async': false });
