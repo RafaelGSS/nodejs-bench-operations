@@ -1,4 +1,5 @@
 const Benchmark = require('benchmark')
+const { eventToMdTable } = require('../markdown')
 const suite = new Benchmark.Suite;
 
 class Base {
@@ -30,6 +31,6 @@ suite.add('Using super', function () {
   const value = cls.bar()
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run();

@@ -1,4 +1,5 @@
 const Benchmark = require('benchmark')
+const { eventToMdTable } = require('../markdown')
 const suite = new Benchmark.Suite;
 
 const map = new Map()
@@ -21,6 +22,6 @@ suite.add('Sort using default', function () {
   new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
 })
 .on('cycle', function(event) {
-  console.log(String(event.target));
+  console.log(eventToMdTable(event))
 })
 .run({ 'async': false });
