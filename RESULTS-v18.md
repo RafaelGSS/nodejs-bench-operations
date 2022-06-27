@@ -2,89 +2,89 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v18.4.0`
-* __Run:__ Mon Jun 27 2022 00:15:06 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Jun 27 2022 00:28:17 GMT+0000 (Coordinated Universal Time)
 
-## compare-using-instanceof.js
+## compare-using-instanceof
 ```
-[True conditional] Using instanceof only x 154,099 ops/sec ±6.17% (52 runs sampled)
-[True conditional] Using constructor name x 123,098 ops/sec ±1.26% (90 runs sampled)
-[True conditional] Check if property is valid then instanceof  x 119,377 ops/sec ±1.27% (87 runs sampled)
-[False conditional] Using instanceof only x 574,994,467 ops/sec ±1.04% (90 runs sampled)
-[False conditional] Using constructor name x 565,633,908 ops/sec ±1.12% (91 runs sampled)
-[False conditional] Check if property is valid then instanceof  x 567,196,836 ops/sec ±1.18% (93 runs sampled)
+[True conditional] Using instanceof only x 221,441 ops/sec ±5.78% (54 runs sampled)
+[True conditional] Using constructor name x 170,742 ops/sec ±0.92% (95 runs sampled)
+[True conditional] Check if property is valid then instanceof  x 171,854 ops/sec ±0.70% (95 runs sampled)
+[False conditional] Using instanceof only x 824,754,090 ops/sec ±0.23% (96 runs sampled)
+[False conditional] Using constructor name x 825,576,101 ops/sec ±0.23% (97 runs sampled)
+[False conditional] Check if property is valid then instanceof  x 829,414,331 ops/sec ±0.32% (95 runs sampled)
 ```
-## date-string-coersion.js
+## date-string-coersion
 ```
-Using String() x 512,027 ops/sec ±1.10% (87 runs sampled)
-Using brackets {} x 545,545 ops/sec ±1.00% (90 runs sampled)
-Using '' +  x 529,588 ops/sec ±0.99% (91 runs sampled)
-Using date.toString() x 591,142 ops/sec ±1.22% (85 runs sampled)
+Using String() x 731,602 ops/sec ±0.13% (94 runs sampled)
+Using brackets {} x 782,277 ops/sec ±0.71% (93 runs sampled)
+Using '' +  x 790,682 ops/sec ±0.42% (91 runs sampled)
+Using date.toString() x 846,754 ops/sec ±0.17% (94 runs sampled)
 ```
-## deleting-properties.js
+## deleting-properties
 ```
-Using delete property x 1,982,159 ops/sec ±1.23% (87 runs sampled)
-Using undefined assignment x 597,102,990 ops/sec ±1.02% (90 runs sampled)
+Using delete property x 2,771,973 ops/sec ±0.38% (95 runs sampled)
+Using undefined assignment x 821,873,524 ops/sec ±0.38% (92 runs sampled)
 ```
-## error.js
+## error
 ```
-Error x 151,864 ops/sec ±5.93% (56 runs sampled)
-NodeError x 118,157 ops/sec ±1.23% (87 runs sampled)
-NodeError Range x 118,136 ops/sec ±1.32% (90 runs sampled)
+Error x 209,974 ops/sec ±5.50% (57 runs sampled)
+NodeError x 163,145 ops/sec ±1.25% (91 runs sampled)
+NodeError Range x 165,354 ops/sec ±1.03% (93 runs sampled)
 ```
-## function-return.js
+## function-return
 ```
-Function returning null x 1,198,086 ops/sec ±1.05% (89 runs sampled)
-Function returning explicitly undefined x 1,168,950 ops/sec ±1.33% (85 runs sampled)
-Function returning implicitly undefined x 1,228,927 ops/sec ±1.14% (89 runs sampled)
-Function returning string x 1,188,419 ops/sec ±0.79% (89 runs sampled)
-Function returning integer x 1,176,917 ops/sec ±1.08% (90 runs sampled)
-Function returning float x 1,212,373 ops/sec ±0.71% (86 runs sampled)
-Function returning functions x 1,184,968 ops/sec ±1.12% (86 runs sampled)
-Function returning arrow functions x 1,178,194 ops/sec ±1.16% (89 runs sampled)
-Function returning empty object x 1,213,211 ops/sec ±0.81% (94 runs sampled)
-Function returning empty array x 1,200,033 ops/sec ±0.96% (89 runs sampled)
+Function returning null x 1,737,969 ops/sec ±0.46% (95 runs sampled)
+Function returning explicitly undefined x 1,704,293 ops/sec ±0.31% (95 runs sampled)
+Function returning implicitly undefined x 1,753,790 ops/sec ±0.39% (96 runs sampled)
+Function returning string x 1,733,198 ops/sec ±0.44% (91 runs sampled)
+Function returning integer x 1,730,914 ops/sec ±0.33% (95 runs sampled)
+Function returning float x 1,702,415 ops/sec ±0.20% (96 runs sampled)
+Function returning functions x 1,675,902 ops/sec ±0.26% (90 runs sampled)
+Function returning arrow functions x 1,732,345 ops/sec ±0.48% (94 runs sampled)
+Function returning empty object x 1,709,338 ops/sec ±0.31% (94 runs sampled)
+Function returning empty array x 1,730,296 ops/sec ±0.16% (95 runs sampled)
 ```
-## includes-vs-raw-comparisson.js
+## includes-vs-raw-comparisson
 ```
-using Array.includes x 587,276,767 ops/sec ±1.17% (89 runs sampled)
-using Array.includes (first item) x 586,514,636 ops/sec ±0.98% (91 runs sampled)
-Using raw comparisson x 583,045,729 ops/sec ±0.75% (90 runs sampled)
-Using raw comparisson (first item) x 579,855,945 ops/sec ±0.83% (91 runs sampled)
+using Array.includes x 817,408,285 ops/sec ±0.18% (96 runs sampled)
+using Array.includes (first item) x 815,626,523 ops/sec ±0.18% (98 runs sampled)
+Using raw comparisson x 827,905,903 ops/sec ±0.36% (91 runs sampled)
+Using raw comparisson (first item) x 832,191,132 ops/sec ±0.35% (94 runs sampled)
 ```
-## possible-undefined-function.js
+## possible-undefined-function
 ```
-Using if to check function existence x 484,817 ops/sec ±3.35% (77 runs sampled)
-Using ? operator to avoid rejection x 529,747 ops/sec ±2.94% (77 runs sampled)
+Using if to check function existence x 680,642 ops/sec ±2.67% (79 runs sampled)
+Using ? operator to avoid rejection x 657,121 ops/sec ±3.08% (75 runs sampled)
 ```
-## private-property.js
+## private-property
 ```
-Raw usage private field x 201,595,522 ops/sec ±1.29% (86 runs sampled)
-Raw usage underscore usage x 205,695,615 ops/sec ±1.39% (86 runs sampled)
-Manipulating private properties using # x 143,244,182 ops/sec ±1.62% (85 runs sampled)
-Manipulating private properties using underscore(_) x 121,160,020 ops/sec ±1.26% (84 runs sampled)
-Manipulating private properties using Symbol x 115,071,343 ops/sec ±1.10% (91 runs sampled)
-Manipulating private properties using PrivateSymbol x 24,365,568 ops/sec ±1.65% (83 runs sampled)
+Raw usage private field x 246,400,089 ops/sec ±0.58% (89 runs sampled)
+Raw usage underscore usage x 251,567,737 ops/sec ±0.63% (91 runs sampled)
+Manipulating private properties using # x 191,015,422 ops/sec ±1.72% (82 runs sampled)
+Manipulating private properties using underscore(_) x 152,074,933 ops/sec ±1.09% (88 runs sampled)
+Manipulating private properties using Symbol x 156,491,794 ops/sec ±0.90% (89 runs sampled)
+Manipulating private properties using PrivateSymbol x 34,788,966 ops/sec ±0.94% (92 runs sampled)
 ```
-## sort-map.js
+## sort-map
 ```
-Sort using default x 146,753 ops/sec ±1.04% (85 runs sampled)
-Sort using first char x 615,347 ops/sec ±1.05% (88 runs sampled)
-Sort using localeCompare x 579,237 ops/sec ±1.08% (89 runs sampled)
+Sort using default x 208,524 ops/sec ±0.52% (90 runs sampled)
+Sort using first char x 876,019 ops/sec ±0.58% (90 runs sampled)
+Sort using localeCompare x 815,162 ops/sec ±0.43% (92 runs sampled)
 ```
-## stream-readable.js
+## stream-readable
 ```
-streams.Readable reading 1e3 * some data x 1,257 ops/sec ±23.89% (83 runs sampled)
-streams.web.Readable reading 1e3 * some data x 346 ops/sec ±1.43% (85 runs sampled)
+streams.Readable reading 1e3 * some data x 1,917 ops/sec ±1.16% (86 runs sampled)
+streams.web.Readable reading 1e3 * some data x 437 ops/sec ±1.48% (85 runs sampled)
 Fastest is streams.Readable reading 1e3 * some data
 ```
-## stream-writable.js
+## stream-writable
 ```
-streams.Writable writing 1e3 * some data x 2,487 ops/sec ±1.11% (90 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 860 ops/sec ±16.43% (54 runs sampled)
+streams.Writable writing 1e3 * some data x 3,603 ops/sec ±0.48% (94 runs sampled)
+streams.web.WritableStream writing 1e3 * some data x 1,036 ops/sec ±16.70% (56 runs sampled)
 Fastest is streams.Writable writing 1e3 * some data
 ```
-## super-vs-this.js
+## super-vs-this
 ```
-Using super x 110,516,188 ops/sec ±0.92% (89 runs sampled)
-Using this x 109,185,314 ops/sec ±0.83% (83 runs sampled)
+Using super x 129,616,014 ops/sec ±0.48% (93 runs sampled)
+Using this x 130,742,509 ops/sec ±0.45% (94 runs sampled)
 ```
