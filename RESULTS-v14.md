@@ -2,102 +2,109 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v14.19.3`
-* __Run:__ Sat Jul 02 2022 01:25:07 GMT+0000 (Coordinated Universal Time)
-
-## Comparisson using `instanceof`
-
-|name|ops/sec|samples|
-|-|-|-|
-|[True conditional] Using instanceof only|277,298|91|
-|[True conditional] Using constructor name|276,790|88|
-|[True conditional] Check if property is valid then instanceof |272,844|85|
-|[False conditional] Using instanceof only|593,045,497|98|
-|[False conditional] Using constructor name|593,039,019|95|
-|[False conditional] Check if property is valid then instanceof |593,561,575|97|
+* __Run:__ Sat Jul 02 2022 02:34:03 GMT+0000 (Coordinated Universal Time)
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|8,795|81|
-|Intl.DateTimeFormat().format(new Date())|8,707|84|
-|Format using date.get*|923,576|95|
-|new Date() (Baseline)|7,538,257|92|
-|Date.now() (Baseline)|14,714,459|96|
+|new Array|357|80|
+|Array.from|12|34|
+
+## Comparisson using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|246,020|81|
+|[True conditional] Using constructor name|251,860|85|
+|[True conditional] Check if property is valid then instanceof |250,913|83|
+|[False conditional] Using instanceof only|791,284,812|85|
+|[False conditional] Using constructor name|777,377,680|85|
+|[False conditional] Check if property is valid then instanceof |806,990,724|83|
+
+## Date format MM/DD/YYYY
+
+|name|ops/sec|samples|
+|-|-|-|
+|Intl.DateTimeFormat().format(Date.now())|5,566|76|
+|Intl.DateTimeFormat().format(new Date())|4,814|77|
+|Format using date.get*|3,086,203|86|
+|new Date() (Baseline)|5,645,586|74|
+|Date.now() (Baseline)|13,592,190|83|
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|662,869|92|
-|Using brackets {}|684,507|94|
-|Using '' + |679,783|95|
-|Using date.toString()|765,309|90|
+|Using String()|604,892|84|
+|Using brackets {}|599,237|84|
+|Using '' + |601,416|85|
+|Using date.toString()|651,483|83|
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,366,367|93|
-|Using undefined assignment|590,724,183|96|
+|Using delete property|2,115,216|82|
+|Using undefined assignment|835,128,520|85|
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|268,174|86|
-|NodeError|269,856|86|
-|NodeError Range|262,562|82|
+|Error|251,105|82|
+|NodeError|255,583|71|
+|NodeError Range|257,848|80|
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,320,291|94|
-|Function returning explicitly undefined|1,318,367|92|
-|Function returning implicitly undefined|1,354,680|87|
-|Function returning string|1,328,400|96|
-|Function returning integer|1,362,552|96|
-|Function returning float|1,326,166|99|
-|Function returning functions|1,304,959|95|
-|Function returning arrow functions|1,313,498|95|
-|Function returning empty object|1,340,533|96|
-|Function returning empty array|1,334,159|99|
+|Function returning null|1,214,868|79|
+|Function returning explicitly undefined|1,184,697|80|
+|Function returning implicitly undefined|1,229,540|84|
+|Function returning string|1,203,949|82|
+|Function returning integer|1,251,221|83|
+|Function returning float|1,265,428|84|
+|Function returning functions|1,184,677|78|
+|Function returning arrow functions|1,112,936|81|
+|Function returning empty object|1,280,887|83|
+|Function returning empty array|1,286,069|83|
 
 ## Array.includes vs raw comparisson
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|591,491,729|93|
-|using Array.includes (first item)|592,394,871|97|
-|Using raw comparisson|593,740,255|99|
-|Using raw comparisson (first item)|592,971,287|96|
+|using Array.includes|829,461,968|84|
+|using Array.includes (first item)|758,376,221|83|
+|Using raw comparisson|772,678,698|82|
+|Using raw comparisson (first item)|786,982,584|84|
 
 ## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|681,670|79|
-|Using ? operator to avoid rejection|720,606|87|
+|Using if to check function existence|631,594|72|
+|Using ? operator to avoid rejection|695,734|74|
 
 ## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|9,073,714|96|
-|Raw usage underscore usage|7,394,991|94|
-|Manipulating private properties using #|2,682,121|91|
-|Manipulating private properties using underscore(_)|590,571,456|99|
-|Manipulating private properties using Symbol|589,342,693|93|
-|Manipulating private properties using PrivateSymbol|34,699,579|95|
+|Raw usage private field|7,078,668|84|
+|Raw usage underscore usage|5,683,156|83|
+|Manipulating private properties using #|2,167,599|84|
+|Manipulating private properties using underscore(_)|681,826,788|84|
+|Manipulating private properties using Symbol|680,449,669|88|
+|Manipulating private properties using PrivateSymbol|26,765,554|83|
 
 ## Sorting Map
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|176,895|95|
-|Sort using first char|862,853|92|
-|Sort using localeCompare|440,417|97|
+|Sort using default|141,659|80|
+|Sort using first char|724,286|82|
+|Sort using localeCompare|394,988|83|
 
 
 
@@ -105,5 +112,5 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|18,697,071|94|
-|Using this|114,027,313|98|
+|Using super|15,200,152|82|
+|Using this|161,144,173|83|
