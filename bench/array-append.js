@@ -1,3 +1,5 @@
+const { H2 } = require('../markdown')
+
 function compare(total) {
   const arrayPush = performance.now();
   var array = [];
@@ -27,6 +29,8 @@ function compare(total) {
       "\n"
   );
 }
+
+console.log(H2('Array.append'))
 console.log('```')
 compare(10);
 compare(100);
