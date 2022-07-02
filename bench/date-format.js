@@ -8,11 +8,16 @@ const tableHeader = createTableHeader([
   'samples'
 ])
 
+const df = new Intl.DateTimeFormat()
+
 suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
   new Intl.DateTimeFormat().format(Date.now())
 })
 .add('Intl.DateTimeFormat().format(new Date())', function () {
   new Intl.DateTimeFormat().format(new Date())
+})
+.add('Reusing Intl.DateTimeFormat()', function () {
+  df.format(Date.now())
 })
 .add('Format using date.get*', function() {
   const date = new Date()
