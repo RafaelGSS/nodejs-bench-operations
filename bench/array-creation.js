@@ -18,7 +18,7 @@ suite.add('new Array', function () {
   console.log(eventToMdTable(event))
 })
 .on('start', function() {
-  console.log(H2('Date format MM/DD/YYYY'))
+  console.log(H2('Array Creation'))
   console.log(tableHeader)
 })
 .run({ 'async': false });
