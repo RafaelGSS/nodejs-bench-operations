@@ -2,7 +2,7 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v12.22.12`
-* __Run:__ Fri Jul 15 2022 20:13:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Aug 10 2022 13:08:01 GMT+0000 (Coordinated Universal Time)
 
 ## Array.append
 
@@ -12,68 +12,68 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|349|83|
-|Array.from|7|21|
+|new Array|284|75|
+|Array.from|6|19|
 
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|5,706|81|
-|Intl.DateTimeFormat().format(new Date())|5,377|75|
-|Reusing Intl.DateTimeFormat()|509,664|86|
-|Format using date.get*|3,563,809|84|
-|new Date() (Baseline)|8,318,382|89|
-|Date.now() (Baseline)|17,511,549|88|
+|Intl.DateTimeFormat().format(Date.now())|7,385|85|
+|Intl.DateTimeFormat().format(new Date())|7,354|79|
+|Reusing Intl.DateTimeFormat()|424,106|87|
+|Format using date.get*|3,364,192|95|
+|new Date() (Baseline)|7,009,266|90|
+|Date.now() (Baseline)|13,780,665|92|
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|654,510|91|
-|Using brackets {}|593,793|81|
-|Using '' + |573,841|87|
-|Using date.toString()|663,279|84|
+|Using String()|533,820|92|
+|Using brackets {}|548,304|93|
+|Using '' + |537,691|93|
+|Using date.toString()|571,569|93|
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,281,676|86|
-|Using undefined assignment|881,380,496|85|
+|Using delete property|2,018,888|93|
+|Using undefined assignment|590,860,288|83|
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|268,941|84|
-|NodeError|267,679|88|
-|NodeError Range|256,498|81|
+|Error|255,964|89|
+|NodeError|253,712|89|
+|NodeError Range|256,319|90|
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,349,009|85|
-|Function returning explicitly undefined|1,306,843|82|
-|Function returning implicitly undefined|1,403,244|84|
-|Function returning string|1,320,501|86|
-|Function returning integer|1,203,296|85|
-|Function returning float|1,179,027|89|
-|Function returning functions|1,093,803|88|
-|Function returning arrow functions|1,114,249|88|
-|Function returning empty object|1,166,612|81|
-|Function returning empty array|1,099,000|85|
+|Function returning null|1,173,529|87|
+|Function returning explicitly undefined|1,155,845|88|
+|Function returning implicitly undefined|1,217,155|87|
+|Function returning string|1,182,418|88|
+|Function returning integer|1,210,994|90|
+|Function returning float|1,171,322|90|
+|Function returning functions|1,131,460|87|
+|Function returning arrow functions|1,129,107|94|
+|Function returning empty object|1,064,600|91|
+|Function returning empty array|1,133,268|87|
 
 ## Array.includes vs raw comparisson
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|734,690,473|90|
-|using Array.includes (first item)|760,070,325|88|
-|Using raw comparisson|766,916,566|87|
-|Using raw comparisson (first item)|796,870,245|90|
+|using Array.includes|585,717,550|95|
+|using Array.includes (first item)|589,495,590|92|
+|Using raw comparisson|605,868,096|91|
+|Using raw comparisson (first item)|604,819,495|94|
 
 ## Get the last item of an Array
 
@@ -82,9 +82,9 @@
 |Length = 100 - Array.at|0|0|
 |Length = 10_000 - Array.at|0|0|
 |Length = 1_000_000 - Array.at|0|0|
-|Length = 100 - Array[length - 1]|786,897,681|91|
-|Length = 10_000 - Array[length - 1]|744,740,628|90|
-|Length = 1_000_000 - Array[length - 1]|746,434,079|89|
+|Length = 100 - Array[length - 1]|609,645,033|92|
+|Length = 10_000 - Array[length - 1]|608,908,975|93|
+|Length = 1_000_000 - Array[length - 1]|604,174,559|93|
 
 
 
@@ -92,20 +92,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|6,443,706|87|
-|Raw usage underscore usage|5,593,962|83|
-|Manipulating private properties using #|2,012,296|88|
-|Manipulating private properties using underscore(_)|577,727,718|84|
-|Manipulating private properties using Symbol|551,579,503|81|
-|Manipulating private properties using PrivateSymbol|19,355,497|86|
+|Raw usage private field|6,766,082|91|
+|Raw usage underscore usage|6,054,100|93|
+|Manipulating private properties using #|2,075,188|95|
+|Manipulating private properties using underscore(_)|31,046,049|86|
+|Manipulating private properties using Symbol|581,555,576|92|
+|Manipulating private properties using PrivateSymbol|21,785,653|95|
 
 ## Sorting Map
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|130,256|85|
-|Sort using first char|586,544|83|
-|Sort using localeCompare|336,617|86|
+|Sort using default|141,386|93|
+|Sort using first char|593,917|91|
+|Sort using localeCompare|336,360|91|
 
 
 
@@ -113,5 +113,5 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|15,383,581|88|
-|Using this|143,189,755|87|
+|Using super|16,091,379|95|
+|Using this|107,489,248|94|
