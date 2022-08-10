@@ -19,4 +19,4 @@ fastify.get('/', schema, function (req, reply) {
   reply.send({ hello: 'world' })
 })
 
-fastify.listen(3000)
+fastify.listen({ port: 3000 })
