@@ -10,10 +10,10 @@ jobs:
     outputs:
       BENCH-14: ${{ steps.benchmark.outputs.BENCH_RESULT14 }}
       BENCH-16: ${{ steps.benchmark.outputs.BENCH_RESULT16 }}
-      BENCH-17: ${{ steps.benchmark.outputs.BENCH_RESULT17 }}
+      BENCH-18: ${{ steps.benchmark.outputs.BENCH_RESULT18 }}
     strategy:
       matrix:
-        node-version: [14, 16, 17]
+        node-version: [14, 16, 18]
 
     steps:
       - uses: actions/checkout@v3
@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-HTTP-v14.md
           echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-HTTP-v16.md
-          echo "${{ needs.bench.outputs.BENCH-17 }}" > RESULTS-HTTP-v17.md
+          echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-HTTP-v18.md
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.8
