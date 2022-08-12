@@ -8,7 +8,6 @@ This repository benchmarks simple operations helping your decision towards a per
 
 All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 
-- [v12](./RESULTS-v12.md)
 - [v14](./RESULTS-v14.md)
 - [v16](./RESULTS-v16.md)
 - [v18](./RESULTS-v18.md)
