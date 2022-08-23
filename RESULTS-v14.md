@@ -2,7 +2,7 @@
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
 * __Node:__ `v14.20.0`
-* __Run:__ Fri Aug 12 2022 19:23:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Aug 23 2022 14:30:30 GMT+0000 (Coordinated Universal Time)
 
 ## Array.append
 
@@ -12,78 +12,78 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|349|84|
-|Array.from|14|39|
+|new Array|384|80|
+|Array.from|15|41|
 
-## Comparisson using `instanceof`
+## Comparison using `instanceof`
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|290,143|92|
-|[True conditional] Using constructor name|286,765|86|
-|[True conditional] Check if property is valid then instanceof |285,778|86|
-|[False conditional] Using instanceof only|713,824,177|90|
-|[False conditional] Using constructor name|714,360,551|98|
-|[False conditional] Check if property is valid then instanceof |715,239,044|99|
+|[True conditional] Using instanceof only|279,018|89|
+|[True conditional] Using constructor name|278,229|85|
+|[True conditional] Check if property is valid then instanceof |274,690|87|
+|[False conditional] Using instanceof only|595,509,693|99|
+|[False conditional] Using constructor name|596,564,888|95|
+|[False conditional] Check if property is valid then instanceof |596,726,951|96|
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|7,849|84|
-|Intl.DateTimeFormat().format(new Date())|8,747|83|
-|Reusing Intl.DateTimeFormat()|379,013|87|
-|Format using date.get*|3,703,414|96|
-|new Date() (Baseline)|7,187,447|98|
-|Date.now() (Baseline)|14,282,720|94|
+|Intl.DateTimeFormat().format(Date.now())|8,511|84|
+|Intl.DateTimeFormat().format(new Date())|8,712|84|
+|Reusing Intl.DateTimeFormat()|373,988|97|
+|Format using date.get*|3,678,259|98|
+|new Date() (Baseline)|7,463,855|93|
+|Date.now() (Baseline)|14,813,016|93|
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|714,678|89|
-|Using brackets {}|728,300|94|
-|Using '' + |726,253|98|
-|Using date.toString()|777,144|88|
+|Using String()|689,154|94|
+|Using brackets {}|692,299|95|
+|Using '' + |709,431|94|
+|Using date.toString()|760,243|93|
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,392,633|92|
-|Using undefined assignment|712,289,807|97|
+|Using delete property|2,345,263|96|
+|Using undefined assignment|593,494,901|94|
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|275,399|86|
-|NodeError|277,899|89|
-|NodeError Range|275,110|88|
+|Error|268,062|86|
+|NodeError|271,839|84|
+|NodeError Range|264,517|86|
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,348,244|96|
-|Function returning explicitly undefined|1,327,871|92|
-|Function returning implicitly undefined|1,327,566|94|
-|Function returning string|1,311,394|94|
-|Function returning integer|1,372,729|94|
-|Function returning float|1,323,950|99|
-|Function returning functions|1,297,736|95|
-|Function returning arrow functions|1,336,491|95|
-|Function returning empty object|1,346,596|97|
-|Function returning empty array|1,347,666|96|
+|Function returning null|1,241,670|93|
+|Function returning explicitly undefined|1,231,345|93|
+|Function returning implicitly undefined|1,264,074|94|
+|Function returning string|1,237,413|91|
+|Function returning integer|1,206,124|93|
+|Function returning float|1,242,911|92|
+|Function returning functions|1,224,099|94|
+|Function returning arrow functions|1,231,501|92|
+|Function returning empty object|1,195,601|93|
+|Function returning empty array|1,125,168|98|
 
-## Array.includes vs raw comparisson
+## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|711,817,710|96|
-|using Array.includes (first item)|712,365,336|99|
-|Using raw comparisson|713,742,137|98|
-|Using raw comparisson (first item)|713,308,957|96|
+|using Array.includes|593,696,420|94|
+|using Array.includes (first item)|593,800,963|92|
+|Using raw comparison|594,895,076|95|
+|Using raw comparison (first item)|594,296,290|98|
 
 ## Get the last item of an Array
 
@@ -92,44 +92,48 @@
 |Length = 100 - Array.at|0|0|
 |Length = 10_000 - Array.at|0|0|
 |Length = 1_000_000 - Array.at|0|0|
-|Length = 100 - Array[length - 1]|708,862,398|95|
-|Length = 10_000 - Array[length - 1]|709,253,010|94|
-|Length = 1_000_000 - Array[length - 1]|707,595,679|98|
+|Length = 100 - Array[length - 1]|597,837,337|98|
+|Length = 10_000 - Array[length - 1]|597,589,631|97|
+|Length = 1_000_000 - Array[length - 1]|596,046,559|95|
 
 ## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|712,901,781|96|
-|Using optional chain (obj.field?.field2) (undefined)|712,818,786|98|
-|Using and operator (obj.field && obj.field.field2) (Valid)|712,751,517|96|
-|Using and operator (obj.field && obj.field.field2) (undefined)|711,387,504|95|
+|Using optional chain (obj.field?.field2) (Valid)|595,322,792|94|
+|Using optional chain (obj.field?.field2) (undefined)|595,166,783|94|
+|Using and operator (obj.field && obj.field.field2) (Valid)|594,351,218|96|
+|Using and operator (obj.field && obj.field.field2) (undefined)|594,061,416|97|
 
 ## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|721,071|73|
-|Using ? operator to avoid rejection|780,398|82|
+|Using if to check function existence|683,210|79|
+|Using ? operator to avoid rejection|722,296|82|
 
 ## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|8,671,212|93|
-|Raw usage underscore usage|7,187,629|96|
-|Manipulating private properties using #|2,551,565|97|
-|Manipulating private properties using underscore(_)|700,762,362|95|
-|Manipulating private properties using Symbol|701,444,650|95|
-|Manipulating private properties using PrivateSymbol|30,276,946|94|
+|Raw usage private field|8,746,535|92|
+|Raw usage underscore usage|7,179,807|97|
+|Manipulating private properties using #|2,636,691|96|
+|Manipulating private properties using underscore(_)|589,336,031|95|
+|Manipulating private properties using Symbol|587,931,067|98|
+|Manipulating private properties using PrivateSymbol|35,583,801|96|
+
+## replace vs replaceAll comparison
+
+This feature is not supported in this Node.js version
 
 ## Sorting Map
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|177,621|95|
-|Sort using first char|789,368|91|
-|Sort using localeCompare|428,720|97|
+|Sort using default|174,302|94|
+|Sort using first char|811,206|93|
+|Sort using localeCompare|431,285|93|
 
 
 
@@ -137,5 +141,5 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|17,392,541|95|
-|Using this|131,563,492|91|
+|Using super|18,193,930|95|
+|Using this|112,785,913|97|
