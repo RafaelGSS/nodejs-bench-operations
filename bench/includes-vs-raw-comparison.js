@@ -16,11 +16,11 @@ suite.add('using Array.includes', function () {
   const httpVersion = '2.0'
   const exists = ['2.0', '1.0', '1.1'].includes(httpVersion)
 })
-.add('Using raw comparisson', function () {
+.add('Using raw comparison', function () {
   const httpVersion = '1.1'
   const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
 })
-.add('Using raw comparisson (first item)', function () {
+.add('Using raw comparison (first item)', function () {
   const httpVersion = '2.0'
   const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
 })
@@ -28,7 +28,7 @@ suite.add('using Array.includes', function () {
   console.log(eventToMdTable(event))
 })
 .on('start', function() {
-  console.log(H2('Array.includes vs raw comparisson'))
+  console.log(H2('Array.includes vs raw comparison'))
   console.log(tableHeader)
 })
 .run({ 'async': false });

@@ -48,7 +48,7 @@ suite.add('[True conditional] Using instanceof only', function () {
   console.log(eventToMdTable(event))
 })
 .on('start', function() {
-  console.log(H2('Comparisson using `instanceof`'))
+  console.log(H2('Comparison using `instanceof`'))
   console.log(tableHeader)
 })
 .run({ 'async': false });
