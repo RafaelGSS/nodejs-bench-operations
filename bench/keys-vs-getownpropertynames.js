@@ -1,6 +1,4 @@
 const Benchmark = require('benchmark')
-const { versions } = require('process')
-const semver = require('semver')
 const suite = new Benchmark.Suite;
 const { eventToMdTable, H2, createTableHeader } = require('../markdown')
 
