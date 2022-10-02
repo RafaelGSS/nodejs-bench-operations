@@ -20,7 +20,7 @@ suite.add('Object.assign (small obj)', function () {
   console.log(eventToMdTable(event))
 })
 .on('start', function() {
-  console.log(H2('Object shallow close'))
+  console.log(H2('Object shallow clone'))
   console.log(tableHeader)
 })
 .run({ 'async': false });
