@@ -54,7 +54,10 @@ for (let i = 0; i < 1000; i++) {
 const tableHeader = createTableHeader(['name', 'ops/sec', 'samples'])
 
 suite
-  .add('Object.assign(bigObject, anotherBigObject)', function () {
+  .add('Object.assign(bigObject, anotherBigObject) - creating new object', function () {
+    Object.assign({}, bigObject, anotherBigObject)
+  })
+  .add('Object.assign(bigObject, anotherBigObject) - mutating bigObject', function () {
     Object.assign(bigObject, anotherBigObject)
   })
   .add('{ ...bigObject, ...anotherBigObject }', function () {
