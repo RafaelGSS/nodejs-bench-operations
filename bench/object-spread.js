@@ -2,8 +2,8 @@ const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite()
 const { eventToMdTable, H2, createTableHeader } = require('../markdown')
 
-const myObject = {}
-const objectToApply = {}
+const bigObject = {}
+const anotherBigObject = {}
 function* keyGenerator() {
   let index = 1
   while (true) {
@@ -16,7 +16,7 @@ function* keyGenerator() {
 const gen = keyGenerator()
 
 for (let i = 0; i < 1000; i++) {
-  myObject[`prop-${i}`] = {
+  bigObject[`prop-${i}`] = {
     [gen.next()]: {
       [gen.next()]: {
         [gen.next()]: {
@@ -33,7 +33,7 @@ for (let i = 0; i < 1000; i++) {
     [gen.next()]: ['a', 'b', 'c'],
   }
 
-  objectToApply[`prop-${i}`] = {
+  anotherBigObject[`prop-${i}`] = {
     [gen.next()]: {
       [gen.next()]: {
         [gen.next()]: {
@@ -54,11 +54,11 @@ for (let i = 0; i < 1000; i++) {
 const tableHeader = createTableHeader(['name', 'ops/sec', 'samples'])
 
 suite
-  .add('Object.assign({}, myObject)', function () {
-    Object.assign(myObject, objectToApply)
+  .add('Object.assign(bigObject, anotherBigObject)', function () {
+    Object.assign(bigObject, anotherBigObject)
   })
-  .add('{...myObject}', function () {
-    const nextObject = { ...myObject, ...objectToApply }
+  .add('{ ...bigObject, ...anotherBigObject }', function () {
+    const nextObject = { ...bigObject, ...anotherBigObject }
   })
   .on('cycle', function (event) {
     console.log(eventToMdTable(event))
