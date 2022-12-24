@@ -1,8 +1,8 @@
 # Node.js Benchmark Operations
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Node:__ `v14.20.1`
-* __Run:__ Thu Nov 03 2022 16:12:48 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v14.21.1`
+* __Run:__ Sat Dec 24 2022 18:48:47 GMT+0000 (Coordinated Universal Time)
 
 ## Array.append
 
@@ -12,85 +12,85 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|331|78|
+|new Array|371|81|
 |Array.from|14|39|
 
 ## Comparison using `instanceof`
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|279,173|90|
-|[True conditional] Using constructor name|282,780|90|
-|[True conditional] Check if property is valid then instanceof |279,505|85|
-|[False conditional] Using instanceof only|713,173,537|97|
-|[False conditional] Using constructor name|712,878,741|95|
-|[False conditional] Check if property is valid then instanceof |713,145,397|98|
+|[True conditional] Using instanceof only|277,600|90|
+|[True conditional] Using constructor name|271,095|84|
+|[True conditional] Check if property is valid then instanceof |270,162|83|
+|[False conditional] Using instanceof only|713,938,107|97|
+|[False conditional] Using constructor name|713,506,393|97|
+|[False conditional] Check if property is valid then instanceof |714,944,161|96|
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|7,589|84|
-|Intl.DateTimeFormat().format(new Date())|7,441|78|
-|Reusing Intl.DateTimeFormat()|379,901|86|
-|Format using date.get*|3,605,801|97|
-|new Date() (Baseline)|7,129,264|96|
-|Date.now() (Baseline)|14,282,618|96|
+|Intl.DateTimeFormat().format(Date.now())|8,152|83|
+|Intl.DateTimeFormat().format(new Date())|7,888|84|
+|Reusing Intl.DateTimeFormat()|443,287|89|
+|Format using date.get*|3,442,627|94|
+|new Date() (Baseline)|6,556,651|95|
+|Date.now() (Baseline)|14,221,860|94|
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|690,590|91|
-|Using brackets {}|719,990|97|
-|Using '' + |721,478|95|
-|Using date.toString()|770,439|93|
+|Using String()|718,264|99|
+|Using brackets {}|740,069|97|
+|Using '' + |739,295|95|
+|Using date.toString()|796,822|96|
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,384,229|94|
-|Using undefined assignment|712,472,493|96|
+|Using delete property|2,446,834|94|
+|Using undefined assignment|712,670,291|97|
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|276,691|87|
-|NodeError|279,528|89|
-|NodeError Range|276,112|85|
+|Error|271,896|87|
+|NodeError|271,825|89|
+|NodeError Range|265,339|85|
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,313,493|94|
-|Function returning explicitly undefined|1,302,578|94|
-|Function returning implicitly undefined|1,335,906|95|
-|Function returning string|1,314,343|95|
-|Function returning integer|1,320,946|93|
-|Function returning float|1,310,993|98|
-|Function returning functions|1,269,979|97|
-|Function returning arrow functions|1,312,597|94|
-|Function returning empty object|1,297,293|97|
-|Function returning empty array|1,334,056|98|
+|Function returning null|1,338,638|95|
+|Function returning explicitly undefined|1,291,246|97|
+|Function returning implicitly undefined|1,298,388|92|
+|Function returning string|1,330,977|96|
+|Function returning integer|1,350,171|95|
+|Function returning float|1,333,732|97|
+|Function returning functions|1,312,659|98|
+|Function returning arrow functions|1,319,366|96|
+|Function returning empty object|1,337,711|96|
+|Function returning empty array|1,334,788|97|
 
 ## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|711,849,031|96|
-|using Array.includes (first item)|712,472,849|97|
-|Using raw comparison|713,303,648|95|
-|Using raw comparison (first item)|712,093,544|98|
+|using Array.includes|713,487,515|97|
+|using Array.includes (first item)|712,578,294|96|
+|Using raw comparison|713,615,882|96|
+|Using raw comparison (first item)|714,003,273|96|
 
 ## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|54,228,907|90|
-|Using Object.getOwnPropertyNames()|48,440,852|89|
+|Using Object.keys()|57,225,704|92|
+|Using Object.getOwnPropertyNames()|56,066,004|97|
 
 ## Get the last item of an Array
 
@@ -99,55 +99,66 @@
 |Length = 100 - Array.at|0|0|
 |Length = 10_000 - Array.at|0|0|
 |Length = 1_000_000 - Array.at|0|0|
-|Length = 100 - Array[length - 1]|707,913,499|97|
-|Length = 10_000 - Array[length - 1]|708,101,175|97|
-|Length = 1_000_000 - Array[length - 1]|704,581,181|97|
+|Length = 100 - Array[length - 1]|710,583,550|97|
+|Length = 10_000 - Array[length - 1]|712,661,862|99|
+|Length = 1_000_000 - Array[length - 1]|710,657,494|97|
 
 ## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|43,566,343|92|
-|Object.create({})|1,245,715|79|
-|Cached Empty.prototype|712,900,267|98|
-|Empty.prototype|1,289,125|72|
-|Empty class|821,137|78|
+|Object.create(null)|46,949,944|92|
+|Object.create({})|1,326,644|79|
+|Cached Empty.prototype|712,867,274|96|
+|Empty.prototype|1,339,164|75|
+|Empty class|907,997|83|
 
 ## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|712,676,560|97|
-|Using optional chain (obj.field?.field2) (undefined)|713,762,651|96|
-|Using and operator (obj.field && obj.field.field2) (Valid)|712,484,598|99|
-|Using and operator (obj.field && obj.field.field2) (undefined)|712,520,023|97|
+|Using optional chain (obj.field?.field2) (Valid)|713,327,992|97|
+|Using optional chain (obj.field?.field2) (undefined)|714,266,180|99|
+|Using and operator (obj.field && obj.field.field2) (Valid)|714,035,311|97|
+|Using and operator (obj.field && obj.field.field2) (undefined)|714,328,110|98|
 
 ## Parsing Integer
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|173,846,845|92|
-|Using parseInt(x, 10) - big number (10 len)|11,856,742|97|
-|Using + - small number (2 len)|713,416,500|98|
-|Using + - big number (10 len)|712,090,744|94|
+|Using parseInt(x, 10) - small number (2 len)|175,065,905|94|
+|Using parseInt(x, 10) - big number (10 len)|12,061,428|93|
+|Using + - small number (2 len)|715,286,651|96|
+|Using + - big number (10 len)|713,807,006|97|
 
 ## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|703,939|75|
-|Using ? operator to avoid rejection|751,230|78|
+|Using if to check function existence|717,996|76|
+|Using ? operator to avoid rejection|767,274|80|
 
 ## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|8,627,560|91|
-|Raw usage underscore usage|7,131,514|95|
-|Manipulating private properties using #|2,541,527|93|
-|Manipulating private properties using underscore(_)|698,266,520|94|
-|Manipulating private properties using Symbol|699,388,135|94|
-|Manipulating private properties using PrivateSymbol|29,715,766|94|
+|Raw usage private field|8,600,326|96|
+|Raw usage underscore usage|7,144,947|96|
+|Manipulating private properties using #|2,540,064|96|
+|Manipulating private properties using underscore(_)|705,653,831|98|
+|Manipulating private properties using Symbol|704,157,791|98|
+|Manipulating private properties using PrivateSymbol|30,575,141|93|
+
+## Property access after shape transition
+
+|name|ops/sec|samples|
+|-|-|-|
+|Adding property after object creation - small object|1,985,808|94|
+|Adding property in the object creation - small object|1,991,913|97|
+|Adding property after the function creation - small class|171,418|88|
+|Adding property in the function creation - small class|171,249|85|
+|Adding property after the class creation - small class|148,245|84|
+|Adding property in the class creation - small class|147,127|84|
 
 ## replace vs replaceAll comparison
 
@@ -157,22 +168,22 @@ This feature is not supported in this Node.js version
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|174,992|94|
-|Sort using first char|778,724|92|
-|Sort using localeCompare|415,068|89|
+|Sort using default|182,087|97|
+|Sort using first char|835,507|96|
+|Sort using localeCompare|433,154|95|
 
 ## Object.assign VS spread operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|{...bigObject} - Total keys: 1000|1,141|91|
-|{...smallObject} - Total keys: 2|53,730,638|96|
-|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,389|95|
-|Object.assign(bigObject, anotherBigObject) - mutating bigObject|3,719|97|
-|{ ...bigObject, ...anotherBigObject }|733|93|
-|Object.assign({}, smallObject, anotherSmallObject) - creating new object|8,898,267|95|
-|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|20,597,258|96|
-|{ ...smallObject, ...anotherSmallObject }|13,368,462|94|
+|{...bigObject} - Total keys: 1000|1,280|94|
+|{...smallObject} - Total keys: 2|55,906,991|95|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,370|95|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|3,661|98|
+|{ ...bigObject, ...anotherBigObject }|803|93|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|8,865,394|97|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|20,463,613|99|
+|{ ...smallObject, ...anotherSmallObject }|13,824,905|94|
 
 
 
@@ -180,13 +191,13 @@ This feature is not supported in this Node.js version
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using + sign|712,649,491|95|
-|Using backtick (`)|713,109,821|98|
-|Using array.join|6,849,621|93|
+|Using + sign|713,663,429|94|
+|Using backtick (`)|714,651,612|96|
+|Using array.join|7,242,593|95|
 
 ## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|17,164,225|98|
-|Using this|123,753,479|93|
+|Using super|17,677,362|97|
+|Using this|134,383,320|97|
