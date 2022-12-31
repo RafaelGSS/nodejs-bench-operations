@@ -64,7 +64,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'main'
-          commit-message: 'chore(v16.x): update benchmark results'
+          commit-message: 'chore(v18.x): update benchmark results'
           force-add: 'true'
           rebase: 'true'
           files: RESULTS*.md v18/*
