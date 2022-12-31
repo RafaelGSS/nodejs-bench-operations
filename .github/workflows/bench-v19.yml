@@ -66,6 +66,7 @@ jobs:
           push-branch: 'main'
           commit-message: 'chore(v19.x): update benchmark results'
           force-add: 'true'
-          files: RESULTS*.md
+          rebase: 'true'
+          files: RESULTS*.md v19/*
           name: Github Actions
 
