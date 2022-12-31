@@ -1,0 +1,71 @@
+name: Benchmark v19
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+    outputs:
+      BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT19_1_0 }}
+      BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT19_2_0 }}
+      BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT19_3_0 }}
+
+    strategy:
+      matrix:
+        node-version: [19.1.0, 19.2.0, 19.3.0]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: |
+          npm install
+
+      - name: Run tests
+        id: benchmark
+        run: |
+          version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
+          node bin.js > ./bench-result.md
+          # https://trstringer.com/github-actions-multiline-strings/
+          result=$(cat ./bench-result.md)
+          result="${result//'%'/'%25'}"
+          result="${result//$'\n'/'%0A'}"
+          result="${result//$'\r'/'%0D'}"
+          result="${result//$'`'/'\`'}"
+          echo "::set-output name=BENCH_RESULT$version::$result"
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: [bench]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Result files
+        run: |
+          rm -rf v19/RESULTS-v19*;
+          echo "${{ needs.bench.outputs.BENCH-N1 }}" > RESULTS-v19.md;
+          echo "${{ needs.bench.outputs.BENCH-N1 }}" > v19/RESULTS-v19_1_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N2 }}" > v19/RESULTS-v19_2_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N3 }}" > v19/RESULTS-v19_3_0.md;
+
+      - name: commit and push updated results
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'main'
+          commit-message: 'chore(v19.x): update benchmark results'
+          force-add: 'true'
+          files: RESULTS*.md
+          name: Github Actions
+

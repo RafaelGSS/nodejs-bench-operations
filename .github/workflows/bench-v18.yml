@@ -1,4 +1,4 @@
-name: Benchmark
+name: Benchmark v18
 
 on:
   workflow_dispatch:
@@ -11,14 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     # runs-on: self-hosted
     outputs:
-      BENCH-14: ${{ steps.benchmark.outputs.BENCH_RESULT14 }}
-      BENCH-16: ${{ steps.benchmark.outputs.BENCH_RESULT16 }}
-      BENCH-18: ${{ steps.benchmark.outputs.BENCH_RESULT18 }}
-      BENCH-19: ${{ steps.benchmark.outputs.BENCH_RESULT19 }}
+      BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT18_12_1 }}
+      BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT18_12_0 }}
+      BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT18_11_0 }}
 
     strategy:
       matrix:
-        node-version: [14, 16, 18, 19]
+        node-version: [18.12.1, 18.12.0, 18.11.0]
 
     steps:
       - uses: actions/checkout@v3
@@ -34,9 +33,8 @@ jobs:
 
       - name: Run tests
         id: benchmark
-        env:
-          MATRIX_NODE_VERSION: ${{ matrix.node-version }}
         run: |
+          version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
           node bin.js > ./bench-result.md
           # https://trstringer.com/github-actions-multiline-strings/
           result=$(cat ./bench-result.md)
@@ -44,7 +42,7 @@ jobs:
           result="${result//$'\n'/'%0A'}"
           result="${result//$'\r'/'%0D'}"
           result="${result//$'`'/'\`'}"
-          echo "::set-output name=BENCH_RESULT$MATRIX_NODE_VERSION::$result"
+          echo "::set-output name=BENCH_RESULT$version::$result"
 
   commit:
     runs-on: ubuntu-latest
@@ -55,17 +53,18 @@ jobs:
 
       - name: Create Result files
         run: |
-          echo "${{ needs.bench.outputs.BENCH-14 }}" > RESULTS-v14.md;
-          echo "${{ needs.bench.outputs.BENCH-16 }}" > RESULTS-v16.md;
-          echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-v18.md;
-          echo "${{ needs.bench.outputs.BENCH-19 }}" > RESULTS-v19.md;
+          rm -rf v18/RESULTS-v18*;
+          echo "${{ needs.bench.outputs.BENCH-N1 }}" > RESULTS-v18.md;
+          echo "${{ needs.bench.outputs.BENCH-N1 }}" > v18/RESULTS-v18_12_1.md;
+          echo "${{ needs.bench.outputs.BENCH-N2 }}" > v18/RESULTS-v18_12_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N3 }}" > v18/RESULTS-v18_11_0.md;
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'main'
-          commit-message: 'chore: update benchmark results'
+          commit-message: 'chore(v16.x): update benchmark results'
           force-add: 'true'
           files: RESULTS*.md
           name: Github Actions
