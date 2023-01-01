@@ -1,6 +1,6 @@
 # Node.js Benchmark Operations
 
-**Note:** the benchmarks run in a dedicated machine to reduce any variability that a shared runner might add to the benchmark.
+**Note:** ~the benchmarks run in a dedicated machine to reduce any variability that a shared runner might add to the benchmark~.
 
 ---
 
