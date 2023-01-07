@@ -8,7 +8,17 @@ const tableHeader = createTableHeader([
   'samples'
 ])
 
+const twoDigitsLocaleOptions = {
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  day: '2-digit',
+  month: '2-digit',
+};
+
 const df = new Intl.DateTimeFormat()
+const dfWithOptions = new Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions);
 
 suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
   new Intl.DateTimeFormat().format(Date.now())
@@ -16,8 +26,26 @@ suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
 .add('Intl.DateTimeFormat().format(new Date())', function () {
   new Intl.DateTimeFormat().format(new Date())
 })
+.add('Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())', function () {
+  new Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())
+})
+.add('Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())', function () {
+  new Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())
+})
 .add('Reusing Intl.DateTimeFormat()', function () {
   df.format(Date.now())
+})
+.add('Reusing dfWithOptions.format(Date.now())', function () {
+  dfWithOptions.format(Date.now())
+})
+.add('Reusing dfWithOptions.format(new Date())', function () {
+  dfWithOptions.format(new Date())
+})
+.add('Date.toLocaleDateString()', function () {
+  new Date().toLocaleDateString()
+})
+.add('Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)', function () {
+  new Date().toLocaleDateString(undefined, twoDigitsLocaleOptions);
 })
 .add('Format using date.get*', function() {
   const date = new Date()
