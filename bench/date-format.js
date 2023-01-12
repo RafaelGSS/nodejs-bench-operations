@@ -1,6 +1,7 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
 const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+const { fromUnixToISOString } = require('../utils/from-unix-to-iso-string');
 
 const tableHeader = createTableHeader([
   'name',
@@ -40,6 +41,12 @@ suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
 })
 .add('Reusing dfWithOptions.format(new Date())', function () {
   dfWithOptions.format(new Date())
+})
+.add('new Date().toISOString()', function () {
+  new Date().toISOString()
+})
+.add('fromUnixToISOString(Date.now())', function () {
+  fromUnixToISOString(Date.now())
 })
 .add('Date.toLocaleDateString()', function () {
   new Date().toLocaleDateString()
