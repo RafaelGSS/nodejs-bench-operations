@@ -83,5 +83,5 @@ function fromUnixToISOString(unix) {
 }
 
 module.exports = {
-  fromUnixToISOString, 
+  fromUnixToISOString,
 };
