@@ -1,7 +1,6 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
 const { eventToMdTable, H2, createTableHeader } = require('../markdown')
-const { fromUnixToISOString } = require('../utils/from-unix-to-iso-string');
 
 const tableHeader = createTableHeader([
   'name',
@@ -11,15 +10,11 @@ const tableHeader = createTableHeader([
 
 const twoDigitsLocaleOptions = {
   year: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-  second: 'numeric',
   day: '2-digit',
   month: '2-digit',
 };
 
 const df = new Intl.DateTimeFormat()
-const dfWithOptions = new Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions);
 
 suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
   new Intl.DateTimeFormat().format(Date.now())
@@ -36,18 +31,6 @@ suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
 .add('Reusing Intl.DateTimeFormat()', function () {
   df.format(Date.now())
 })
-.add('Reusing dfWithOptions.format(Date.now())', function () {
-  dfWithOptions.format(Date.now())
-})
-.add('Reusing dfWithOptions.format(new Date())', function () {
-  dfWithOptions.format(new Date())
-})
-.add('new Date().toISOString()', function () {
-  new Date().toISOString()
-})
-.add('fromUnixToISOString(Date.now())', function () {
-  fromUnixToISOString(Date.now())
-})
 .add('Date.toLocaleDateString()', function () {
   new Date().toLocaleDateString()
 })
@@ -56,13 +39,7 @@ suite.add('Intl.DateTimeFormat().format(Date.now())', function () {
 })
 .add('Format using date.get*', function() {
   const date = new Date()
-  const formated = `${date.getMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`
-})
-.add('new Date() (Baseline)', function() {
-  new Date()
-})
-.add('Date.now() (Baseline)', function() {
-  Date.now()
+  `${date.getMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`
 })
 .on('cycle', function(event) {
   console.log(eventToMdTable(event))
