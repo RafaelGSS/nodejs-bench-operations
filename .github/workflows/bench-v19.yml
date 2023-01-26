@@ -8,8 +8,8 @@ on:
 
 jobs:
   bench:
-    runs-on: ubuntu-latest
-    # runs-on: self-hosted
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     outputs:
       BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT19_2_0 }}
       BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT19_3_0 }}
