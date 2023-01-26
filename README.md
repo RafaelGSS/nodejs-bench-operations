@@ -1,10 +1,11 @@
 # Node.js Benchmark Operations
 
-**Note:** ~the benchmarks run in a dedicated machine to reduce any variability that a shared runner might add to the benchmark~.
+To eliminate any potential variability introduced by a shared runner,
+the benchmarks are executed on a dedicated Linode machine.
 
----
+## Usage
 
-This repository benchmarks simple operations helping your decision towards a performatic solution.
+This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
 
 All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 
