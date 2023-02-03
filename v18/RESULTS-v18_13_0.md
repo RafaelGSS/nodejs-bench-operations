@@ -2,244 +2,244 @@
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.8GB Mem
 * __Node:__ `v18.13.0`
-* __Run:__ Fri Jan 27 2023 19:36:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Feb 03 2023 18:01:49 GMT+0000 (Coordinated Universal Time)
 
 ## Array.append (number)
 
 |type|amount|time elapsed|
 |-|-|-|
-array.push|10|0.01ms
-new Array(length)|10|0.002ms
-array.push|100|0.037ms
-new Array(length)|100|0.008ms
-array.push|1,000|0.079ms
-new Array(length)|1,000|0.03ms
-array.push|10,000|0.62ms
-new Array(length)|10,000|0.169ms
-array.push|1,000,000|26.915ms
-new Array(length)|1,000,000|16.972ms
-array.push|100,000,000|2,063.56ms
-new Array(length)|100,000,000|5,030.808ms
+array.push|10|0.012ms
+new Array(length)|10|0.003ms
+array.push|100|0.05ms
+new Array(length)|100|0.016ms
+array.push|1,000|0.085ms
+new Array(length)|1,000|0.051ms
+array.push|10,000|0.75ms
+new Array(length)|10,000|0.228ms
+array.push|1,000,000|28.26ms
+new Array(length)|1,000,000|17.37ms
+array.push|100,000,000|2,303.399ms
+new Array(length)|100,000,000|5,864.376ms
 ## Array.append (string)
 
 |type|amount|time elapsed|
 |-|-|-|
-array.push|10|0.008ms
-new Array(length)|10|0.022ms
-array.push|100|0.093ms
-new Array(length)|100|0.01ms
-array.push|1,000|0.046ms
-new Array(length)|1,000|0.02ms
-array.push|10,000|0.597ms
-new Array(length)|10,000|4.062ms
-array.push|1,000,000|313.791ms
-new Array(length)|1,000,000|4.721ms
-array.push|100,000,000|2,528.267ms
-new Array(length)|100,000,000|5,392.79ms
+array.push|10|0.01ms
+new Array(length)|10|0.021ms
+array.push|100|0.114ms
+new Array(length)|100|0.011ms
+array.push|1,000|0.058ms
+new Array(length)|1,000|0.021ms
+array.push|10,000|0.625ms
+new Array(length)|10,000|4.323ms
+array.push|1,000,000|337.556ms
+new Array(length)|1,000,000|4.926ms
+array.push|100,000,000|2,848.286ms
+new Array(length)|100,000,000|6,385.524ms
 
 ## Array Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|315|82|
+|new Array|277|79|
 |Array.from|15|41|
 
 ## Comparison using `instanceof`
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|186,407|54|
-|[True conditional] Using constructor name|144,272|90|
-|[True conditional] Check if property is valid then instanceof |145,039|87|
-|[False conditional] Using instanceof only|775,236,616|94|
-|[False conditional] Using constructor name|775,467,667|96|
-|[False conditional] Check if property is valid then instanceof |775,105,067|95|
+|[True conditional] Using instanceof only|194,821|49|
+|[True conditional] Using constructor name|148,212|89|
+|[True conditional] Check if property is valid then instanceof |150,092|90|
+|[False conditional] Using instanceof only|770,256,781|95|
+|[False conditional] Using constructor name|771,713,139|92|
+|[False conditional] Check if property is valid then instanceof |769,594,839|95|
 
 ## Date toISOString
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|2,000,483|88|
-|fromUnixToISOString(new Date())|1,563,735|89|
+|new Date().toISOString()|1,968,384|91|
+|fromUnixToISOString(new Date())|1,531,000|91|
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|9,562|79|
-|Intl.DateTimeFormat().format(new Date())|9,002|79|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|8,012|71|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|9,230|75|
-|Reusing Intl.DateTimeFormat()|534,481|92|
-|Date.toLocaleDateString()|559,814|89|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,661|78|
+|Intl.DateTimeFormat().format(Date.now())|9,562|78|
+|Intl.DateTimeFormat().format(new Date())|9,635|83|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|10,268|57|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|11,491|85|
+|Reusing Intl.DateTimeFormat()|543,706|92|
+|Date.toLocaleDateString()|557,714|89|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,042|73|
 |Format using date.get*|0|0|
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|637,726|93|
-|Using brackets {}|653,695|93|
-|Using '' + |650,103|93|
-|Using date.toString()|697,648|89|
+|Using String()|623,969|91|
+|Using brackets {}|624,009|90|
+|Using '' + |637,338|91|
+|Using date.toString()|674,299|93|
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,241,221|86|
-|Using undefined assignment|772,554,703|96|
+|Using delete property|2,344,944|93|
+|Using undefined assignment|760,253,931|94|
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|189,662|54|
-|NodeError|147,462|89|
-|NodeError Range|148,960|92|
+|Error|189,155|55|
+|NodeError|145,671|86|
+|NodeError Range|145,966|88|
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,346,282|93|
-|Function returning explicitly undefined|1,331,461|92|
-|Function returning implicitly undefined|1,332,246|90|
-|Function returning string|1,300,341|87|
-|Function returning integer|1,339,555|89|
-|Function returning float|1,327,380|92|
-|Function returning functions|1,297,873|93|
-|Function returning arrow functions|1,304,958|87|
-|Function returning empty object|1,321,700|88|
-|Function returning empty array|1,325,582|91|
+|Function returning null|1,353,584|96|
+|Function returning explicitly undefined|1,315,397|91|
+|Function returning implicitly undefined|1,343,114|89|
+|Function returning string|1,343,729|93|
+|Function returning integer|1,360,135|92|
+|Function returning float|1,368,914|90|
+|Function returning functions|1,336,595|93|
+|Function returning arrow functions|1,357,044|96|
+|Function returning empty object|1,388,094|96|
+|Function returning empty array|1,388,767|96|
 
 ## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|775,570,812|97|
-|using Array.includes (first item)|774,588,772|99|
-|Using raw comparison|775,962,757|96|
-|Using raw comparison (first item)|776,736,798|94|
+|using Array.includes|769,666,804|95|
+|using Array.includes (first item)|769,618,757|94|
+|Using raw comparison|772,057,543|94|
+|Using raw comparison (first item)|770,823,090|95|
 
 ## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|54,196,348|88|
-|Using Object.getOwnPropertyNames()|56,151,950|90|
+|Using Object.keys()|55,520,094|92|
+|Using Object.getOwnPropertyNames()|57,402,579|92|
 
 ## Get the last item of an Array
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|18,705,581|96|
-|Length = 10_000 - Array.at|18,708,180|94|
-|Length = 1_000_000 - Array.at|18,744,279|98|
-|Length = 100 - Array[length - 1]|774,129,774|95|
-|Length = 10_000 - Array[length - 1]|774,123,777|96|
-|Length = 1_000_000 - Array[length - 1]|774,258,618|96|
+|Length = 100 - Array.at|18,727,596|94|
+|Length = 10_000 - Array.at|18,685,090|94|
+|Length = 1_000_000 - Array.at|18,710,804|96|
+|Length = 100 - Array[length - 1]|771,571,733|98|
+|Length = 10_000 - Array[length - 1]|768,864,290|97|
+|Length = 1_000_000 - Array[length - 1]|763,134,023|85|
 
 ## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|58,505,921|86|
-|Object.create({})|1,129,602|82|
-|Cached Empty.prototype|775,997,042|97|
-|Empty.prototype|1,145,830|82|
-|Empty class|826,767|81|
+|Object.create(null)|58,006,524|92|
+|Object.create({})|1,148,049|86|
+|Cached Empty.prototype|769,306,183|95|
+|Empty.prototype|1,182,806|85|
+|Empty class|843,853|80|
 
 ## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|775,288,903|97|
-|Using optional chain (obj.field?.field2) (undefined)|773,407,647|94|
-|Using and operator (obj.field && obj.field.field2) (Valid)|776,393,029|97|
-|Using and operator (obj.field && obj.field.field2) (undefined)|774,619,070|98|
+|Using optional chain (obj.field?.field2) (Valid)|771,741,092|96|
+|Using optional chain (obj.field?.field2) (undefined)|771,112,600|92|
+|Using and operator (obj.field && obj.field.field2) (Valid)|774,169,437|97|
+|Using and operator (obj.field && obj.field.field2) (undefined)|772,308,623|94|
 
 ## Parsing Integer
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|227,596,451|95|
-|Using parseInt(x, 10) - big number (10 len)|12,543,905|91|
-|Using + - small number (2 len)|776,702,976|97|
-|Using + - big number (10 len)|777,009,312|96|
+|Using parseInt(x, 10) - small number (2 len)|226,522,897|96|
+|Using parseInt(x, 10) - big number (10 len)|12,663,146|92|
+|Using + - small number (2 len)|772,055,128|93|
+|Using + - big number (10 len)|772,688,844|96|
 
 ## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|661,708|81|
-|Using ? operator to avoid rejection|674,504|83|
+|Using if to check function existence|647,146|77|
+|Using ? operator to avoid rejection|672,157|84|
 
 ## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|222,224,371|90|
-|Raw usage underscore usage|233,500,112|92|
-|Manipulating private properties using #|191,457,398|92|
-|Manipulating private properties using underscore(_)|193,605,945|85|
-|Manipulating private properties using Symbol|204,345,915|91|
-|Manipulating private properties using PrivateSymbol|21,165,559|87|
+|Raw usage private field|219,069,827|87|
+|Raw usage underscore usage|227,843,981|92|
+|Manipulating private properties using #|191,753,428|90|
+|Manipulating private properties using underscore(_)|177,997,383|92|
+|Manipulating private properties using Symbol|179,689,359|90|
+|Manipulating private properties using PrivateSymbol|22,086,391|92|
 
 ## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|2,961,171|96|
-|Adding property in the object creation - small object|2,968,647|93|
-|Adding property after the function creation - small class|166,429|82|
-|Adding property in the function creation - small class|164,717|85|
-|Adding property after the class creation - small class|139,589|84|
-|Adding property in the class creation - small class|141,041|82|
+|Adding property after object creation - small object|2,972,564|93|
+|Adding property in the object creation - small object|3,012,984|96|
+|Adding property after the function creation - small class|167,742|84|
+|Adding property in the function creation - small class|170,319|86|
+|Adding property after the class creation - small class|140,424|83|
+|Adding property in the class creation - small class|140,606|82|
 
 ## replace vs replaceAll comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using replace(//g)|2,601,251|92|
-|Using replaceAll()|1,922,555|89|
-|Using replaceAll(//g)|2,347,001|91|
+|Using replace(//g)|2,675,172|94|
+|Using replaceAll()|1,927,636|92|
+|Using replaceAll(//g)|2,451,663|90|
 
 ## Sorting Map
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|190,610|93|
-|Sort using first char|826,296|90|
-|Sort using localeCompare|792,853|90|
+|Sort using default|195,905|94|
+|Sort using first char|871,243|93|
+|Sort using localeCompare|840,103|91|
 
 ## Object.assign VS spread operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|{...bigObject} - Total keys: 1000|1,549|83|
-|{...smallObject} - Total keys: 2|52,399,157|87|
-|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,476|90|
-|Object.assign(bigObject, anotherBigObject) - mutating bigObject|4,098|89|
-|{ ...bigObject, ...anotherBigObject }|919|87|
-|Object.assign({}, smallObject, anotherSmallObject) - creating new object|8,584,587|86|
-|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|26,774,254|96|
-|{ ...smallObject, ...anotherSmallObject }|15,134,208|91|
+|{...bigObject} - Total keys: 1000|1,501|89|
+|{...smallObject} - Total keys: 2|57,206,285|94|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,494|93|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|4,123|92|
+|{ ...bigObject, ...anotherBigObject }|909|91|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|8,991,428|91|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|26,609,674|98|
+|{ ...smallObject, ...anotherSmallObject }|15,865,106|93|
 
 ## Stream.Readable
 
 ```
-streams.Readable reading 1e3 * some data x 1,673 ops/sec ±1.73% (82 runs sampled)
-streams.web.Readable reading 1e3 * some data x 431 ops/sec ±0.86% (85 runs sampled)
+streams.Readable reading 1e3 * some data x 1,776 ops/sec ±0.78% (83 runs sampled)
+streams.web.Readable reading 1e3 * some data x 445 ops/sec ±0.72% (85 runs sampled)
 Fastest is streams.Readable reading 1e3 * some data
 ```
 
 ## Stream.Writable
 
 ```
-streams.Writable writing 1e3 * some data x 3,730 ops/sec ±0.79% (86 runs sampled)
-streams.web.WritableStream writing 1e3 * some data x 1,033 ops/sec ±12.27% (63 runs sampled)
+streams.Writable writing 1e3 * some data x 3,836 ops/sec ±0.62% (90 runs sampled)
+streams.web.WritableStream writing 1e3 * some data x 977 ops/sec ±39.26% (43 runs sampled)
 Fastest is streams.Writable writing 1e3 * some data
 ```
 
@@ -247,20 +247,20 @@ Fastest is streams.Writable writing 1e3 * some data
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using + sign|773,444,863|97|
-|Using backtick (`)|773,331,125|96|
-|Using array.join|7,401,072|85|
+|Using + sign|771,866,732|94|
+|Using backtick (`)|769,889,455|93|
+|Using array.join|7,756,613|94|
 
 ## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|140,296,768|93|
-|Using this|145,260,972|91|
+|Using super|145,072,377|93|
+|Using this|150,584,572|92|
 
 ## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().getTime()|6,331,516|93|
-|Date.now()|14,753,134|89|
+|new Date().getTime()|6,664,746|92|
+|Date.now()|15,511,291|94|
