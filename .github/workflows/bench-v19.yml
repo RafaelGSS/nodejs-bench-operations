@@ -11,13 +11,14 @@ jobs:
     # runs-on: ubuntu-latest
     runs-on: self-hosted
     outputs:
+      BENCH-N: ${{ steps.benchmark.outputs.BENCH_RESULT19_0_0 }}
       BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT19_3_0 }}
       BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT19_4_0 }}
       BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT19_5_0 }}
 
     strategy:
       matrix:
-        node-version: [19.3.0, 19.4.0, 19.5.0]
+        node-version: [19.0.0, 19.3.0, 19.4.0, 19.5.0]
 
     steps:
       - uses: actions/checkout@v3
@@ -58,6 +59,7 @@ jobs:
           echo "${{ needs.bench.outputs.BENCH-N1 }}" > v19/RESULTS-v19_3_0.md;
           echo "${{ needs.bench.outputs.BENCH-N2 }}" > v19/RESULTS-v19_4_0.md;
           echo "${{ needs.bench.outputs.BENCH-N3 }}" > v19/RESULTS-v19_5_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N }}" > v19/RESULTS-v19_0_0.md;
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.9
