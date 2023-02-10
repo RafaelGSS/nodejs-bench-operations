@@ -16,11 +16,6 @@ suite.add('Directly in the object', function () {
   
   data.test = 'Hello';
 })
-.add('Using dot notation with undefined value', function () {
-  const data = { test: undefined }
-  
-  data.test = 'Hello';
-})
 .add('Using define property (writable)', function () {
   const data = { }
   
@@ -31,27 +26,21 @@ suite.add('Directly in the object', function () {
     configurable: true,
   })
 })
+.add('Using define property initialized (writable)', function () {
+  const data = { test: undefined }
+  
+  Object.defineProperty(data, 'test', {
+    value: 'Hello',
+    enumerable: true,
+    configurable: true,
+  });
+})
 .add('Using define property (getter)', function () {
   const data = { }
   
   Object.defineProperty(data, 'test', {
     get() {
       return 'Hello';
-    },
-    enumerable: true,
-    configurable: true,
-  })
-})
-.add('Using define property (getter and setter)', function () {
-  let value = 'Hello';
-  const data = { }
-  
-  Object.defineProperty(data, 'test', {
-    get() {
-      return value;
-    },
-    set(newValue) {
-      value = newValue;
     },
     enumerable: true,
     configurable: true,
