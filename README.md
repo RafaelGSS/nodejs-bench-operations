@@ -27,3 +27,10 @@ These results aim to compare http libraries between versions of Node.js
 
 - [v14](./RESULTS-HTTP-v14.md)
 - [v16](./RESULTS-HTTP-v16.md)
+
+## Affiliates
+
+Some projects have done some perfomance comparison on a dedicated topic.  
+Here is a usuful list:
+
+- [Loops](https://github.com/simone-sanfratello/node-bench-iteration)
