@@ -12,13 +12,13 @@ jobs:
     runs-on: self-hosted
     outputs:
       BENCH-N: ${{ steps.benchmark.outputs.BENCH_RESULT19_0_0 }}
-      BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT19_4_0 }}
-      BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT19_5_0 }}
-      BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT19_6_0 }}
+      BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT19_8_0 }}
+      BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT19_8_1 }}
+      BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT19_9_0 }}
 
     strategy:
       matrix:
-        node-version: [19.0.0, 19.4.0, 19.5.0, 19.6.0]
+        node-version: [19.0.0, 19.8.0, 19.8.1, 19.9.0]
 
     steps:
       - uses: actions/checkout@v3
@@ -56,9 +56,9 @@ jobs:
         run: |
           rm -rf v19/RESULTS-v19*;
           echo "${{ needs.bench.outputs.BENCH-N3 }}" > RESULTS-v19.md;
-          echo "${{ needs.bench.outputs.BENCH-N1 }}" > v19/RESULTS-v19_4_0.md;
-          echo "${{ needs.bench.outputs.BENCH-N2 }}" > v19/RESULTS-v19_5_0.md;
-          echo "${{ needs.bench.outputs.BENCH-N3 }}" > v19/RESULTS-v19_6_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N1 }}" > v19/RESULTS-v19_8_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N2 }}" > v19/RESULTS-v19_8_1.md;
+          echo "${{ needs.bench.outputs.BENCH-N3 }}" > v19/RESULTS-v19_9_0.md;
           echo "${{ needs.bench.outputs.BENCH-N }}" > v19/RESULTS-v19_0_0.md;
 
       - name: commit and push updated results
