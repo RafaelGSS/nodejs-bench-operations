@@ -1,4 +1,4 @@
-name: Benchmark v16
+name: Benchmark v20
 
 on:
   workflow_dispatch:
@@ -11,14 +11,11 @@ jobs:
     # runs-on: ubuntu-latest
     runs-on: self-hosted
     outputs:
-      BENCH-N: ${{ steps.benchmark.outputs.BENCH_RESULT16_0_0 }}
-      BENCH-N1: ${{ steps.benchmark.outputs.BENCH_RESULT16_18_1 }}
-      BENCH-N2: ${{ steps.benchmark.outputs.BENCH_RESULT16_19_0 }}
-      BENCH-N3: ${{ steps.benchmark.outputs.BENCH_RESULT16_20_0 }}
+      BENCH-N: ${{ steps.benchmark.outputs.BENCH_RESULT20_0_0 }}
 
     strategy:
       matrix:
-        node-version: [16.0.0, 16.18.1, 16.19.0, 16.20.0]
+        node-version: [20.0.0]
 
     steps:
       - uses: actions/checkout@v3
@@ -54,21 +51,22 @@ jobs:
 
       - name: Create Result files
         run: |
-          rm -rf v16/RESULTS-v16*;
-          echo "${{ needs.bench.outputs.BENCH-N3 }}" > RESULTS-v16.md;
-          echo "${{ needs.bench.outputs.BENCH-N1 }}" > v16/RESULTS-v16_18_1.md;
-          echo "${{ needs.bench.outputs.BENCH-N2 }}" > v16/RESULTS-v16_19_0.md;
-          echo "${{ needs.bench.outputs.BENCH-N3 }}" > v16/RESULTS-v16_20_0.md;
-          echo "${{ needs.bench.outputs.BENCH-N }}" > v16/RESULTS-v16_0_0.md;
+          rm -rf v20/RESULTS-v20*;
+          # echo "${{ needs.bench.outputs.BENCH-N3 }}" > RESULTS-v19.md;
+          # echo "${{ needs.bench.outputs.BENCH-N1 }}" > v19/RESULTS-v19_8_0.md;
+          # echo "${{ needs.bench.outputs.BENCH-N2 }}" > v19/RESULTS-v19_8_1.md;
+          # echo "${{ needs.bench.outputs.BENCH-N3 }}" > v19/RESULTS-v19_9_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N }}" > v20/RESULTS-v20_0_0.md;
+          echo "${{ needs.bench.outputs.BENCH-N }}" > RESULTS-v20.md;
 
       - name: commit and push updated results
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'main'
-          commit-message: 'chore(v16.x): update benchmark results'
+          commit-message: 'chore(v20.x): update benchmark results'
           force-add: 'true'
           rebase: 'true'
-          files: RESULTS*.md v16/*
+          files: RESULTS*.md v20/*
           name: Github Actions
 
