@@ -1,7 +1,7 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { Writable } = require('stream')
-const { WritableStream } = require('stream/web')
+const { Writable } = require('node:stream')
+const { WritableStream } = require('node:stream/web')
 const { H2 } = require('../markdown')
 
 suite.add('streams.Writable writing 1e3 * "some data"', function () {

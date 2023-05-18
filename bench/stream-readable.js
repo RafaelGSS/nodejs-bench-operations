@@ -1,7 +1,7 @@
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
-const { Readable } = require('stream')
-const { ReadableStream } = require('stream/web')
+const { Readable } = require('node:stream')
+const { ReadableStream } = require('node:stream/web')
 const { H2 } = require('../markdown')
 
 suite.add('streams.Readable reading 1e3 * "some data"', {
