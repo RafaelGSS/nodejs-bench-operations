@@ -1,6 +1,6 @@
 const onlisten = require('on-net-listen')
-const fs = require('fs')
-const net = require('net')
+const fs = require('node:fs')
+const net = require('node:net')
 
 onlisten(function (addr) {
   this.destroy()
