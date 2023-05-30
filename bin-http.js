@@ -1,11 +1,11 @@
-const fs = require('fs')
-const { promisify } = require('util')
+const fs = require('node:fs')
+const { promisify } = require('node:util')
 const readdir = promisify(fs.readdir)
 const autocannon = require('autocannon')
-const { once } = require('events')
-const path = require('path')
-const os = require('os')
-const { spawn } = require('child_process')
+const { once } = require('node:events')
+const path = require('node:path')
+const os = require('node:os')
+const { spawn } = require('node:child_process')
 
 const machineInfo = `${os.platform()} ${os.arch()} | ${os.cpus().length} vCPUs | ${(os.totalmem() / (1024 ** 3)).toFixed(1)}GB Mem`
 

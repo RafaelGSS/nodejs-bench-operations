@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
-const os = require('os')
-const { spawnSync } = require('child_process')
+const fs = require('node:fs')
+const path = require('node:path')
+const os = require('node:os')
+const { spawnSync } = require('node:child_process')
 
 const machineInfo = `${os.platform()} ${os.arch()} | ${os.cpus().length} vCPUs | ${(os.totalmem() / (1024 ** 3)).toFixed(1)}GB Mem`
 

@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('node:http');
 
 const requestListener = function (req, res) {
   res.writeHead(200);
