@@ -35,7 +35,7 @@ function compare (total) {
     for (let i = 0; i < total; i++) array.fill(i, i, i+1)
   })
 
-  bench('variable size array[i] = i', total, () => {
+  bench('array[i] = i', total, () => {
     const array = []
     for (let i = 0; i < total; i++) array[i] = i
   })
