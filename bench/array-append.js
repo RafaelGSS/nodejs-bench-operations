@@ -15,7 +15,7 @@ const bench = (name, total, fn) => {
 function compare (total) {
   console.log(tableHeader)
 
-  bench('fixed size fill(a,b,c) DESC', total, () => {
+  bench('new Array(length) + fill(a,b,c) DESC', total, () => {
     const array = new Array(total)
     for (let i = total; i-- > 0;) array.fill(i, i, i+1)
   })
