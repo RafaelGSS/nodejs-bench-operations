@@ -50,7 +50,6 @@ function compare (total) {
     for (let i = total; i-- > 0;) array[i] = i
   })
 
-  console.log()
 }
 
 function compareStrings (total) {
