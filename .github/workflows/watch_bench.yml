@@ -51,6 +51,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ./.github/workflows/bench.yml
+      - uses: h4ad-forks/nodejs-bench-operations/.github/workflows/bench.yml@feat/split-benchmarks
         with:
           bench-file: ${{ matrix.file }}
