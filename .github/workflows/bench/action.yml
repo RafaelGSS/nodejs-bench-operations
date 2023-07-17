@@ -39,7 +39,7 @@ jobs:
         id: benchmark
         run: |
           version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
-          node bench/${{ inputs.bench-file }} > ./bench-result.md
+          node ${{ inputs.bench-file }}  > ./bench-result.md
 
       - name: Set Env Variable
         run: |
