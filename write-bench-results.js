@@ -1,10 +1,12 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const benchFile = path.basename(process.env.BENCH_FILE, '.js');
 const benchResult = JSON.parse(process.env.BENCH_RESULT);
 
-for (const nodeVersion of Object.keys(benchResult.result)) {
+for (const key of Object.keys(benchResult.result)) {
+  const [benchmarkFilepath, nodeVersion] = key.split(':');
+  const benchFile = path.basename(benchmarkFilepath, '.js');
+
   const major = nodeVersion.split('.')[0];
   const result = decodeURIComponent(benchResult.result[nodeVersion]).replace(/\\#/g, '#');
   const outputFolder = `./v${major}/${nodeVersion.replace(/\./g, '_')}`;

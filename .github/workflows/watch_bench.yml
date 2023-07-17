@@ -31,18 +31,86 @@ jobs:
             benchmarks:
               - added|modified: 'bench/*.js'
 
-  build:
+  benchmark:
     needs: changes
     if: needs.changes.outputs.files != '[]'
     strategy:
       matrix:
         # Parse JSON array containing names of all filters matching any of changed files
         # e.g. ['add-property.js', 'array-append.js'] if both bench files contains changes
-        file: ${{ fromJSON(needs.changes.outputs.files) }}
+        bench-file: ${{ fromJSON(needs.changes.outputs.files) }}
+        node-version: [16.0.0, 16.18.1, 16.19.0, 16.20.0, 18.0.0, 18.14.2, 18.15.0, 18.16.0, 19.0.0, 19.8.0, 19.8.1, 19.9.0, 20.0.0]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ./.github/workflows/bench
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          bench-file: ${{ matrix.file }}
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: |
+          npm install
+
+      - name: Run Benchmark
+        id: benchmark
+        run: |
+          version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
+          node ${{ matrix.bench-file }}  > ./bench-result.md
+
+      - name: Set Env Variable
+        run: |
+          result=$(cat ./bench-result.md)
+          echo "$result" >> $GITHUB_STEP_SUMMARY
+          result="${result//'%'/'%25'}"
+          result="${result//'#'/'\#'}"
+          result="${result//$'\n'/'%0A'}"
+          result="${result//$'\r'/'%0D'}"
+          result="${result//$'`'/'\`'}"
+          echo "BENCH_RESULT=$result" >> "$GITHUB_ENV"
+
+      ## Write for matrix outputs workaround 
+      - uses: cloudposse/github-action-matrix-outputs-write@main
+        id: out
+        with:
+          matrix-step-name: benchmark
+          matrix-key: ${{ matrix.bench-file }}:${{ matrix.node-version }}
+          outputs: |-
+            result: ${{ env.BENCH_RESULT }}
+
+  ## Read matrix outputs
+  read:
+    runs-on: ubuntu-latest
+    needs: [benchmark]
+
+    steps:
+      - uses: cloudposse/github-action-matrix-outputs-read@main
+        id: read
+        with:
+          matrix-step-name: benchmark
+
+    outputs:
+      result: "${{ steps.read.outputs.result }}"
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: [benchmark]
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Write Benchmark Results
+        run: node write-bench-results.js
+        env:
+          BENCH_RESULT: ${{ needs.read.outputs.result }}
+
+      - name: Commit and Push Updated Results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: 'main'
+          commit_message: 'chore(bench): update benchmark results'
+        
