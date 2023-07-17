@@ -31,14 +31,6 @@ jobs:
             benchmarks:
               - added|modified: 'bench/*.js'
 
-      - name: 'Print Changed Files'
-        run: |
-          echo "# Changed Files"
-          echo ${{ steps.changes.outputs.benchmarks_files }} >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "# Filters"
-          echo ${{ steps.changes.outputs.benchmarks }} >> $GITHUB_STEP_SUMMARY
-
   build:
     needs: changes
     if: needs.changes.outputs.files != '[]'
