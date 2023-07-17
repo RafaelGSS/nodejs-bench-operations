@@ -26,9 +26,10 @@ jobs:
         with:
           list-files: json
           base: ${{ github.ref }}
+          working-directory: bench
           filters: |
             benchmarks:
-              - added|modified: '*.js'
+              - added|modified: 'bench/*.js'
 
       - name: 'Print Changed Files'
         run: |
