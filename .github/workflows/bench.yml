@@ -41,7 +41,6 @@ jobs:
         run: |
           version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
           node bench/${{ inputs.bench-file }}.js > ./bench-result.md
-          # Set Result to Env
           result=$(cat ./bench-result.md)
           result="${result//'%'/'%25'}"
           result="${result//$'\n'/'%0A'}"
