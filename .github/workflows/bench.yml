@@ -45,19 +45,18 @@ jobs:
       - name: Set Env Variable
         run: |
           result=$(cat ./bench-result.md)
-          result="${result//'%'/'%25'}"
-          result="${result//$'\n'/'%0A'}"
-          result="${result//$'\r'/'%0D'}"
-          result="${result//$'`'/'\`'}"
-          echo "::debug::$result"
           echo "$result" >> $GITHUB_STEP_SUMMARY
+          # result="${result//'%'/'%25'}"
+          # result="${result//$'\n'/'%0A'}"
+          # result="${result//$'\r'/'%0D'}"
+          # result="${result//$'`'/'\`'}"
           echo "BENCH_RESULT=$result" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround 
       - uses: cloudposse/github-action-matrix-outputs-write@main
         id: out
         with:
-          matrix-step-name: ${{ github.job }}
+          matrix-step-name: benchmark
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
             result: ${{ env.BENCH_RESULT }}
