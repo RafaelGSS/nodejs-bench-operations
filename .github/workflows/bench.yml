@@ -42,6 +42,7 @@ jobs:
         id: benchmark
         run: |
           result_folder=$(node -v | cut -d. -f1)/single/${{ inputs.node-version }}
+          mkdir -p $result_folder
           node bench/${{ inputs.bench-file }}.js > ./$result_folder/${{ inputs.bench-file }}.md
 
       - name: Commit and Push Updated Results
