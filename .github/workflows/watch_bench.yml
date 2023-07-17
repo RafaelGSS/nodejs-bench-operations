@@ -49,6 +49,8 @@ jobs:
         file: ${{ fromJSON(needs.changes.outputs.files) }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
       - uses: ./.github/workflows/bench.yml
         with:
           bench-file: ${{ matrix.file }}
