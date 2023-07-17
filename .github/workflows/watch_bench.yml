@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      files: ${{ steps.changes.outputs.changes_files }}
+      files: ${{ steps.changes.outputs.benchmarks_files }}
+      changes: ${{ steps.changes.outputs.benchmarks }}
 
     steps:
       - uses: actions/checkout@v3
@@ -24,10 +25,18 @@ jobs:
         id: changes
         with:
           list-files: json
-          working-directory: ./bench
+          base: ${{ github.ref }}
           filters: |
             benchmarks:
               - added|modified: '*.js'
+
+      - name: 'Print Changed Files'
+        run: |
+          echo "# Changed Files"
+          echo ${{ steps.changes.outputs.benchmarks_files }} >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "# Filters"
+          echo ${{ steps.changes.outputs.benchmarks }} >> $GITHUB_STEP_SUMMARY
 
   build:
     needs: changes
