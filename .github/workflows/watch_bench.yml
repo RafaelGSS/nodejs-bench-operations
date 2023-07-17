@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      files: ${{ steps.filter.outputs.changes }}
+      files: ${{ steps.changes.outputs.benchmarks_files }}
 
     steps:
       - uses: actions/checkout@v3
