@@ -46,10 +46,10 @@ jobs:
         run: |
           result=$(cat ./bench-result.md)
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          # result="${result//'%'/'%25'}"
-          # result="${result//$'\n'/'%0A'}"
-          # result="${result//$'\r'/'%0D'}"
-          # result="${result//$'`'/'\`'}"
+          result="${result//'%'/'%25'}"
+          result="${result//$'\n'/'%0A'}"
+          result="${result//$'\r'/'%0D'}"
+          result="${result//$'`'/'\`'}"
           echo "BENCH_RESULT=$result" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround 
