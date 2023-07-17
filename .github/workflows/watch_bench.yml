@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      files: ${{ steps.changes.outputs.benchmarks_files }}
+      files: ${{ steps.changes.outputs.changes_files }}
 
     steps:
       - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
 
   build:
     needs: changes
-    if: needs.changes.outputs.files != ''
+    if: needs.changes.outputs.files != '[]'
     strategy:
       matrix:
         # Parse JSON array containing names of all filters matching any of changed files
