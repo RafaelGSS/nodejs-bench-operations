@@ -8,7 +8,7 @@ for (const nodeVersion of Object.keys(benchResult)) {
   const result = benchResult[nodeVersion].result;
   const outputFolder = `./${major}/${nodeVersion}`;
 
-  if (!fs.existsSync()) {
+  if (!fs.existsSync(outputFolder)) {
     fs.mkdirSync(outputFolder, {
       recursive: true,
     });
