@@ -2,7 +2,7 @@ const { H2, createTableHeader } = require('../markdown')
 
 function compareToMdTable(name, amount, ms) {
   const numberFormat = new Intl.NumberFormat()
-  return `${name}|${numberFormat.format(amount)}|${numberFormat.format(ms)}ms`
+  return `${name}|${numberFormat.format(amount)}|${numberFormat.format(ms)}ms`;
 }
 
 function compare(total) {
