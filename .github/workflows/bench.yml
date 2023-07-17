@@ -1,4 +1,4 @@
-name: Benchmark
+name: "Run Benchmark"
 
 on:
   workflow_call:
@@ -42,5 +42,5 @@ jobs:
           commit-message: 'chore(${{ inputs.node-version }}): updated ${{ inputs.bench-file }}'
           force-add: 'true'
           rebase: 'true'
-          files: *.md
+          files: \*.md
           name: Github Actions
