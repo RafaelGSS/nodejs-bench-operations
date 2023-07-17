@@ -5,7 +5,7 @@ const { eventToMdTable, H2, createTableHeader } = require('../markdown')
 const tableHeader = createTableHeader([
   'name',
   'ops/sec',
-  'samples',
+  'samples'
 ])
 
 suite.add('Directly in the object', function () {
