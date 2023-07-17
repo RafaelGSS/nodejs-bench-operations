@@ -1,6 +1,14 @@
 name: "Run Benchmark"
 
 on:
+  workflow_dispatch:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      bench-file:
+        required: true
+        type: string
   workflow_call:
     inputs:
       node-version:
