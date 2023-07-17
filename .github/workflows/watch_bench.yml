@@ -22,7 +22,7 @@ jobs:
         id: changes
         with:
           list-files: json
-          working-directory: bench
+          working-directory: ./bench
           filters: |
             benchmarks:
               - added|modified: '*.js'
