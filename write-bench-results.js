@@ -3,9 +3,9 @@ const benchResult = JSON.parse(process.env.BENCH_RESULT);
 
 const fs = require('fs');
 
-for (const nodeVersion of Object.keys(benchResult)) {
+for (const nodeVersion of Object.keys(benchResult.result)) {
   const major = nodeVersion.split('.')[0];
-  const result = benchResult[nodeVersion].result;
+  const result = benchResult.result[nodeVersion];
   const outputFolder = `./${major}/${nodeVersion}`;
 
   if (!fs.existsSync(outputFolder)) {
