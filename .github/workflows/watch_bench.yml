@@ -43,6 +43,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ./.github/workflows/bench.yml
+      - uses: h4ad-forks/nodejs-bench-operations/.github/workflows/bench.yml@bea3467115c3e92dd9796ea3e456b8848da0d52c
         with:
           bench-file: ${{ matrix.file }}
