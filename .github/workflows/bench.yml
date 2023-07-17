@@ -50,4 +50,4 @@ jobs:
         with:
           branch: 'main'
           commit_message: 'chore(${{ inputs.node-version }}): updated ${{ inputs.bench-file }}'
-          add_options:  '-u'
+          add_options:  '-u -all'
