@@ -1,7 +1,8 @@
-const benchFile = process.env.BENCH_FILE;
-const benchResult = JSON.parse(process.env.BENCH_RESULT);
+const fs = require('node:fs');
+const path = require('node:path');
 
-const fs = require('fs');
+const benchFile = path.basename(process.env.BENCH_FILE, '.js');
+const benchResult = JSON.parse(process.env.BENCH_RESULT);
 
 for (const nodeVersion of Object.keys(benchResult.result)) {
   const major = nodeVersion.split('.')[0];
