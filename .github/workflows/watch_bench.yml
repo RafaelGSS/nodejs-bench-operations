@@ -31,6 +31,7 @@ jobs:
 
   build:
     needs: changes
+    if: needs.changes.outputs.files != ''
     strategy:
       matrix:
         # Parse JSON array containing names of all filters matching any of changed files
