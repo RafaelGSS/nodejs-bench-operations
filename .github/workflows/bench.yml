@@ -1,0 +1,46 @@
+name: Benchmark
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      bench-file:
+        required: true
+        type: string
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v${{ inputs.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          cache: node-${{ inputs.node-version }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install
+        run: |
+          npm install
+
+      - name: Run Benchmark
+        id: benchmark
+        run: |
+          result_folder=$(node -v | cut -d. -f1)/single/${{ inputs.node-version }}
+          node bench/${{ inputs.bench-file }}.js > ./$result_folder/${{ inputs.bench-file }}.md
+
+      - name: Commit and Push Updated Results
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'main'
+          commit-message: 'chore(${{ inputs.node-version }}): updated ${{ inputs.bench-file }}'
+          force-add: 'true'
+          rebase: 'true'
+          files: *.md
+          name: Github Actions
