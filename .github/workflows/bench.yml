@@ -47,7 +47,7 @@ jobs:
           result=$(cat ./bench-result.md)
           echo "$result" >> $GITHUB_STEP_SUMMARY
           result="${result//'%'/'%25'}"
-          result="${result//'#'/'%23'}"
+          result="${result//'#'/'\#'}"
           result="${result//$'\n'/'%0A'}"
           result="${result//$'\r'/'%0D'}"
           result="${result//$'`'/'\`'}"
