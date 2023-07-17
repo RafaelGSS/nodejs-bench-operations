@@ -41,18 +41,16 @@ jobs:
         run: |
           version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
           node bench/${{ inputs.bench-file }}.js > ./bench-result.md
+          echo ./bench-result.md
+
+      - name: Set Env Variable
+        run: |
           result=$(cat ./bench-result.md)
           result="${result//'%'/'%25'}"
           result="${result//$'\n'/'%0A'}"
           result="${result//$'\r'/'%0D'}"
           result="${result//$'`'/'\`'}"
-          echo $result > ./bench-result-encoded.md
-
-      - name: Save Result on Outputs
-        id: encoded
-        uses: jaywcjlove/github-action-read-file@main
-        with:
-          path: ./bench-result-encoded.md
+          echo "BENCH_RESULT=$result" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround 
       - uses: cloudposse/github-action-matrix-outputs-write@main
@@ -61,7 +59,7 @@ jobs:
           matrix-step-name: ${{ github.job }}
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
-            result: ${{ steps.encoded.outputs.content }}
+            result: ${{ env.BENCH_RESULT }}
 
   ## Read matrix outputs
   read:
