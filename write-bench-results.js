@@ -5,7 +5,7 @@ const fs = require('fs');
 
 for (const nodeVersion of Object.keys(benchResult.result)) {
   const major = nodeVersion.split('.')[0];
-  const result = decodeURIComponent(benchResult.result[nodeVersion]);
+  const result = decodeURIComponent(benchResult.result[nodeVersion]).replace(/\\#/g, '#');
   const outputFolder = `./v${major}/${nodeVersion.replace(/\./g, '_')}`;
 
   if (!fs.existsSync(outputFolder)) {
