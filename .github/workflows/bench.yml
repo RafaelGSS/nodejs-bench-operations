@@ -41,7 +41,8 @@ jobs:
       - name: Run Benchmark
         id: benchmark
         run: |
-          result_folder=$(node -v | cut -d. -f1)/single/${{ inputs.node-version }}
+          version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
+          result_folder=$(node -v | cut -d. -f1)/single/$version
           mkdir -p $result_folder
           node bench/${{ inputs.bench-file }}.js > ./$result_folder/${{ inputs.bench-file }}.md
 
@@ -50,4 +51,4 @@ jobs:
         with:
           branch: 'main'
           commit_message: 'chore(${{ inputs.node-version }}): updated ${{ inputs.bench-file }}'
-          add_options:  '-u -all'
+          add_options:  '-A'
