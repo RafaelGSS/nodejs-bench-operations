@@ -1,4 +1,7 @@
+name: 'Watch Benchmarks'
+
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
