@@ -97,7 +97,7 @@ jobs:
 
   commit:
     runs-on: ubuntu-latest
-    needs: [benchmark]
+    needs: [read]
 
     permissions:
       contents: write
