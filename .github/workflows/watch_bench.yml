@@ -104,6 +104,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Write Benchmark Results
         run: node write-bench-results.js
