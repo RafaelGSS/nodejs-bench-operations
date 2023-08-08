@@ -44,7 +44,7 @@ jobs:
         run: |
           result=$(cat ./bench-result.md)
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64)
+          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64 -w 0)
           echo "BENCH_RESULT=$RESULT_IN_BASE64" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround 
