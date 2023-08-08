@@ -35,7 +35,6 @@ jobs:
     needs: changes
     if: needs.changes.outputs.files != '[]'
     strategy:
-      max-parallel: 5
       fail-fast: true
       matrix:
         # Parse JSON array containing names of all filters matching any of changed files
