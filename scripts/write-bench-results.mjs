@@ -19,7 +19,7 @@ for (const key of Object.keys(benchResult.result)) {
   const nodeVersion = getBenchmarkNodeVersion(key);
 
   const major = nodeVersion.split('.')[0].replace(/\./g, '_');
-  const result = decodeURIComponent(benchResult.result[key]).replace(/\\#/g, '#');
+  const result = Buffer.from(benchResult.result[key], 'base64').toString('utf8');
   const outputFolder = resolve(rootFolder, `./v${major}/${nodeVersion}`);
 
   const outputFolderExist = await existAsync(outputFolder);
@@ -29,8 +29,6 @@ for (const key of Object.keys(benchResult.result)) {
       recursive: true,
     });
   }
-
-  // TODO: Add machine details for every file
 
   await writeFile(`${outputFolder}/${benchFile}.md`, result, 'utf-8');
 }

@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { copyFile, readFile, readdir, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { majorNodeFolderRegexp, nodeFolderVersionRegexp, rootFolder } from './utils.mjs';
 
@@ -30,7 +30,7 @@ for (const majorNodeFolder of majorNodeFolders) {
 
   // sort to use later to generate the major report
   nodeFoldersUnderMajor.sort((a, b) => a.localeCompare(b));
-  
+
   for (const nodeFolder of nodeFoldersUnderMajor) {
     const nodeFolderPath = join(nodeFolder.path, nodeFolder.name);
     const benchmarkPaths = await readdir(nodeFolderPath, {
@@ -55,5 +55,13 @@ for (const majorNodeFolder of majorNodeFolders) {
     console.log(`     > Generated ${finalContentFilepath}.`);
   }
 
-  
+  if (nodeFoldersUnderMajor.length > 0) {
+    const latestNodeVersion = nodeFoldersUnderMajor[nodeFoldersUnderMajor.length - 1];
+    const latestNodeVersionReport = resolve(majorNodeFolderPath, `RESULTS-${latestNodeVersion.name}.md`);
+    const majorReportFinalPath = resolve(rootFolder, `RESULTS-${majorNodeFolder.name}.md`);
+
+    await copyFile(latestNodeVersionReport, majorReportFinalPath);
+
+    console.log(`   > Generated ${majorReportFinalPath}`);
+  }
 }
