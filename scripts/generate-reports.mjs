@@ -29,7 +29,7 @@ for (const majorNodeFolder of majorNodeFolders) {
   console.log(` > Found ${nodeFoldersUnderMajor.length} node versions under ${majorNodeFolder.name}.`);
 
   // sort to use later to generate the major report
-  nodeFoldersUnderMajor.sort((a, b) => a.localeCompare(b));
+  nodeFoldersUnderMajor.sort((a, b) => a.name.localeCompare(b.name));
 
   for (const nodeFolder of nodeFoldersUnderMajor) {
     const nodeFolderPath = join(nodeFolder.path, nodeFolder.name);
