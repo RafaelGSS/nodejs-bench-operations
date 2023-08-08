@@ -109,12 +109,11 @@ jobs:
           node-version: 20.x
 
       - name: Write Benchmark Results
-        run: node scripts/write-bench-results.mjs
+        run: |
+          node scripts/write-bench-results.mjs
+          node scripts/generate-reports.mjs
         env:
           BENCH_RESULT: ${{ needs.read.outputs.result }}
-
-      - name: Write Benchmark Reports
-        run: node scripts/generate-reports.mjs
 
       - name: Commit and Push Updated Results
         uses: stefanzweifel/git-auto-commit-action@v4
