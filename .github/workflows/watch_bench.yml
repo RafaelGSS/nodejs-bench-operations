@@ -59,18 +59,18 @@ jobs:
         id: benchmark
         run: |
           version=$(node -v | sed "s/v//g" | sed "s/\./_/g")
-          node ${{ matrix.bench-file }}  > ./bench-result.md
+          node ${{ inputs.bench-file }} > ./bench-result.md
+
+      - name: Append Machine Info to Benchmark Result
+        run: |
+          node scripts/machine-info.mjs >> ./bench-result.md
 
       - name: Set Env Variable
         run: |
           result=$(cat ./bench-result.md)
+          resultBase64=$(cat ./bench-result.md | base64)
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          result="${result//'%'/'%25'}"
-          result="${result//'#'/'\#'}"
-          result="${result//$'\n'/'%0A'}"
-          result="${result//$'\r'/'%0D'}"
-          result="${result//$'`'/'\`'}"
-          echo "BENCH_RESULT=$result" >> "$GITHUB_ENV"
+          echo "BENCH_RESULT=$resultBase64" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
