@@ -20,7 +20,7 @@ for (const key of Object.keys(benchResult.result)) {
 
   const major = nodeVersion.split('_')[0];
   const result = Buffer.from(benchResult.result[key], 'base64').toString('utf8');
-  const outputFolder = resolve(rootFolder, `./v${major}/${nodeVersion}`);
+  const outputFolder = resolve(rootFolder, `./v${major}/v${nodeVersion}`);
 
   const outputFolderExist = await existAsync(outputFolder);
 
