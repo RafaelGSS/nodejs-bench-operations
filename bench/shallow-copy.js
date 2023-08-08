@@ -29,22 +29,12 @@ const headers = {
   'X-Forwarded-Proto': 'https',
 };
 
-const symbol = Symbol('t');
-const value = [true];
-
 suite
   .add('{ ...object }', () => {
     const result = { ...headers };
   })
   .add('{ ...object, __proto__: null }', () => {
     const result = { ...headers, __proto__: null };
-  })
-  .add('{ ...object, __proto__: null }[symbol]: value', () => {
-    const result = { ...headers, __proto__: null };
-    result[symbol] = value;
-  })
-  .add('{ ...object, [symbol]: value, __proto__: null }', () => {
-    const result = { ...headers, [symbol]: value, __proto__: null };
   })
   .add('{ ...object, newProp: true }', () => {
     const result = { ...headers, newProp: true };
