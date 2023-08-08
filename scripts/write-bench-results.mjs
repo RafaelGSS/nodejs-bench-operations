@@ -16,9 +16,9 @@ function getBenchmarkNodeVersion(key) {
 
 for (const key of Object.keys(benchResult.result)) {
   const benchFile = getBenchmarkFile(key);
-  const nodeVersion = getBenchmarkNodeVersion(key);
+  const nodeVersion = getBenchmarkNodeVersion(key).replace(/\./g, '_');
 
-  const major = nodeVersion.split('.')[0].replace(/\./g, '_');
+  const major = nodeVersion.split('_')[0];
   const result = Buffer.from(benchResult.result[key], 'base64').toString('utf8');
   const outputFolder = resolve(rootFolder, `./v${major}/${nodeVersion}`);
 
