@@ -47,9 +47,9 @@ jobs:
       - name: Set Env Variable
         run: |
           result=$(cat ./bench-result.md)
-          resultBase64=$(cat ./bench-result.md | base64)
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          echo "BENCH_RESULT=$resultBase64" >> "$GITHUB_ENV"
+          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64)
+          echo "BENCH_RESULT=RESULT_IN_BASE64" >> "$GITHUB_ENV"
 
       ## Write for matrix outputs workaround 
       - uses: cloudposse/github-action-matrix-outputs-write@main
