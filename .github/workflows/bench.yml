@@ -32,7 +32,14 @@ jobs:
       - name: Install
         run: npm install
 
+      - name: Run all benchmarks
+        if: ${{ inputs.bench-file }} == '*'
+        id: benchmark
+        run: |
+          for i in bench/*; do node "$i" >> ./bench-result.md; done
+
       - name: Run Benchmark
+        if: ${{ inputs.bench-file }} != '*'
         id: benchmark
         run: node bench/${{ inputs.bench-file }} > ./bench-result.md
 
