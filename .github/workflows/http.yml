@@ -54,13 +54,8 @@ jobs:
           echo "${{ needs.bench.outputs.BENCH-18 }}" > RESULTS-HTTP-v18.md
           echo "${{ needs.bench.outputs.BENCH-19 }}" > RESULTS-HTTP-v19.md
 
-      - name: commit and push updated results
-        uses: github-actions-x/commit@v2.8
+      - name: Commit and Push Updated Results
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: 'main'
-          commit-message: 'chore: update benchmark results'
-          force-add: 'true'
-          files: RESULTS*.md
-          name: Github Actions
-
+          branch: 'main'
+          commit_message: 'chore(bench): update benchmark results'

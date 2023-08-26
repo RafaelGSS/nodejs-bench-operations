@@ -1,0 +1,102 @@
+name: "Run Benchmark"
+
+on:
+  workflow_dispatch:
+    inputs:
+      bench-file:
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      bench-file:
+        required: true
+        type: string
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [16.0.0, 16.18.1, 16.19.0, 16.20.0, 18.0.0, 18.14.2, 18.15.0, 18.16.0, 19.0.0, 19.8.0, 19.8.1, 19.9.0, 20.0.0]
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: npm install    
+
+      - name: Run Benchmark
+        id: benchmark
+        run: node ${{ inputs.bench-file }} > ./bench-result.md
+
+      - name: Append Machine Info to Benchmark Result
+        run: node scripts/machine-info.mjs >> ./bench-result.md
+
+      - name: Set Env Variable
+        run: |
+          result=$(cat ./bench-result.md)
+          echo "$result" >> $GITHUB_STEP_SUMMARY
+          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64 -w 0)
+          echo "BENCH_RESULT=$RESULT_IN_BASE64" >> "$GITHUB_ENV"
+
+      ## Write for matrix outputs workaround 
+      - uses: cloudposse/github-action-matrix-outputs-write@main
+        id: out
+        with:
+          matrix-step-name: benchmark
+          matrix-key: ${{ matrix.node-version }}
+          outputs: |-
+            result: ${{ env.BENCH_RESULT }}
+
+  ## Read matrix outputs
+  read:
+    runs-on: ubuntu-latest
+    needs: [benchmark]
+
+    steps:
+      - uses: cloudposse/github-action-matrix-outputs-read@main
+        id: read
+        with:
+          matrix-step-name: benchmark
+
+    outputs:
+      result: "${{ steps.read.outputs.result }}"
+
+  commit:
+    runs-on: ubuntu-latest
+    needs: [read]
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Use Node.js v20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+
+      - name: Write Benchmark Reports
+        run: |
+          node scripts/write-bench-results.mjs
+          node scripts/generate-reports.mjs
+        env:
+          BENCH_FILE: ${{ inputs.bench-file }}
+          BENCH_RESULT: ${{ needs.read.outputs.result }}
+    
+      - name: Commit and Push Updated Results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: 'main'
+          commit_message: 'chore(${{ inputs.bench-file }}): update benchmark results'
