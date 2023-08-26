@@ -15,7 +15,6 @@ on:
 jobs:
   benchmark:
     runs-on: ubuntu-latest
-    # runs-on: self-hosted
 
     strategy:
       matrix:
@@ -31,11 +30,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install
-        run: npm install    
+        run: npm install
 
       - name: Run Benchmark
         id: benchmark
-        run: node ${{ inputs.bench-file }} > ./bench-result.md
+        run: node bench/${{ inputs.bench-file }} > ./bench-result.md
 
       - name: Append Machine Info to Benchmark Result
         run: node scripts/machine-info.mjs >> ./bench-result.md
@@ -94,7 +93,7 @@ jobs:
         env:
           BENCH_FILE: ${{ inputs.bench-file }}
           BENCH_RESULT: ${{ needs.read.outputs.result }}
-    
+
       - name: Commit and Push Updated Results
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
