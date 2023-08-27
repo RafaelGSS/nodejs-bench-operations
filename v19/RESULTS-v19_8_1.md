@@ -1,3 +1,22 @@
+## Adding property
+
+|name|ops/sec|samples|
+|-|-|-|
+|Directly in the object|591,834,273|96|
+|Using dot notation|601,727,851|98|
+|Using define property (writable)|3,024,442|96|
+|Using define property initialized (writable)|4,138,105|96|
+|Using define property (getter)|1,666,306|92|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sun Aug 27 2023 00:42:44 GMT+0000 (Coordinated Universal Time)
+</details>
+
+
 ## Array Creation
 
 |name|ops/sec|samples|
