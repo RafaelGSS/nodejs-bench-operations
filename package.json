@@ -9,7 +9,7 @@
     "fastify": "^4.4.0",
     "on-net-listen": "^1.1.2",
     "privsym": "^1.0.0",
-    "semver": "^7.3.7"
+    "semver": "^7.5.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

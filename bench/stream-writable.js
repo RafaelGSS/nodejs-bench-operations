@@ -1,3 +1,5 @@
+const { skipIfVersion } = require('../utils')
+skipIfVersion('<= 16.5.0')
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite;
 const { Writable } = require('node:stream')
