@@ -556,12 +556,18 @@ new Array(length)|100,000,000|4,759.122ms
 </details>
 
 
+## Date toISOString
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().toISOString()|1,331,909|87|
+|fromUnixToISOString(new Date())|1,118,954|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sun Aug 27 2023 00:21:46 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
