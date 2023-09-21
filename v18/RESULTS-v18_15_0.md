@@ -492,20 +492,23 @@ new Array(length)|100,000,000|6,650.89ms
 </details>
 
 
-## replace vs replaceAll comparison
+## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using replace(//g)|2,128,995|93|
-|Using replaceAll()|1,980,419|96|
-|Using replaceAll(//g)|1,879,198|97|
+|Adding property after object creation - small object|1,860,465|84|
+|Adding property in the object creation - small object|1,844,150|87|
+|Adding property after the function creation - small class|105,948|79|
+|Adding property in the function creation - small class|104,621|79|
+|Adding property after the class creation - small class|86,080|76|
+|Adding property in the class creation - small class|87,178|77|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Aug 26 2023 18:55:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:42:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
