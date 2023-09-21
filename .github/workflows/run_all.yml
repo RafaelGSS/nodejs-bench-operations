@@ -30,8 +30,15 @@ jobs:
     with:
       bench-file: array-creation.js
 
-  compare-using-instanceof:
+  blob:
     needs: array-creation
+    name: Running "blob.js"
+    uses: ./.github/workflows/bench.yml
+    with:
+      bench-file: blob.js
+
+  compare-using-instanceof:
+    needs: blob
     name: Running "compare-using-instanceof.js"
     uses: ./.github/workflows/bench.yml
     with:
