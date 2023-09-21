@@ -312,20 +312,25 @@ new Array(length)|100,000,000|5,114.16ms
 </details>
 
 
-## Node.js Error
+## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|164,237|54|
-|NodeError|129,741|97|
-|NodeError Range|129,356|96|
+|Intl.DateTimeFormat().format(Date.now())|8,746|88|
+|Intl.DateTimeFormat().format(new Date())|8,570|75|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|10,908|69|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|10,169|79|
+|Reusing Intl.DateTimeFormat()|443,627|96|
+|Date.toLocaleDateString()|456,235|97|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|10,329|84|
+|Format using date.get*|0|0|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Aug 26 2023 19:28:22 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:12:50 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

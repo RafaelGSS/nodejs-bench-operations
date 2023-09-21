@@ -176,20 +176,19 @@
 </details>
 
 
-## Node.js Error
+## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|193,277|56|
-|NodeError|152,815|91|
-|NodeError Range|154,252|97|
+|Using delete property|1,890,183|87|
+|Using undefined assignment|596,840,812|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Aug 26 2023 19:28:19 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:17:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

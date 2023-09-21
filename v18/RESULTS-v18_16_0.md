@@ -268,20 +268,19 @@ new Array(length)|100,000,000|4,759.122ms
 </details>
 
 
-## Node.js Error
+## Date toISOString
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|171,158|57|
-|NodeError|139,466|88|
-|NodeError Range|133,601|86|
+|new Date().toISOString()|1,331,909|87|
+|fromUnixToISOString(new Date())|1,118,954|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Aug 26 2023 19:28:26 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

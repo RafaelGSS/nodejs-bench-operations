@@ -1,16 +1,18 @@
-## Node.js Error
+## Adding property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|135,281|57|
-|NodeError|104,637|82|
-|NodeError Range|112,093|87|
+|Directly in the object|789,970,949|78|
+|Using dot notation|671,179,977|83|
+|Using define property (writable)|2,596,022|86|
+|Using define property initialized (writable)|3,176,243|91|
+|Using define property (getter)|1,286,496|85|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Aug 26 2023 19:28:28 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 21 2023 22:03:03 GMT+0000 (Coordinated Universal Time)
 </details>
 
