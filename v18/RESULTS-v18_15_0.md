@@ -120,6 +120,16 @@ new Array(length)|100,000,000|6,650.89ms
 </details>
 
 
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Fri Sep 22 2023 10:14:02 GMT+0000 (Coordinated Universal Time)
+</details>
+
+
 ## Comparison using `instanceof`
 
 |name|ops/sec|samples|
