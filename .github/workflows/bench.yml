@@ -49,7 +49,7 @@ jobs:
       - uses: cloudposse/github-action-matrix-outputs-write@main
         id: out
         with:
-          matrix-step-name: benchmark
+          matrix-step-name: benchmark-${{ inputs.bench-file }}
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
             result: ${{ env.BENCH_RESULT }}
@@ -63,7 +63,7 @@ jobs:
       - uses: cloudposse/github-action-matrix-outputs-read@main
         id: read
         with:
-          matrix-step-name: benchmark
+          matrix-step-name: benchmark-${{ inputs.bench-file }}
 
     outputs:
       result: "${{ steps.read.outputs.result }}"
