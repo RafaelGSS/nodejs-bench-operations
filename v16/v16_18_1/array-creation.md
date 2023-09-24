@@ -2,14 +2,14 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|new Array|339|80|
+|Array.from|16|44|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Sep 24 2023 10:52:52 GMT+0000 (Coordinated Universal Time)
 </details>
 

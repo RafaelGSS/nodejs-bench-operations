@@ -63,7 +63,7 @@ new Array(length)|100,000,000|5,698.497ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|247|63|
+|new Array|277|76|
 |Array.from|13|36|
 
 
@@ -71,7 +71,7 @@ new Array(length)|100,000,000|5,698.497ms
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Sep 24 2023 10:52:55 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
