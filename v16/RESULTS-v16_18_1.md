@@ -2,37 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|709,628,667|96|
-|Using dot notation|712,702,841|97|
-|Using define property (writable)|3,086,627|94|
-|Using define property initialized (writable)|3,789,163|98|
-|Using define property (getter)|1,557,006|89|
+|Directly in the object|712,684,012|96|
+|Using dot notation|713,651,532|97|
+|Using define property (writable)|3,061,197|94|
+|Using define property initialized (writable)|3,770,875|95|
+|Using define property (getter)|1,560,732|90|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sun Aug 27 2023 00:42:36 GMT+0000 (Coordinated Universal Time)
-</details>
-
-
-## Adding property
-
-|name|ops/sec|samples|
-|-|-|-|
-|Directly in the object|712,177,470|98|
-|Using dot notation|710,119,013|93|
-|Using define property (writable)|3,071,865|94|
-|Using define property initialized (writable)|3,796,164|94|
-|Using define property (getter)|1,562,206|87|
-
-
-<details>
-<summary>Environment</summary>
-
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:03:00 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Sep 24 2023 10:42:11 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
