@@ -12,6 +12,9 @@ jobs:
   changes:
     runs-on: ubuntu-latest
 
+    permissions: 
+      issues: write    
+
     outputs:
       files: ${{ steps.changes.outputs.benchmarks_files }}
       changes: ${{ steps.changes.outputs.benchmarks }}
@@ -56,6 +59,21 @@ jobs:
       - name: Run Benchmark
         id: benchmark
         run: node ${{ inputs.bench-file }} > ./bench-result.md
+
+      - name: Notify on Error
+        if: ${{ failure() }}
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Benchmark ${{ inputs.bench-file }} failed on v${{ matrix.node-version }}
+          body: |
+            ### Context
+            [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            [Codebase](https://github.com/${{ github.repository }}/tree/${{ github.sha }})
+            Workflow name - `${{ github.workflow }}`
+            Job -           `${{ github.job }}`
+            status -        `${{ job.status }}`
+          assignees: RafaelGSS
 
       - name: Append Machine Info to Benchmark Result
         run: node scripts/machine-info.mjs >> ./bench-result.md
