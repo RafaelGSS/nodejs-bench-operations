@@ -55,6 +55,16 @@ jobs:
             status -        `${{ job.status }}`
           assignees: RafaelGSS
 
+      - name: Output Failure
+        if: ${{ failure() }}
+        uses: cloudposse/github-action-matrix-outputs-write@main
+        with:
+          matrix-step-name: benchmark-${{ inputs.bench-file }}
+          matrix-key: ${{ matrix.node-version }}
+          outputs: |-
+            failure: 'true'
+            result: ''
+
       - name: Append Machine Info to Benchmark Result
         run: node scripts/machine-info.mjs >> ./bench-result.md
 
@@ -72,12 +82,12 @@ jobs:
           matrix-step-name: benchmark-${{ inputs.bench-file }}
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
+            failure: 'false'
             result: ${{ env.BENCH_RESULT }}
 
   ## Read matrix outputs
   read:
     runs-on: ubuntu-latest
-    if: ${{ !failure() }}
     needs: [benchmark]
 
     steps:
@@ -91,7 +101,7 @@ jobs:
 
   commit:
     runs-on: ubuntu-latest
-    if: ${{ !failure() }}
+    if: ${{ needs.read.outputs.failure != 'true' }}
     needs: [read]
 
     permissions:
