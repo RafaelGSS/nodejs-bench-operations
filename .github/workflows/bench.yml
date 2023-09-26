@@ -54,6 +54,7 @@ jobs:
             Job -           `${{ github.job }}`
             status -        `${{ job.status }}`
           assignees: RafaelGSS
+          labels: bug
 
       - name: Output Failure
         if: ${{ failure() }}
