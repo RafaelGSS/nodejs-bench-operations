@@ -1,4 +1,4 @@
-name: "Run Benchmark"
+name: 'Run Benchmark'
 
 on:
   workflow_dispatch:
@@ -12,14 +12,14 @@ on:
         required: true
         type: string
 
+permissions:
+  issues: write
+
 jobs:
   benchmark:
     continue-on-error: true
 
     runs-on: ubuntu-latest
-
-    permissions: 
-      issues: write
 
     strategy:
       matrix:
@@ -65,7 +65,7 @@ jobs:
           export RESULT_IN_BASE64=$(cat ./bench-result.md | base64 -w 0)
           echo "BENCH_RESULT=$RESULT_IN_BASE64" >> "$GITHUB_ENV"
 
-      ## Write for matrix outputs workaround 
+      ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
         id: out
         with:
@@ -87,7 +87,7 @@ jobs:
           matrix-step-name: benchmark-${{ inputs.bench-file }}
 
     outputs:
-      result: "${{ steps.read.outputs.result }}"
+      result: '${{ steps.read.outputs.result }}'
 
   commit:
     runs-on: ubuntu-latest

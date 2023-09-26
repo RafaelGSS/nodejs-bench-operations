@@ -8,12 +8,12 @@ on:
     paths:
       - 'bench/**'
 
+permissions:
+  issues: write
+
 jobs:
   changes:
     runs-on: ubuntu-latest
-
-    permissions: 
-      issues: write    
 
     outputs:
       files: ${{ steps.changes.outputs.benchmarks_files }}
