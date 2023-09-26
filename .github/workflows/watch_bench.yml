@@ -58,7 +58,7 @@ jobs:
 
       - name: Run Benchmark
         id: benchmark
-        run: node ${{ inputs.bench-file }} > ./bench-result.md
+        run: node ${{ matrix.bench-file }} > ./bench-result.md
 
       - name: Notify on Error
         if: ${{ failure() }}
@@ -73,7 +73,7 @@ jobs:
             Workflow name - `${{ github.workflow }}`
             Job -           `${{ github.job }}`
             status -        `${{ job.status }}`
-          assignees: RafaelGSS
+          assignees: h4ad
 
       - name: Append Machine Info to Benchmark Result
         run: node scripts/machine-info.mjs >> ./bench-result.md
