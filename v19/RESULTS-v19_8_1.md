@@ -298,25 +298,21 @@ new Array(length)|100,000,000|5,078.453ms
 </details>
 
 
-## Date format MM/DD/YYYY
+## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|8,746|88|
-|Intl.DateTimeFormat().format(new Date())|8,570|75|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|10,908|69|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|10,169|79|
-|Reusing Intl.DateTimeFormat()|443,627|96|
-|Date.toLocaleDateString()|456,235|97|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|10,329|84|
-|Format using date.get*|0|0|
+|Using optional chain (obj.field?.field2) (Valid)|593,481,952|93|
+|Using optional chain (obj.field?.field2) (undefined)|596,995,635|97|
+|Using and operator (obj.field && obj.field.field2) (Valid)|597,258,091|96|
+|Using and operator (obj.field && obj.field.field2) (undefined)|595,863,252|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:12:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:21:46 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

@@ -319,21 +319,21 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Array.includes vs raw comparison
+## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Using optional chain (obj.field?.field2) (Valid)|586,471,866|98|
+|Using optional chain (obj.field?.field2) (undefined)|593,634,165|96|
+|Using and operator (obj.field && obj.field.field2) (Valid)|593,476,866|94|
+|Using and operator (obj.field && obj.field.field2) (undefined)|590,706,068|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:21:45 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

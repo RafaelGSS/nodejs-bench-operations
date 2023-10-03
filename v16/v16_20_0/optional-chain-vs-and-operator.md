@@ -1,18 +1,17 @@
-## Object Creation
+## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|42,007,584|91|
-|Object.create({})|1,319,441|79|
-|Cached Empty.prototype|713,108,585|95|
-|Empty.prototype|1,361,130|73|
-|Empty class|896,639|82|
+|Using optional chain (obj.field?.field2) (Valid)|592,175,912|97|
+|Using optional chain (obj.field?.field2) (undefined)|594,414,139|96|
+|Using and operator (obj.field && obj.field.field2) (Valid)|595,013,556|98|
+|Using and operator (obj.field && obj.field.field2) (undefined)|594,223,354|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:30:05 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:21:44 GMT+0000 (Coordinated Universal Time)
 </details>
 
