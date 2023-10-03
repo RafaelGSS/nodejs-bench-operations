@@ -8,7 +8,6 @@ const l = '2'
 
 suite
   .add('Using + sign', function () {
-    // biome-ignore lint/style/useTemplate: <explanation>
     k + '-' + o + '-' + l
   })
   .add('Using backtick (`)', function () {
