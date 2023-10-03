@@ -617,19 +617,19 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Date toISOString
+## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Using super|128,168,017|94|
+|Using this|124,411,511|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:10:36 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

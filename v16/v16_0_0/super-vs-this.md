@@ -1,15 +1,15 @@
-## Deleting properties
+## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|Using super|116,093,407|94|
+|Using this|118,209,690|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:10:35 GMT+0000 (Coordinated Universal Time)
 </details>
 
