@@ -355,19 +355,19 @@ new Array(length)|100,000,000|6,421.813ms
 </details>
 
 
-## Object.keys vs Object.getOwnPropertyNames comparison
+## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|54,263,875|87|
-|Using Object.getOwnPropertyNames()|51,165,553|91|
+|Using if to check function existence|590,967|71|
+|Using ? operator to avoid rejection|678,812|78|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:25:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:25:54 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

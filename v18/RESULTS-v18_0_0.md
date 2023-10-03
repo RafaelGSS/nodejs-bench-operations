@@ -355,21 +355,19 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Array.includes vs raw comparison
+## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Using if to check function existence|581,419|73|
+|Using ? operator to avoid rejection|617,734|75|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:25:56 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

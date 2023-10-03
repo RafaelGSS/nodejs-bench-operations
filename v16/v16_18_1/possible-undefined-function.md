@@ -1,15 +1,15 @@
-## Array Creation
+## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|Using if to check function existence|746,632|73|
+|Using ? operator to avoid rejection|828,332|82|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:25:46 GMT+0000 (Coordinated Universal Time)
 </details>
 
