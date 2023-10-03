@@ -1,15 +1,19 @@
-## Possible undefined Function
+## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|820,334|74|
-|Using ? operator to avoid rejection|831,588|75|
+|Raw usage private field|599,874,286|96|
+|Raw usage underscore usage|603,826,068|92|
+|Manipulating private properties using #|624,874,490|93|
+|Manipulating private properties using underscore(_)|631,810,127|92|
+|Manipulating private properties using Symbol|610,263,566|92|
+|Manipulating private properties using PrivateSymbol|23,797,195|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:38:54 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:28:41 GMT+0000 (Coordinated Universal Time)
 </details>
 

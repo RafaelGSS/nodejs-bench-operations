@@ -1,18 +1,19 @@
-## Object Creation
+## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|42,007,584|91|
-|Object.create({})|1,319,441|79|
-|Cached Empty.prototype|713,108,585|95|
-|Empty.prototype|1,361,130|73|
-|Empty class|896,639|82|
+|Raw usage private field|8,036,854|96|
+|Raw usage underscore usage|6,597,910|98|
+|Manipulating private properties using #|2,436,130|96|
+|Manipulating private properties using underscore(_)|700,091,148|96|
+|Manipulating private properties using Symbol|698,120,725|94|
+|Manipulating private properties using PrivateSymbol|24,278,988|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:30:05 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:28:33 GMT+0000 (Coordinated Universal Time)
 </details>
 

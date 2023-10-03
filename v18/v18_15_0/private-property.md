@@ -1,17 +1,19 @@
-## Optional Chain (?) vs && operator
+## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|710,675,438|97|
-|Using optional chain (obj.field?.field2) (undefined)|710,899,358|97|
-|Using and operator (obj.field && obj.field.field2) (Valid)|709,830,834|99|
-|Using and operator (obj.field && obj.field.field2) (undefined)|708,723,291|96|
+|Raw usage private field|246,545,698|89|
+|Raw usage underscore usage|235,034,808|88|
+|Manipulating private properties using #|157,657,146|84|
+|Manipulating private properties using underscore(_)|136,133,710|90|
+|Manipulating private properties using Symbol|140,102,636|86|
+|Manipulating private properties using PrivateSymbol|27,046,564|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:33:17 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:28:35 GMT+0000 (Coordinated Universal Time)
 </details>
 

@@ -371,19 +371,23 @@ new Array(length)|100,000,000|5,473.416ms
 </details>
 
 
-## Array Creation
+## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|Raw usage private field|7,084,570|85|
+|Raw usage underscore usage|5,771,483|84|
+|Manipulating private properties using #|2,114,944|83|
+|Manipulating private properties using underscore(_)|609,917,719|86|
+|Manipulating private properties using Symbol|612,243,754|84|
+|Manipulating private properties using PrivateSymbol|26,004,316|81|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:28:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

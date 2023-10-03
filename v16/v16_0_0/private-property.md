@@ -1,15 +1,19 @@
-## Deleting properties
+## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|Raw usage private field|7,888,067|95|
+|Raw usage underscore usage|6,476,840|93|
+|Manipulating private properties using #|2,315,174|95|
+|Manipulating private properties using underscore(_)|702,262,130|99|
+|Manipulating private properties using Symbol|698,671,068|95|
+|Manipulating private properties using PrivateSymbol|27,318,117|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:28:36 GMT+0000 (Coordinated Universal Time)
 </details>
 
