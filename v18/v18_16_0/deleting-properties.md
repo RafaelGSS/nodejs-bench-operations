@@ -1,15 +1,15 @@
-## Date toISOString
+## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Using delete property|2,367,483|93|
+|Using undefined assignment|591,513,642|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:06:30 GMT+0000 (Coordinated Universal Time)
 </details>
 

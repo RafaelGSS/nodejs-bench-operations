@@ -193,15 +193,15 @@ new Array(length)|100,000,000|4,508.701ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|Using delete property|2,246,314|95|
+|Using undefined assignment|707,243,805|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:06:26 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
