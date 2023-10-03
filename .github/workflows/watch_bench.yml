@@ -59,6 +59,8 @@ jobs:
       - name: Run Benchmark
         id: benchmark
         run: node ${{ matrix.bench-file }} > ./bench-result.md
+        env:
+          CI: true
 
       - name: Notify on Error
         if: ${{ failure() }}
@@ -75,9 +77,6 @@ jobs:
             status -        `${{ job.status }}`
           assignees: RafaelGSS
           labels: bug
-
-      - name: Append Machine Info to Benchmark Result
-        run: node scripts/machine-info.mjs >> ./bench-result.md
 
       - name: Set Env Variable
         run: |

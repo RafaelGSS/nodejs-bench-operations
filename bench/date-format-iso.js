@@ -1,25 +1,14 @@
-const Benchmark = require('benchmark')
-const suite = new Benchmark.Suite;
-const { eventToMdTable, H2, createTableHeader } = require('../markdown')
-const { fromUnixToISOString } = require('../utils/from-unix-to-iso-string');
+const { createBenchmarkSuite } = require('../common')
 
-const tableHeader = createTableHeader([
-  'name',
-  'ops/sec',
-  'samples'
-])
+const suite = createBenchmarkSuite('Date toISOString')
 
-suite.add('new Date().toISOString()', function () {
-  new Date().toISOString()
-})
-.add('fromUnixToISOString(new Date())', function () {
-  fromUnixToISOString(new Date())
-})
-.on('cycle', function(event) {
-  console.log(eventToMdTable(event))
-})
-.on('start', function() {
-  console.log(H2('Date toISOString'))
-  console.log(tableHeader)
-})
-.run({ 'async': false });
+const { fromUnixToISOString } = require('../utils/from-unix-to-iso-string')
+
+suite
+  .add('new Date().toISOString()', function () {
+    new Date().toISOString()
+  })
+  .add('fromUnixToISOString(new Date())', function () {
+    fromUnixToISOString(new Date())
+  })
+  .run({ async: false })

@@ -1,34 +1,22 @@
-const Benchmark = require('benchmark')
-const suite = new Benchmark.Suite;
-const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+const { createBenchmarkSuite } = require('../common')
 
-const tableHeader = createTableHeader([
-  'name',
-  'ops/sec',
-  'samples'
-])
+const suite = createBenchmarkSuite('Array.includes vs raw comparison')
 
-suite.add('using Array.includes', function () {
-  const httpVersion = '1.1'
-  const exists = ['2.0', '1.0', '1.1'].includes(httpVersion)
-})
-.add('using Array.includes (first item)', function () {
-  const httpVersion = '2.0'
-  const exists = ['2.0', '1.0', '1.1'].includes(httpVersion)
-})
-.add('Using raw comparison', function () {
-  const httpVersion = '1.1'
-  const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
-})
-.add('Using raw comparison (first item)', function () {
-  const httpVersion = '2.0'
-  const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
-})
-.on('cycle', function(event) {
-  console.log(eventToMdTable(event))
-})
-.on('start', function() {
-  console.log(H2('Array.includes vs raw comparison'))
-  console.log(tableHeader)
-})
-.run({ 'async': false });
+suite
+  .add('using Array.includes', function () {
+    const httpVersion = '1.1'
+    const exists = ['2.0', '1.0', '1.1'].includes(httpVersion)
+  })
+  .add('using Array.includes (first item)', function () {
+    const httpVersion = '2.0'
+    const exists = ['2.0', '1.0', '1.1'].includes(httpVersion)
+  })
+  .add('Using raw comparison', function () {
+    const httpVersion = '1.1'
+    const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
+  })
+  .add('Using raw comparison (first item)', function () {
+    const httpVersion = '2.0'
+    const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
+  })
+  .run({ async: false })

@@ -39,6 +39,8 @@ jobs:
 
       - name: Run Benchmark
         run: node bench/${{ inputs.bench-file }} > ./bench-result.md
+        env:
+          CI: true
 
       - name: Notify on Error
         if: ${{ failure() }}
@@ -65,9 +67,6 @@ jobs:
           outputs: |-
             failure: 'true'
             result: ''
-
-      - name: Append Machine Info to Benchmark Result
-        run: node scripts/machine-info.mjs >> ./bench-result.md
 
       - name: Set Env Variable
         run: |
