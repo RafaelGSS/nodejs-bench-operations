@@ -1,19 +1,19 @@
-## Property access after shape transition
+## String searching
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|1,860,465|84|
-|Adding property in the object creation - small object|1,844,150|87|
-|Adding property after the function creation - small class|105,948|79|
-|Adding property in the function creation - small class|104,621|79|
-|Adding property after the class creation - small class|86,080|76|
-|Adding property in the class creation - small class|87,178|77|
+|Using includes|713,010,680|90|
+|Using indexof|702,977,876|89|
+|Using RegExp.test|9,458,406|89|
+|Using RegExp.text with cached regex pattern|9,917,229|88|
+|Using new RegExp.test|2,417,973|85|
+|Using new RegExp.test with cached regex pattern|2,786,906|86|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:42:41 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:05:18 GMT+0000 (Coordinated Universal Time)
 </details>
 

@@ -597,23 +597,23 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Get the last item of an Array
+## String searching
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|18,704,688|96|
-|Length = 10_000 - Array.at|19,062,395|96|
-|Length = 1_000_000 - Array.at|19,269,176|96|
-|Length = 100 - Array[length - 1]|589,456,031|97|
-|Length = 10_000 - Array[length - 1]|588,279,927|92|
-|Length = 1_000_000 - Array[length - 1]|588,403,148|95|
+|Using includes|587,756,228|97|
+|Using indexof|591,593,719|96|
+|Using RegExp.test|11,385,711|95|
+|Using RegExp.text with cached regex pattern|11,893,985|95|
+|Using new RegExp.test|3,090,022|96|
+|Using new RegExp.test with cached regex pattern|3,625,030|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:55 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:05:25 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

@@ -597,28 +597,23 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Shallow Copy
+## String searching
 
 |name|ops/sec|samples|
 |-|-|-|
-|{ ...object }|13,634,170|91|
-|{ ...object, __proto__: null }|13,424,046|94|
-|{ ...object, newProp: true }|510,574|85|
-|structuredClone|0|0|
-|JSON.parse + JSON.stringify|144,585|98|
-|loop + object.keys starting with {}|328,752|92|
-|loop + object.keys starting with { __proto__: null }|434,923|94|
-|loop + object.keys starting with { randomProp: true }|341,338|96|
-|object.keys + reduce(FN, {})|333,113|97|
-|object.keys + reduce(FN, { __proto__: null })|426,462|91|
-|object.keys + reduce(FN, { newProp: true })|344,621|93|
+|Using includes|9,633,198|84|
+|Using indexof|596,143,742|93|
+|Using RegExp.test|8,826,826|94|
+|Using RegExp.text with cached regex pattern|9,259,597|93|
+|Using new RegExp.test|2,584,014|92|
+|Using new RegExp.test with cached regex pattern|3,072,830|91|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:53:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:05:15 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

@@ -597,23 +597,23 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Private Property
+## String searching
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|599,283,380|99|
-|Raw usage underscore usage|597,207,510|99|
-|Manipulating private properties using #|594,026,209|96|
-|Manipulating private properties using underscore(_)|595,294,492|99|
-|Manipulating private properties using Symbol|593,550,801|99|
-|Manipulating private properties using PrivateSymbol|39,479,382|98|
+|Using includes|715,364,753|98|
+|Using indexof|716,568,021|95|
+|Using RegExp.test|11,223,081|92|
+|Using RegExp.text with cached regex pattern|11,783,316|97|
+|Using new RegExp.test|3,022,872|96|
+|Using new RegExp.test with cached regex pattern|3,424,976|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:40:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:05:10 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
