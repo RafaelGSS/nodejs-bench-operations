@@ -300,19 +300,22 @@ new Array(length)|100,000,000|6,421.813ms
 </details>
 
 
-## Object.keys vs Object.getOwnPropertyNames comparison
+## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|54,263,875|87|
-|Using Object.getOwnPropertyNames()|51,165,553|91|
+|Object.create(null)|55,957,876|96|
+|Object.create({})|1,606,715|80|
+|Cached Empty.prototype|595,916,930|98|
+|Empty.prototype|1,544,386|79|
+|Empty class|1,017,351|90|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:25:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:20:00 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

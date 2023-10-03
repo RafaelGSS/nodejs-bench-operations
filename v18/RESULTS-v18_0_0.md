@@ -300,21 +300,22 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Array.includes vs raw comparison
+## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Object.create(null)|54,318,934|93|
+|Object.create({})|1,361,568|86|
+|Cached Empty.prototype|593,025,581|97|
+|Empty.prototype|1,432,948|79|
+|Empty class|868,628|83|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:20:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

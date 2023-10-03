@@ -304,18 +304,18 @@ new Array(length)|100,000,000|4,702.79ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|42,007,584|91|
-|Object.create({})|1,319,441|79|
-|Cached Empty.prototype|713,108,585|95|
-|Empty.prototype|1,361,130|73|
-|Empty class|896,639|82|
+|Object.create(null)|32,276,009|82|
+|Object.create({})|991,783|77|
+|Cached Empty.prototype|688,284,572|89|
+|Empty.prototype|1,013,870|78|
+|Empty class|674,260|72|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:30:05 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:20:06 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

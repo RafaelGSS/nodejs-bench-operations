@@ -1,19 +1,18 @@
-## Get the last item of an Array
+## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|16,065,712|94|
-|Length = 10_000 - Array.at|15,947,232|94|
-|Length = 1_000_000 - Array.at|16,085,897|97|
-|Length = 100 - Array[length - 1]|708,504,635|96|
-|Length = 10_000 - Array[length - 1]|706,995,891|94|
-|Length = 1_000_000 - Array[length - 1]|706,145,230|97|
+|Object.create(null)|49,658,706|92|
+|Object.create({})|951,732|79|
+|Cached Empty.prototype|714,471,016|97|
+|Empty.prototype|1,043,288|81|
+|Empty class|716,606|81|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:54 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:20:00 GMT+0000 (Coordinated Universal Time)
 </details>
 
