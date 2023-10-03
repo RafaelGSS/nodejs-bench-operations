@@ -153,13 +153,13 @@ new Array(length)|100,000,000|6,426.649ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|7,800|81|
-|Intl.DateTimeFormat().format(new Date())|8,398|80|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|6,698|67|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|10,727|78|
-|Reusing Intl.DateTimeFormat()|475,517|97|
-|Date.toLocaleDateString()|488,217|95|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,724|81|
+|Intl.DateTimeFormat().format(Date.now())|6,114|80|
+|Intl.DateTimeFormat().format(new Date())|7,744|82|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|6,697|74|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|9,332|95|
+|Reusing Intl.DateTimeFormat()|331,966|78|
+|Date.toLocaleDateString()|418,830|97|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|8,503|84|
 |Format using date.get*|0|0|
 
 
@@ -167,7 +167,7 @@ new Array(length)|100,000,000|6,426.649ms
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:12:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:03:11 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

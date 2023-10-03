@@ -149,23 +149,25 @@ new Array(length)|100,000,000|5,524.558ms
 </details>
 
 
-## Comparison using `instanceof`
+## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|126,203|60|
-|[True conditional] Using constructor name|100,482|90|
-|[True conditional] Check if property is valid then instanceof |103,716|92|
-|[False conditional] Using instanceof only|710,767,286|92|
-|[False conditional] Using constructor name|704,987,935|88|
-|[False conditional] Check if property is valid then instanceof |703,669,939|87|
+|Intl.DateTimeFormat().format(Date.now())|7,948|85|
+|Intl.DateTimeFormat().format(new Date())|8,163|77|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|6,971|72|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|9,101|81|
+|Reusing Intl.DateTimeFormat()|483,192|98|
+|Date.toLocaleDateString()|496,159|96|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,629|85|
+|Format using date.get*|0|0|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:03:05 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

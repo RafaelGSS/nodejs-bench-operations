@@ -1,15 +1,21 @@
-## Date toISOString
+## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Intl.DateTimeFormat().format(Date.now())|7,877|88|
+|Intl.DateTimeFormat().format(new Date())|8,232|76|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|6,630|71|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|9,245|81|
+|Reusing Intl.DateTimeFormat()|457,523|92|
+|Date.toLocaleDateString()|462,527|95|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,536|81|
+|Format using date.get*|0|0|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:03:10 GMT+0000 (Coordinated Universal Time)
 </details>
 
