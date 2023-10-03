@@ -1,19 +1,26 @@
-## Property access after shape transition
+## Property Setter Access
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|2,016,624|81|
-|Adding property in the object creation - small object|2,211,681|89|
-|Adding property after the function creation - small class|144,924|75|
-|Adding property in the function creation - small class|147,009|75|
-|Adding property after the class creation - small class|121,193|77|
-|Adding property in the class creation - small class|113,712|73|
+|Setter (class)|574,523,237|96|
+|Setter|7,966,455|95|
+|Method|582,211,638|97|
+|DefineProperty (setter)|581,772,639|96|
+|DefineProperty (setter & enumerable=false)|8,069,481|96|
+|DefineProperty (setter & configurable=false)|7,931,415|99|
+|DefineProperty (setter & enumerable=false & configurable=false)|8,028,801|97|
+|DefineProperty (writable)|592,400,589|95|
+|DefineProperty (writable & enumerable=false)|589,163,067|91|
+|DefineProperty (writable & enumerable=false & configurable=false)|104,613,123|79|
+|DefineProperties (setter)|86,631,226|81|
+|DefineProperties (setter & enumerable=false)|8,044,651|97|
+|DefineProperties (setter & enumerable=false & configurable=false)|8,011,516|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:42:40 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:38:44 GMT+0000 (Coordinated Universal Time)
 </details>
 
