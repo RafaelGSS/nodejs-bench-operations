@@ -1,3 +1,6 @@
+const { skipIfVersionWithMessage } = require('../utils')
+skipIfVersionWithMessage('19.8.1||19.8.0', 'Blob')
+
 const { createBenchmarkSuite } = require('../common')
 
 const suite = createBenchmarkSuite('Blob')
