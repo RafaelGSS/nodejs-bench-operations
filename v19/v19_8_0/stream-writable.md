@@ -1,16 +1,16 @@
-## Sorting Map
+## Stream.Writable
 
-|name|ops/sec|samples|
-|-|-|-|
-|Sort using default|160,333|94|
-|Sort using first char|749,921|95|
-|Sort using localeCompare|695,771|95|
+```
+streams.Writable writing 1e3 * "some data" x 4,459 ops/sec ±0.99% (90 runs sampled)
+streams.web.WritableStream writing 1e3 * "some data" x 1,000 ops/sec ±17.19% (52 runs sampled)
+Fastest is streams.Writable writing 1e3 * "some data"
+```
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:55:31 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:56:31 GMT+0000 (Coordinated Universal Time)
 </details>
 

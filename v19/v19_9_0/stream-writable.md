@@ -1,19 +1,16 @@
-## Private Property
+## Stream.Writable
 
-|name|ops/sec|samples|
-|-|-|-|
-|Raw usage private field|599,283,380|99|
-|Raw usage underscore usage|597,207,510|99|
-|Manipulating private properties using #|594,026,209|96|
-|Manipulating private properties using underscore(_)|595,294,492|99|
-|Manipulating private properties using Symbol|593,550,801|99|
-|Manipulating private properties using PrivateSymbol|39,479,382|98|
+```
+streams.Writable writing 1e3 * "some data" x 4,267 ops/sec ±0.48% (94 runs sampled)
+streams.web.WritableStream writing 1e3 * "some data" x 730 ops/sec ±16.51% (63 runs sampled)
+Fastest is streams.Writable writing 1e3 * "some data"
+```
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:40:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:56:26 GMT+0000 (Coordinated Universal Time)
 </details>
 
