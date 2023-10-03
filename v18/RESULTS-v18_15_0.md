@@ -133,23 +133,19 @@ new Array(length)|100,000,000|5,431.845ms
 </details>
 
 
-## Comparison using `instanceof`
+## Date toISOString
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|156,843|57|
-|[True conditional] Using constructor name|122,918|91|
-|[True conditional] Check if property is valid then instanceof |123,131|92|
-|[False conditional] Using instanceof only|587,544,728|97|
-|[False conditional] Using constructor name|588,093,186|96|
-|[False conditional] Check if property is valid then instanceof |588,210,194|95|
+|new Date().toISOString()|1,284,073|96|
+|fromUnixToISOString(new Date())|1,069,436|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:00:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

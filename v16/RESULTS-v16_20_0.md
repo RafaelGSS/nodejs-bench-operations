@@ -137,15 +137,15 @@ new Array(length)|100,000,000|4,702.79ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,562,274|96|
-|fromUnixToISOString(new Date())|1,355,011|98|
+|new Date().toISOString()|1,532,645|93|
+|fromUnixToISOString(new Date())|1,319,442|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:00:38 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
