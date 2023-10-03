@@ -1,19 +1,21 @@
-## Property access after shape transition
+## Object.assign VS spread operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|2,016,624|81|
-|Adding property in the object creation - small object|2,211,681|89|
-|Adding property after the function creation - small class|144,924|75|
-|Adding property in the function creation - small class|147,009|75|
-|Adding property after the class creation - small class|121,193|77|
-|Adding property in the class creation - small class|113,712|73|
+|{...bigObject} - Total keys: 1000|1,340|93|
+|{...smallObject} - Total keys: 2|74,784,796|96|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,608|97|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|4,649|98|
+|{ ...bigObject, ...anotherBigObject }|826|96|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|10,170,223|97|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|24,846,646|93|
+|{ ...smallObject, ...anotherSmallObject }|16,751,433|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:42:40 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:51:45 GMT+0000 (Coordinated Universal Time)
 </details>
 

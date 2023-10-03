@@ -1,19 +1,21 @@
-## Get the last item of an Array
+## Object.assign VS spread operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|598,582,230|95|
-|Length = 10_000 - Array.at|600,602,977|97|
-|Length = 1_000_000 - Array.at|603,097,763|99|
-|Length = 100 - Array[length - 1]|596,218,433|98|
-|Length = 10_000 - Array[length - 1]|596,822,236|97|
-|Length = 1_000_000 - Array[length - 1]|596,539,154|98|
+|{...bigObject} - Total keys: 1000|1,443|93|
+|{...smallObject} - Total keys: 2|78,460,458|96|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|819|96|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|4,744|96|
+|{ ...bigObject, ...anotherBigObject }|868|95|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|11,142,892|98|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|27,403,929|97|
+|{ ...smallObject, ...anotherSmallObject }|18,679,538|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:51:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
