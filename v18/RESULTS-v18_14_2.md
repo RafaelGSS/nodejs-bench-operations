@@ -482,23 +482,28 @@ new Array(length)|100,000,000|5,524.558ms
 </details>
 
 
-## Get the last item of an Array
+## Shallow Copy
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|18,704,688|96|
-|Length = 10_000 - Array.at|19,062,395|96|
-|Length = 1_000_000 - Array.at|19,269,176|96|
-|Length = 100 - Array[length - 1]|589,456,031|97|
-|Length = 10_000 - Array[length - 1]|588,279,927|92|
-|Length = 1_000_000 - Array[length - 1]|588,403,148|95|
+|{ ...object }|15,193,442|90|
+|{ ...object, __proto__: null }|15,183,730|87|
+|{ ...object, newProp: true }|409,603|80|
+|structuredClone|161,010|92|
+|JSON.parse + JSON.stringify|124,982|89|
+|loop + object.keys starting with {}|722,991|87|
+|loop + object.keys starting with { __proto__: null }|382,756|83|
+|loop + object.keys starting with { randomProp: true }|283,278|80|
+|object.keys + reduce(FN, {})|265,274|87|
+|object.keys + reduce(FN, { __proto__: null })|395,337|81|
+|object.keys + reduce(FN, { newProp: true })|270,067|83|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:55 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:45:20 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
