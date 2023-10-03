@@ -171,19 +171,21 @@ new Array(length)|100,000,000|4,702.79ms
 </details>
 
 
-## Date toISOString
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,562,274|96|
-|fromUnixToISOString(new Date())|1,355,011|98|
+|Using String()|647,651|95|
+|Using brackets {}|649,796|94|
+|Using '' + |648,633|94|
+|Using date.toString()|689,497|89|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:04:49 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

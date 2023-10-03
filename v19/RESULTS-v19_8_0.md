@@ -150,25 +150,21 @@ new Array(length)|100,000,000|7,029.463ms
 </details>
 
 
-## Date format MM/DD/YYYY
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|6,327|81|
-|Intl.DateTimeFormat().format(new Date())|6,925|80|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|5,684|69|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|8,314|90|
-|Reusing Intl.DateTimeFormat()|434,446|92|
-|Date.toLocaleDateString()|546,679|95|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|7,993|84|
-|Format using date.get*|0|0|
+|Using String()|657,603|95|
+|Using brackets {}|673,879|93|
+|Using '' + |671,336|96|
+|Using date.toString()|744,973|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:12:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:04:49 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

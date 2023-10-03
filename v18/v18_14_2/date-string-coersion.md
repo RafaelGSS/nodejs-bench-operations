@@ -1,19 +1,17 @@
-## Comparison using `instanceof`
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|126,203|60|
-|[True conditional] Using constructor name|100,482|90|
-|[True conditional] Check if property is valid then instanceof |103,716|92|
-|[False conditional] Using instanceof only|710,767,286|92|
-|[False conditional] Using constructor name|704,987,935|88|
-|[False conditional] Check if property is valid then instanceof |703,669,939|87|
+|Using String()|659,012|95|
+|Using brackets {}|666,117|98|
+|Using '' + |656,483|96|
+|Using date.toString()|717,434|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:04:48 GMT+0000 (Coordinated Universal Time)
 </details>
 

@@ -171,23 +171,21 @@ new Array(length)|100,000,000|5,431.845ms
 </details>
 
 
-## Comparison using `instanceof`
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|156,843|57|
-|[True conditional] Using constructor name|122,918|91|
-|[True conditional] Check if property is valid then instanceof |123,131|92|
-|[False conditional] Using instanceof only|587,544,728|97|
-|[False conditional] Using constructor name|588,093,186|96|
-|[False conditional] Check if property is valid then instanceof |588,210,194|95|
+|Using String()|676,847|95|
+|Using brackets {}|701,562|95|
+|Using '' + |687,973|96|
+|Using date.toString()|744,835|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:04:52 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

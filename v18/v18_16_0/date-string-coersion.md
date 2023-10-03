@@ -1,15 +1,17 @@
-## Date toISOString
+## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Using String()|643,717|97|
+|Using brackets {}|638,226|98|
+|Using '' + |648,204|96|
+|Using date.toString()|699,184|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:04:53 GMT+0000 (Coordinated Universal Time)
 </details>
 
