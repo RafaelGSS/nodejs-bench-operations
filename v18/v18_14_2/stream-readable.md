@@ -1,19 +1,16 @@
-## Get the last item of an Array
+## Stream.Readable
 
-|name|ops/sec|samples|
-|-|-|-|
-|Length = 100 - Array.at|18,704,688|96|
-|Length = 10_000 - Array.at|19,062,395|96|
-|Length = 1_000_000 - Array.at|19,269,176|96|
-|Length = 100 - Array[length - 1]|589,456,031|97|
-|Length = 10_000 - Array[length - 1]|588,279,927|92|
-|Length = 1_000_000 - Array[length - 1]|588,403,148|95|
+```
+streams.Readable reading 1e3 * "some data" x 1,654 ops/sec ±1.18% (84 runs sampled)
+streams.web.Readable reading 1e3 * "some data" x 412 ops/sec ±0.29% (91 runs sampled)
+Fastest is streams.Readable reading 1e3 * "some data"
+```
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:55 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:53:23 GMT+0000 (Coordinated Universal Time)
 </details>
 

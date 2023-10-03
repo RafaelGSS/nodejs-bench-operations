@@ -1,15 +1,16 @@
-## Array Creation
+## Stream.Readable
 
-|name|ops/sec|samples|
-|-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+```
+streams.Readable reading 1e3 * "some data" x 1,062 ops/sec ±25.36% (78 runs sampled)
+streams.web.Readable reading 1e3 * "some data" x 316 ops/sec ±4.75% (80 runs sampled)
+Fastest is streams.Readable reading 1e3 * "some data"
+```
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:53:23 GMT+0000 (Coordinated Universal Time)
 </details>
 

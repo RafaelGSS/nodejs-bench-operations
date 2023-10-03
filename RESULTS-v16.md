@@ -546,28 +546,20 @@ new Array(length)|100,000,000|4,702.79ms
 </details>
 
 
-## Shallow Copy
+## Stream.Readable
 
-|name|ops/sec|samples|
-|-|-|-|
-|{ ...object }|13,634,170|91|
-|{ ...object, __proto__: null }|13,424,046|94|
-|{ ...object, newProp: true }|510,574|85|
-|structuredClone|0|0|
-|JSON.parse + JSON.stringify|144,585|98|
-|loop + object.keys starting with {}|328,752|92|
-|loop + object.keys starting with { __proto__: null }|434,923|94|
-|loop + object.keys starting with { randomProp: true }|341,338|96|
-|object.keys + reduce(FN, {})|333,113|97|
-|object.keys + reduce(FN, { __proto__: null })|426,462|91|
-|object.keys + reduce(FN, { newProp: true })|344,621|93|
+```
+streams.Readable reading 1e3 * "some data" x 1,056 ops/sec ±21.12% (82 runs sampled)
+streams.web.Readable reading 1e3 * "some data" x 308 ops/sec ±1.26% (83 runs sampled)
+Fastest is streams.Readable reading 1e3 * "some data"
+```
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:53:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:53:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
