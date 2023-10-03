@@ -2,40 +2,40 @@
 
 |type|amount|time elapsed|
 |-|-|-|
-array.push|10|0.015ms
+array.push|10|0.017ms
 new Array(length)|10|0.003ms
-array.push|100|0.038ms
-new Array(length)|100|0.03ms
-array.push|1,000|0.062ms
-new Array(length)|1,000|0.035ms
-array.push|10,000|0.456ms
-new Array(length)|10,000|0.42ms
-array.push|1,000,000|35.374ms
-new Array(length)|1,000,000|9.149ms
-array.push|100,000,000|1,868.257ms
-new Array(length)|100,000,000|4,409.487ms
+array.push|100|0.109ms
+new Array(length)|100|0.019ms
+array.push|1,000|0.069ms
+new Array(length)|1,000|0.033ms
+array.push|10,000|0.568ms
+new Array(length)|10,000|0.517ms
+array.push|1,000,000|46.41ms
+new Array(length)|1,000,000|10.589ms
+array.push|100,000,000|2,540.854ms
+new Array(length)|100,000,000|5,821.659ms
 ## Array.append (string)
 
 |type|amount|time elapsed|
 |-|-|-|
-array.push|10|0.009ms
-new Array(length)|10|0.018ms
-array.push|100|0.029ms
-new Array(length)|100|0.012ms
-array.push|1,000|0.04ms
-new Array(length)|1,000|0.017ms
-array.push|10,000|0.303ms
-new Array(length)|10,000|0.209ms
-array.push|1,000,000|32.136ms
-new Array(length)|1,000,000|4.186ms
-array.push|100,000,000|2,129.89ms
-new Array(length)|100,000,000|4,794.359ms
+array.push|10|0.01ms
+new Array(length)|10|0.022ms
+array.push|100|0.055ms
+new Array(length)|100|0.013ms
+array.push|1,000|0.048ms
+new Array(length)|1,000|0.023ms
+array.push|10,000|0.391ms
+new Array(length)|10,000|0.324ms
+array.push|1,000,000|44.703ms
+new Array(length)|1,000,000|4.747ms
+array.push|100,000,000|2,853.451ms
+new Array(length)|100,000,000|6,523.44ms
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sun Sep 24 2023 10:51:23 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:52:03 GMT+0000 (Coordinated Universal Time)
 </details>
 
