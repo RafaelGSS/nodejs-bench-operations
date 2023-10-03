@@ -97,22 +97,23 @@ new Array(length)|100,000,000|6,896.814ms
 </details>
 
 
-## Adding property
+## Comparison using `instanceof`
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|789,970,949|78|
-|Using dot notation|671,179,977|83|
-|Using define property (writable)|2,596,022|86|
-|Using define property initialized (writable)|3,176,243|91|
-|Using define property (getter)|1,286,496|85|
+|[True conditional] Using instanceof only|165,449|50|
+|[True conditional] Using constructor name|127,758|90|
+|[True conditional] Check if property is valid then instanceof |128,501|93|
+|[False conditional] Using instanceof only|598,110,072|94|
+|[False conditional] Using constructor name|599,303,437|97|
+|[False conditional] Check if property is valid then instanceof |596,832,428|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:03:03 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:57:29 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

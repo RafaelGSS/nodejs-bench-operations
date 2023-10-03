@@ -1,41 +1,19 @@
-## Array.append (number)
+## Comparison using `instanceof`
 
-|type|amount|time elapsed|
+|name|ops/sec|samples|
 |-|-|-|
-array.push|10|0.009ms
-new Array(length)|10|0.006ms
-array.push|100|0.039ms
-new Array(length)|100|0.015ms
-array.push|1,000|0.073ms
-new Array(length)|1,000|0.036ms
-array.push|10,000|0.476ms
-new Array(length)|10,000|3.178ms
-array.push|1,000,000|37.974ms
-new Array(length)|1,000,000|10.379ms
-array.push|100,000,000|2,377.668ms
-new Array(length)|100,000,000|5,083.938ms
-## Array.append (string)
-
-|type|amount|time elapsed|
-|-|-|-|
-array.push|10|0.009ms
-new Array(length)|10|0.021ms
-array.push|100|0.1ms
-new Array(length)|100|0.011ms
-array.push|1,000|0.048ms
-new Array(length)|1,000|0.023ms
-array.push|10,000|0.452ms
-new Array(length)|10,000|0.222ms
-array.push|1,000,000|124.681ms
-new Array(length)|1,000,000|10.139ms
-array.push|100,000,000|2,740.868ms
-new Array(length)|100,000,000|5,849.984ms
+|[True conditional] Using instanceof only|183,387|55|
+|[True conditional] Using constructor name|146,417|93|
+|[True conditional] Check if property is valid then instanceof |147,504|97|
+|[False conditional] Using instanceof only|718,806,538|97|
+|[False conditional] Using constructor name|716,777,297|96|
+|[False conditional] Check if property is valid then instanceof |718,636,789|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:04:22 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:57:30 GMT+0000 (Coordinated Universal Time)
 </details>
 

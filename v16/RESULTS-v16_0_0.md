@@ -101,19 +101,19 @@ new Array(length)|100,000,000|4,508.701ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|308,972|88|
-|[True conditional] Using constructor name|303,133|85|
-|[True conditional] Check if property is valid then instanceof |302,621|88|
-|[False conditional] Using instanceof only|708,955,050|98|
-|[False conditional] Using constructor name|708,457,531|97|
-|[False conditional] Check if property is valid then instanceof |710,207,339|97|
+|[True conditional] Using instanceof only|258,386|84|
+|[True conditional] Using constructor name|256,464|90|
+|[True conditional] Check if property is valid then instanceof |260,555|78|
+|[False conditional] Using instanceof only|611,160,541|91|
+|[False conditional] Using constructor name|609,850,117|92|
+|[False conditional] Check if property is valid then instanceof |598,711,230|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:57:29 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
