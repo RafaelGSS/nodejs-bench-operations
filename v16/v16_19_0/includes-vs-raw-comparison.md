@@ -1,15 +1,17 @@
-## Date toISOString
+## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,610,281|95|
-|fromUnixToISOString(new Date())|1,389,989|98|
+|using Array.includes|713,139,277|95|
+|using Array.includes (first item)|714,086,160|96|
+|Using raw comparison|714,262,770|98|
+|Using raw comparison (first item)|715,242,786|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:13:37 GMT+0000 (Coordinated Universal Time)
 </details>
 

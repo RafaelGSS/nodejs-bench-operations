@@ -246,23 +246,21 @@ new Array(length)|100,000,000|5,431.845ms
 </details>
 
 
-## Comparison using `instanceof`
+## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|156,843|57|
-|[True conditional] Using constructor name|122,918|91|
-|[True conditional] Check if property is valid then instanceof |123,131|92|
-|[False conditional] Using instanceof only|587,544,728|97|
-|[False conditional] Using constructor name|588,093,186|96|
-|[False conditional] Check if property is valid then instanceof |588,210,194|95|
+|using Array.includes|583,515,766|94|
+|using Array.includes (first item)|585,908,737|93|
+|Using raw comparison|585,887,457|95|
+|Using raw comparison (first item)|585,921,604|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:13:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

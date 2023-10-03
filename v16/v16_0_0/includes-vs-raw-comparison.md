@@ -1,15 +1,17 @@
-## Deleting properties
+## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|using Array.includes|703,251,314|96|
+|using Array.includes (first item)|698,957,928|92|
+|Using raw comparison|707,859,518|97|
+|Using raw comparison (first item)|708,773,298|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:13:35 GMT+0000 (Coordinated Universal Time)
 </details>
 

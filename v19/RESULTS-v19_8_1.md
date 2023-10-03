@@ -225,25 +225,21 @@ new Array(length)|100,000,000|5,078.453ms
 </details>
 
 
-## Date format MM/DD/YYYY
+## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|8,746|88|
-|Intl.DateTimeFormat().format(new Date())|8,570|75|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|10,908|69|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|10,169|79|
-|Reusing Intl.DateTimeFormat()|443,627|96|
-|Date.toLocaleDateString()|456,235|97|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|10,329|84|
-|Format using date.get*|0|0|
+|using Array.includes|707,819,093|96|
+|using Array.includes (first item)|714,691,614|97|
+|Using raw comparison|717,369,316|99|
+|Using raw comparison (first item)|715,738,422|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:12:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:13:36 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
