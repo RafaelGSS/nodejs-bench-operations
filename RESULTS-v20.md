@@ -599,23 +599,20 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Get the last item of an Array
+## String concat
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|598,582,230|95|
-|Length = 10_000 - Array.at|600,602,977|97|
-|Length = 1_000_000 - Array.at|603,097,763|99|
-|Length = 100 - Array[length - 1]|596,218,433|98|
-|Length = 10_000 - Array[length - 1]|596,822,236|97|
-|Length = 1_000_000 - Array[length - 1]|596,539,154|98|
+|Using + sign|596,861,791|97|
+|Using backtick (`)|592,235,708|92|
+|Using array.join|8,927,924|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:59:38 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

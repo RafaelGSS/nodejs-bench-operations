@@ -1,15 +1,16 @@
-## Date toISOString
+## String concat
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Using + sign|707,866,377|96|
+|Using backtick (`)|711,604,190|92|
+|Using array.join|6,167,897|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:59:36 GMT+0000 (Coordinated Universal Time)
 </details>
 
