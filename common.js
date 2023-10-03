@@ -69,11 +69,6 @@ function installMarkdownHiddenDetailedInfo(suite) {
     })
 }
 
-/**
- * @param {string} name - The name of this suite
- * @param {Object} options - The options to create a suite
- * @param {string} options.tableHeaderColumns - The header columns of the table
- */
 function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
   const suite = new Benchmark.Suite()
 
