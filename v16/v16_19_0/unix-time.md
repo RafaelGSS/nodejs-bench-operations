@@ -1,15 +1,15 @@
-## Date toISOString
+## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,610,281|95|
-|fromUnixToISOString(new Date())|1,389,989|98|
+|new Date().getTime()|7,418,390|93|
+|Date.now()|14,262,652|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:12:24 GMT+0000 (Coordinated Universal Time)
 </details>
 

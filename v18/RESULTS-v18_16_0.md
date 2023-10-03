@@ -633,18 +633,18 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Date toISOString
+## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|new Date().getTime()|7,350,286|97|
+|Date.now()|14,984,975|91|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:12:32 GMT+0000 (Coordinated Universal Time)
 </details>
 

@@ -1,15 +1,15 @@
-## Deleting properties
+## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|new Date().getTime()|7,345,326|97|
+|Date.now()|14,136,590|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:12:27 GMT+0000 (Coordinated Universal Time)
 </details>
 

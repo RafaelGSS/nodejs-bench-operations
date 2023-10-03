@@ -633,18 +633,18 @@ Fastest is streams.Writable writing 1e3 * "some data"
 </details>
 
 
-## Array Creation
+## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|new Date().getTime()|7,829,945|95|
+|Date.now()|14,470,130|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 02:12:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
