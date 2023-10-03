@@ -264,19 +264,19 @@ new Array(length)|100,000,000|5,473.416ms
 </details>
 
 
-## Array Creation
+## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|Using Object.keys()|64,035,845|91|
+|Using Object.getOwnPropertyNames()|65,078,953|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:16:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

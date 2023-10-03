@@ -1,15 +1,15 @@
-## Deleting properties
+## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,692,524|88|
-|Using undefined assignment|564,278,692|86|
+|Using Object.keys()|51,914,026|91|
+|Using Object.getOwnPropertyNames()|46,803,632|87|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:16:30 GMT+0000 (Coordinated Universal Time)
 </details>
 

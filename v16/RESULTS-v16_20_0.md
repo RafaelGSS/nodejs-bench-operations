@@ -264,19 +264,19 @@ new Array(length)|100,000,000|4,702.79ms
 </details>
 
 
-## Deleting properties
+## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|1,890,183|87|
-|Using undefined assignment|596,840,812|95|
+|Using Object.keys()|44,640,650|82|
+|Using Object.getOwnPropertyNames()|47,525,491|85|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:17:04 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:16:35 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

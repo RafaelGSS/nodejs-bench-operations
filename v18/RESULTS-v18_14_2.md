@@ -268,15 +268,15 @@ new Array(length)|100,000,000|5,524.558ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|66,394,745|89|
-|Using Object.getOwnPropertyNames()|65,049,405|89|
+|Using Object.keys()|49,533,370|86|
+|Using Object.getOwnPropertyNames()|51,176,841|86|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:25:05 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:16:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

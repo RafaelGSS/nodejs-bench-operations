@@ -1,17 +1,15 @@
-## Array.includes vs raw comparison
+## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Using Object.keys()|41,117,942|88|
+|Using Object.getOwnPropertyNames()|37,675,638|88|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:16:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
