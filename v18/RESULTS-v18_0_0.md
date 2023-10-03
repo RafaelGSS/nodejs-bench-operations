@@ -411,23 +411,30 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Property access after shape transition
+## Property Getter Access
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|2,016,624|81|
-|Adding property in the object creation - small object|2,211,681|89|
-|Adding property after the function creation - small class|144,924|75|
-|Adding property in the function creation - small class|147,009|75|
-|Adding property after the class creation - small class|121,193|77|
-|Adding property in the class creation - small class|113,712|73|
+|Getter (class)|778,322,906|85|
+|Getter|57,278,361|87|
+|Method|715,703,595|78|
+|DefineProperty (getter)|770,324,241|83|
+|DefineProperty (getter & enumerable=false)|55,925,036|82|
+|DefineProperty (getter & configurable=false)|762,276,018|82|
+|DefineProperty (getter & enumerable=false & configurable=false)|58,678,845|87|
+|DefineProperty (writable)|796,734,592|88|
+|DefineProperty (writable & enumerable=false)|802,919,181|86|
+|DefineProperty (writable & enumerable=false & configurable=false)|302,891,425|35|
+|DefineProperties (getter)|35,963,981|84|
+|DefineProperties (getter & enumerable=false)|36,880,477|83|
+|DefineProperties (getter & enumerable=false & configurable=false)|36,346,514|83|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:42:40 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:35:13 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

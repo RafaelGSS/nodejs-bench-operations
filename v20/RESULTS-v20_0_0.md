@@ -430,23 +430,30 @@ new Array(length)|100,000,000|6,523.44ms
 </details>
 
 
-## Get the last item of an Array
+## Property Getter Access
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|598,582,230|95|
-|Length = 10_000 - Array.at|600,602,977|97|
-|Length = 1_000_000 - Array.at|603,097,763|99|
-|Length = 100 - Array[length - 1]|596,218,433|98|
-|Length = 10_000 - Array[length - 1]|596,822,236|97|
-|Length = 1_000_000 - Array[length - 1]|596,539,154|98|
+|Getter (class)|680,986,323|89|
+|Getter|50,322,221|88|
+|Method|708,058,544|89|
+|DefineProperty (getter)|703,869,433|91|
+|DefineProperty (getter & enumerable=false)|51,462,755|87|
+|DefineProperty (getter & configurable=false)|712,370,051|88|
+|DefineProperty (getter & enumerable=false & configurable=false)|51,091,506|91|
+|DefineProperty (writable)|705,915,955|92|
+|DefineProperty (writable & enumerable=false)|683,782,060|88|
+|DefineProperty (writable & enumerable=false & configurable=false)|706,123,395|92|
+|DefineProperties (getter)|50,314,522|83|
+|DefineProperties (getter & enumerable=false)|50,638,700|87|
+|DefineProperties (getter & enumerable=false & configurable=false)|51,091,851|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:35:15 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
