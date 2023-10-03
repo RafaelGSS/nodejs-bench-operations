@@ -1,19 +1,16 @@
-## Get the last item of an Array
+## replace vs replaceAll comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|598,582,230|95|
-|Length = 10_000 - Array.at|600,602,977|97|
-|Length = 1_000_000 - Array.at|603,097,763|99|
-|Length = 100 - Array[length - 1]|596,218,433|98|
-|Length = 10_000 - Array[length - 1]|596,822,236|97|
-|Length = 1_000_000 - Array[length - 1]|596,539,154|98|
+|Using replace(//g)|2,496,288|94|
+|Using replaceAll()|2,307,344|99|
+|Using replaceAll(//g)|2,381,674|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:26:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:40:19 GMT+0000 (Coordinated Universal Time)
 </details>
 

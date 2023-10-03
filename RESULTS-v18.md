@@ -465,19 +465,20 @@ new Array(length)|100,000,000|4,859.036ms
 </details>
 
 
-## Date toISOString
+## replace vs replaceAll comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,331,909|87|
-|fromUnixToISOString(new Date())|1,118,954|97|
+|Using replace(//g)|1,769,199|87|
+|Using replaceAll()|1,648,257|84|
+|Using replaceAll(//g)|1,504,278|89|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:40:25 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

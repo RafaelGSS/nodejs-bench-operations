@@ -1,17 +1,16 @@
-## Parsing Integer
+## replace vs replaceAll comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|150,688,203|85|
-|Using parseInt(x, 10) - big number (10 len)|12,414,600|89|
-|Using + - small number (2 len)|736,226,076|85|
-|Using + - big number (10 len)|758,545,198|86|
+|Using replace(//g)|1,954,386|94|
+|Using replaceAll()|1,786,035|91|
+|Using replaceAll(//g)|1,690,034|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:36:39 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:40:22 GMT+0000 (Coordinated Universal Time)
 </details>
 
