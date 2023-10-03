@@ -337,22 +337,21 @@ new Array(length)|100,000,000|4,702.79ms
 </details>
 
 
-## Object Creation
+## Parsing Integer
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|42,007,584|91|
-|Object.create({})|1,319,441|79|
-|Cached Empty.prototype|713,108,585|95|
-|Empty.prototype|1,361,130|73|
-|Empty class|896,639|82|
+|Using parseInt(x, 10) - small number (2 len)|216,793,135|90|
+|Using parseInt(x, 10) - big number (10 len)|15,300,395|95|
+|Using + - small number (2 len)|594,511,101|98|
+|Using + - big number (10 len)|594,677,594|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:30:05 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:24:08 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

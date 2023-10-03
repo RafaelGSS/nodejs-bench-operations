@@ -341,17 +341,17 @@ new Array(length)|100,000,000|6,896.814ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|150,688,203|85|
-|Using parseInt(x, 10) - big number (10 len)|12,414,600|89|
-|Using + - small number (2 len)|736,226,076|85|
-|Using + - big number (10 len)|758,545,198|86|
+|Using parseInt(x, 10) - small number (2 len)|124,694,282|88|
+|Using parseInt(x, 10) - big number (10 len)|11,378,466|92|
+|Using + - small number (2 len)|571,694,757|95|
+|Using + - big number (10 len)|583,807,582|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:36:39 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:24:16 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

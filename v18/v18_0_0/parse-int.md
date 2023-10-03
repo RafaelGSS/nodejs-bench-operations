@@ -1,17 +1,17 @@
-## Array.includes vs raw comparison
+## Parsing Integer
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Using parseInt(x, 10) - small number (2 len)|221,080,796|91|
+|Using parseInt(x, 10) - big number (10 len)|14,853,606|98|
+|Using + - small number (2 len)|594,215,120|98|
+|Using + - big number (10 len)|593,413,734|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:24:12 GMT+0000 (Coordinated Universal Time)
 </details>
 
