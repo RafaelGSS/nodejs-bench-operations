@@ -280,21 +280,23 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Array.includes vs raw comparison
+## Get the last item of an Array
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|87,023,414|93|
-|using Array.includes (first item)|92,089,875|90|
-|Using raw comparison|590,353,191|96|
-|Using raw comparison (first item)|591,916,442|96|
+|Length = 100 - Array.at|14,659,378|86|
+|Length = 10_000 - Array.at|14,607,556|83|
+|Length = 1_000_000 - Array.at|14,438,821|90|
+|Length = 100 - Array[length - 1]|699,898,166|86|
+|Length = 10_000 - Array[length - 1]|672,206,851|82|
+|Length = 1_000_000 - Array[length - 1]|697,900,612|89|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:23:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:18:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

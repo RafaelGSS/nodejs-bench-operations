@@ -280,19 +280,23 @@ new Array(length)|100,000,000|6,421.813ms
 </details>
 
 
-## Object.keys vs Object.getOwnPropertyNames comparison
+## Get the last item of an Array
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|54,263,875|87|
-|Using Object.getOwnPropertyNames()|51,165,553|91|
+|Length = 100 - Array.at|698,117,139|96|
+|Length = 10_000 - Array.at|710,344,605|97|
+|Length = 1_000_000 - Array.at|710,589,672|99|
+|Length = 100 - Array[length - 1]|713,664,413|96|
+|Length = 10_000 - Array[length - 1]|712,220,502|97|
+|Length = 1_000_000 - Array[length - 1]|712,686,276|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:25:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:18:21 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

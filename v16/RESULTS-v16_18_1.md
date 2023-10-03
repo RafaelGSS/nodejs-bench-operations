@@ -280,19 +280,23 @@ new Array(length)|100,000,000|5,473.416ms
 </details>
 
 
-## Array Creation
+## Get the last item of an Array
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|243|77|
-|Array.from|11|32|
+|Length = 100 - Array.at|15,874,685|96|
+|Length = 10_000 - Array.at|15,557,937|92|
+|Length = 1_000_000 - Array.at|15,865,790|97|
+|Length = 100 - Array[length - 1]|713,758,580|98|
+|Length = 10_000 - Array[length - 1]|711,880,309|96|
+|Length = 1_000_000 - Array[length - 1]|712,193,566|99|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:18:17 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
