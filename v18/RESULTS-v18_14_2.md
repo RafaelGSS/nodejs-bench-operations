@@ -222,23 +222,27 @@ new Array(length)|100,000,000|5,524.558ms
 </details>
 
 
-## Comparison using `instanceof`
+## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|126,203|60|
-|[True conditional] Using constructor name|100,482|90|
-|[True conditional] Check if property is valid then instanceof |103,716|92|
-|[False conditional] Using instanceof only|710,767,286|92|
-|[False conditional] Using constructor name|704,987,935|88|
-|[False conditional] Check if property is valid then instanceof |703,669,939|87|
+|Function returning null|1,365,070|97|
+|Function returning explicitly undefined|1,355,232|92|
+|Function returning implicitly undefined|1,398,499|94|
+|Function returning string|1,368,728|94|
+|Function returning integer|1,370,832|92|
+|Function returning float|1,386,735|96|
+|Function returning functions|1,350,721|96|
+|Function returning arrow functions|1,338,430|94|
+|Function returning empty object|1,381,714|92|
+|Function returning empty array|1,362,081|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:10:46 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

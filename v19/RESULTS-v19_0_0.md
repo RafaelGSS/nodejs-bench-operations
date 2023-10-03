@@ -222,22 +222,27 @@ new Array(length)|100,000,000|6,896.814ms
 </details>
 
 
-## Adding property
+## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|789,970,949|78|
-|Using dot notation|671,179,977|83|
-|Using define property (writable)|2,596,022|86|
-|Using define property initialized (writable)|3,176,243|91|
-|Using define property (getter)|1,286,496|85|
+|Function returning null|1,060,678|87|
+|Function returning explicitly undefined|1,000,177|87|
+|Function returning implicitly undefined|1,065,690|89|
+|Function returning string|1,042,009|87|
+|Function returning integer|1,078,312|91|
+|Function returning float|1,040,948|87|
+|Function returning functions|1,048,283|90|
+|Function returning arrow functions|1,048,202|83|
+|Function returning empty object|1,085,847|88|
+|Function returning empty array|1,095,567|88|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:03:03 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:10:49 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

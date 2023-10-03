@@ -222,25 +222,27 @@ new Array(length)|100,000,000|6,426.649ms
 </details>
 
 
-## Date format MM/DD/YYYY
+## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|7,800|81|
-|Intl.DateTimeFormat().format(new Date())|8,398|80|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|6,698|67|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|10,727|78|
-|Reusing Intl.DateTimeFormat()|475,517|97|
-|Date.toLocaleDateString()|488,217|95|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|9,724|81|
-|Format using date.get*|0|0|
+|Function returning null|1,226,160|88|
+|Function returning explicitly undefined|1,310,909|92|
+|Function returning implicitly undefined|1,310,728|81|
+|Function returning string|1,344,703|89|
+|Function returning integer|1,322,492|84|
+|Function returning float|1,304,243|88|
+|Function returning functions|1,223,852|86|
+|Function returning arrow functions|1,198,430|93|
+|Function returning empty object|1,236,873|87|
+|Function returning empty array|1,181,808|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:12:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:10:48 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
