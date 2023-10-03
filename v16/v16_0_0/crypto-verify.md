@@ -1,19 +1,15 @@
-## Comparison using `instanceof`
+## Crypto Verify
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|308,972|88|
-|[True conditional] Using constructor name|303,133|85|
-|[True conditional] Check if property is valid then instanceof |302,621|88|
-|[False conditional] Using instanceof only|708,955,050|98|
-|[False conditional] Using constructor name|708,457,531|97|
-|[False conditional] Check if property is valid then instanceof |710,207,339|97|
+|crypto.createVerify('RSA-SHA256')|21,042|94|
+|crypto.verify('RSA-SHA256')|20,455|93|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:07:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:59:19 GMT+0000 (Coordinated Universal Time)
 </details>
 

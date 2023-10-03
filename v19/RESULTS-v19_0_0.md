@@ -117,22 +117,19 @@ new Array(length)|100,000,000|6,896.814ms
 </details>
 
 
-## Adding property
+## Crypto Verify
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|789,970,949|78|
-|Using dot notation|671,179,977|83|
-|Using define property (writable)|2,596,022|86|
-|Using define property initialized (writable)|3,176,243|91|
-|Using define property (getter)|1,286,496|85|
+|crypto.createVerify('RSA-SHA256')|3,891|87|
+|crypto.verify('RSA-SHA256')|3,861|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:03:03 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:59:21 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

@@ -96,19 +96,19 @@ new Array(length)|100,000,000|7,029.463ms
 </details>
 
 
-## Array Creation
+## Crypto Verify
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|247|63|
-|Array.from|13|36|
+|crypto.createVerify('RSA-SHA256')|4,557|91|
+|crypto.verify('RSA-SHA256')|4,565|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:05:53 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:59:21 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
