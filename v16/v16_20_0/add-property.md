@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|588,759,003|88|
-|Using dot notation|601,847,321|93|
-|Using define property (writable)|2,509,972|94|
-|Using define property initialized (writable)|3,044,166|91|
-|Using define property (getter)|1,286,333|83|
+|Directly in the object|701,664,605|84|
+|Using dot notation|589,107,824|84|
+|Using define property (writable)|2,394,709|90|
+|Using define property initialized (writable)|3,035,620|86|
+|Using define property (getter)|1,213,715|81|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sun Sep 24 2023 10:42:14 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 00:50:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
