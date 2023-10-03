@@ -391,19 +391,23 @@ new Array(length)|100,000,000|5,457.897ms
 </details>
 
 
-## Date toISOString
+## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,610,281|95|
-|fromUnixToISOString(new Date())|1,389,989|98|
+|Adding property after object creation - small object|1,636,108|91|
+|Adding property in the object creation - small object|1,669,717|87|
+|Adding property after the function creation - small class|145,406|78|
+|Adding property in the function creation - small class|146,620|82|
+|Adding property after the class creation - small class|118,627|77|
+|Adding property in the class creation - small class|117,336|74|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:10:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:32:34 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

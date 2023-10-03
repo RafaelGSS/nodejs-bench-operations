@@ -391,21 +391,23 @@ new Array(length)|100,000,000|6,896.814ms
 </details>
 
 
-## Parsing Integer
+## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|150,688,203|85|
-|Using parseInt(x, 10) - big number (10 len)|12,414,600|89|
-|Using + - small number (2 len)|736,226,076|85|
-|Using + - big number (10 len)|758,545,198|86|
+|Adding property after object creation - small object|2,066,711|97|
+|Adding property in the object creation - small object|2,074,186|94|
+|Adding property after the function creation - small class|174,624|85|
+|Adding property in the function creation - small class|176,709|89|
+|Adding property after the class creation - small class|142,584|81|
+|Adding property in the class creation - small class|141,457|77|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:36:39 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:32:33 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

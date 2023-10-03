@@ -395,19 +395,19 @@ new Array(length)|100,000,000|4,702.79ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|2,597,173|98|
-|Adding property in the object creation - small object|2,592,225|98|
-|Adding property after the function creation - small class|162,982|90|
-|Adding property in the function creation - small class|164,083|86|
-|Adding property after the class creation - small class|138,199|84|
-|Adding property in the class creation - small class|137,653|85|
+|Adding property after object creation - small object|1,594,826|94|
+|Adding property in the object creation - small object|1,592,298|93|
+|Adding property after the function creation - small class|144,434|84|
+|Adding property in the function creation - small class|146,621|84|
+|Adding property after the class creation - small class|122,339|81|
+|Adding property in the class creation - small class|122,861|82|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:42:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:32:38 GMT+0000 (Coordinated Universal Time)
 </details>
 
 

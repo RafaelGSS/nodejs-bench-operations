@@ -1,15 +1,19 @@
-## Possible undefined Function
+## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|820,334|74|
-|Using ? operator to avoid rejection|831,588|75|
+|Adding property after object creation - small object|2,041,915|98|
+|Adding property in the object creation - small object|2,055,754|98|
+|Adding property after the function creation - small class|178,630|80|
+|Adding property in the function creation - small class|183,268|86|
+|Adding property after the class creation - small class|142,626|76|
+|Adding property in the class creation - small class|148,095|77|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:38:54 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:32:35 GMT+0000 (Coordinated Universal Time)
 </details>
 
