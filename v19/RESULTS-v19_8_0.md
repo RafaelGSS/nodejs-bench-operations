@@ -490,16 +490,16 @@ new Array(length)|100,000,000|7,029.463ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|160,333|94|
-|Sort using first char|749,921|95|
-|Sort using localeCompare|695,771|95|
+|Sort using default|160,078|90|
+|Sort using first char|781,025|92|
+|Sort using localeCompare|710,635|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Thu Sep 21 2023 22:55:31 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 03 2023 01:49:29 GMT+0000 (Coordinated Universal Time)
 </details>
 
 
