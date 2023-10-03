@@ -1,13 +1,8 @@
-const Benchmark = require('benchmark')
-const suite = new Benchmark.Suite;
-const crypto = require('crypto');
-const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+const { createBenchmarkSuite } = require('../common')
 
-const tableHeader = createTableHeader([
-  'name',
-  'ops/sec',
-  'samples'
-])
+const suite = createBenchmarkSuite('Crypto Verify')
+
+const crypto = require('crypto')
 
 const rsaPrivateKey = `
 -----BEGIN RSA PRIVATE KEY-----
@@ -37,7 +32,7 @@ yDISMQKBgE22EhVB99rEsLXDCXOUHIFGpW46ZavQc4DLXg+uIQm3y0WWyc0oyNF8
 9kr1luu5QI5PV9mWpSKa3SKmc74biyxhlUp/DYuMyuSXpdDegMAKheAHVXP9ToU/
 5qhq4HBcISN3CwSAYcFcbqC3cB07T+IwX6NTEz4zel4gty8t/tsM
 -----END RSA PRIVATE KEY-----
-`;
+`
 
 const rsaPublicKey = `
 -----BEGIN PUBLIC KEY-----
@@ -51,23 +46,17 @@ uQIDAQAB
 -----END PUBLIC KEY-----
 `
 
-const thing = 'hello world';
-const algorithm = 'RSA-SHA256';
-const signature = crypto.createSign(algorithm).update(thing).sign(rsaPrivateKey, 'base64');
+const thing = 'hello world'
+const algorithm = 'RSA-SHA256'
+const signature = crypto.createSign(algorithm).update(thing).sign(rsaPrivateKey, 'base64')
 
-suite.add(`crypto.createVerify('${algorithm}')`, function () {
-  var verifier = crypto.createVerify(algorithm);
-  verifier.update(thing);
-  verifier.verify(rsaPublicKey, signature, 'base64');
-})
-.add(`crypto.verify('${algorithm}')`, function () {
-  crypto.verify(algorithm, thing, rsaPublicKey, Buffer.from(signature, 'base64'));
-})
-.on('cycle', function(event) {
-  console.log(eventToMdTable(event))
-})
-.on('start', function() {
-  console.log(H2('Crypto Verify'))
-  console.log(tableHeader)
-})
-.run({ 'async': false });
+suite
+  .add(`crypto.createVerify('${algorithm}')`, function () {
+    var verifier = crypto.createVerify(algorithm)
+    verifier.update(thing)
+    verifier.verify(rsaPublicKey, signature, 'base64')
+  })
+  .add(`crypto.verify('${algorithm}')`, function () {
+    crypto.verify(algorithm, thing, rsaPublicKey, Buffer.from(signature, 'base64'))
+  })
+  .run({ async: false })

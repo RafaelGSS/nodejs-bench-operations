@@ -1,56 +1,44 @@
-const Benchmark = require('benchmark')
-const suite = new Benchmark.Suite;
-const { eventToMdTable, H2, createTableHeader } = require('../markdown')
+const { createBenchmarkSuite } = require('../common')
 
-const tableHeader = createTableHeader([
-  'name',
-  'ops/sec',
-  'samples'
-])
+const suite = createBenchmarkSuite('Adding property')
 
-suite.add('Directly in the object', function () {
-  const data = { test: 'Hello' }
-})
-.add('Using dot notation', function () {
-  const data = { }
-  
-  data.test = 'Hello';
-})
-.add('Using define property (writable)', function () {
-  const data = { }
-  
-  Object.defineProperty(data, 'test', {
-    value: 'Hello',
-    writable: true,
-    enumerable: true,
-    configurable: true,
+suite
+  .add('Directly in the object', function () {
+    const data = { test: 'Hello' }
   })
-})
-.add('Using define property initialized (writable)', function () {
-  const data = { test: undefined }
-  
-  Object.defineProperty(data, 'test', {
-    value: 'Hello',
-    enumerable: true,
-    configurable: true,
-  });
-})
-.add('Using define property (getter)', function () {
-  const data = { }
-  
-  Object.defineProperty(data, 'test', {
-    get() {
-      return 'Hello';
-    },
-    enumerable: true,
-    configurable: true,
+  .add('Using dot notation', function () {
+    const data = {}
+
+    data.test = 'Hello'
   })
-})
-.on('cycle', function(event) {
-  console.log(eventToMdTable(event))
-})
-.on('start', function() {
-  console.log(H2('Adding property'))
-  console.log(tableHeader)
-})
-.run({ 'async': false });
+  .add('Using define property (writable)', function () {
+    const data = {}
+
+    Object.defineProperty(data, 'test', {
+      value: 'Hello',
+      writable: true,
+      enumerable: true,
+      configurable: true,
+    })
+  })
+  .add('Using define property initialized (writable)', function () {
+    const data = { test: undefined }
+
+    Object.defineProperty(data, 'test', {
+      value: 'Hello',
+      enumerable: true,
+      configurable: true,
+    })
+  })
+  .add('Using define property (getter)', function () {
+    const data = {}
+
+    Object.defineProperty(data, 'test', {
+      get() {
+        return 'Hello'
+      },
+      enumerable: true,
+      configurable: true,
+    })
+  })
+  .run({ async: false })
