@@ -52,7 +52,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install
+      - name: NPM Install
         run: |
           npm install
 
@@ -67,7 +67,7 @@ jobs:
         uses: dacbd/create-issue-action@main
         with:
           token: ${{ github.token }}
-          title: Benchmark ${{ inputs.bench-file }} failed on v${{ matrix.node-version }}
+          title: Benchmark ${{ matrix.bench-file }} failed on v${{ matrix.node-version }}
           body: |
             ### Context
             [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
@@ -78,21 +78,29 @@ jobs:
           assignees: RafaelGSS
           labels: bug
 
-      - name: Set Env Variable
+      - name: Add Job Summary
         run: |
           result=$(cat ./bench-result.md)
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64 -w 0)
-          echo "BENCH_RESULT=$RESULT_IN_BASE64" >> "$GITHUB_ENV"
+          export SAFE_BENCH_FILE=$(basename ${{ matrix.bench-file }})
+          echo "BENCH_FILE=$SAFE_BENCH_FILE" >> "$GITHUB_ENV"
+
+      - name: Upload Bench Result
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md
+          retention-days: 1
+          if-no-files-found: error
+          path: ./bench-result.md
 
       ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
         id: out
         with:
           matrix-step-name: benchmark
-          matrix-key: ${{ matrix.bench-file }}:${{ matrix.node-version }}
+          matrix-key: ${{ env.BENCH_FILE }}:${{ matrix.node-version }}
           outputs: |-
-            result: ${{ env.BENCH_RESULT }}
+            result: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md
 
   ## Read matrix outputs
   read:
@@ -124,6 +132,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
+
+      - name: NPM Install
+        run: npm install
 
       - name: Write Benchmark Results
         run: |
