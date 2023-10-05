@@ -52,13 +52,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: NPM Install
-        run: |
-          npm install
+      - name: Correct Bench file
+        run: |-
+          export SAFE_BENCH_FILE=$(basename ${{ matrix.bench-file }})
+          echo "BENCH_FILE=$SAFE_BENCH_FILE" >> "$GITHUB_ENV"
+
+      - name: Report Filename
+        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md" >> $GITHUB_STEP_SUMMARY
 
       - name: Run Benchmark
-        id: benchmark
-        run: node ${{ matrix.bench-file }} > ./bench-result.md
+        run: node bench/${{ env.BENCH_FILE }} > ./${{ env.BENCH_REPORT_FILE }}.md
         env:
           CI: true
 
@@ -67,7 +70,7 @@ jobs:
         uses: dacbd/create-issue-action@main
         with:
           token: ${{ github.token }}
-          title: Benchmark ${{ matrix.bench-file }} failed on v${{ matrix.node-version }}
+          title: Benchmark ${{ env.BENCH_FILE }} failed on v${{ matrix.node-version }}
           body: |
             ### Context
             [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
@@ -80,18 +83,16 @@ jobs:
 
       - name: Add Job Summary
         run: |
-          result=$(cat ./bench-result.md)
+          result=$(cat ./${{ env.BENCH_REPORT_FILE }}
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          export SAFE_BENCH_FILE=$(basename ${{ matrix.bench-file }})
-          echo "BENCH_FILE=$SAFE_BENCH_FILE" >> "$GITHUB_ENV"
 
       - name: Upload Bench Result
         uses: actions/upload-artifact@v3
         with:
-          name: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md
+          name: benchmark-artifacts-${{github.run_id}}
           retention-days: 1
           if-no-files-found: error
-          path: ./bench-result.md
+          path: ./${{ env.BENCH_REPORT_FILE }}
 
       ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
@@ -100,7 +101,7 @@ jobs:
           matrix-step-name: benchmark
           matrix-key: ${{ env.BENCH_FILE }}:${{ matrix.node-version }}
           outputs: |-
-            result: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md
+            result: ${{ env.BENCH_REPORT_FILE }}
 
   ## Read matrix outputs
   read:
@@ -133,8 +134,9 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: NPM Install
-        run: npm install
+      - uses: actions/download-artifact@v3
+        with:
+          name: benchmark-artifacts-${{github.run_id}}
 
       - name: Write Benchmark Results
         run: |

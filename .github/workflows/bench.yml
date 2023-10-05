@@ -37,8 +37,11 @@ jobs:
       - name: NPM Install
         run: npm install
 
+      - name: Report Filename
+        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_STEP_SUMMARY
+
       - name: Run Benchmark
-        run: node bench/${{ inputs.bench-file }} > ./bench-result.md
+        run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}.md
         env:
           CI: true
 
@@ -70,16 +73,16 @@ jobs:
 
       - name: Add Job Summary
         run: |
-          result=$(cat ./bench-result.md)
+          result=$(cat ./${{ env.BENCH_REPORT_FILE }}
           echo "$result" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Bench Result
         uses: actions/upload-artifact@v3
         with:
-          name: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md
+          name: benchmark-artifacts-${{github.run_id}}
           retention-days: 1
           if-no-files-found: error
-          path: ./bench-result.md
+          path: ./${{ env.BENCH_REPORT_FILE }}
 
       ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
@@ -89,7 +92,7 @@ jobs:
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
             failure: 'false'
-            result: benchmark-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md
+            result: ${{ env.BENCH_REPORT_FILE }}
 
   ## Read matrix outputs
   read:
@@ -123,9 +126,10 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: NPM Install
-        run: npm install
-  
+      - uses: actions/download-artifact@v3
+        with:
+          name: benchmark-artifacts-${{github.run_id}}
+
       - name: Write Benchmark Reports
         run: |
           node scripts/write-bench-results.mjs
