@@ -150,7 +150,7 @@ jobs:
           node scripts/write-bench-results.mjs
           node scripts/generate-reports.mjs
         env:
-          BENCH_RESULT: ${{ needs.read.outputs.result }}
+          BENCH_ARTIFACTS: ${{ needs.read.outputs.result }}
 
       - name: Clean temporary report folder
         run: rm -r ./temp-reports
