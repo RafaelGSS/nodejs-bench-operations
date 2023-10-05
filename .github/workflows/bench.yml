@@ -41,7 +41,7 @@ jobs:
         run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_ENV
 
       - name: Run Benchmark
-        run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}.md
+        run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
         env:
           CI: true
 
