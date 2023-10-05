@@ -83,7 +83,7 @@ jobs:
 
       - name: Add Job Summary
         run: |
-          result=$(cat ./${{ env.BENCH_REPORT_FILE }}
+          result=$(cat ./${{ env.BENCH_REPORT_FILE }})
           echo "$result" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Bench Result
