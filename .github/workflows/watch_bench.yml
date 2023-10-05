@@ -42,7 +42,7 @@ jobs:
         # Parse JSON array containing names of all filters matching any of changed files
         # e.g. ['add-property.js', 'array-append.js'] if both bench files contains changes
         bench-file: ${{ fromJSON(needs.changes.outputs.files) }}
-        node-version: [16.0.0, 16.18.1, 16.19.0, 16.20.0, 18.0.0, 18.14.2, 18.15.0, 18.16.0, 19.0.0, 19.8.0, 19.8.1, 19.9.0, 20.0.0]
+        node-version: [18.0.0, 18.16.1, 18.17.1, 18.18.0, 19.0.0, 19.9.0, 20.0.0, 20.5.0, 20.6.0, 20.7.0, 20.8.0]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
