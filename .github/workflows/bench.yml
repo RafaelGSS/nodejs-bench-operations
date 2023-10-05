@@ -126,9 +126,13 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Create temporary report folder
+        run: mkdir ./temp-reports
+
       - uses: actions/download-artifact@v3
         with:
           name: benchmark-artifacts-${{github.run_id}}
+          path: ./temp-reports
 
       - name: Write Benchmark Reports
         run: |
@@ -137,6 +141,9 @@ jobs:
         env:
           BENCH_FILE: ${{ inputs.bench-file }}
           BENCH_ARTIFACTS: ${{ needs.read.outputs.result }}
+
+      - name: Clean temporary report folder
+        run: rm -r ./temp-reports
 
       - name: Commit and Push Updated Results
         uses: stefanzweifel/git-auto-commit-action@v4

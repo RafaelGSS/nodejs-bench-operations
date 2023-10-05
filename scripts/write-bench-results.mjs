@@ -1,4 +1,4 @@
-import { mkdir, rename } from 'node:fs/promises';
+import { mkdir, readdir, rename, rm } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
 import { existAsync, rootFolder } from './utils.mjs';
 
@@ -44,5 +44,5 @@ for (const key of Object.keys(benchResult.result)) {
     });
   }
 
-  await rename(`./${reportFilepath}`, `${outputFolder}/${benchFile}.md`, 'utf-8');
+  await rename(`./temp-reports/${reportFilepath}`, `${outputFolder}/${benchFile}.md`, 'utf-8');
 }
