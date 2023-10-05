@@ -38,7 +38,7 @@ jobs:
         run: npm install
 
       - name: Report Filename
-        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_STEP_SUMMARY
+        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_ENV
 
       - name: Run Benchmark
         run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}.md

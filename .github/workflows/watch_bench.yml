@@ -58,7 +58,7 @@ jobs:
           echo "BENCH_FILE=$SAFE_BENCH_FILE" >> "$GITHUB_ENV"
 
       - name: Report Filename
-        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md" >> $GITHUB_STEP_SUMMARY
+        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ env.BENCH_FILE }}.md" >> $GITHUB_ENV
 
       - name: Run Benchmark
         run: node bench/${{ env.BENCH_FILE }} > ./${{ env.BENCH_REPORT_FILE }}.md
