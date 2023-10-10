@@ -5,14 +5,6 @@ const suite = createBenchmarkSuite('Deleting properties')
 const NullObject = function NullObject () { }
 NullObject.prototype = Object.create(null)
 
-const setupForMap = function () {
-  const data = new Map();
-  
-  for (let i = 0; i < this.count; i++) {
-    data.set(i.toString(), i);
-  }
-}
-
 suite
   .add('Using delete property', function () {
     const data = { x: 1, y: 2, z: 3 }
@@ -42,11 +34,6 @@ suite
     data.x
     data.y
     data.z
-  })
-  .add('Using map.delete', function () {
-    data.delete(this.count.toString())
-  }, {
-    setup: setupForMap,
   })
   .add('Using undefined assignment', function () {
     const data = { x: 1, y: 2, z: 3 }
