@@ -34,11 +34,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install
+      - name: NPM Install
         run: npm install
 
+      - name: Report Filename
+        run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_ENV
+
       - name: Run Benchmark
-        run: node bench/${{ inputs.bench-file }} > ./bench-result.md
+        run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
         env:
           CI: true
 
@@ -68,12 +71,18 @@ jobs:
             failure: 'true'
             result: ''
 
-      - name: Set Env Variable
+      - name: Add Job Summary
         run: |
-          result=$(cat ./bench-result.md)
+          result=$(cat ./${{ env.BENCH_REPORT_FILE }})
           echo "$result" >> $GITHUB_STEP_SUMMARY
-          export RESULT_IN_BASE64=$(cat ./bench-result.md | base64 -w 0)
-          echo "BENCH_RESULT=$RESULT_IN_BASE64" >> "$GITHUB_ENV"
+
+      - name: Upload Bench Result
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-artifacts-${{github.run_id}}
+          retention-days: 1
+          if-no-files-found: error
+          path: ./${{ env.BENCH_REPORT_FILE }}
 
       ## Write for matrix outputs workaround
       - uses: cloudposse/github-action-matrix-outputs-write@main
@@ -83,7 +92,7 @@ jobs:
           matrix-key: ${{ matrix.node-version }}
           outputs: |-
             failure: 'false'
-            result: ${{ env.BENCH_RESULT }}
+            result: ${{ env.BENCH_REPORT_FILE }}
 
   ## Read matrix outputs
   read:
@@ -117,13 +126,24 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Create temporary report folder
+        run: mkdir ./temp-reports
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: benchmark-artifacts-${{github.run_id}}
+          path: ./temp-reports
+
       - name: Write Benchmark Reports
         run: |
           node scripts/write-bench-results.mjs
           node scripts/generate-reports.mjs
         env:
           BENCH_FILE: ${{ inputs.bench-file }}
-          BENCH_RESULT: ${{ needs.read.outputs.result }}
+          BENCH_ARTIFACTS: ${{ needs.read.outputs.result }}
+
+      - name: Clean temporary report folder
+        run: rm -r ./temp-reports
 
       - name: Commit and Push Updated Results
         uses: stefanzweifel/git-auto-commit-action@v4
