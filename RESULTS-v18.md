@@ -133,3 +133,21 @@ new Array(length)|100,000,000|5,670.299ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","hz":4515.0193977735435,"cycles":4,"stats":{"deviation":0.0000042815054893696955,"mean":0.00022148299085782938,"moe":8.845681985135754e-7,"rme":0.39938425749423906,"sem":4.513103053640691e-7,"variance":1.8331289255502838e-11}},{"name":"crypto.verify('RSA-SHA256')","hz":4499.40281607116,"cycles":3,"stats":{"deviation":0.000008100742834345195,"mean":0.0002222517167007491,"moe":0.0000016376345408851729,"rme":0.7368377464954147,"sem":8.355278269822311e-7,"variance":6.562203446819503e-11}}]}-->
+
+## Date toISOString
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().toISOString()|1,666,064|95|
+|fromUnixToISOString(new Date())|1,334,039|97|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 01:42:02 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759754180908203},"benchmarks":[{"name":"new Date().toISOString()","hz":1666063.9439747168,"cycles":6,"stats":{"deviation":1.060312258120572e-8,"mean":6.002170586648116e-7,"moe":2.1322005496331767e-9,"rme":0.35523824570669094,"sem":1.0878574232822331e-9,"variance":1.1242620847207464e-16}},{"name":"fromUnixToISOString(new Date())","hz":1334039.489862225,"cycles":7,"stats":{"deviation":1.3324418663183106e-8,"mean":7.496029972120814e-7,"moe":2.6516638888903667e-9,"rme":0.3537424341621388,"sem":1.352889739229779e-9,"variance":1.7754013271178226e-16}}]}-->
