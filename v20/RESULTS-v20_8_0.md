@@ -175,3 +175,23 @@ new Array(length)|100,000,000|5,411.836ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","hz":7170.6813640018945,"cycles":3,"stats":{"deviation":0.00007064339183252889,"mean":0.00013945676139232447,"moe":0.00001567762647646587,"rme":11.241926400657649,"sem":0.000007998789018605037,"variance":4.990488809604209e-9}},{"name":"Intl.DateTimeFormat().format(new Date())","hz":7932.960404921135,"cycles":5,"stats":{"deviation":0.000011843237675881893,"mean":0.00012605634579742258,"moe":0.0000025479298699753843,"rme":2.0212626773030578,"sem":0.0000012999642193751962,"variance":1.4026227864742837e-10}},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","hz":7558.415822818007,"cycles":3,"stats":{"deviation":0.000019935695079118443,"mean":0.0001323028559742787,"moe":0.0000046049106248498995,"rme":3.4805829329528235,"sem":0.0000023494441963519898,"variance":3.974319382875873e-10}},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","hz":8634.197178571954,"cycles":3,"stats":{"deviation":0.000015312893463398103,"mean":0.00011581852711005544,"moe":0.0000032364142651369636,"rme":2.7943838916735593,"sem":0.0000016512317679270222,"variance":2.3448470622138033e-10}},{"name":"Reusing Intl.DateTimeFormat()","hz":400958.4976614997,"cycles":5,"stats":{"deviation":0.000002894533569517392,"mean":0.0000024940237102649655,"moe":6.507705122025329e-7,"rme":26.093196689513228,"sem":3.3202577153190456e-7,"variance":8.378324585063094e-12}},{"name":"Date.toLocaleDateString()","hz":472786.0514031677,"cycles":3,"stats":{"deviation":1.0948930614822468e-7,"mean":0.000002115121622205498,"moe":2.249609196600402e-8,"rme":1.0635838492609564,"sem":1.1477597941838785e-8,"variance":1.1987908160819673e-14}},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","hz":8185.511574847955,"cycles":3,"stats":{"deviation":0.00004063361330553611,"mean":0.0001221670742086239,"moe":0.00000890423310921663,"rme":7.288570318063712,"sem":0.000004542976076130934,"variance":1.6510905302638413e-9}},{"name":"Format using date.get*","hz":0,"cycles":0,"stats":{"deviation":0,"mean":0,"moe":0,"rme":0,"sem":0,"variance":0}}]}-->
+
+## Date String coersion
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using String()|768,129|93|
+|Using brackets {}|790,632|89|
+|Using '' + |784,797|99|
+|Using date.toString()|854,884|92|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 01:46:09 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Using String()","hz":768128.7626582164,"cycles":4,"stats":{"deviation":2.96424459177325e-8,"mean":0.0000013018650630128222,"moe":6.024605767948147e-9,"rme":0.46276729740375633,"sem":3.073778453034769e-9,"variance":8.786745999856961e-16}},{"name":"Using brackets {}","hz":790631.9268113072,"cycles":3,"stats":{"deviation":3.123795730198027e-8,"mean":0.0000012648110531446585,"moe":6.489985029102343e-9,"rme":0.5131189368535723,"sem":3.311216851582828e-9,"variance":9.758099764003427e-16}},{"name":"Using '' + ","hz":784797.1348636753,"cycles":5,"stats":{"deviation":5.757734502196418e-8,"mean":0.0000012742146416904374,"moe":1.1342012173662947e-8,"rme":0.8901178657479608,"sem":5.786740904930075e-9,"variance":3.3151506597783038e-15}},{"name":"Using date.toString()","hz":854883.9750128763,"cycles":5,"stats":{"deviation":2.036170709575817e-8,"mean":0.000001169749380300336,"moe":4.160795235788321e-9,"rme":0.35569971703853576,"sem":2.1228547121368983e-9,"variance":4.1459911585344863e-16}}]}-->
