@@ -26,6 +26,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
 });
 
 const template = `
+# Auto Generated YAML please don't change
 name: 'Run All'
 
 on:
