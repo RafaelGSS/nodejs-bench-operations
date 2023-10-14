@@ -93,3 +93,25 @@ new Array(length)|100,000,000|6,436.286ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"new Blob (128)","hz":3379.4802934033382,"cycles":3,"stats":{"deviation":0.000026454574349272245,"mean":0.00029590348609280997,"moe":0.000005559007029676022,"rme":1.878655470768074,"sem":0.000002836228076365317,"variance":6.99844504001173e-10}},{"name":"new Blob (1024)","hz":410.72012913110734,"cycles":2,"stats":{"deviation":0.0004152159877713554,"mean":0.002434747968441514,"moe":0.00009869057573681999,"rme":4.053420601065003,"sem":0.000050352334559602036,"variance":1.7240431650094235e-7}},{"name":"text (128)","hz":29293.60020903577,"cycles":4,"stats":{"deviation":0.0000028672216499818233,"mean":0.00003413714916787676,"moe":7.137095268233591e-7,"rme":2.090712154414357,"sem":3.641375136853873e-7,"variance":8.22095999012449e-12}},{"name":"text (1024)","hz":21094.801343228068,"cycles":4,"stats":{"deviation":0.0000018309657203248349,"mean":0.00004740504467092428,"moe":4.012280538815835e-7,"rme":0.8463826089962011,"sem":2.0470819075590995e-7,"variance":3.3524354690046418e-12}},{"name":"arrayBuffer (128)","hz":29674.747595303255,"cycles":5,"stats":{"deviation":0.000002707692095683197,"mean":0.000033698685954729875,"moe":6.582618260572315e-7,"rme":1.9533753539871763,"sem":3.35847870437363e-7,"variance":7.331596485025263e-12}},{"name":"arrayBuffer (1024)","hz":21788.22100412383,"cycles":4,"stats":{"deviation":0.000002208322705311177,"mean":0.00004589635839524169,"moe":4.6404380885288035e-7,"rme":1.011068906288195,"sem":2.3675704533310223e-7,"variance":4.876689170792874e-12}},{"name":"slice (0, 64)","hz":62990.868597119865,"cycles":4,"stats":{"deviation":0.0000036528438820661017,"mean":0.000015875316887529363,"moe":8.159091812539367e-7,"rme":5.139482802355038,"sem":4.1628019451731466e-7,"variance":1.3343268426747748e-11}},{"name":"slice (0, 512)","hz":34629.90971243806,"cycles":4,"stats":{"deviation":0.000012396345640646026,"mean":0.000028876771793627552,"moe":0.000002768881602593844,"rme":9.58861199022556,"sem":0.000001412694695200941,"variance":1.5366938524236374e-10}}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|184,273|56|
+|[True conditional] Using constructor name|146,734|93|
+|[True conditional] Check if property is valid then instanceof |147,608|92|
+|[False conditional] Using instanceof only|710,974,986|98|
+|[False conditional] Using constructor name|711,841,869|97|
+|[False conditional] Check if property is valid then instanceof |713,065,857|91|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 01:38:43 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"[True conditional] Using instanceof only","hz":184272.5943633215,"cycles":4,"stats":{"deviation":0.0000011764076378405378,"mean":0.0000054267429373048695,"moe":3.0812000295883324e-7,"rme":5.677807232045849,"sem":1.5720408314226185e-7,"variance":1.3839349303695538e-12}},{"name":"[True conditional] Using constructor name","hz":146734.00783500823,"cycles":3,"stats":{"deviation":2.2368767502594483e-7,"mean":0.00000681505272536703,"moe":4.546284948685857e-8,"rme":0.6670946112806506,"sem":2.319533137084621e-8,"variance":5.00361759585127e-14}},{"name":"[True conditional] Check if property is valid then instanceof ","hz":147608.2613658252,"cycles":3,"stats":{"deviation":2.0127942703370273e-7,"mean":0.000006774688562462288,"moe":4.1130268553882737e-8,"rme":0.6071167430748104,"sem":2.098483089483813e-8,"variance":4.051340774701566e-14}},{"name":"[False conditional] Using instanceof only","hz":710974986.1541065,"cycles":9,"stats":{"deviation":1.3464662772632666e-11,"mean":1.4065192439600769e-9,"moe":2.6658672188172133e-12,"rme":0.18953649089872546,"sem":1.3601363361312314e-12,"variance":1.8129714358072002e-22}},{"name":"[False conditional] Using constructor name","hz":711841869.1926676,"cycles":6,"stats":{"deviation":9.859949554456344e-12,"mean":1.4048063808527387e-9,"moe":1.9622073458315243e-12,"rme":0.13967813448002955,"sem":1.0011261968528185e-12,"variance":9.721860521642385e-23}},{"name":"[False conditional] Check if property is valid then instanceof ","hz":713065857.3402686,"cycles":9,"stats":{"deviation":9.911199987403026e-12,"mean":1.4023950098101655e-9,"moe":2.0363930894605596e-12,"rme":0.14520823842179922,"sem":1.038976066051306e-12,"variance":9.823188519029773e-23}}]}-->
