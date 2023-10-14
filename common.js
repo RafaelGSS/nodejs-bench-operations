@@ -53,7 +53,19 @@ function installMarkdownHiddenDetailedInfo(suite) {
 
   suite
     .on('cycle', function (event) {
-      cycleEvents.push(event)
+      cycleEvents.push({
+        name: event.target.name,
+        hz: event.target.hz,
+        cycles: event.target.cycles,
+        stats: {
+          deviation: event.target.stats.deviation,
+          mean: event.target.stats.mean,
+          moe: event.target.stats.moe,
+          rme: event.target.stats.rme,
+          sem: event.target.stats.sem,
+          variance: event.target.stats.variance,
+        },
+      })
     })
     .on('complete', function () {
       const writter = process.stdout
@@ -62,7 +74,7 @@ function installMarkdownHiddenDetailedInfo(suite) {
       writter.write(
         JSON.stringify({
           environment: getMachineInfo(),
-          benchmarks: JSON.stringify(cycleEvents),
+          benchmarks: cycleEvents,
         }),
       )
       writter.write('-->\n')
