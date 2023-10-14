@@ -282,3 +282,21 @@ new Array(length)|100,000,000|6,430.024ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"using Array.includes","hz":742757015.2512379,"cycles":6,"stats":{"deviation":5.09828907922983e-11,"mean":1.3463353148697621e-9,"moe":1.0592184206660667e-11,"rme":0.7867419126330577,"sem":5.4041756156431975e-12,"variance":2.5992551535394143e-21}},{"name":"using Array.includes (first item)","hz":722995501.0934469,"cycles":8,"stats":{"deviation":1.1263693711125373e-10,"mean":1.3831344710826223e-9,"moe":2.327103230253161e-11,"rme":1.6824851660530629,"sem":1.1872975664556945e-11,"variance":1.2687079601804529e-20}},{"name":"Using raw comparison","hz":743726148.2740531,"cycles":6,"stats":{"deviation":4.436996551841514e-11,"mean":1.344580935228209e-9,"moe":9.116422963530477e-12,"rme":0.678012213670365,"sem":4.6512362058828965e-12,"variance":1.9686938401053485e-21}},{"name":"Using raw comparison (first item)","hz":744527516.0292417,"cycles":6,"stats":{"deviation":6.324550991620634e-11,"mean":1.3431337035510244e-9,"moe":1.3367079904782982e-11,"rme":0.9952158798072465,"sem":6.819938726930093e-12,"variance":3.999994524560955e-21}}]}-->
+
+## Object.keys vs Object.getOwnPropertyNames comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using Object.keys()|49,266,274|92|
+|Using Object.getOwnPropertyNames()|49,908,825|94|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 02:02:28 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Using Object.keys()","hz":49266274.44077764,"cycles":6,"stats":{"deviation":2.1932224130683034e-9,"mean":2.0297861191068696e-8,"moe":4.481721166306253e-10,"rme":2.207977049462859,"sem":2.2865924317889047e-10,"variance":4.810224553185151e-18}},{"name":"Using Object.getOwnPropertyNames()","hz":49908825.29911372,"cycles":7,"stats":{"deviation":7.180545407450609e-10,"mean":2.003653650445181e-8,"moe":1.4516087502222302e-10,"rme":0.7244808751750609,"sem":7.406167092970563e-11,"variance":5.156023234846004e-19}}]}-->

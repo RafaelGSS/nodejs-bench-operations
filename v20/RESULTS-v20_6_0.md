@@ -282,3 +282,21 @@ new Array(length)|100,000,000|5,828.389ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759754180908203},"benchmarks":[{"name":"using Array.includes","hz":596802348.3097681,"cycles":8,"stats":{"deviation":2.942916628371722e-11,"mean":1.675596623961261e-9,"moe":6.0136772565607656e-12,"rme":0.35889767086925084,"sem":3.068202681918758e-12,"variance":8.660758281546783e-22}},{"name":"using Array.includes (first item)","hz":597029396.8498778,"cycles":7,"stats":{"deviation":5.794803680082437e-11,"mean":1.6749593994472076e-9,"moe":1.1652872535482013e-11,"rme":0.6957107461427333,"sem":5.945343130347966e-12,"variance":3.3579749690696953e-21}},{"name":"Using raw comparison","hz":601347545.13663,"cycles":8,"stats":{"deviation":8.80340237843417e-12,"mean":1.6629318737350021e-9,"moe":1.742984745405283e-12,"rme":0.10481395978600609,"sem":8.89277931329226e-13,"variance":7.74998934366204e-23}},{"name":"Using raw comparison (first item)","hz":600158973.7449771,"cycles":8,"stats":{"deviation":1.5813985517527022e-11,"mean":1.6662251899026433e-9,"moe":3.18006213302949e-12,"rme":0.19085428262042417,"sem":1.6224806801170868e-12,"variance":2.500821379485544e-22}}]}-->
+
+## Object.keys vs Object.getOwnPropertyNames comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using Object.keys()|46,661,143|80|
+|Using Object.getOwnPropertyNames()|48,941,360|84|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 02:02:40 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Using Object.keys()","hz":46661142.622940235,"cycles":6,"stats":{"deviation":2.2159295999735717e-9,"mean":2.143110827955519e-8,"moe":4.855869834516925e-10,"rme":2.2658043490682744,"sem":2.477484609447411e-10,"variance":4.910343992039034e-18}},{"name":"Using Object.getOwnPropertyNames()","hz":48941360.04910087,"cycles":5,"stats":{"deviation":1.6293825336493783e-9,"mean":2.0432615664884277e-8,"moe":3.4844921050273635e-10,"rme":1.7053578270039362,"sem":1.7778020944017162e-10,"variance":2.6548874409616675e-18}}]}-->
