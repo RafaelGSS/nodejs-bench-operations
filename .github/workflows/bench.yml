@@ -6,11 +6,20 @@ on:
       bench-file:
         required: true
         type: string
+      node-versions:
+        required: true
+        type: string
+        default: '[16.0.0, 16.18.1, 16.19.0, 16.20.2, 18.0.0, 18.16.1, 18.17.1, 18.18.0, 19.0.0, 19.9.0, 20.0.0, 20.6.0, 20.7.0, 20.8.0]'
+        description: 'The Node.js Versions (should be a JSON array)'
   workflow_call:
     inputs:
       bench-file:
         required: true
         type: string
+      node-versions:
+        required: true
+        type: string
+        description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
   issues: write
@@ -23,7 +32,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.0.0, 16.18.1, 16.19.0, 16.20.2, 18.0.0, 18.16.1, 18.17.1, 18.18.0, 19.0.0, 19.9.0, 20.0.0, 20.6.0, 20.7.0, 20.8.0]
+        node-version: ${{ fromJson(inputs.node-versions) }}
       fail-fast: true
 
     steps:
