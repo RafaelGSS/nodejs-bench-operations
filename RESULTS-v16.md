@@ -217,3 +217,22 @@ new Array(length)|100,000,000|5,808.457ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Using delete property","hz":2405137.4149310873,"cycles":5,"stats":{"deviation":8.284371924440483e-9,"mean":4.157766594923028e-7,"moe":1.6572195311026288e-9,"rme":0.39858406990094847,"sem":8.455201689299127e-10,"variance":6.863081818245773e-17}},{"name":"Using delete property (proto: null)","hz":11988347.133411113,"cycles":5,"stats":{"deviation":8.154549574074419e-9,"mean":8.341433467613181e-8,"moe":1.6573513041175484e-9,"rme":1.9868902755772782,"sem":8.455874000599737e-10,"variance":6.649667875603728e-17}},{"name":"Using delete property (cached proto: null)","hz":2394104.7557352157,"cycles":5,"stats":{"deviation":1.873796021074917e-8,"mean":4.176926667909758e-7,"moe":3.7099268445748446e-9,"rme":0.8881953502026378,"sem":1.892819818660635e-9,"variance":3.51111152859619e-16}},{"name":"Using undefined assignment","hz":708817861.3501139,"cycles":6,"stats":{"deviation":7.530162681920767e-11,"mean":1.410799663111282e-9,"moe":1.5063462604863763e-11,"rme":1.0677251348106949,"sem":7.685440104522328e-12,"variance":5.6703350016192166e-21}},{"name":"Using undefined assignment (proto: null)","hz":14785388.543623684,"cycles":6,"stats":{"deviation":1.6988773682041666e-9,"mean":6.76343402846358e-8,"moe":3.434426096213841e-10,"rme":0.5077932425688234,"sem":1.7522582123540005e-10,"variance":2.8861843121963153e-18}},{"name":"Using undefined property (cached proto: null)","hz":710928356.2830963,"cycles":7,"stats":{"deviation":8.696837761081457e-12,"mean":1.4066114977158028e-9,"moe":1.7581402354408536e-12,"rme":0.1249911747697142,"sem":8.970103242045171e-13,"variance":7.563498704257233e-23}}]}-->
+
+## Node.js Error
+
+|name|ops/sec|samples|
+|-|-|-|
+|Error|187,155|59|
+|NodeError|152,606|95|
+|NodeError Range|152,401|97|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 01:53:48 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Error","hz":187155.42942670142,"cycles":4,"stats":{"deviation":0.0000010281372961452974,"mean":0.000005343152496634598,"moe":2.6235006685089313e-7,"rme":4.910023942160273,"sem":1.3385207492392507e-7,"variance":1.057066299724963e-12}},{"name":"NodeError","hz":152606.4269555789,"cycles":3,"stats":{"deviation":2.603112043741058e-7,"mean":0.00000655280396736556,"moe":5.2346437456637184e-8,"rme":0.7988402784111082,"sem":2.6707366049304686e-8,"variance":6.776192312269749e-14}},{"name":"NodeError Range","hz":152400.59244534106,"cycles":3,"stats":{"deviation":1.8851922419410757e-7,"mean":0.000006561654282011096,"moe":3.751680518253261e-8,"rme":0.5717583336474411,"sem":1.914122713394521e-8,"variance":3.5539497890748193e-14}}]}-->

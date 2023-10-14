@@ -217,3 +217,22 @@ new Array(length)|100,000,000|6,430.024ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Using delete property","hz":2294566.3238617526,"cycles":6,"stats":{"deviation":2.325125778379787e-8,"mean":4.3581220102498543e-7,"moe":4.6756362804058985e-9,"rme":1.07285575516456,"sem":2.3855287144928054e-9,"variance":5.406209885286211e-16}},{"name":"Using delete property (proto: null)","hz":11203591.424247188,"cycles":7,"stats":{"deviation":1.4443281043793776e-9,"mean":8.925709284933102e-8,"moe":2.935489012142637e-10,"rme":0.328880195224131,"sem":1.497698475582978e-10,"variance":2.0860836731001263e-18}},{"name":"Using delete property (cached proto: null)","hz":2297487.4271520292,"cycles":6,"stats":{"deviation":1.4583302469083408e-8,"mean":4.352580946393262e-7,"moe":2.91726806813716e-9,"rme":0.6702386708177214,"sem":1.4884020755801836e-9,"variance":2.126727109047742e-16}},{"name":"Using undefined assignment","hz":709978428.9415733,"cycles":7,"stats":{"deviation":1.126658256264904e-11,"mean":1.4084934967542424e-9,"moe":2.242138354232813e-12,"rme":0.15918698662078576,"sem":1.1439481399147005e-12,"variance":1.269358826409874e-22}},{"name":"Using undefined assignment (proto: null)","hz":13383271.627174323,"cycles":6,"stats":{"deviation":1.4242484524698486e-9,"mean":7.472014525727257e-8,"moe":2.8792402231040736e-10,"rme":0.38533653985687816,"sem":1.469000113828609e-10,"variance":2.0284836543627585e-18}},{"name":"Using undefined property (cached proto: null)","hz":706016536.4404961,"cycles":9,"stats":{"deviation":2.042241532609618e-11,"mean":1.4163974190203422e-9,"moe":4.043431942281392e-12,"rme":0.28547298152223766,"sem":2.0629754807558123e-12,"variance":4.1707504775156804e-22}}]}-->
+
+## Node.js Error
+
+|name|ops/sec|samples|
+|-|-|-|
+|Error|181,979|59|
+|NodeError|138,670|89|
+|NodeError Range|142,797|93|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 01:53:52 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Error","hz":181978.86544636983,"cycles":4,"stats":{"deviation":0.000001068512691768758,"mean":0.000005495143612128439,"moe":2.7265266727270415e-7,"rme":4.961702305121327,"sem":1.3910850371056334e-7,"variance":1.1417193724709166e-12}},{"name":"NodeError","hz":138670.45107948364,"cycles":3,"stats":{"deviation":9.350790224930584e-7,"mean":0.000007211341653650614,"moe":1.9427162917028802e-7,"rme":2.693973444899001,"sem":9.911817814810613e-8,"variance":8.743727783065735e-13}},{"name":"NodeError Range","hz":142796.70960174917,"cycles":3,"stats":{"deviation":3.660734064248518e-7,"mean":0.000007002962482741623,"moe":7.440168608084599e-8,"rme":1.062431596116707,"sem":3.796004391879898e-8,"variance":1.3400973889149472e-13}}]}-->
