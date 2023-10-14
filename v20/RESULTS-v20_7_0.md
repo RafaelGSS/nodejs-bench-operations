@@ -322,3 +322,24 @@ new Array(length)|100,000,000|5,001.738ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Length = 100 - Array.at","hz":681416517.8680232,"cycles":6,"stats":{"deviation":1.0467746995948156e-10,"mean":1.4675311997553898e-9,"moe":2.2123817280195002e-11,"rme":1.5075534533018877,"sem":1.1287661877650512e-11,"variance":1.0957372717118163e-20}},{"name":"Length = 10_000 - Array.at","hz":694261898.9709543,"cycles":7,"stats":{"deviation":8.365629030399602e-11,"mean":1.440378625821488e-9,"moe":1.7478869400055564e-11,"rme":1.2134913061547883,"sem":8.91779051023243e-12,"variance":6.998374907426459e-21}},{"name":"Length = 1_000_000 - Array.at","hz":689198171.883162,"cycles":7,"stats":{"deviation":1.0009841635790178e-10,"mean":1.4509614807416052e-9,"moe":2.1534968051423406e-11,"rme":1.484186061260331,"sem":1.0987228597665003e-11,"variance":1.0019692957359858e-20}},{"name":"Length = 100 - Array[length - 1]","hz":794178332.6669537,"cycles":7,"stats":{"deviation":8.287962957324661e-11,"mean":1.2591630353876195e-9,"moe":1.7938946989611546e-11,"rme":1.4246723010010565,"sem":9.152523974291605e-12,"variance":6.869032998198574e-21}},{"name":"Length = 10_000 - Array[length - 1]","hz":772995697.695809,"cycles":6,"stats":{"deviation":1.044767685368483e-10,"mean":1.2936682610017867e-9,"moe":2.261355681822963e-11,"rme":1.748018213009123,"sem":1.1537528988892669e-11,"variance":1.0915395163902174e-20}},{"name":"Length = 1_000_000 - Array[length - 1]","hz":828099869.0872915,"cycles":8,"stats":{"deviation":7.825185672719684e-11,"mean":1.2075838160706052e-9,"moe":1.6635706882890887e-11,"rme":1.3776026691896497,"sem":8.48760555249535e-12,"variance":6.12335308125374e-21}}]}-->
+
+## Object Creation
+
+|name|ops/sec|samples|
+|-|-|-|
+|Object.create(null)|49,248,340|91|
+|Object.create({})|1,585,919|78|
+|Cached Empty.prototype|717,546,525|98|
+|Empty.prototype|1,428,725|70|
+|Empty class|989,923|86|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 14 2023 02:07:30 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Object.create(null)","hz":49248340.44906952,"cycles":8,"stats":{"deviation":2.5880444545465675e-9,"mean":2.0305252743169208e-8,"moe":5.317495206588293e-10,"rme":2.6187781427035555,"sem":2.7130077584634145e-10,"variance":6.69797409870924e-18}},{"name":"Object.create({})","hz":1585918.5042472777,"cycles":3,"stats":{"deviation":7.70588333048756e-8,"mean":6.3054942440099e-7,"moe":1.7101381656901117e-8,"rme":2.712139761787445,"sem":8.725194722908734e-9,"variance":5.9380637903086065e-15}},{"name":"Cached Empty.prototype","hz":717546525.420857,"cycles":6,"stats":{"deviation":2.5179181655652585e-11,"mean":1.3936378542331842e-9,"moe":4.985223626163162e-12,"rme":0.3577129891399342,"sem":2.5434814419199806e-12,"variance":6.339911888483516e-22}},{"name":"Empty.prototype","hz":1428724.8454566433,"cycles":3,"stats":{"deviation":6.288774007134127e-8,"mean":6.9992483379848e-7,"moe":1.47323843174918e-8,"rme":2.1048523507216346,"sem":7.516522610965204e-9,"variance":3.9548678512805815e-15}},{"name":"Empty class","hz":989923.2681118546,"cycles":6,"stats":{"deviation":1.0128329589002468e-7,"mean":0.0000010101793060257746,"moe":2.1406451003011323e-8,"rme":2.1190743935577254,"sem":1.0921658675005777e-8,"variance":1.025830602634629e-14}}]}-->
