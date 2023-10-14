@@ -18,3 +18,36 @@
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"Directly in the object","hz":769033732.0840257,"cycles":6,"stats":{"deviation":2.4038055735216086e-10,"mean":1.3003330780953813e-9,"moe":5.267571213745441e-11,"rme":4.050939949525038,"sem":2.6875363335435924e-11,"variance":5.77828123529355e-20}},{"name":"Using dot notation","hz":663245107.0705248,"cycles":8,"stats":{"deviation":1.2844954862176432e-10,"mean":1.5077382242846565e-9,"moe":2.8325338474616187e-11,"rme":1.8786642149405668,"sem":1.4451703303375606e-11,"variance":1.6499286541135e-20}},{"name":"Using define property (writable)","hz":2937010.4986294126,"cycles":7,"stats":{"deviation":3.8768998386509724e-8,"mean":3.404822694595953e-7,"moe":8.340682820136008e-9,"rme":2.4496673008477434,"sem":4.255450418436739e-9,"variance":1.5030352358931934e-15}},{"name":"Using define property initialized (writable)","hz":3754435.5693027554,"cycles":4,"stats":{"deviation":2.5421145532150424e-8,"mean":2.663516210469187e-7,"moe":5.46905312575636e-9,"rme":2.0533207585746096,"sem":2.7903332274267143e-9,"variance":6.462346401667715e-16}},{"name":"Using define property (getter)","hz":1588469.0187195742,"cycles":4,"stats":{"deviation":7.406918164413298e-8,"mean":6.295369870078268e-7,"moe":1.6031962617590167e-8,"rme":2.5466275927312347,"sem":8.179572764076615e-9,"variance":5.486243669431566e-15}}]}-->
+
+## Array.append (number)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.025ms
+new Array(length)|10|0.006ms
+array.push|100|0.061ms
+new Array(length)|100|0.015ms
+array.push|1,000|0.084ms
+new Array(length)|1,000|0.041ms
+array.push|10,000|0.644ms
+new Array(length)|10,000|0.594ms
+array.push|1,000,000|40.728ms
+new Array(length)|1,000,000|7.997ms
+array.push|100,000,000|1,990.905ms
+new Array(length)|100,000,000|5,494.342ms
+## Array.append (string)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.01ms
+new Array(length)|10|0.022ms
+array.push|100|0.056ms
+new Array(length)|100|0.011ms
+array.push|1,000|0.046ms
+new Array(length)|1,000|0.02ms
+array.push|10,000|0.372ms
+new Array(length)|10,000|0.261ms
+array.push|1,000,000|32.965ms
+new Array(length)|1,000,000|5.606ms
+array.push|100,000,000|3,201.022ms
+new Array(length)|100,000,000|5,411.836ms
