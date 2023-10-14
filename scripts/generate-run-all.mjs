@@ -32,6 +32,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   ${benchJobs.join('')}
