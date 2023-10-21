@@ -610,3 +610,21 @@ new Array(length)|100,000,000|5,007.311ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":1663.7929359736636,"samples":4},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":487.94110691623945,"samples":5}]}-->
+
+## Stream.Writable
+
+|name|ops/sec|samples|
+|-|-|-|
+|streams.Writable writing 1e3 * "some data"|4,763|93|
+|streams.web.WritableStream writing 1e3 * "some data"|979|44|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 21 2023 13:50:00 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":4762.994951498457,"samples":5},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":978.5074627545547,"samples":3}]}-->
