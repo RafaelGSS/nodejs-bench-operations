@@ -669,3 +669,21 @@ new Array(length)|100,000,000|6,319.052ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using includes","opsSec":688752661.1334761,"samples":9},{"name":"Using indexof","opsSec":694149409.6367636,"samples":6},{"name":"Using RegExp.test","opsSec":9240145.65300417,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":9920021.251961557,"samples":6},{"name":"Using new RegExp.test","opsSec":2295876.176967583,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":2758731.156435859,"samples":5}]}-->
+
+## Super vs This
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using super|130,710,317|88|
+|Using this|132,201,365|96|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 21 2023 14:06:35 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using super","opsSec":130710317.35104145,"samples":6},{"name":"Using this","opsSec":132201365.44874254,"samples":8}]}-->
