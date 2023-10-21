@@ -55,16 +55,8 @@ function installMarkdownHiddenDetailedInfo(suite) {
     .on('cycle', function (event) {
       cycleEvents.push({
         name: event.target.name,
-        hz: event.target.hz,
-        cycles: event.target.cycles,
-        stats: {
-          deviation: event.target.stats.deviation,
-          mean: event.target.stats.mean,
-          moe: event.target.stats.moe,
-          rme: event.target.stats.rme,
-          sem: event.target.stats.sem,
-          variance: event.target.stats.variance,
-        },
+        opsSec: event.target.hz,
+        samples: event.target.cycles,
       })
     })
     .on('complete', function () {
