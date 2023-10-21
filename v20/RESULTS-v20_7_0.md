@@ -687,3 +687,21 @@ new Array(length)|100,000,000|5,007.311ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using super","opsSec":712563168.5556358,"samples":8},{"name":"Using this","opsSec":714284036.3177735,"samples":7}]}-->
+
+## Getting unix time
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().getTime()|7,705,803|90|
+|Date.now()|15,536,694|89|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 21 2023 14:16:55 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Date().getTime()","opsSec":7705802.704858642,"samples":5},{"name":"Date.now()","opsSec":15536694.498747312,"samples":4}]}-->
