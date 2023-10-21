@@ -383,3 +383,21 @@ new Array(length)|100,000,000|6,319.052ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","opsSec":158380282.45844007,"samples":8},{"name":"Using parseInt(x, 10) - big number (10 len)","opsSec":14077002.354949778,"samples":9},{"name":"Using + - small number (2 len)","opsSec":710816940.2885693,"samples":7},{"name":"Using + - big number (10 len)","opsSec":709980539.4072638,"samples":8}]}-->
+
+## Possible undefined Function
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using if to check function existence|483,768|74|
+|Using ? operator to avoid rejection|523,902|81|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Sat Oct 21 2023 13:10:25 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using if to check function existence","opsSec":483768.28621441673,"samples":4},{"name":"Using ? operator to avoid rejection","opsSec":523901.79508402466,"samples":4}]}-->
