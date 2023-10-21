@@ -74,25 +74,25 @@ new Array(length)|100,000,000|5,363.897ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|2,523|82|
-|new Blob (1024)|328|66|
-|text (128)|2,755|78|
-|text (1024)|326|75|
-|arrayBuffer (128)|2,757|81|
-|arrayBuffer (1024)|322|74|
-|slice (0, 64)|41,013|66|
-|slice (0, 512)|17,441|64|
+|new Blob (128)|3,074|84|
+|new Blob (1024)|380|65|
+|text (128)|3,540|83|
+|text (1024)|434|87|
+|arrayBuffer (128)|3,464|88|
+|arrayBuffer (1024)|417|88|
+|slice (0, 64)|59,576|68|
+|slice (0, 512)|19,789|60|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 14 2023 01:34:29 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sat Oct 21 2023 12:32:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759757995605469},"benchmarks":[{"name":"new Blob (128)","hz":2522.6655874277862,"cycles":3,"stats":{"deviation":0.000026205663492397492,"mean":0.00039640608925087104,"moe":0.0000056721055660879215,"rme":1.4308825519827602,"sem":0.0000028939314112693476,"variance":6.867367990767747e-10}},{"name":"new Blob (1024)","hz":328.3033962129587,"cycles":2,"stats":{"deviation":0.0005408630171679248,"mean":0.003045963007191481,"moe":0.00013048824498960938,"rme":4.283973399595736,"sem":0.0000665756351987803,"variance":2.925328033399909e-7}},{"name":"text (128)","hz":2755.2395872885354,"cycles":4,"stats":{"deviation":0.000026743227775611843,"mean":0.0003629448432047654,"moe":0.000005935025555327737,"rme":1.6352417361608103,"sem":0.000003028074262922315,"variance":7.152002318582568e-10}},{"name":"text (1024)","hz":325.6099542267456,"cycles":3,"stats":{"deviation":0.0001882546475065038,"mean":0.0030711591799298258,"moe":0.0000426060375943186,"rme":1.387294995086908,"sem":0.000021737774282815613,"variance":3.5439812307798e-8}},{"name":"arrayBuffer (128)","hz":2757.405874423115,"cycles":3,"stats":{"deviation":0.00003235718104126743,"mean":0.0003626597046433046,"moe":0.000007046674982320462,"rme":1.9430542991400845,"sem":0.000003595242337918603,"variance":1.0469871649373564e-9}},{"name":"arrayBuffer (1024)","hz":321.7418286155038,"cycles":3,"stats":{"deviation":0.00024109131909189353,"mean":0.00310808204299431,"moe":0.00005493154126948799,"rme":1.7673774536713076,"sem":0.0000280262965660653,"variance":5.812502414146923e-8}},{"name":"slice (0, 64)","hz":41013.29609471556,"cycles":3,"stats":{"deviation":0.000013462229029469293,"mean":0.000024382336832685023,"moe":0.000003247888252559556,"rme":13.320660258477337,"sem":0.0000016570858431426306,"variance":1.8123161044188574e-10}},{"name":"slice (0, 512)","hz":17441.36217012851,"cycles":4,"stats":{"deviation":0.00006727391599253507,"mean":0.00005733497133112006,"moe":0.00001648210941817109,"rme":28.747043969000806,"sem":0.000008409239499066884,"variance":4.525779772970665e-9}}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Blob (128)","opsSec":3073.740963633099,"samples":4},{"name":"new Blob (1024)","opsSec":380.1551186497588,"samples":2},{"name":"text (128)","opsSec":3539.90718544297,"samples":4},{"name":"text (1024)","opsSec":433.88940078333513,"samples":3},{"name":"arrayBuffer (128)","opsSec":3463.8525264972477,"samples":4},{"name":"arrayBuffer (1024)","opsSec":416.714932289845,"samples":3},{"name":"slice (0, 64)","opsSec":59576.00401361419,"samples":4},{"name":"slice (0, 512)","opsSec":19788.585538930907,"samples":3}]}-->
 
 ## Comparison using `instanceof`
 
