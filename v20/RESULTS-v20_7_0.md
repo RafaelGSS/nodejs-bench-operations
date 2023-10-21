@@ -2,22 +2,22 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|712,291,725|93|
-|Using dot notation|712,421,897|96|
-|Using define property (writable)|3,159,074|94|
-|Using define property initialized (writable)|4,125,637|89|
-|Using define property (getter)|1,646,633|88|
+|Directly in the object|708,220,357|97|
+|Using dot notation|710,056,945|96|
+|Using define property (writable)|3,156,237|96|
+|Using define property initialized (writable)|4,149,693|93|
+|Using define property (getter)|1,660,135|89|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 14 2023 01:29:25 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sat Oct 21 2023 12:27:24 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759754180908203},"benchmarks":[{"name":"Directly in the object","hz":712291725.4103355,"cycles":7,"stats":{"deviation":4.323871129853061e-11,"mean":1.403919158858573e-9,"moe":8.787945171958297e-12,"rme":0.6259580629345604,"sem":4.48364549589709e-12,"variance":1.869586154757679e-21}},{"name":"Using dot notation","hz":712421896.5168866,"cycles":6,"stats":{"deviation":3.200234123472622e-11,"mean":1.4036626399176052e-9,"moe":6.401801538959904e-12,"rme":0.4560783593510538,"sem":3.2662252749795426e-12,"variance":1.0241498445038579e-21}},{"name":"Using define property (writable)","hz":3159073.691577493,"cycles":5,"stats":{"deviation":3.2557524802479167e-9,"mean":3.1654848782607754e-7,"moe":6.581782470147429e-10,"rme":0.2079233584512867,"sem":3.3580522806874637e-10,"variance":1.059992421264046e-17}},{"name":"Using define property initialized (writable)","hz":4125637.4600812034,"cycles":6,"stats":{"deviation":5.0708194272365304e-9,"mean":2.423867849940255e-7,"moe":1.0535113371820943e-9,"rme":0.43464058372986875,"sem":5.375057842765787e-10,"variance":2.5713209663639418e-17}},{"name":"Using define property (getter)","hz":1646632.5449403194,"cycles":4,"stats":{"deviation":4.829584922928987e-8,"mean":6.073000336794898e-7,"moe":1.0090775459633413e-8,"rme":1.6615799275517489,"sem":5.148354826343578e-9,"variance":2.332489052778299e-15}}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Directly in the object","opsSec":708220356.5698638,"samples":8},{"name":"Using dot notation","opsSec":710056945.3565415,"samples":6},{"name":"Using define property (writable)","opsSec":3156236.9569961936,"samples":6},{"name":"Using define property initialized (writable)","opsSec":4149693.441426524,"samples":6},{"name":"Using define property (getter)","opsSec":1660134.9350095561,"samples":4}]}-->
 
 ## Array.append (number)
 
