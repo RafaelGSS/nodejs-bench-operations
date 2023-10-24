@@ -348,21 +348,21 @@ new Array(length)|100,000,000|5,861.293ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|576,462,844|92|
-|Using optional chain (obj.field?.field2) (undefined)|590,893,865|93|
-|Using and operator (obj.field && obj.field.field2) (Valid)|585,967,533|94|
-|Using and operator (obj.field && obj.field.field2) (undefined)|590,225,593|91|
+|Using optional chain (obj.field?.field2) (Valid)|681,612,262|90|
+|Using optional chain (obj.field?.field2) (undefined)|687,800,713|89|
+|Using and operator (obj.field && obj.field.field2) (Valid)|693,196,489|91|
+|Using and operator (obj.field && obj.field.field2) (undefined)|687,311,037|89|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 13:05:42 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:01:47 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759742736816406},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":576462843.5801349,"samples":5},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":590893864.8120055,"samples":6},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":585967532.6169944,"samples":7},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":590225592.5750984,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":681612261.767552,"samples":6},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":687800713.2040915,"samples":7},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":693196488.8683201,"samples":6},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":687311037.4144589,"samples":6}]}-->
 
 ## Parsing Integer
 
