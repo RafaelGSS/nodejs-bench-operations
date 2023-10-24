@@ -692,16 +692,16 @@ new Array(length)|100,000,000|5,655.727ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().getTime()|5,565,996|86|
-|Date.now()|11,600,851|89|
+|new Date().getTime()|6,588,230|90|
+|Date.now()|12,315,744|86|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:16:56 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 18:01:25 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Date().getTime()","opsSec":5565995.727853332,"samples":7},{"name":"Date.now()","opsSec":11600850.74724363,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Date().getTime()","opsSec":6588230.298115629,"samples":5},{"name":"Date.now()","opsSec":12315744.079805996,"samples":6}]}-->
