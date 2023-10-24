@@ -56,19 +56,19 @@ new Array(length)|100,000,000|5,543.277ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|372|73|
-|Array.from|16|43|
+|new Array|385|85|
+|Array.from|15|42|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 12:30:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 15:57:33 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Array","opsSec":372.2633001277244,"samples":5},{"name":"Array.from","opsSec":15.824797440660662,"samples":1}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Array","opsSec":385.1057729052451,"samples":4},{"name":"Array.from","opsSec":15.357248245083639,"samples":1}]}-->
 
 ## Blob
 
