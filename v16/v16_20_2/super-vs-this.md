@@ -2,16 +2,16 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|130,982,473|93|
-|Using this|131,454,977|89|
+|Using super|160,214,708|86|
+|Using this|166,326,853|87|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:06:31 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:58:59 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using super","opsSec":130982473.27029684,"samples":7},{"name":"Using this","opsSec":131454977.15062356,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using super","opsSec":160214707.6742371,"samples":10},{"name":"Using this","opsSec":166326852.5438845,"samples":6}]}-->
