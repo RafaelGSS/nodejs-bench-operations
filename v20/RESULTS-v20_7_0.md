@@ -305,23 +305,23 @@ new Array(length)|100,000,000|6,459.78ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|693,393,807|91|
-|Length = 10_000 - Array.at|670,199,191|89|
-|Length = 1_000_000 - Array.at|642,338,473|90|
-|Length = 100 - Array[length - 1]|652,671,930|89|
-|Length = 10_000 - Array[length - 1]|646,593,995|89|
-|Length = 1_000_000 - Array[length - 1]|614,329,466|88|
+|Length = 100 - Array.at|708,537,754|96|
+|Length = 10_000 - Array.at|714,311,272|97|
+|Length = 1_000_000 - Array.at|714,199,233|97|
+|Length = 100 - Array[length - 1]|716,711,399|95|
+|Length = 10_000 - Array[length - 1]|716,027,784|97|
+|Length = 1_000_000 - Array[length - 1]|716,219,211|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 13:01:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 16:32:37 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":693393806.6183873,"samples":6},{"name":"Length = 10_000 - Array.at","opsSec":670199190.7562598,"samples":7},{"name":"Length = 1_000_000 - Array.at","opsSec":642338473.078916,"samples":10},{"name":"Length = 100 - Array[length - 1]","opsSec":652671930.2027539,"samples":6},{"name":"Length = 10_000 - Array[length - 1]","opsSec":646593995.4929851,"samples":9},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":614329465.6311858,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":708537753.538098,"samples":7},{"name":"Length = 10_000 - Array.at","opsSec":714311271.5303947,"samples":6},{"name":"Length = 1_000_000 - Array.at","opsSec":714199232.5182551,"samples":6},{"name":"Length = 100 - Array[length - 1]","opsSec":716711399.0179228,"samples":6},{"name":"Length = 10_000 - Array[length - 1]","opsSec":716027784.3464487,"samples":6},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":716219211.4158398,"samples":7}]}-->
 
 ## Object Creation
 
