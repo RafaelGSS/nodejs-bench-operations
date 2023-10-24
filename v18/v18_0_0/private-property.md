@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|187,191,062|79|
-|Raw usage underscore usage|161,520,519|83|
-|Manipulating private properties using #|109,485,717|85|
-|Manipulating private properties using underscore(_)|112,321,613|89|
-|Manipulating private properties using Symbol|114,904,778|88|
-|Manipulating private properties using PrivateSymbol|27,266,997|94|
+|Raw usage private field|143,601,587|81|
+|Raw usage underscore usage|152,451,777|80|
+|Manipulating private properties using #|100,368,969|81|
+|Manipulating private properties using underscore(_)|83,337,597|73|
+|Manipulating private properties using Symbol|74,203,861|80|
+|Manipulating private properties using PrivateSymbol|30,534,898|81|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 13:15:25 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:10:55 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Raw usage private field","opsSec":187191062.47787407,"samples":5},{"name":"Raw usage underscore usage","opsSec":161520518.50296986,"samples":6},{"name":"Manipulating private properties using #","opsSec":109485717.34410878,"samples":7},{"name":"Manipulating private properties using underscore(_)","opsSec":112321612.56465062,"samples":8},{"name":"Manipulating private properties using Symbol","opsSec":114904777.86385614,"samples":7},{"name":"Manipulating private properties using PrivateSymbol","opsSec":27266996.631110735,"samples":9}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Raw usage private field","opsSec":143601587.0970657,"samples":7},{"name":"Raw usage underscore usage","opsSec":152451776.97363168,"samples":8},{"name":"Manipulating private properties using #","opsSec":100368969.28946424,"samples":6},{"name":"Manipulating private properties using underscore(_)","opsSec":83337596.77733003,"samples":9},{"name":"Manipulating private properties using Symbol","opsSec":74203860.99661043,"samples":6},{"name":"Manipulating private properties using PrivateSymbol","opsSec":30534897.970669147,"samples":8}]}-->
