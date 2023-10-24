@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using + sign|591,440,523|94|
-|Using backtick (`)|592,457,409|95|
-|Using array.join|8,653,953|98|
+|Using + sign|710,269,036|96|
+|Using backtick (`)|714,985,899|98|
+|Using array.join|6,404,049|98|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 13:57:12 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:51:51 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using + sign","opsSec":591440523.191732,"samples":7},{"name":"Using backtick (`)","opsSec":592457408.6462176,"samples":7},{"name":"Using array.join","opsSec":8653952.556777244,"samples":7}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using + sign","opsSec":710269036.4908843,"samples":8},{"name":"Using backtick (`)","opsSec":714985898.995559,"samples":6},{"name":"Using array.join","opsSec":6404049.388967138,"samples":6}]}-->

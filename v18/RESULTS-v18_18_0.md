@@ -633,20 +633,20 @@ new Array(length)|100,000,000|6,464.699ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using + sign|712,560,861|97|
-|Using backtick (`)|712,472,077|98|
-|Using array.join|6,211,350|91|
+|Using + sign|591,623,470|96|
+|Using backtick (`)|591,580,615|99|
+|Using array.join|8,579,156|96|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 13:57:13 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:51:51 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using + sign","opsSec":712560860.9316577,"samples":7},{"name":"Using backtick (`)","opsSec":712472076.5780462,"samples":6},{"name":"Using array.join","opsSec":6211350.343042749,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using + sign","opsSec":591623470.2276025,"samples":10},{"name":"Using backtick (`)","opsSec":591580615.2400622,"samples":6},{"name":"Using array.join","opsSec":8579156.01465481,"samples":7}]}-->
 
 ## String searching
 
