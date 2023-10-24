@@ -222,20 +222,20 @@ new Array(length)|100,000,000|5,787.415ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|167,833|53|
-|NodeError|131,567|97|
-|NodeError Range|130,470|94|
+|Error|165,130|54|
+|NodeError|129,077|90|
+|NodeError Range|130,091|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 12:48:28 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 16:21:44 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Error","opsSec":167833.27429839707,"samples":4},{"name":"NodeError","opsSec":131567.30494815475,"samples":3},{"name":"NodeError Range","opsSec":130469.91908193224,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Error","opsSec":165129.96470282692,"samples":4},{"name":"NodeError","opsSec":129076.96850511465,"samples":3},{"name":"NodeError Range","opsSec":130090.88823008267,"samples":3}]}-->
 
 ## Function return
 
