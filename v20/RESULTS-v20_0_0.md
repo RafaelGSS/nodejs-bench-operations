@@ -671,23 +671,23 @@ new Array(length)|100,000,000|4,649.012ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|704,867,895|95|
-|Using indexof|716,661,892|93|
-|Using RegExp.test|11,175,434|87|
-|Using RegExp.text with cached regex pattern|11,816,446|96|
-|Using new RegExp.test|3,313,268|96|
-|Using new RegExp.test with cached regex pattern|4,012,640|98|
+|Using includes|718,267,436|94|
+|Using indexof|719,271,199|95|
+|Using RegExp.test|11,457,547|88|
+|Using RegExp.text with cached regex pattern|11,897,206|94|
+|Using new RegExp.test|3,306,773|99|
+|Using new RegExp.test with cached regex pattern|3,979,450|99|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:00:33 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:54:52 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using includes","opsSec":704867894.6692827,"samples":5},{"name":"Using indexof","opsSec":716661891.7412158,"samples":8},{"name":"Using RegExp.test","opsSec":11175433.734687818,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":11816446.49157919,"samples":7},{"name":"Using new RegExp.test","opsSec":3313268.2960559768,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":4012640.245081775,"samples":5}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using includes","opsSec":718267436.0675179,"samples":7},{"name":"Using indexof","opsSec":719271198.7651001,"samples":8},{"name":"Using RegExp.test","opsSec":11457546.872299096,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":11897205.51656406,"samples":4},{"name":"Using new RegExp.test","opsSec":3306773.406929525,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3979449.506485021,"samples":5}]}-->
 
 ## Super vs This
 

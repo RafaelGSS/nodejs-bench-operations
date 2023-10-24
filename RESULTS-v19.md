@@ -652,23 +652,23 @@ new Array(length)|100,000,000|5,861.293ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|715,177,729|95|
-|Using indexof|715,561,007|93|
-|Using RegExp.test|11,233,807|97|
-|Using RegExp.text with cached regex pattern|11,769,016|96|
-|Using new RegExp.test|3,025,329|98|
-|Using new RegExp.test with cached regex pattern|3,436,323|96|
+|Using includes|658,987,659|87|
+|Using indexof|647,149,598|89|
+|Using RegExp.test|10,220,896|89|
+|Using RegExp.text with cached regex pattern|11,016,059|90|
+|Using new RegExp.test|2,714,931|88|
+|Using new RegExp.test with cached regex pattern|2,993,886|91|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:00:29 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:54:59 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using includes","opsSec":715177728.5287883,"samples":6},{"name":"Using indexof","opsSec":715561007.2557237,"samples":9},{"name":"Using RegExp.test","opsSec":11233807.220113022,"samples":7},{"name":"Using RegExp.text with cached regex pattern","opsSec":11769015.727174401,"samples":5},{"name":"Using new RegExp.test","opsSec":3025328.651752171,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3436323.464339445,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using includes","opsSec":658987658.9939677,"samples":8},{"name":"Using indexof","opsSec":647149597.860574,"samples":7},{"name":"Using RegExp.test","opsSec":10220896.172745954,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":11016059.0002731,"samples":6},{"name":"Using new RegExp.test","opsSec":2714931.3332201447,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":2993886.2056882926,"samples":4}]}-->
 
 ## Super vs This
 

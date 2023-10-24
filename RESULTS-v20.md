@@ -652,23 +652,23 @@ new Array(length)|100,000,000|5,102.649ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|714,602,666|96|
-|Using indexof|716,158,200|96|
-|Using RegExp.test|12,003,624|98|
-|Using RegExp.text with cached regex pattern|12,664,094|98|
-|Using new RegExp.test|3,268,032|97|
-|Using new RegExp.test with cached regex pattern|3,956,766|94|
+|Using includes|712,971,087|90|
+|Using indexof|718,759,859|96|
+|Using RegExp.test|12,323,312|97|
+|Using RegExp.text with cached regex pattern|12,759,046|96|
+|Using new RegExp.test|3,317,757|99|
+|Using new RegExp.test with cached regex pattern|4,018,924|99|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:00:29 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:54:51 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using includes","opsSec":714602665.5474858,"samples":7},{"name":"Using indexof","opsSec":716158200.0847802,"samples":9},{"name":"Using RegExp.test","opsSec":12003623.872507334,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":12664094.004841112,"samples":5},{"name":"Using new RegExp.test","opsSec":3268031.8320975862,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3956766.3158374634,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using includes","opsSec":712971087.3715091,"samples":6},{"name":"Using indexof","opsSec":718759858.9620582,"samples":6},{"name":"Using RegExp.test","opsSec":12323312.217163512,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":12759046.390152972,"samples":5},{"name":"Using new RegExp.test","opsSec":3317756.9641114897,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":4018924.475365215,"samples":4}]}-->
 
 ## Super vs This
 

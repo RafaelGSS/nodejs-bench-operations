@@ -652,23 +652,23 @@ new Array(length)|100,000,000|6,390.596ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|712,294,410|96|
-|Using indexof|711,280,566|97|
-|Using RegExp.test|10,844,690|95|
-|Using RegExp.text with cached regex pattern|11,275,156|96|
-|Using new RegExp.test|2,982,075|97|
-|Using new RegExp.test with cached regex pattern|3,393,676|98|
+|Using includes|587,929,364|96|
+|Using indexof|588,853,129|96|
+|Using RegExp.test|8,886,683|96|
+|Using RegExp.text with cached regex pattern|9,321,506|95|
+|Using new RegExp.test|2,480,781|94|
+|Using new RegExp.test with cached regex pattern|2,846,059|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Oct 21 2023 14:00:26 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 24 2023 17:54:52 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Using includes","opsSec":712294409.5126008,"samples":7},{"name":"Using indexof","opsSec":711280565.8300632,"samples":9},{"name":"Using RegExp.test","opsSec":10844690.338203343,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":11275155.760490052,"samples":6},{"name":"Using new RegExp.test","opsSec":2982074.5957367932,"samples":8},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3393675.66014488,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using includes","opsSec":587929364.3221627,"samples":6},{"name":"Using indexof","opsSec":588853129.0441865,"samples":10},{"name":"Using RegExp.test","opsSec":8886682.790940505,"samples":8},{"name":"Using RegExp.text with cached regex pattern","opsSec":9321506.171399247,"samples":5},{"name":"Using new RegExp.test","opsSec":2480781.438291734,"samples":8},{"name":"Using new RegExp.test with cached regex pattern","opsSec":2846058.5555388876,"samples":6}]}-->
 
 ## Super vs This
 
