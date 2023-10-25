@@ -474,3 +474,32 @@ new Array(length)|100,000,000|5,732.528ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Getter (class)","opsSec":681528615.1547203,"samples":6},{"name":"Getter","opsSec":50860424.02456426,"samples":6},{"name":"Method","opsSec":697892646.2797625,"samples":7},{"name":"DefineProperty (getter)","opsSec":694959130.6038502,"samples":7},{"name":"DefineProperty (getter & enumerable=false)","opsSec":48966876.34703692,"samples":5},{"name":"DefineProperty (getter & configurable=false)","opsSec":691874497.852425,"samples":6},{"name":"DefineProperty (getter & enumerable=false & configurable=false)","opsSec":51385665.81995732,"samples":6},{"name":"DefineProperty (writable)","opsSec":724783450.393159,"samples":8},{"name":"DefineProperty (writable & enumerable=false)","opsSec":710689196.2749329,"samples":7},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":169832717.54717663,"samples":7},{"name":"DefineProperties (getter)","opsSec":30572924.06638441,"samples":4},{"name":"DefineProperties (getter & enumerable=false)","opsSec":31604200.184535675,"samples":8},{"name":"DefineProperties (getter & enumerable=false & configurable=false)","opsSec":51444590.07547817,"samples":4}]}-->
+
+## Property Setter Access
+
+|name|ops/sec|samples|
+|-|-|-|
+|Setter (class)|588,583,583|98|
+|Setter|9,191,028|97|
+|Method|589,819,628|99|
+|DefineProperty (setter)|590,079,231|96|
+|DefineProperty (setter & enumerable=false)|9,118,954|96|
+|DefineProperty (setter & configurable=false)|9,136,167|98|
+|DefineProperty (setter & enumerable=false & configurable=false)|9,093,547|98|
+|DefineProperty (writable)|591,955,307|97|
+|DefineProperty (writable & enumerable=false)|490,987,720|84|
+|DefineProperty (writable & enumerable=false & configurable=false)|83,215,810|82|
+|DefineProperties (setter)|81,793,770|86|
+|DefineProperties (setter & enumerable=false)|9,207,862|100|
+|DefineProperties (setter & enumerable=false & configurable=false)|9,060,565|100|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 04:36:48 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Setter (class)","opsSec":588583582.6824358,"samples":5},{"name":"Setter","opsSec":9191027.635076981,"samples":5},{"name":"Method","opsSec":589819627.5497978,"samples":6},{"name":"DefineProperty (setter)","opsSec":590079230.8764385,"samples":6},{"name":"DefineProperty (setter & enumerable=false)","opsSec":9118954.46546731,"samples":5},{"name":"DefineProperty (setter & configurable=false)","opsSec":9136167.059435714,"samples":6},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":9093546.90865357,"samples":5},{"name":"DefineProperty (writable)","opsSec":591955307.1771848,"samples":10},{"name":"DefineProperty (writable & enumerable=false)","opsSec":490987720.3791294,"samples":6},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":83215810.3262072,"samples":5},{"name":"DefineProperties (setter)","opsSec":81793769.55052915,"samples":6},{"name":"DefineProperties (setter & enumerable=false)","opsSec":9207861.748307897,"samples":5},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":9060565.284511006,"samples":4}]}-->
