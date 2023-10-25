@@ -133,3 +133,21 @@ new Array(length)|100,000,000|5,550.143ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":3221.438889009544,"samples":4},{"name":"crypto.verify('RSA-SHA256')","opsSec":3277.2765417832443,"samples":3}]}-->
+
+## Date toISOString
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().toISOString()|742,223|83|
+|fromUnixToISOString(new Date())|1,313,643|84|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 03:47:19 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"new Date().toISOString()","opsSec":742223.13196516,"samples":4},{"name":"fromUnixToISOString(new Date())","opsSec":1313642.6560793107,"samples":6}]}-->
