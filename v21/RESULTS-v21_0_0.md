@@ -93,3 +93,25 @@ new Array(length)|100,000,000|5,550.143ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"new Blob (128)","opsSec":3162.2462030464294,"samples":5},{"name":"new Blob (1024)","opsSec":404.72615829113164,"samples":2},{"name":"text (128)","opsSec":3040.054570621493,"samples":4},{"name":"text (1024)","opsSec":399.3013875205176,"samples":3},{"name":"arrayBuffer (128)","opsSec":3030.6571952450768,"samples":3},{"name":"arrayBuffer (1024)","opsSec":397.0467390444342,"samples":3},{"name":"slice (0, 64)","opsSec":102423.80338072422,"samples":4},{"name":"slice (0, 512)","opsSec":15155.401978842616,"samples":4}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|185,632|51|
+|[True conditional] Using constructor name|149,369|89|
+|[True conditional] Check if property is valid then instanceof |151,897|95|
+|[False conditional] Using instanceof only|713,937,667|96|
+|[False conditional] Using constructor name|711,929,813|92|
+|[False conditional] Check if property is valid then instanceof |713,203,433|93|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 03:43:10 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":185632.31600670173,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":149368.95813736125,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":151897.37872726395,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":713937667.4616102,"samples":7},{"name":"[False conditional] Using constructor name","opsSec":711929812.9790542,"samples":6},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":713203433.4026605,"samples":6}]}-->

@@ -93,3 +93,25 @@ new Array(length)|100,000,000|4,925.47ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"new Blob (128)","opsSec":3022.696298846174,"samples":3},{"name":"new Blob (1024)","opsSec":385.97523344677325,"samples":3},{"name":"text (128)","opsSec":2984.805175593328,"samples":4},{"name":"text (1024)","opsSec":391.9509868895917,"samples":2},{"name":"arrayBuffer (128)","opsSec":2945.4226779285123,"samples":3},{"name":"arrayBuffer (1024)","opsSec":392.09387057455024,"samples":4},{"name":"slice (0, 64)","opsSec":37787.86376204858,"samples":5},{"name":"slice (0, 512)","opsSec":13718.6948745658,"samples":5}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|165,945|55|
+|[True conditional] Using constructor name|129,128|94|
+|[True conditional] Check if property is valid then instanceof |129,987|93|
+|[False conditional] Using instanceof only|596,944,778|96|
+|[False conditional] Using constructor name|597,348,310|96|
+|[False conditional] Check if property is valid then instanceof |598,320,114|97|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 03:43:09 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":165944.63509854447,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":129128.1646339486,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":129987.3194858227,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":596944777.6304117,"samples":6},{"name":"[False conditional] Using constructor name","opsSec":597348310.3874255,"samples":7},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":598320113.5361209,"samples":6}]}-->
