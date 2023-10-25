@@ -322,3 +322,24 @@ new Array(length)|100,000,000|5,550.143ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759742736816406},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":392652743.85273457,"samples":6},{"name":"Length = 10_000 - Array.at","opsSec":390740726.38348716,"samples":7},{"name":"Length = 1_000_000 - Array.at","opsSec":394099877.7461991,"samples":8},{"name":"Length = 100 - Array[length - 1]","opsSec":586513847.3895895,"samples":6},{"name":"Length = 10_000 - Array[length - 1]","opsSec":585493871.6251258,"samples":8},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":586639591.0318083,"samples":7}]}-->
+
+## Object Creation
+
+|name|ops/sec|samples|
+|-|-|-|
+|Object.create(null)|47,675,931|92|
+|Object.create({})|1,359,677|76|
+|Cached Empty.prototype|706,727,669|97|
+|Empty.prototype|1,445,485|78|
+|Empty class|1,004,790|84|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 04:09:10 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Object.create(null)","opsSec":47675930.79136651,"samples":6},{"name":"Object.create({})","opsSec":1359676.9052763954,"samples":3},{"name":"Cached Empty.prototype","opsSec":706727669.0419743,"samples":7},{"name":"Empty.prototype","opsSec":1445484.8108577689,"samples":3},{"name":"Empty class","opsSec":1004789.5263879414,"samples":3}]}-->
