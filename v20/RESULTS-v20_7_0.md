@@ -423,3 +423,25 @@ new Array(length)|100,000,000|5,960.651ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Raw usage private field","opsSec":557858268.6516926,"samples":7},{"name":"Raw usage underscore usage","opsSec":566656029.8947797,"samples":6},{"name":"Manipulating private properties using #","opsSec":560553474.422821,"samples":7},{"name":"Manipulating private properties using underscore(_)","opsSec":548405650.05479,"samples":6},{"name":"Manipulating private properties using Symbol","opsSec":579262696.7071878,"samples":7},{"name":"Manipulating private properties using PrivateSymbol","opsSec":26245580.41485384,"samples":7}]}-->
+
+## Property access after shape transition
+
+|name|ops/sec|samples|
+|-|-|-|
+|Adding property after object creation - small object|5,792,586|97|
+|Adding property in the object creation - small object|5,823,614|94|
+|Adding property after the function creation - small class|190,577|81|
+|Adding property in the function creation - small class|197,572|81|
+|Adding property after the class creation - small class|159,297|76|
+|Adding property in the class creation - small class|159,355|77|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 04:27:44 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Adding property after object creation - small object","opsSec":5792586.359565447,"samples":6},{"name":"Adding property in the object creation - small object","opsSec":5823613.924233706,"samples":6},{"name":"Adding property after the function creation - small class","opsSec":190577.2552585519,"samples":4},{"name":"Adding property in the function creation - small class","opsSec":197572.45513073466,"samples":4},{"name":"Adding property after the class creation - small class","opsSec":159296.8133493271,"samples":3},{"name":"Adding property in the class creation - small class","opsSec":159354.89159198056,"samples":3}]}-->
