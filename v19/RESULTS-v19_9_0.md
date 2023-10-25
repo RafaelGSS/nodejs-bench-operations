@@ -115,3 +115,21 @@ new Array(length)|100,000,000|4,849.887ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":196998.39555315176,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":154862.58316604438,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":154593.53932479725,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":989929681.515476,"samples":6},{"name":"[False conditional] Using constructor name","opsSec":944256057.615183,"samples":6},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":983327764.0183756,"samples":6}]}-->
+
+## Crypto Verify
+
+|name|ops/sec|samples|
+|-|-|-|
+|crypto.createVerify('RSA-SHA256')|3,741|91|
+|crypto.verify('RSA-SHA256')|3,804|93|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
+* __Run:__ Wed Oct 25 2023 03:45:19 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":3740.953822777264,"samples":6},{"name":"crypto.verify('RSA-SHA256')","opsSec":3804.1872085846644,"samples":3}]}-->
