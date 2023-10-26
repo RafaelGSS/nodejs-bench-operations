@@ -11,6 +11,10 @@ on:
         type: string
         default: '["16.0.0", "16.20.2", "18.0.0", "18.16.1", "18.17.1", "18.18.2", "19.0.0", "19.9.0", "20.0.0", "20.7.0", "20.8.0", "20.9.0", "21.0.0", "21.1.0"]'
         description: 'The Node.js Versions (should be a JSON array)'
+      node-opts:
+        required: false
+        type: string
+        description: 'Flags to be used in the Node.js binary'
   workflow_call:
     inputs:
       bench-file:
@@ -20,6 +24,10 @@ on:
         required: true
         type: string
         description: 'The Node.js Versions (should be a JSON array)'
+      node-opts:
+        required: false
+        type: string
+        description: 'Flags to be used in the Node.js binary'
 
 permissions:
   issues: write
@@ -50,7 +58,7 @@ jobs:
         run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_ENV
 
       - name: Run Benchmark
-        run: node bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
+        run: node ${{ inputs.node-opts }} bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
         env:
           CI: true
 
