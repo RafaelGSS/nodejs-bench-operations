@@ -1,4 +1,4 @@
-import { mkdir, readdir, rename, rm } from 'node:fs/promises';
+import { mkdir, rename } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
 import { existAsync, rootFolder } from './utils.mjs';
 
