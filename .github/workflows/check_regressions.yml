@@ -1,0 +1,22 @@
+name: 'Check Regressions'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'v20.x'
+
+      - name: NPM Install
+        run: npm install
+
+      - name: Run Checker
+        run: node scripts/check-regression.mjs
