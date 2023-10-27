@@ -12,10 +12,7 @@ const formatJobName = name => name
 .slice(0, 100)
 
 const benchJobs = allBenches.map((benchFile, index, array) => {
-  let nodeOpts = '';
-  if (benchFile === 'async-function-vs-function.js') {
-    nodeOpts += '--max-heap-size=4000 ';
-  }
+  const nodeOpts = '';
   const jobName = formatJobName(benchFile);
 
   return `

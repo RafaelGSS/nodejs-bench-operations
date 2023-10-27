@@ -1,6 +1,4 @@
-// --max-heap-size=4000
 const { createBenchmarkSuite } = require('../common')
-const assert = require('assert')
 
 const suite = createBenchmarkSuite('async function vs function');
 
@@ -13,20 +11,26 @@ async function noop2() {
 }
 
 suite
-  .add('function', function () {
-    const a = noop();
-    assert.ok(a);
+  .add({
+    name: 'function',
+    fn: function () {
+      noop();
+    },
+    defer: false,
   })
-  .add('[async] - function', async function () {
-    const a = noop();
-    assert.ok(a);
+  .add({
+    name: '[async] async function',
+    fn: function (deferred) {
+      noop2().then(() => deferred.resolve());
+    },
+    defer: true,
   })
-  .add('[async] - await function', async function () {
-    const a = await noop();
-    assert.ok(a);
+  .add({
+    name: '[async] function',
+    fn: function (deferred) {
+      noop();
+      deferred.resolve();
+    },
+    defer: true,
   })
-  .add('[async] - await async function', async function () {
-    const a = await noop2();
-    assert.ok(a);
-  })
-  .run({ async: false })
+  .run({ async: false });
