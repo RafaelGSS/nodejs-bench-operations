@@ -1,8 +1,6 @@
 import fs from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-const versions = ['v18', 'v20', 'v21'];
-
 async function parseMD(path) {
   const content = await fs.readFile(path, 'utf-8');
   const strData = content.match(/<!--([\s\S]*?)-->/);
@@ -32,9 +30,14 @@ async function checkRegression(aResult, bResult) {
     //   console.warn(`${bench} does have the same environment in ${a.name} and ${b.name}`);
     //   continue;
     // }
-    if (aResult[bench] === null || bResult[bench] === null) {
+    if (aResult[bench] == null || bResult[bench] == null) {
       console.warn(`Skipping ${bench} - no benchmark data`)
       continue;
+    }
+
+    if (!aResult[bench].benchmarks || !bResult[bench].benchmarks) {
+      console.warn(`No benchmarks field for ${bench}`);
+      throw new Error('Unexpected behavior');
     }
 
     const aBench = aResult[bench].benchmarks;
@@ -70,11 +73,19 @@ async function checkRegression(aResult, bResult) {
   }
 }
 
-async function main (versions) {
+async function main (versions, majorOnly) {
+  let previous;
+  let previousName;
+
   for (const version of versions) {
-    const dir = (await fs.readdir(version, { withFileTypes: true })).sort();
-    let previous;
-    let previousName;
+    let dir = (await fs.readdir(version, { withFileTypes: true })).sort();
+    if (majorOnly) {
+      dir = [dir.at(-1)];
+    } else {
+      // do not compare vN with vN+1
+      previous = undefined;
+      previousName = undefined;
+    }
     for await (const dirent of dir) {
       if (dirent.isDirectory()) {
         const content = await readResult(resolve(dirent.path, dirent.name));
@@ -93,4 +104,6 @@ async function main (versions) {
   }
 }
 
-main(versions)
+let majorOnly = process.env.MAJOR_ONLY || false;
+let versions = process.env.VERSIONS ? process.env.VERSIONS.split(',') : ['v18', 'v20', 'v21'];
+main(versions, majorOnly);

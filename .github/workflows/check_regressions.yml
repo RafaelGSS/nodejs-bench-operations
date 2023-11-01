@@ -2,7 +2,17 @@ name: 'Check Regressions'
 
 on:
   workflow_dispatch:
-
+    inputs:
+      versions:
+        required: true
+        type: string
+        default: 'v18,v20,v21'
+        description: 'The Node.js Versions (the folder must exist)'
+      major-only:
+        required: true
+        type: boolean
+        default: false
+        description: 'Flag to check regression only between major versions'
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -19,4 +29,7 @@ jobs:
         run: npm install
 
       - name: Run Checker
+        env:
+          MAJOR_ONLY: ${{ inputs.major-only }}
+          VERSIONS: ${{ inputs.versions }}
         run: node scripts/check-regression.mjs
