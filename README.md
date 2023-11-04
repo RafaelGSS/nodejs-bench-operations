@@ -11,15 +11,15 @@ All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 
 - [v16](./RESULTS-v16.md)
 - [v18](./RESULTS-v18.md)
-- [v19](./RESULTS-v19.md)
 - [v20](./RESULTS-v20.md)
+- [v21](./RESULTS-v21.md)
 
 It also stores the last 3 versions of each active release line. You can check it inside its respective folder:
 
 - [v16](./v16)
 - [v18](./v18)
-- [v19](./v19)
 - [v20](./v20)
+- [v21](./v21)
 
 This is useful to identify regressions in minor/patch versions.
 
