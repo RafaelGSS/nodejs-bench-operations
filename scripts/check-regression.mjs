@@ -63,13 +63,13 @@ async function checkRegression(aResult, bResult) {
         // arbitrary threshold
         const threshold = aOpsSec - (aOpsSec * 0.20);
         if (bOpsSec < threshold) {
-          console.warn(`📉 - ${bench}#${aBenchResult.name} | ${percent}%`);
+          console.warn(`😱 - ${bench}#${aBenchResult.name} | ${percent}%`);
         }
       } else {
         // arbitrary threshold
         const threshold = aOpsSec + (aOpsSec * 0.20);
         if (bOpsSec > threshold) {
-          console.warn(`📈 - ${bench}#${aBenchResult.name} | ${percent}%`);
+          console.warn(`😁 - ${bench}#${aBenchResult.name} | ${percent}%`);
         }
       }
     }
