@@ -23,9 +23,15 @@ It also stores the last 3 versions of each active release line. You can check it
 
 This is useful to identify regressions in minor/patch versions.
 
+## Regression Checker
+
+This repository contains an action to automatically identify regressions and improvements based on a 20% change - up or down
+
+See: [check-regressions.yml](https://github.com/RafaelGSS/nodejs-bench-operations/actions/workflows/check_regressions.yml)
+
 ## Affiliates
 
-Some projects have done some perfomance comparison on a dedicated topic.  
+Some projects have done some perfomance comparison on a dedicated topic.
 Here is a usuful list:
 
 - [Loops](https://github.com/simone-sanfratello/node-bench-iteration)
