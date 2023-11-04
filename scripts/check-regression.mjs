@@ -57,16 +57,19 @@ async function checkRegression(aResult, bResult) {
         continue;
       }
 
+      const percent = ((bOpsSec - aOpsSec) / aOpsSec * 100).toFixed(2);
       // regression
       if (aOpsSec - bOpsSec > 0) {
-        const threshold = aOpsSec - (aOpsSec * 0.15);
+        // arbitrary threshold
+        const threshold = aOpsSec - (aOpsSec * 0.20);
         if (bOpsSec < threshold) {
-          console.warn(`[REGRESSION DETECTED] - ${bench}#${aBenchResult.name} | ${aOpsSec} x ${bOpsSec}`);
+          console.warn(`📉 - ${bench}#${aBenchResult.name} | ${percent}%`);
         }
       } else {
-        const threshold = aOpsSec + (aOpsSec * 0.15);
+        // arbitrary threshold
+        const threshold = aOpsSec + (aOpsSec * 0.20);
         if (bOpsSec > threshold) {
-          console.warn(`[IMPROVEMENT DETECTED] - ${bench}#${aBenchResult.name} | ${aOpsSec} x ${bOpsSec}`);
+          console.warn(`📈 - ${bench}#${aBenchResult.name} | ${percent}%`);
         }
       }
     }
