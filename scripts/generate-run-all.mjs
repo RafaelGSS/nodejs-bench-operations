@@ -12,7 +12,6 @@ const formatJobName = name => name
 .slice(0, 100)
 
 const benchJobs = allBenches.map((benchFile, index, array) => {
-  const nodeOpts = '';
   const jobName = formatJobName(benchFile);
 
   return `
@@ -21,7 +20,6 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
     name: Running "${benchFile}"
     uses: ./.github/workflows/bench.yml
     with:
-      node-opts: ${nodeOpts}
       bench-file: ${benchFile}
       node-versions: \${{ inputs.node-versions }}
 `;
@@ -37,7 +35,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '[16.0.0, 16.18.1, 16.19.0, 16.20.2, 18.0.0, 18.16.1, 18.17.1, 18.18.0, 20.0.0, 20.6.0, 20.7.0, 20.8.0, 21.0.0, 21.1.0]'
+        default: '["16.0.0", "16.18.1", "16.19.0", "16.20.2", "18.0.0", "18.16.1", "18.17.1", "18.18.0", "20.0.0", "20.6.0", "20.7.0", "20.8.0", "21.0.0", "21.1.0"]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
