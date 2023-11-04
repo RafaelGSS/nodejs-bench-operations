@@ -1,4 +1,5 @@
 
+# Auto Generated YAML please don't change
 name: 'Run All'
 
 on:
@@ -7,7 +8,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["16.0.0", "16.20.2", "18.0.0", "18.16.1", "18.17.1", "18.18.2", "19.0.0", "19.9.0", "20.0.0", "20.7.0", "20.8.0", "20.9.0", "21.0.0", "21.1.0"]'
+        default: '[16.0.0, 16.18.1, 16.19.0, 16.20.2, 18.0.0, 18.16.1, 18.17.1, 18.18.0, 20.0.0, 20.6.0, 20.7.0, 20.8.0, 21.0.0, 21.1.0]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
@@ -21,6 +22,7 @@ jobs:
     name: Running "add-property.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: add-property.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -29,6 +31,7 @@ jobs:
     name: Running "array-append.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: array-append.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -37,14 +40,25 @@ jobs:
     name: Running "array-creation.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: array-creation.js
       node-versions: ${{ inputs.node-versions }}
 
-  blob:
+  async-function-vs-function:
     needs: array-creation
+    name: Running "async-function-vs-function.js"
+    uses: ./.github/workflows/bench.yml
+    with:
+      node-opts: 
+      bench-file: async-function-vs-function.js
+      node-versions: ${{ inputs.node-versions }}
+
+  blob:
+    needs: async-function-vs-function
     name: Running "blob.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: blob.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -53,6 +67,7 @@ jobs:
     name: Running "compare-using-instanceof.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: compare-using-instanceof.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -61,6 +76,7 @@ jobs:
     name: Running "crypto-verify.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: crypto-verify.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -69,6 +85,7 @@ jobs:
     name: Running "date-format-iso.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: date-format-iso.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -77,6 +94,7 @@ jobs:
     name: Running "date-format.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: date-format.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -85,6 +103,7 @@ jobs:
     name: Running "date-string-coersion.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: date-string-coersion.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -93,6 +112,7 @@ jobs:
     name: Running "deleting-properties.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: deleting-properties.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -101,6 +121,7 @@ jobs:
     name: Running "error.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: error.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -109,6 +130,7 @@ jobs:
     name: Running "function-return.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: function-return.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -117,6 +139,7 @@ jobs:
     name: Running "includes-vs-raw-comparison.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: includes-vs-raw-comparison.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -125,6 +148,7 @@ jobs:
     name: Running "keys-vs-getownpropertynames.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: keys-vs-getownpropertynames.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -133,6 +157,7 @@ jobs:
     name: Running "last-array-item.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: last-array-item.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -141,6 +166,7 @@ jobs:
     name: Running "object-creation.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: object-creation.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -149,6 +175,7 @@ jobs:
     name: Running "optional-chain-vs-and-operator.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: optional-chain-vs-and-operator.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -157,6 +184,7 @@ jobs:
     name: Running "parse-int.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: parse-int.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -165,6 +193,7 @@ jobs:
     name: Running "possible-undefined-function.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: possible-undefined-function.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -173,6 +202,7 @@ jobs:
     name: Running "private-property.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: private-property.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -181,6 +211,7 @@ jobs:
     name: Running "property-access-transition.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: property-access-transition.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -189,6 +220,7 @@ jobs:
     name: Running "property-getter-access.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: property-getter-access.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -197,6 +229,7 @@ jobs:
     name: Running "property-setter-access.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: property-setter-access.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -205,6 +238,7 @@ jobs:
     name: Running "replace-vs-replaceall-comparison.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: replace-vs-replaceall-comparison.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -213,6 +247,7 @@ jobs:
     name: Running "shallow-copy.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: shallow-copy.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -221,6 +256,7 @@ jobs:
     name: Running "sort-map.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: sort-map.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -229,6 +265,7 @@ jobs:
     name: Running "spread-vs-object-assign.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: spread-vs-object-assign.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -237,6 +274,7 @@ jobs:
     name: Running "stream-readable.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: stream-readable.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -245,6 +283,7 @@ jobs:
     name: Running "stream-writable.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: stream-writable.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -253,6 +292,7 @@ jobs:
     name: Running "string-concat.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: string-concat.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -261,6 +301,7 @@ jobs:
     name: Running "string-searching.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: string-searching.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -269,6 +310,7 @@ jobs:
     name: Running "super-vs-this.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: super-vs-this.js
       node-versions: ${{ inputs.node-versions }}
 
@@ -277,6 +319,7 @@ jobs:
     name: Running "unix-time.js"
     uses: ./.github/workflows/bench.yml
     with:
+      node-opts: 
       bench-file: unix-time.js
       node-versions: ${{ inputs.node-versions }}
 
