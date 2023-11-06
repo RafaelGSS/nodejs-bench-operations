@@ -112,3 +112,25 @@ new Array(length)|100,000,000|4,569.798ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Blob (128)","opsSec":4380.250352935759,"samples":3},{"name":"new Blob (1024)","opsSec":555.8047846678493,"samples":2},{"name":"text (128)","opsSec":40723.27285400267,"samples":4},{"name":"text (1024)","opsSec":26042.085884365824,"samples":4},{"name":"arrayBuffer (128)","opsSec":50673.158182317595,"samples":4},{"name":"arrayBuffer (1024)","opsSec":30144.618345180505,"samples":4},{"name":"slice (0, 64)","opsSec":88719.94394699612,"samples":3},{"name":"slice (0, 512)","opsSec":45074.76460710991,"samples":3}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|236,688|53|
+|[True conditional] Using constructor name|183,579|94|
+|[True conditional] Check if property is valid then instanceof |186,479|97|
+|[False conditional] Using instanceof only|847,060,070|100|
+|[False conditional] Using constructor name|845,702,523|98|
+|[False conditional] Check if property is valid then instanceof |847,710,499|97|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Nov 06 2023 15:35:01 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":236687.78199815727,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":183579.48473759982,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":186479.1872003973,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":847060069.7962646,"samples":6},{"name":"[False conditional] Using constructor name","opsSec":845702522.7899752,"samples":6},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":847710498.9695412,"samples":6}]}-->
