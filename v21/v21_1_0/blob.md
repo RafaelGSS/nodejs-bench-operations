@@ -2,22 +2,22 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|5,497|94|
-|new Blob (1024)|685|77|
-|text (128)|5,869|86|
-|text (1024)|750|89|
-|arrayBuffer (128)|5,882|88|
-|arrayBuffer (1024)|748|87|
-|slice (0, 64)|199,445|56|
-|slice (0, 512)|24,811|54|
+|new Blob (128)|4,812|87|
+|new Blob (1024)|587|73|
+|text (128)|4,936|85|
+|text (1024)|617|87|
+|arrayBuffer (128)|4,923|87|
+|arrayBuffer (1024)|615|87|
+|slice (0, 64)|168,177|57|
+|slice (0, 512)|29,925|64|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sat Nov 04 2023 16:06:28 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Nov 06 2023 15:33:03 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606914520263672},"benchmarks":[{"name":"new Blob (128)","opsSec":5497.432550594937,"samples":4},{"name":"new Blob (1024)","opsSec":684.9151095843624,"samples":2},{"name":"text (128)","opsSec":5868.597805609598,"samples":4},{"name":"text (1024)","opsSec":749.8718519558171,"samples":2},{"name":"arrayBuffer (128)","opsSec":5881.785178289786,"samples":4},{"name":"arrayBuffer (1024)","opsSec":748.1073239410351,"samples":2},{"name":"slice (0, 64)","opsSec":199444.78399374164,"samples":4},{"name":"slice (0, 512)","opsSec":24811.368970799474,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Blob (128)","opsSec":4812.253534016254,"samples":8},{"name":"new Blob (1024)","opsSec":587.1688912737525,"samples":2},{"name":"text (128)","opsSec":4935.913853951404,"samples":5},{"name":"text (1024)","opsSec":617.148106964497,"samples":3},{"name":"arrayBuffer (128)","opsSec":4923.386108099483,"samples":4},{"name":"arrayBuffer (1024)","opsSec":615.0943467541347,"samples":2},{"name":"slice (0, 64)","opsSec":168177.28475880792,"samples":4},{"name":"slice (0, 512)","opsSec":29925.30912774519,"samples":3}]}-->
