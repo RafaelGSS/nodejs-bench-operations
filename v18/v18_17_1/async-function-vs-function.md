@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|function|671,296,410|90|
-|[async] async function|10,710,921|85|
-|[async] function|254,131|29|
+|function|845,338,623|96|
+|[async] async function|17,366,758|90|
+|[async] function|351,783|27|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Fri Oct 27 2023 00:23:22 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Nov 06 2023 15:15:12 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759742736816406},"benchmarks":[{"name":"function","opsSec":671296410.243675,"samples":8},{"name":"[async] async function","opsSec":10710920.82085785,"samples":7},{"name":"[async] function","opsSec":254131.12872098587,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"function","opsSec":845338623.0454707,"samples":6},{"name":"[async] async function","opsSec":17366757.867480263,"samples":7},{"name":"[async] function","opsSec":351783.0918022088,"samples":3}]}-->
