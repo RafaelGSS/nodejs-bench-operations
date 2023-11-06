@@ -19,6 +19,39 @@
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Directly in the object","opsSec":846637246.0334784,"samples":9},{"name":"Using dot notation","opsSec":845459598.1746011,"samples":5},{"name":"Using define property (writable)","opsSec":4459835.9063445525,"samples":5},{"name":"Using define property initialized (writable)","opsSec":5626913.739952738,"samples":4},{"name":"Using define property (getter)","opsSec":2193984.125529026,"samples":6}]}-->
 
+## Array.append (number)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.008ms
+new Array(length)|10|0.002ms
+array.push|100|0.068ms
+new Array(length)|100|0.007ms
+array.push|1,000|0.032ms
+new Array(length)|1,000|0.016ms
+array.push|10,000|0.284ms
+new Array(length)|10,000|0.152ms
+array.push|1,000,000|32.281ms
+new Array(length)|1,000,000|6.217ms
+array.push|100,000,000|1,847.85ms
+new Array(length)|100,000,000|4,113.021ms
+## Array.append (string)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.008ms
+new Array(length)|10|0.017ms
+array.push|100|0.048ms
+new Array(length)|100|0.009ms
+array.push|1,000|0.034ms
+new Array(length)|1,000|0.019ms
+array.push|10,000|0.423ms
+new Array(length)|10,000|3.263ms
+array.push|1,000,000|263.149ms
+new Array(length)|1,000,000|4.863ms
+array.push|100,000,000|2,236.126ms
+new Array(length)|100,000,000|4,569.798ms
+
 ## async function vs function
 
 |name|ops/sec|samples|
