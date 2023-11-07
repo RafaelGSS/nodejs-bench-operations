@@ -2,16 +2,16 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Writable writing 1e3 * "some data"|4,084|85|
-|streams.web.WritableStream writing 1e3 * "some data"|707|60|
+|streams.Writable writing 1e3 * "some data"|6,632|94|
+|streams.web.WritableStream writing 1e3 * "some data"|1,047|42|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 05:00:24 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 23:36:05 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":4083.909895584747,"samples":5},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":706.525042440654,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":6631.77076987607,"samples":4},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":1047.2931859367748,"samples":4}]}-->
