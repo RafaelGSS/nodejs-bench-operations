@@ -4,29 +4,29 @@
 |-|-|-|
 array.push|10|0.013ms
 new Array(length)|10|0.002ms
-array.push|100|0.024ms
-new Array(length)|100|0.008ms
-array.push|1,000|0.046ms
-new Array(length)|1,000|0.025ms
-array.push|10,000|0.306ms
-new Array(length)|10,000|0.32ms
-array.push|1,000,000|31.788ms
-new Array(length)|1,000,000|6.789ms
-array.push|100,000,000|1,810.665ms
-new Array(length)|100,000,000|4,390.875ms
+array.push|100|0.023ms
+new Array(length)|100|0.007ms
+array.push|1,000|0.047ms
+new Array(length)|1,000|0.026ms
+array.push|10,000|0.311ms
+new Array(length)|10,000|0.322ms
+array.push|1,000,000|30.6ms
+new Array(length)|1,000,000|7.318ms
+array.push|100,000,000|1,745.578ms
+new Array(length)|100,000,000|4,219.819ms
 ## Array.append (string)
 
 |type|amount|time elapsed|
 |-|-|-|
-array.push|10|0.008ms
-new Array(length)|10|0.017ms
-array.push|100|0.012ms
-new Array(length)|100|0.009ms
-array.push|1,000|0.032ms
+array.push|10|0.009ms
+new Array(length)|10|0.016ms
+array.push|100|0.013ms
+new Array(length)|100|0.01ms
+array.push|1,000|0.03ms
 new Array(length)|1,000|0.013ms
-array.push|10,000|0.233ms
-new Array(length)|10,000|0.238ms
-array.push|1,000,000|22.788ms
-new Array(length)|1,000,000|4.396ms
-array.push|100,000,000|2,513.769ms
-new Array(length)|100,000,000|4,086.067ms
+array.push|10,000|0.227ms
+new Array(length)|10,000|0.237ms
+array.push|1,000,000|22.495ms
+new Array(length)|1,000,000|4.151ms
+array.push|100,000,000|2,491.633ms
+new Array(length)|100,000,000|3,916.569ms
