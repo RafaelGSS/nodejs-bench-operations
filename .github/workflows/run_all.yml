@@ -21,7 +21,6 @@ jobs:
     
     name: Running "add-property.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: add-property.js
       node-versions: ${{ inputs.node-versions }}
@@ -30,7 +29,6 @@ jobs:
     needs: add-property
     name: Running "array-append.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: array-append.js
       node-versions: ${{ inputs.node-versions }}
@@ -39,7 +37,6 @@ jobs:
     needs: array-append
     name: Running "array-creation.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: array-creation.js
       node-versions: ${{ inputs.node-versions }}
@@ -48,7 +45,6 @@ jobs:
     needs: array-creation
     name: Running "async-function-vs-function.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: async-function-vs-function.js
       node-versions: ${{ inputs.node-versions }}
@@ -57,7 +53,6 @@ jobs:
     needs: async-function-vs-function
     name: Running "blob.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: blob.js
       node-versions: ${{ inputs.node-versions }}
@@ -66,7 +61,6 @@ jobs:
     needs: blob
     name: Running "compare-using-instanceof.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: compare-using-instanceof.js
       node-versions: ${{ inputs.node-versions }}
@@ -75,7 +69,6 @@ jobs:
     needs: compare-using-instanceof
     name: Running "crypto-verify.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: crypto-verify.js
       node-versions: ${{ inputs.node-versions }}
@@ -84,7 +77,6 @@ jobs:
     needs: crypto-verify
     name: Running "date-format-iso.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: date-format-iso.js
       node-versions: ${{ inputs.node-versions }}
@@ -93,7 +85,6 @@ jobs:
     needs: date-format-iso
     name: Running "date-format.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: date-format.js
       node-versions: ${{ inputs.node-versions }}
@@ -102,7 +93,6 @@ jobs:
     needs: date-format
     name: Running "date-string-coersion.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: date-string-coersion.js
       node-versions: ${{ inputs.node-versions }}
@@ -111,7 +101,6 @@ jobs:
     needs: date-string-coersion
     name: Running "deleting-properties.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: deleting-properties.js
       node-versions: ${{ inputs.node-versions }}
@@ -120,7 +109,6 @@ jobs:
     needs: deleting-properties
     name: Running "error.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: error.js
       node-versions: ${{ inputs.node-versions }}
@@ -129,7 +117,6 @@ jobs:
     needs: error
     name: Running "function-return.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: function-return.js
       node-versions: ${{ inputs.node-versions }}
@@ -138,7 +125,6 @@ jobs:
     needs: function-return
     name: Running "includes-vs-raw-comparison.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: includes-vs-raw-comparison.js
       node-versions: ${{ inputs.node-versions }}
@@ -147,7 +133,6 @@ jobs:
     needs: includes-vs-raw-comparison
     name: Running "keys-vs-getownpropertynames.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: keys-vs-getownpropertynames.js
       node-versions: ${{ inputs.node-versions }}
@@ -156,7 +141,6 @@ jobs:
     needs: keys-vs-getownpropertynames
     name: Running "last-array-item.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: last-array-item.js
       node-versions: ${{ inputs.node-versions }}
@@ -165,7 +149,6 @@ jobs:
     needs: last-array-item
     name: Running "object-creation.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: object-creation.js
       node-versions: ${{ inputs.node-versions }}
@@ -174,7 +157,6 @@ jobs:
     needs: object-creation
     name: Running "optional-chain-vs-and-operator.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: optional-chain-vs-and-operator.js
       node-versions: ${{ inputs.node-versions }}
@@ -183,7 +165,6 @@ jobs:
     needs: optional-chain-vs-and-operator
     name: Running "parse-int.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: parse-int.js
       node-versions: ${{ inputs.node-versions }}
@@ -192,7 +173,6 @@ jobs:
     needs: parse-int
     name: Running "possible-undefined-function.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: possible-undefined-function.js
       node-versions: ${{ inputs.node-versions }}
@@ -201,7 +181,6 @@ jobs:
     needs: possible-undefined-function
     name: Running "private-property.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: private-property.js
       node-versions: ${{ inputs.node-versions }}
@@ -210,7 +189,6 @@ jobs:
     needs: private-property
     name: Running "property-access-transition.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: property-access-transition.js
       node-versions: ${{ inputs.node-versions }}
@@ -219,7 +197,6 @@ jobs:
     needs: property-access-transition
     name: Running "property-getter-access.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: property-getter-access.js
       node-versions: ${{ inputs.node-versions }}
@@ -228,7 +205,6 @@ jobs:
     needs: property-getter-access
     name: Running "property-setter-access.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: property-setter-access.js
       node-versions: ${{ inputs.node-versions }}
@@ -237,7 +213,6 @@ jobs:
     needs: property-setter-access
     name: Running "replace-vs-replaceall-comparison.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: replace-vs-replaceall-comparison.js
       node-versions: ${{ inputs.node-versions }}
@@ -246,7 +221,6 @@ jobs:
     needs: replace-vs-replaceall-comparison
     name: Running "shallow-copy.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: shallow-copy.js
       node-versions: ${{ inputs.node-versions }}
@@ -255,7 +229,6 @@ jobs:
     needs: shallow-copy
     name: Running "sort-map.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: sort-map.js
       node-versions: ${{ inputs.node-versions }}
@@ -264,7 +237,6 @@ jobs:
     needs: sort-map
     name: Running "spread-vs-object-assign.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: spread-vs-object-assign.js
       node-versions: ${{ inputs.node-versions }}
@@ -273,7 +245,6 @@ jobs:
     needs: spread-vs-object-assign
     name: Running "stream-readable.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: stream-readable.js
       node-versions: ${{ inputs.node-versions }}
@@ -282,7 +253,6 @@ jobs:
     needs: stream-readable
     name: Running "stream-writable.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: stream-writable.js
       node-versions: ${{ inputs.node-versions }}
@@ -291,7 +261,6 @@ jobs:
     needs: stream-writable
     name: Running "string-concat.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: string-concat.js
       node-versions: ${{ inputs.node-versions }}
@@ -300,7 +269,6 @@ jobs:
     needs: string-concat
     name: Running "string-searching.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: string-searching.js
       node-versions: ${{ inputs.node-versions }}
@@ -309,7 +277,6 @@ jobs:
     needs: string-searching
     name: Running "super-vs-this.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: super-vs-this.js
       node-versions: ${{ inputs.node-versions }}
@@ -318,7 +285,6 @@ jobs:
     needs: super-vs-this
     name: Running "unix-time.js"
     uses: ./.github/workflows/bench.yml
-    continue-on-error: true
     with:
       bench-file: unix-time.js
       node-versions: ${{ inputs.node-versions }}
