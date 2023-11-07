@@ -93,25 +93,25 @@ new Array(length)|100,000,000|3,896.643ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|4,426|83|
-|new Blob (1024)|561|75|
-|text (128)|4,790|83|
-|text (1024)|607|86|
-|arrayBuffer (128)|4,813|82|
-|arrayBuffer (1024)|608|86|
-|slice (0, 64)|68,215|68|
-|slice (0, 512)|19,164|62|
+|new Blob (128)|4,550|83|
+|new Blob (1024)|585|76|
+|text (128)|4,961|85|
+|text (1024)|627|87|
+|arrayBuffer (128)|5,009|86|
+|arrayBuffer (1024)|627|87|
+|slice (0, 64)|70,370|69|
+|slice (0, 512)|20,974|69|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Nov 06 2023 15:28:13 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Nov 07 2023 18:30:11 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Blob (128)","opsSec":4426.1326495393305,"samples":5},{"name":"new Blob (1024)","opsSec":561.1137523796411,"samples":2},{"name":"text (128)","opsSec":4790.207295795042,"samples":5},{"name":"text (1024)","opsSec":607.4332998245562,"samples":4},{"name":"arrayBuffer (128)","opsSec":4813.395019995601,"samples":3},{"name":"arrayBuffer (1024)","opsSec":608.2203283107427,"samples":3},{"name":"slice (0, 64)","opsSec":68214.66766216386,"samples":3},{"name":"slice (0, 512)","opsSec":19163.681648935875,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Blob (128)","opsSec":4549.537132052786,"samples":4},{"name":"new Blob (1024)","opsSec":584.6879144015662,"samples":2},{"name":"text (128)","opsSec":4960.855318794562,"samples":5},{"name":"text (1024)","opsSec":627.2874948708021,"samples":3},{"name":"arrayBuffer (128)","opsSec":5009.469243547625,"samples":4},{"name":"arrayBuffer (1024)","opsSec":626.7600184341482,"samples":2},{"name":"slice (0, 64)","opsSec":70370.39851800003,"samples":4},{"name":"slice (0, 512)","opsSec":20973.903710032257,"samples":5}]}-->
 
 ## Comparison using `instanceof`
 
