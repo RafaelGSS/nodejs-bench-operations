@@ -194,3 +194,23 @@ new Array(length)|100,000,000|4,190.618ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":18768.73360648624,"samples":4},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":17370.261345471903,"samples":5},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":17766.754776808455,"samples":5},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":21248.149297243348,"samples":4},{"name":"Reusing Intl.DateTimeFormat()","opsSec":691638.8036586964,"samples":5},{"name":"Date.toLocaleDateString()","opsSec":721377.2015299452,"samples":6},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":18621.65685825323,"samples":4},{"name":"Format using date.get*","opsSec":0,"samples":0}]}-->
+
+## Date String coersion
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using String()|1,004,621|98|
+|Using brackets {}|1,020,170|98|
+|Using '' + |1,013,010|91|
+|Using date.toString()|1,102,332|95|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 19:26:01 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using String()","opsSec":1004621.2172862835,"samples":6},{"name":"Using brackets {}","opsSec":1020169.9430967006,"samples":6},{"name":"Using '' + ","opsSec":1013009.9543819001,"samples":6},{"name":"Using date.toString()","opsSec":1102332.4309854454,"samples":7}]}-->

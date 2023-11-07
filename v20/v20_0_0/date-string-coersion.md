@@ -2,18 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|633,410|86|
-|Using brackets {}|654,729|87|
-|Using '' + |654,443|90|
-|Using date.toString()|718,794|86|
+|Using String()|1,090,838|99|
+|Using brackets {}|1,093,699|99|
+|Using '' + |1,080,938|97|
+|Using date.toString()|1,202,522|100|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 03:51:56 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 19:25:23 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using String()","opsSec":633409.991499142,"samples":4},{"name":"Using brackets {}","opsSec":654729.0446645044,"samples":5},{"name":"Using '' + ","opsSec":654442.8666460891,"samples":5},{"name":"Using date.toString()","opsSec":718793.6284471028,"samples":5}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using String()","opsSec":1090838.35088016,"samples":4},{"name":"Using brackets {}","opsSec":1093698.6763126089,"samples":6},{"name":"Using '' + ","opsSec":1080937.6187137724,"samples":6},{"name":"Using date.toString()","opsSec":1202522.4100635007,"samples":5}]}-->
