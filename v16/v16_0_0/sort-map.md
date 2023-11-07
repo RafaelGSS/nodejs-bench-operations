@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|171,898|93|
-|Sort using first char|784,853|93|
-|Sort using localeCompare|417,707|99|
+|Sort using default|261,939|98|
+|Sort using first char|1,307,054|99|
+|Sort using localeCompare|632,272|94|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 04:47:15 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 17:39:19 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759746551513672},"benchmarks":[{"name":"Sort using default","opsSec":171897.8144577827,"samples":5},{"name":"Sort using first char","opsSec":784853.2573346342,"samples":6},{"name":"Sort using localeCompare","opsSec":417707.32200125844,"samples":7}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Sort using default","opsSec":261938.52264207834,"samples":4},{"name":"Sort using first char","opsSec":1307054.282468753,"samples":5},{"name":"Sort using localeCompare","opsSec":632272.4055116839,"samples":5}]}-->
