@@ -407,19 +407,19 @@ new Array(length)|100,000,000|4,141.973ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|461,779|74|
-|Using ? operator to avoid rejection|517,157|81|
+|Using if to check function existence|751,840|81|
+|Using ? operator to avoid rejection|798,581|88|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 04:19:38 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 21:16:50 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using if to check function existence","opsSec":461779.20655339916,"samples":3},{"name":"Using ? operator to avoid rejection","opsSec":517156.6372046946,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using if to check function existence","opsSec":751840.0495854152,"samples":3},{"name":"Using ? operator to avoid rejection","opsSec":798581.4552474017,"samples":3}]}-->
 
 ## Private Property
 

@@ -2,16 +2,16 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|662,286|72|
-|Using ? operator to avoid rejection|764,560|80|
+|Using if to check function existence|1,207,038|80|
+|Using ? operator to avoid rejection|1,257,396|87|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 04:19:39 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 21:19:49 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using if to check function existence","opsSec":662285.6632279755,"samples":4},{"name":"Using ? operator to avoid rejection","opsSec":764559.7067718015,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using if to check function existence","opsSec":1207038.4163627264,"samples":4},{"name":"Using ? operator to avoid rejection","opsSec":1257396.158297296,"samples":3}]}-->
