@@ -139,19 +139,19 @@ new Array(length)|100,000,000|4,291.234ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|crypto.createVerify('RSA-SHA256')|6,362|92|
-|crypto.verify('RSA-SHA256')|6,396|94|
+|crypto.createVerify('RSA-SHA256')|6,787|96|
+|crypto.verify('RSA-SHA256')|6,782|96|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sat Nov 04 2023 16:09:10 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 18:54:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606914520263672},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":6362.224767048198,"samples":4},{"name":"crypto.verify('RSA-SHA256')","opsSec":6395.824028153965,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":6786.901188884431,"samples":5},{"name":"crypto.verify('RSA-SHA256')","opsSec":6781.681121977067,"samples":4}]}-->
 
 ## Date toISOString
 
