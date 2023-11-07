@@ -117,20 +117,20 @@ new Array(length)|100,000,000|3,952.21ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|227,819|52|
-|[True conditional] Using constructor name|181,006|98|
-|[True conditional] Check if property is valid then instanceof |181,013|95|
-|[False conditional] Using instanceof only|852,291,754|99|
-|[False conditional] Using constructor name|851,637,891|99|
-|[False conditional] Check if property is valid then instanceof |852,657,143|99|
+|[True conditional] Using instanceof only|231,486|52|
+|[True conditional] Using constructor name|179,888|94|
+|[True conditional] Check if property is valid then instanceof |181,847|98|
+|[False conditional] Using instanceof only|855,309,809|98|
+|[False conditional] Using constructor name|855,297,195|97|
+|[False conditional] Check if property is valid then instanceof |855,853,707|99|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Nov 06 2023 15:41:58 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Nov 07 2023 18:41:58 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":227818.89604480373,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":181005.66005299587,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":181013.3968355075,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":852291754.0837125,"samples":6},{"name":"[False conditional] Using constructor name","opsSec":851637890.7073481,"samples":7},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":852657142.5204705,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":231485.78453562036,"samples":3},{"name":"[True conditional] Using constructor name","opsSec":179888.0491143693,"samples":3},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":181846.87452778968,"samples":3},{"name":"[False conditional] Using instanceof only","opsSec":855309808.6763289,"samples":9},{"name":"[False conditional] Using constructor name","opsSec":855297194.911394,"samples":7},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":855853707.3279694,"samples":6}]}-->
