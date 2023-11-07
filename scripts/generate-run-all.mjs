@@ -19,6 +19,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
     ${ index > 0 ? `needs: ${formatJobName(array[index - 1])}` : '' }
     name: Running "${benchFile}"
     uses: ./.github/workflows/bench.yml
+    continue-on-error: true
     with:
       bench-file: ${benchFile}
       node-versions: \${{ inputs.node-versions }}
