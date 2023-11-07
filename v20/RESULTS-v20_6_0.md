@@ -56,7 +56,7 @@ new Array(length)|100,000,000|3,952.21ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|278|83|
+|new Array|310|88|
 |Array.from|23|42|
 
 
@@ -64,11 +64,11 @@ new Array(length)|100,000,000|3,952.21ms
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Nov 06 2023 15:09:03 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Nov 07 2023 18:10:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Array","opsSec":277.6934202080662,"samples":3},{"name":"Array.from","opsSec":22.63279718575523,"samples":2}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Array","opsSec":309.83781862412314,"samples":4},{"name":"Array.from","opsSec":23.069157694234523,"samples":2}]}-->
 
 ## async function vs function
 
