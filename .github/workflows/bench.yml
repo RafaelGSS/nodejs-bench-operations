@@ -114,6 +114,7 @@ jobs:
   ## Read matrix outputs
   read:
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs: [benchmark]
 
     steps:
@@ -127,6 +128,7 @@ jobs:
 
   commit:
     runs-on: ubuntu-latest
+    continue-on-error: true
     if: ${{ needs.read.outputs.failure != 'true' }}
     needs: [read]
 
