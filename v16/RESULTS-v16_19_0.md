@@ -74,20 +74,20 @@ new Array(length)|100,000,000|4,207.022ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|function|846,428,558|99|
-|[async] async function|16,731,320|90|
-|[async] function|347,824|31|
+|function|849,956,988|98|
+|[async] async function|16,365,153|90|
+|[async] function|292,249|30|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Nov 06 2023 15:12:01 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Nov 07 2023 18:13:05 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"function","opsSec":846428557.6431224,"samples":6},{"name":"[async] async function","opsSec":16731319.67763224,"samples":7},{"name":"[async] function","opsSec":347823.9175577923,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"function","opsSec":849956988.412415,"samples":6},{"name":"[async] async function","opsSec":16365153.116623286,"samples":6},{"name":"[async] function","opsSec":292249.4806138971,"samples":3}]}-->
 
 ## Blob
 
