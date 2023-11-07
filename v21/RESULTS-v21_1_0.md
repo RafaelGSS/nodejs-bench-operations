@@ -157,19 +157,19 @@ new Array(length)|100,000,000|4,276.416ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,483,398|92|
-|fromUnixToISOString(new Date())|2,187,871|94|
+|new Date().toISOString()|1,489,616|95|
+|fromUnixToISOString(new Date())|2,276,263|96|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sat Nov 04 2023 16:10:20 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 19:05:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606914520263672},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1483398.2436451355,"samples":6},{"name":"fromUnixToISOString(new Date())","opsSec":2187870.9465366066,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1489615.9798435655,"samples":5},{"name":"fromUnixToISOString(new Date())","opsSec":2276263.3653675313,"samples":5}]}-->
 
 ## Date format MM/DD/YYYY
 
