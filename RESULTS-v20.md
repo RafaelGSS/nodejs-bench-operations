@@ -527,20 +527,20 @@ new Array(length)|100,000,000|4,145.757ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using replace(//g)|2,188,327|91|
-|Using replaceAll()|2,048,648|99|
-|Using replaceAll(//g)|2,011,814|95|
+|Using replace(//g)|3,725,190|94|
+|Using replaceAll()|3,164,255|95|
+|Using replaceAll(//g)|3,344,270|95|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Wed Oct 25 2023 04:39:29 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Nov 08 2023 10:48:36 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.7597503662109375},"benchmarks":[{"name":"Using replace(//g)","opsSec":2188326.6005223254,"samples":5},{"name":"Using replaceAll()","opsSec":2048647.8353346442,"samples":10},{"name":"Using replaceAll(//g)","opsSec":2011814.0469460806,"samples":8}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using replace(//g)","opsSec":3725190.0513048633,"samples":5},{"name":"Using replaceAll()","opsSec":3164254.931739993,"samples":5},{"name":"Using replaceAll(//g)","opsSec":3344269.524509878,"samples":7}]}-->
 
 ## Shallow Copy
 
