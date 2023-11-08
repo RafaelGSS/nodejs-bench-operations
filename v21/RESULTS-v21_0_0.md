@@ -671,23 +671,23 @@ new Array(length)|100,000,000|4,291.234ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|591,968,725|98|
-|Using indexof|593,326,051|94|
-|Using RegExp.test|11,244,170|98|
-|Using RegExp.text with cached regex pattern|11,767,611|97|
-|Using new RegExp.test|3,394,929|99|
-|Using new RegExp.test with cached regex pattern|3,970,941|99|
+|Using includes|847,706,114|95|
+|Using indexof|851,027,217|94|
+|Using RegExp.test|16,943,922|98|
+|Using RegExp.text with cached regex pattern|17,470,383|100|
+|Using new RegExp.test|4,740,212|97|
+|Using new RegExp.test with cached regex pattern|5,542,879|97|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 2 vCPUs | 6.8GB Mem
-* __Run:__ Sat Nov 04 2023 16:55:16 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Nov 07 2023 23:59:57 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":2,"totalMemory":6.759742736816406},"benchmarks":[{"name":"Using includes","opsSec":591968724.5742807,"samples":6},{"name":"Using indexof","opsSec":593326050.7263244,"samples":5},{"name":"Using RegExp.test","opsSec":11244170.151363626,"samples":7},{"name":"Using RegExp.text with cached regex pattern","opsSec":11767610.624907369,"samples":7},{"name":"Using new RegExp.test","opsSec":3394928.9611566467,"samples":8},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3970940.830058832,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using includes","opsSec":847706113.7235386,"samples":6},{"name":"Using indexof","opsSec":851027217.3782984,"samples":8},{"name":"Using RegExp.test","opsSec":16943922.434333872,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":17470382.71604766,"samples":7},{"name":"Using new RegExp.test","opsSec":4740211.736377912,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5542879.109951419,"samples":5}]}-->
 
 ## Super vs This
 
