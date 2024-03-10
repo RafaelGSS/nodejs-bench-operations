@@ -306,19 +306,19 @@ new Array(length)|100,000,000|3,507.181ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|87,278,327|97|
-|Using Object.getOwnPropertyNames()|89,959,212|95|
+|Using Object.keys()|91,083,346|92|
+|Using Object.getOwnPropertyNames()|90,627,903|97|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Nov 07 2023 20:29:20 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 15:54:33 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using Object.keys()","opsSec":87278326.78890887,"samples":6},{"name":"Using Object.getOwnPropertyNames()","opsSec":89959212.2697022,"samples":7}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"Using Object.keys()","opsSec":91083346.3107362,"samples":5},{"name":"Using Object.getOwnPropertyNames()","opsSec":90627903.37357123,"samples":6}]}-->
 
 ## Get the last item of an Array
 

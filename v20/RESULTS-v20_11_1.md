@@ -301,3 +301,21 @@ new Array(length)|100,000,000|3,515.38ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"using Array.includes","opsSec":858694535.5021778,"samples":8},{"name":"using Array.includes (first item)","opsSec":855864737.6210253,"samples":6},{"name":"Using raw comparison","opsSec":850897616.1400636,"samples":6},{"name":"Using raw comparison (first item)","opsSec":847125189.9680749,"samples":8}]}-->
+
+## Object.keys vs Object.getOwnPropertyNames comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using Object.keys()|93,643,623|88|
+|Using Object.getOwnPropertyNames()|97,472,623|97|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 15:54:25 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Using Object.keys()","opsSec":93643622.9101056,"samples":5},{"name":"Using Object.getOwnPropertyNames()","opsSec":97472623.08866982,"samples":6}]}-->
