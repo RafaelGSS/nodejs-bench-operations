@@ -2,19 +2,19 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|67,157,057|97|
-|Object.create({})|1,849,100|81|
-|Cached Empty.prototype|847,465,916|100|
-|Empty.prototype|2,104,646|87|
-|Empty class|1,233,102|89|
+|Object.create(null)|60,711,812|94|
+|Object.create({})|1,695,028|79|
+|Cached Empty.prototype|899,290,849|100|
+|Empty.prototype|2,087,033|85|
+|Empty class|1,270,699|86|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Nov 07 2023 17:25:01 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 15:57:43 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Object.create(null)","opsSec":67157057.21986364,"samples":6},{"name":"Object.create({})","opsSec":1849100.2226923124,"samples":3},{"name":"Cached Empty.prototype","opsSec":847465915.5803816,"samples":11},{"name":"Empty.prototype","opsSec":2104646.296641374,"samples":3},{"name":"Empty class","opsSec":1233102.4465527767,"samples":3}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Object.create(null)","opsSec":60711811.88676614,"samples":5},{"name":"Object.create({})","opsSec":1695028.2847122508,"samples":3},{"name":"Cached Empty.prototype","opsSec":899290849.062475,"samples":5},{"name":"Empty.prototype","opsSec":2087032.9091849274,"samples":3},{"name":"Empty class","opsSec":1270698.6144019316,"samples":3}]}-->
