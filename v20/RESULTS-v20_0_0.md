@@ -367,21 +367,21 @@ new Array(length)|100,000,000|3,560.584ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|853,368,357|95|
-|Using optional chain (obj.field?.field2) (undefined)|854,282,887|98|
-|Using and operator (obj.field && obj.field.field2) (Valid)|856,325,704|99|
-|Using and operator (obj.field && obj.field.field2) (undefined)|854,241,667|100|
+|Using optional chain (obj.field?.field2) (Valid)|826,546,925|100|
+|Using optional chain (obj.field?.field2) (undefined)|827,072,262|97|
+|Using and operator (obj.field && obj.field.field2) (Valid)|826,681,178|96|
+|Using and operator (obj.field && obj.field.field2) (undefined)|826,401,378|99|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Nov 07 2023 21:00:19 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 15:59:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":853368356.8121027,"samples":8},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":854282887.0392901,"samples":7},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":856325704.1402996,"samples":7},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":854241666.9706804,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":826546924.5372735,"samples":6},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":827072262.060481,"samples":6},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":826681178.2748749,"samples":8},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":826401377.9236037,"samples":7}]}-->
 
 ## Parsing Integer
 
