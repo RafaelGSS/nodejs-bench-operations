@@ -522,3 +522,22 @@ new Array(length)|100,000,000|3,515.38ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Setter (class)","opsSec":776822728.8545372,"samples":6},{"name":"Setter","opsSec":11544422.111978417,"samples":5},{"name":"Method","opsSec":627579152.8192941,"samples":7},{"name":"DefineProperty (setter)","opsSec":779175571.6839905,"samples":6},{"name":"DefineProperty (setter & enumerable=false)","opsSec":11561278.389908751,"samples":4},{"name":"DefineProperty (setter & configurable=false)","opsSec":10728301.869443191,"samples":5},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":11624261.876577923,"samples":5},{"name":"DefineProperty (writable)","opsSec":787657942.439823,"samples":6},{"name":"DefineProperty (writable & enumerable=false)","opsSec":481396659.55300885,"samples":7},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":113538145.26614422,"samples":5},{"name":"DefineProperties (setter)","opsSec":116416779.58075619,"samples":6},{"name":"DefineProperties (setter & enumerable=false)","opsSec":11362789.258439587,"samples":4},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":10980315.285582941,"samples":4}]}-->
+
+## replace vs replaceAll comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using replace(//g)|3,267,507|93|
+|Using replaceAll()|2,663,205|95|
+|Using replaceAll(//g)|3,075,674|94|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 16:12:15 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"Using replace(//g)","opsSec":3267507.3313517096,"samples":5},{"name":"Using replaceAll()","opsSec":2663205.2782604196,"samples":7},{"name":"Using replaceAll(//g)","opsSec":3075674.2197130127,"samples":4}]}-->
