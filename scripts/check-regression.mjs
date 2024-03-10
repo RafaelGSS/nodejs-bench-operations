@@ -107,6 +107,6 @@ async function main (versions, majorOnly) {
   }
 }
 
-let majorOnly = process.env.MAJOR_ONLY || false;
+let majorOnly = process.env.MAJOR_ONLY ? process.env.MAJOR_ONLY !== 'false' : false;
 let versions = process.env.VERSIONS ? process.env.VERSIONS.split(',') : ['v18', 'v20', 'v21'];
 main(versions, majorOnly);
