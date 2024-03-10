@@ -18,3 +18,36 @@
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Directly in the object","opsSec":821351323.368965,"samples":7},{"name":"Using dot notation","opsSec":820319174.2976774,"samples":6},{"name":"Using define property (writable)","opsSec":4201786.648696174,"samples":5},{"name":"Using define property initialized (writable)","opsSec":6190788.4554243125,"samples":4},{"name":"Using define property (getter)","opsSec":2410612.572721549,"samples":4}]}-->
+
+## Array.append (number)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.004ms
+new Array(length)|10|0.005ms
+array.push|100|0.084ms
+new Array(length)|100|0.015ms
+array.push|1,000|0.035ms
+new Array(length)|1,000|0.016ms
+array.push|10,000|0.281ms
+new Array(length)|10,000|0.181ms
+array.push|1,000,000|23.229ms
+new Array(length)|1,000,000|5.658ms
+array.push|100,000,000|978.339ms
+new Array(length)|100,000,000|3,552.555ms
+## Array.append (string)
+
+|type|amount|time elapsed|
+|-|-|-|
+array.push|10|0.005ms
+new Array(length)|10|0.003ms
+array.push|100|0.017ms
+new Array(length)|100|0.012ms
+array.push|1,000|0.042ms
+new Array(length)|1,000|0.023ms
+array.push|10,000|0.353ms
+new Array(length)|10,000|0.22ms
+array.push|1,000,000|18.081ms
+new Array(length)|1,000,000|6.181ms
+array.push|100,000,000|1,131.526ms
+new Array(length)|100,000,000|3,530.976ms
