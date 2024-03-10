@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|845,870,263|98|
-|Length = 10_000 - Array.at|847,516,138|97|
-|Length = 1_000_000 - Array.at|846,760,162|96|
-|Length = 100 - Array[length - 1]|846,592,484|92|
-|Length = 10_000 - Array[length - 1]|849,741,191|94|
-|Length = 1_000_000 - Array[length - 1]|848,152,540|98|
+|Length = 100 - Array.at|867,723,129|96|
+|Length = 10_000 - Array.at|873,817,983|91|
+|Length = 1_000_000 - Array.at|867,089,937|95|
+|Length = 100 - Array[length - 1]|818,737,279|95|
+|Length = 10_000 - Array[length - 1]|821,315,871|94|
+|Length = 1_000_000 - Array[length - 1]|822,874,415|96|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Nov 07 2023 20:41:02 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
+* __Run:__ Sun Mar 10 2024 15:56:21 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.6085662841796875},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":845870263.3180512,"samples":6},{"name":"Length = 10_000 - Array.at","opsSec":847516138.2249008,"samples":6},{"name":"Length = 1_000_000 - Array.at","opsSec":846760162.1973292,"samples":9},{"name":"Length = 100 - Array[length - 1]","opsSec":846592483.7208861,"samples":6},{"name":"Length = 10_000 - Array[length - 1]","opsSec":849741191.2887024,"samples":7},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":848152539.7529279,"samples":7}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":867723128.7217239,"samples":10},{"name":"Length = 10_000 - Array.at","opsSec":873817982.8560684,"samples":7},{"name":"Length = 1_000_000 - Array.at","opsSec":867089937.3164809,"samples":8},{"name":"Length = 100 - Array[length - 1]","opsSec":818737278.7109885,"samples":7},{"name":"Length = 10_000 - Array[length - 1]","opsSec":821315870.6655908,"samples":6},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":822874415.2115588,"samples":7}]}-->
