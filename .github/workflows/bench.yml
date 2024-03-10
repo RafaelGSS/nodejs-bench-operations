@@ -36,8 +36,8 @@ jobs:
   benchmark:
     continue-on-error: true
 
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
     strategy:
       matrix:
         node-version: ${{ fromJson(inputs.node-versions) }}
