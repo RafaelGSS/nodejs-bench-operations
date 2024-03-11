@@ -1,7 +1,7 @@
 # Node.js Benchmark Operations
 
-To eliminate any potential variability introduced by a shared runner,
-the benchmarks are executed on a dedicated Linode machine.
+~To eliminate any potential variability introduced by a shared runner,
+the benchmarks are executed on a dedicated Linode machine~ (Sponsor me so I can use a dedicated machine 💚).
 
 ## Usage
 
