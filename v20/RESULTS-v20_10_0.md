@@ -306,19 +306,19 @@ new Array(length)|100,000,000|3,606.565ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|95,276,471|90|
-|Using Object.getOwnPropertyNames()|97,328,184|94|
+|Using Object.keys()|93,210,453|93|
+|Using Object.getOwnPropertyNames()|95,235,851|94|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sun Mar 10 2024 15:54:28 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Mar 12 2024 18:51:07 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Using Object.keys()","opsSec":95276470.57445508,"samples":5},{"name":"Using Object.getOwnPropertyNames()","opsSec":97328183.52802713,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Using Object.keys()","opsSec":93210453.42560941,"samples":6},{"name":"Using Object.getOwnPropertyNames()","opsSec":95235850.93754026,"samples":6}]}-->
 
 ## Get the last item of an Array
 

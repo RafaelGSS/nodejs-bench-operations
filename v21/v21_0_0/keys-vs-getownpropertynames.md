@@ -2,16 +2,16 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|91,083,346|92|
-|Using Object.getOwnPropertyNames()|90,627,903|97|
+|Using Object.keys()|89,960,919|90|
+|Using Object.getOwnPropertyNames()|89,577,180|97|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sun Mar 10 2024 15:54:33 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Mar 12 2024 18:51:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"Using Object.keys()","opsSec":91083346.3107362,"samples":5},{"name":"Using Object.getOwnPropertyNames()","opsSec":90627903.37357123,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Using Object.keys()","opsSec":89960918.53471947,"samples":5},{"name":"Using Object.getOwnPropertyNames()","opsSec":89577179.59735303,"samples":5}]}-->
