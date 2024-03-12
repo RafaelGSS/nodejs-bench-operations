@@ -2,22 +2,22 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Directly in the object|822,497,604|96|
-|Using dot notation|823,122,487|96|
-|Using define property (writable)|4,288,677|92|
-|Using define property initialized (writable)|6,288,244|94|
-|Using define property (getter)|2,430,513|94|
+|Directly in the object|820,120,057|98|
+|Using dot notation|820,383,625|98|
+|Using define property (writable)|4,236,163|92|
+|Using define property initialized (writable)|6,196,162|92|
+|Using define property (getter)|2,402,875|92|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sun Mar 10 2024 15:33:28 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Mar 12 2024 18:19:58 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"Directly in the object","opsSec":822497604.3513371,"samples":5},{"name":"Using dot notation","opsSec":823122487.2002578,"samples":9},{"name":"Using define property (writable)","opsSec":4288677.202090691,"samples":6},{"name":"Using define property initialized (writable)","opsSec":6288243.748767417,"samples":5},{"name":"Using define property (getter)","opsSec":2430512.5132306577,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606498718261719},"benchmarks":[{"name":"Directly in the object","opsSec":820120057.1834788,"samples":6},{"name":"Using dot notation","opsSec":820383624.584437,"samples":6},{"name":"Using define property (writable)","opsSec":4236163.266394479,"samples":5},{"name":"Using define property initialized (writable)","opsSec":6196161.770511278,"samples":5},{"name":"Using define property (getter)","opsSec":2402874.9575527916,"samples":4}]}-->
 
 ## Array.append (number)
 
