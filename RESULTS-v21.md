@@ -157,19 +157,19 @@ new Array(length)|100,000,000|3,584.353ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,369,644|95|
-|fromUnixToISOString(new Date())|2,231,067|95|
+|new Date().toISOString()|1,396,149|94|
+|fromUnixToISOString(new Date())|2,193,597|95|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Sun Mar 10 2024 15:43:20 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Mar 12 2024 18:39:23 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1369643.7274465105,"samples":4},{"name":"fromUnixToISOString(new Date())","opsSec":2231066.6164413407,"samples":4}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606491088867188},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1396149.0986145088,"samples":4},{"name":"fromUnixToISOString(new Date())","opsSec":2193597.186286845,"samples":5}]}-->
 
 ## Date format MM/DD/YYYY
 
