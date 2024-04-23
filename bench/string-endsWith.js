@@ -7,7 +7,6 @@ const longString = 'foobar'.repeat(100)
 const comparison = 'bar'
 const comparison2 = 'foo'
 
-const endsWithRegExp = new RegExp(`${comparison}$`)
 
 suite.add('(short string) (true) String#endsWith', function () {
     shortString.endsWith(comparison)
@@ -15,17 +14,11 @@ suite.add('(short string) (true) String#endsWith', function () {
 ).add('(short string) (true) String#slice and strict comparison', function () {
     shortString.slice(-comparison.length) === comparison
     }
-).add('(short string) (true) RegExp#test', function () {
-    endsWithRegExp.test(shortString)
-    }
 ).add('(long string) (true) String#endsWith', function () {
     longString.endsWith(comparison)
     }
 ).add('(long string) (true) String#slice and strict comparison', function () {
     longString.slice(-comparison.length) === comparison
-    }
-).add('(long string) (true) RegExp#test', function () {
-    endsWithRegExp.test(longString)
     }
 ).add('(short string) (false) String#endsWith', function () {
     shortString.endsWith(comparison2)

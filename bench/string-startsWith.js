@@ -7,16 +7,11 @@ const longString = 'foobar'.repeat(100)
 const comparison = 'foo'
 const comparison2 = 'bar'
 
-const startsWithRegExp = new RegExp(`^${comparison}`)
-
 suite.add('(short string) (true) String#startsWith', function () {
     shortString.startsWith(comparison)
     }
 ).add('(short string) (true) String#slice and strict comparison', function () {
     shortString.slice(0, comparison.length) === comparison
-    }
-).add('(short string) (true) RegExp#test', function () {
-    startsWithRegExp.test(shortString)
     }
 )
 .add('(long string) (true) String#startsWith', function () {
@@ -24,9 +19,6 @@ suite.add('(short string) (true) String#startsWith', function () {
     }
 ).add('(long string) (true) String#slice and strict comparison', function () {
     longString.slice(0, comparison.length) === comparison
-    }
-).add('(long string) (true) RegExp#test', function () {
-    startsWithRegExp.test(longString)
     }
 )
 .add('(short string) (false) String#startsWith', function () {
