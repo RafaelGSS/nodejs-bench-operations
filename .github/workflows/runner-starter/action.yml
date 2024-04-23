@@ -22,8 +22,8 @@ runs:
       name: Start/Stop Runner Instance
       shell: bash
       env:
-        AWS_DEFAULT_REGION: ${{ inputs.aws_default_region }}
+        AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
         AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
       run: |
-        ${GITHUB_ACTION_PATH}/instance_start_stop.bash --instance-id=${{ inputs.instance_id }} --action=${{ inputs.action }}
+        ${GITHUB_ACTION_PATH}/instance_start_stop.bash --instance-id=${{ env.INSTANCE_ID }} --action=${{ inputs.action }}
