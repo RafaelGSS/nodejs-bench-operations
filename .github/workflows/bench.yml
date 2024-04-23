@@ -199,7 +199,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Start Runner
+      - name: Stop Runner
         uses: ./runner-starter
         with:
           runner_type: 'Instance'
