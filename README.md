@@ -33,3 +33,8 @@ Some projects have done some perfomance comparison on a dedicated topic.
 Here is a usuful list:
 
 - [Loops](https://github.com/simone-sanfratello/node-bench-iteration)
+
+## Sponsors
+
+Benchmark machines are sponsored by [NodeSource](https://nodesource.com/)
+![NodeSource logo](https://github.com/RafaelGSS/nodejs-bench-operations/assets/55195249/9580c302-6f96-4d25-8d67-8a6c6d703bbf)

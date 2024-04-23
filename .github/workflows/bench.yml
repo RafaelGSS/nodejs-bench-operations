@@ -127,12 +127,6 @@ jobs:
             failure: 'false'
             result: ${{ env.BENCH_REPORT_FILE }}
 
-      - name: Stop Instance
-        uses: ./runner_starter
-        with:
-          instance_id: ${{ secrets.INSTANCE_ID }}
-          action: "stop"
-
   ## Read matrix outputs
   read:
     runs-on: ubuntu-latest
@@ -192,3 +186,22 @@ jobs:
           branch: 'main'
           commit_message: 'chore(${{ inputs.bench-file }}): update benchmark results'
           commit_author: Github Actions <actions@github.com> 
+
+  ## Stop Runner
+  runner-stop:
+    runs-on: ubuntu-latest
+    needs: [benchmark]
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Start Runner
+        uses: ./runner-starter
+        with:
+          runner_type: 'Instance'
+          instance_id: ${{ secrets.INSTANCE_ID }}
+          action: 'stop'
