@@ -127,12 +127,6 @@ jobs:
             failure: 'false'
             result: ${{ env.BENCH_REPORT_FILE }}
 
-      - name: Stop Instance
-        uses: ./runner_starter
-        with:
-          instance_id: ${{ secrets.INSTANCE_ID }}
-          action: "stop"
-
   ## Read matrix outputs
   read:
     runs-on: ubuntu-latest
@@ -205,7 +199,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Stop Runner
+      - name: Start Runner
         uses: ./runner-starter
         with:
           runner_type: 'Instance'
