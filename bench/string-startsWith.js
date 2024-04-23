@@ -12,10 +12,6 @@ suite
     shortString.startsWith(comparison)
     }
 )
-.add('(short string) (true) String#slice and String#indexOf', function () {
-    shortString.slice(0, comparison.length).indexOf(comparison) === 0
-    }
-)
 .add('(short string) (true) String#slice and strict comparison', function () {
     shortString.slice(0, comparison.length) === comparison
     }
