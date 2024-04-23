@@ -127,6 +127,12 @@ jobs:
             failure: 'false'
             result: ${{ env.BENCH_REPORT_FILE }}
 
+      - name: Stop Instance
+        uses: ./runner_starter
+        with:
+          instance_id: ${{ secrets.INSTANCE_ID }}
+          action: "stop"
+
   ## Read matrix outputs
   read:
     runs-on: ubuntu-latest
