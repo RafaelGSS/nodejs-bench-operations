@@ -31,6 +31,8 @@ on:
 
 permissions:
   issues: write
+  contents: read
+  id-token: write
 
 jobs:
   runner-start:
@@ -39,14 +41,14 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-west-2
-
+          role-to-assume: arn:aws:iam::800406105498:role/RafaelGSS-nodejs-bench-operations
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Start Runner
-        uses: ./runner-starter
+        uses: ./.github/workflows/runner-starter
         with:
-          runner_type: 'Instance'
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: 'start'
 
@@ -199,9 +201,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Stop Runner
-        uses: ./runner-starter
+      - name: Start Runner
+        uses: ./.github/workflows/runner-starter
         with:
-          runner_type: 'Instance'
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: 'stop'

@@ -18,7 +18,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Instance Start
-        uses: ./runner_starter
+        uses: ./.github/workflows/runner-starter
         with:
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: "start"
@@ -30,7 +30,7 @@ jobs:
         run: echo "Keep the runner active"
 
       - name: Instance Stop
-        uses: ./runner_starter
+        uses: ./.github/workflows/runner-starter
         with:
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: "stop"
