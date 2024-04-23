@@ -1,0 +1,36 @@
+name: Cron - Keep Runners Active
+
+on:
+  schedule:
+    # Runs this workflow every Sunday at 12:00 UTC. You can adjust the schedule according to your needs.
+    - cron: "0 12 * * 0"
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  start_windows_runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Instance Start
+        uses: ./runner_starter
+        with:
+          instance_id: ${{ secrets.INSTANCE_ID }}
+          action: "start"
+
+  keep-runner-active:
+    runs-on: [self-hosted]
+    steps:
+      - name: Run task to keep the runner active
+        run: echo "Keep the runner active"
+
+      - name: Instance Stop
+        uses: ./runner_starter
+        with:
+          instance_id: ${{ secrets.INSTANCE_ID }}
+          action: "stop"
