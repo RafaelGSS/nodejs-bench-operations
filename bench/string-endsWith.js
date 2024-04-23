@@ -1,6 +1,6 @@
 const { createBenchmarkSuite } = require('../common')
 
-const suite = createBenchmarkSuite('Check if string ends with a substring')
+const suite = createBenchmarkSuite('endsWith comparison')
 const shortString = 'foobar'
 const longString = 'foobar'.repeat(100)
 
