@@ -1,0 +1,29 @@
+name: 'Runner Starter'
+description: 'Turn on a self-hosted runner'
+inputs:
+  runner_type:
+    description: 'Type of runner to start | Instance' 
+    required: true
+  instance_id:
+    description: 'ID of the EC2 instance to start OR the name of the scaling group to scale down'
+    required: true
+  action:
+    description: 'Define if I want to start or stop the runner'
+    required: true
+  aws_default_region:
+    description: 'AWS region to use'
+    required: false
+    default: 'us-west-2'
+
+runs:
+  using: "composite"
+  steps:
+    - id: start_instance
+      name: Start/Stop Runner Instance
+      shell: bash
+      env:
+        AWS_DEFAULT_REGION: ${{ inputs.aws_default_region }}
+        AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        ${GITHUB_ACTION_PATH}/instance_start_stop.bash --instance-id=${{ inputs.instance_id }} --action=${{ inputs.action }}
