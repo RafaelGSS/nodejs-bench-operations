@@ -29,6 +29,11 @@ on:
         type: string
         description: 'Flags to be used in the Node.js binary'
 
+permissions:
+  issues: write
+  contents: read
+  id-token: write
+
 jobs:
   runner-start:
     runs-on: ubuntu-latest
@@ -41,7 +46,7 @@ jobs:
           aws-region: us-west-2
       - name: Checkout
         uses: actions/checkout@v4
-
+        
       - name: Start Runner
         uses: ./.github/workflows/runner-starter
         with:
