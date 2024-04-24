@@ -31,6 +31,7 @@ on:
 
 permissions:
   issues: write
+  contents: read
 
 jobs:
   runner-start:
@@ -44,9 +45,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Start Runner
-        uses: ./runner-starter
+        uses: ./.github/workflows/runner-starter
         with:
-          runner_type: 'Instance'
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: 'start'
 
@@ -200,8 +200,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Start Runner
-        uses: ./runner-starter
+        uses: ./.github/workflows/runner-starter
         with:
-          runner_type: 'Instance'
           instance_id: ${{ secrets.INSTANCE_ID }}
           action: 'stop'
