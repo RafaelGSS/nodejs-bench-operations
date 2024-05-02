@@ -1,9 +1,6 @@
 name: 'Runner Starter'
 description: 'Turn on a self-hosted runner'
 inputs:
-  runner_type:
-    description: 'Type of runner to start | Instance' 
-    required: true
   instance_id:
     description: 'ID of the EC2 instance to start OR the name of the scaling group to scale down'
     required: true

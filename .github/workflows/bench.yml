@@ -49,8 +49,9 @@ jobs:
       - name: Start Runner
         uses: ./.github/workflows/runner-starter
         with:
-          instance_id: ${{ secrets.INSTANCE_ID }}
+          instance_id: 'i-065f0f848eb1615ae'
           action: 'start'
+          aws_default_region: 'us-west-2'
 
   benchmark:
     continue-on-error: true
