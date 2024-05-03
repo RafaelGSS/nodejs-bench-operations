@@ -68,6 +68,7 @@ jobs:
     continue-on-error: true
     runs-on: self-hosted
     needs: runner-start
+    if: always()
     strategy:
       matrix:
         node-version: ${{ fromJson(inputs.node-versions) }}
