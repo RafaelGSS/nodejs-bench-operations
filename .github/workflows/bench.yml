@@ -67,7 +67,7 @@ jobs:
   benchmark:
     continue-on-error: true
     runs-on: self-hosted
-    needs: runner-start
+    # needs: runner-start
     if: always()
     strategy:
       matrix:
