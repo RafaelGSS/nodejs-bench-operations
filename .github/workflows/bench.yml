@@ -202,8 +202,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Start Runner
+      - name: Stop Runner
         uses: ./.github/workflows/runner-starter
         with:
-          instance_id: ${{ secrets.INSTANCE_ID }}
+          instance_id: 'i-065f0f848eb1615ae'
           action: 'stop'
+          aws_default_region: 'us-west-2'

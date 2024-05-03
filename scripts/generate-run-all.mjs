@@ -41,6 +41,7 @@ on:
 permissions:
   contents: write
   issues: write
+  id-token: write
 
 jobs:
   ${benchJobs.join('')}
