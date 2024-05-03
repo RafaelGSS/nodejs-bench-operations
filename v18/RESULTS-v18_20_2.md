@@ -344,3 +344,23 @@ new Array(length)|100,000,000|4,637.439ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Object.create(null)","opsSec":85404109.64765747,"samples":5},{"name":"Object.create({})","opsSec":1729813.3424350305,"samples":3},{"name":"Cached Empty.prototype","opsSec":909969342.3505026,"samples":6},{"name":"Empty.prototype","opsSec":1838373.32985113,"samples":3},{"name":"Empty class","opsSec":1168841.154956424,"samples":3}]}-->
+
+## Optional Chain (?) vs && operator
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using optional chain (obj.field?.field2) (Valid)|910,376,115|97|
+|Using optional chain (obj.field?.field2) (undefined)|910,228,456|97|
+|Using and operator (obj.field && obj.field.field2) (Valid)|909,926,019|97|
+|Using and operator (obj.field && obj.field.field2) (undefined)|908,264,241|95|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Fri May 03 2024 22:55:57 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":910376114.5959765,"samples":6},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":910228456.1480523,"samples":6},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":909926018.6779265,"samples":6},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":908264241.0688523,"samples":9}]}-->
