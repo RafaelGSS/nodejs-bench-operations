@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/RafaelGSS/nodejs-bench-operations/issues"
   },
-  "homepage": "https://github.com/RafaelGSS/nodejs-bench-operations#readme"
+  "homepage": "https://github.com/RafaelGSS/nodejs-bench-operations#readme",
+  "devDependencies": {
+    "@pkgjs/nv": "^0.2.2"
+  }
 }

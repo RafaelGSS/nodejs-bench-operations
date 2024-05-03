@@ -2,6 +2,8 @@ import { readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { rootFolder } from './utils.mjs';
 
+import nv from '@pkgjs/nv';
+
 const allBenches = await readdir(join(rootFolder, 'bench')).then(items => {
   return items.filter(item => item.endsWith('.js'));
 });
@@ -28,6 +30,17 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
 `;
 });
 
+const MAJORS = [18, 20, 21, 22];
+const nodeVersions = []
+const allVersions = await nv('all');
+for (const m of MAJORS) {
+  nodeVersions.push(`${m}.0.0`);
+  nodeVersions.push(
+    // 😨
+    ...allVersions.filter((v) => v.major === m).slice(-2).map((v) => v.version),
+  );
+}
+
 const template = `
 # Auto Generated YAML please don't change
 name: 'Run All'
@@ -38,7 +51,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["16.0.0", "16.18.1", "16.19.0", "16.20.2", "18.0.0", "18.16.1", "18.17.1", "18.18.0", "20.0.0", "20.7.0", "20.8.0", "20.9.0", "21.0.0", "21.1.0"]'
+        default: '${JSON.stringify(nodeVersions)}'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
