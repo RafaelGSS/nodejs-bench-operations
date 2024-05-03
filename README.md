@@ -1,7 +1,7 @@
 # Node.js Benchmark Operations
 
-~To eliminate any potential variability introduced by a shared runner,
-the benchmarks are executed on a dedicated Linode machine~ (Sponsor me so I can use a dedicated machine 💚).
+To eliminate any potential variability introduced by a shared runner,
+the benchmarks are executed on a dedicated AWS EC2 machine
 
 ## Usage
 
@@ -12,12 +12,14 @@ All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 - [v18](./RESULTS-v18.md)
 - [v20](./RESULTS-v20.md)
 - [v21](./RESULTS-v21.md)
+- [v22](./RESULTS-v22.md)
 
 It also stores the last 3 versions of each active release line. You can check it inside its respective folder:
 
 - [v18](./v18)
 - [v20](./v20)
 - [v21](./v21)
+- [v22](./v22)
 
 This is useful to identify regressions in minor/patch versions.
 
@@ -29,8 +31,8 @@ See: [check-regressions.yml](https://github.com/RafaelGSS/nodejs-bench-operation
 
 ## Affiliates
 
-Some projects have done some perfomance comparison on a dedicated topic.
-Here is a usuful list:
+Some projects have done some perfomance comparisson on a dedicated topic.
+Here is a useful list:
 
 - [Loops](https://github.com/simone-sanfratello/node-bench-iteration)
 
