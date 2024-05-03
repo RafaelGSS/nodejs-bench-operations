@@ -18,8 +18,8 @@ on:
       run-start-stop:
         required: false
         type: boolean
-        default: false
-        description: 'When true, starting and stopping the runner machine is skipped'
+        default: true
+        description: 'When false, starting and stopping the runner machine is skipped'
   workflow_call:
     inputs:
       bench-file:
@@ -46,7 +46,7 @@ permissions:
 
 jobs:
   runner-start:
-    if: ${{ inputs.run-start-stop }}
+    if: ${{ inputs.run-start-stop == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credentials
@@ -203,7 +203,7 @@ jobs:
 
   ## Stop Runner
   runner-stop:
-    if: ${{ inputs.run-start-stop }}
+    if: ${{ inputs.run-start-stop == true }}
     runs-on: ubuntu-latest
     needs: [benchmark]
     steps:
