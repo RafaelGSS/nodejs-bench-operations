@@ -22,6 +22,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
     with:
       bench-file: ${benchFile}
       node-versions: \${{ inputs.node-versions }}
+      detach-start-stop: true
 `;
 });
 
@@ -44,7 +45,41 @@ permissions:
   id-token: write
 
 jobs:
+  runner-start:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::800406105498:role/RafaelGSS-nodejs-bench-operations
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start Runner
+        uses: ./.github/workflows/runner-starter
+        with:
+          instance_id: 'i-065f0f848eb1615ae'
+          action: 'start'
+          aws_default_region: 'us-west-2'
   ${benchJobs.join('')}
+  ## Stop Runner
+  runner-stop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: \${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: \${{ secrets.AWS_SECRET_KEY }}
+          aws-region: \${{ secrets.AWS_REGION }}
+
+      - name: Stop Runner
+        uses: ./.github/workflows/runner-starter
+        with:
+          instance_id: 'i-065f0f848eb1615ae'
+          action: 'stop'
+          aws_default_region: 'us-west-2'
 `;
 
 await writeFile(join(rootFolder, '.github', 'workflows', 'run_all.yml'), template);

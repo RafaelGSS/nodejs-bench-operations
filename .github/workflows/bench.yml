@@ -15,6 +15,11 @@ on:
         required: false
         type: string
         description: 'Flags to be used in the Node.js binary'
+      detach-start-stop:
+        required: false
+        type: boolean
+        default: false
+        description: 'When true, starting and stopping the runner machine is skipped'
   workflow_call:
     inputs:
       bench-file:
@@ -28,6 +33,11 @@ on:
         required: false
         type: string
         description: 'Flags to be used in the Node.js binary'
+      detach-start-stop:
+        required: false
+        type: boolean
+        default: false
+        description: 'When true, starting and stopping the runner machine is skipped'
 
 permissions:
   issues: write
@@ -36,6 +46,7 @@ permissions:
 
 jobs:
   runner-start:
+    if: ${{ inputs.detach-start-stop }}
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credentials
@@ -192,6 +203,7 @@ jobs:
 
   ## Stop Runner
   runner-stop:
+    if: ${{ inputs.detach-start-stop }}
     runs-on: ubuntu-latest
     needs: [benchmark]
     steps:
