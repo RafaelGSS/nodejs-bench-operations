@@ -15,7 +15,7 @@ on:
         required: false
         type: string
         description: 'Flags to be used in the Node.js binary'
-      detach-start-stop:
+      run-start-stop:
         required: false
         type: boolean
         default: false

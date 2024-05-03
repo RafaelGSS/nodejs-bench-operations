@@ -42,7 +42,7 @@ jobs:
     with:
       bench-file: add-property.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   array-append:
     needs: add-property
@@ -51,7 +51,7 @@ jobs:
     with:
       bench-file: array-append.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   array-creation:
     needs: array-append
@@ -60,7 +60,7 @@ jobs:
     with:
       bench-file: array-creation.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   async-function-vs-function:
     needs: array-creation
@@ -69,7 +69,7 @@ jobs:
     with:
       bench-file: async-function-vs-function.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   blob:
     needs: async-function-vs-function
@@ -78,7 +78,7 @@ jobs:
     with:
       bench-file: blob.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   compare-using-instanceof:
     needs: blob
@@ -87,7 +87,7 @@ jobs:
     with:
       bench-file: compare-using-instanceof.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   crypto-verify:
     needs: compare-using-instanceof
@@ -96,7 +96,7 @@ jobs:
     with:
       bench-file: crypto-verify.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   date-format-iso:
     needs: crypto-verify
@@ -105,7 +105,7 @@ jobs:
     with:
       bench-file: date-format-iso.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   date-format:
     needs: date-format-iso
@@ -114,7 +114,7 @@ jobs:
     with:
       bench-file: date-format.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   date-string-coersion:
     needs: date-format
@@ -123,7 +123,7 @@ jobs:
     with:
       bench-file: date-string-coersion.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   deleting-properties:
     needs: date-string-coersion
@@ -132,7 +132,7 @@ jobs:
     with:
       bench-file: deleting-properties.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   error:
     needs: deleting-properties
@@ -141,7 +141,7 @@ jobs:
     with:
       bench-file: error.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   function-return:
     needs: error
@@ -150,7 +150,7 @@ jobs:
     with:
       bench-file: function-return.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   includes-vs-raw-comparison:
     needs: function-return
@@ -159,7 +159,7 @@ jobs:
     with:
       bench-file: includes-vs-raw-comparison.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   keys-vs-getownpropertynames:
     needs: includes-vs-raw-comparison
@@ -168,7 +168,7 @@ jobs:
     with:
       bench-file: keys-vs-getownpropertynames.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   last-array-item:
     needs: keys-vs-getownpropertynames
@@ -177,7 +177,7 @@ jobs:
     with:
       bench-file: last-array-item.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   object-creation:
     needs: last-array-item
@@ -186,7 +186,7 @@ jobs:
     with:
       bench-file: object-creation.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   optional-chain-vs-and-operator:
     needs: object-creation
@@ -195,7 +195,7 @@ jobs:
     with:
       bench-file: optional-chain-vs-and-operator.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   parse-int:
     needs: optional-chain-vs-and-operator
@@ -204,7 +204,7 @@ jobs:
     with:
       bench-file: parse-int.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   possible-undefined-function:
     needs: parse-int
@@ -213,7 +213,7 @@ jobs:
     with:
       bench-file: possible-undefined-function.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   private-property:
     needs: possible-undefined-function
@@ -222,7 +222,7 @@ jobs:
     with:
       bench-file: private-property.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   property-access-transition:
     needs: private-property
@@ -231,7 +231,7 @@ jobs:
     with:
       bench-file: property-access-transition.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   property-getter-access:
     needs: property-access-transition
@@ -240,7 +240,7 @@ jobs:
     with:
       bench-file: property-getter-access.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   property-setter-access:
     needs: property-getter-access
@@ -249,7 +249,7 @@ jobs:
     with:
       bench-file: property-setter-access.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   replace-vs-replaceall-comparison:
     needs: property-setter-access
@@ -258,7 +258,7 @@ jobs:
     with:
       bench-file: replace-vs-replaceall-comparison.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   shallow-copy:
     needs: replace-vs-replaceall-comparison
@@ -267,7 +267,7 @@ jobs:
     with:
       bench-file: shallow-copy.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   sort-map:
     needs: shallow-copy
@@ -276,7 +276,7 @@ jobs:
     with:
       bench-file: sort-map.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   spread-vs-object-assign:
     needs: sort-map
@@ -285,7 +285,7 @@ jobs:
     with:
       bench-file: spread-vs-object-assign.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   stream-readable:
     needs: spread-vs-object-assign
@@ -294,7 +294,7 @@ jobs:
     with:
       bench-file: stream-readable.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   stream-writable:
     needs: stream-readable
@@ -303,7 +303,7 @@ jobs:
     with:
       bench-file: stream-writable.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   string-concat:
     needs: stream-writable
@@ -312,7 +312,7 @@ jobs:
     with:
       bench-file: string-concat.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   string-endsWith:
     needs: string-concat
@@ -321,7 +321,7 @@ jobs:
     with:
       bench-file: string-endsWith.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   string-searching:
     needs: string-endsWith
@@ -330,7 +330,7 @@ jobs:
     with:
       bench-file: string-searching.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   string-startsWith:
     needs: string-searching
@@ -339,7 +339,7 @@ jobs:
     with:
       bench-file: string-startsWith.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   super-vs-this:
     needs: string-startsWith
@@ -348,7 +348,7 @@ jobs:
     with:
       bench-file: super-vs-this.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   unix-time:
     needs: super-vs-this
@@ -357,11 +357,12 @@ jobs:
     with:
       bench-file: unix-time.js
       node-versions: ${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 
   ## Stop Runner
   runner-stop:
     runs-on: ubuntu-latest
+    needs: [unix-time]
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -369,6 +370,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Stop Runner
         uses: ./.github/workflows/runner-starter
