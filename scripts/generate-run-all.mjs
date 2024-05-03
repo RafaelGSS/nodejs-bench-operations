@@ -18,7 +18,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
   lastJobName = jobName;
   return `
   ${jobName}:
-    ${ index > 0 ? `needs: ${formatJobName(array[index - 1])}` : '' }
+    ${ index > 0 ? `needs: ${formatJobName(array[index - 1])}` : 'needs: runner-start' }
     name: Running "${benchFile}"
     uses: ./.github/workflows/bench.yml
     with:

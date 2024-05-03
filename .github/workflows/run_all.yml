@@ -36,7 +36,7 @@ jobs:
           aws_default_region: 'us-west-2'
   
   add-property:
-    
+    needs: runner-start
     name: Running "add-property.js"
     uses: ./.github/workflows/bench.yml
     with:
