@@ -11,9 +11,11 @@ const formatJobName = name => name
 .replace(/[^a-zA-Z\-_]/g, '_')
 .slice(0, 100)
 
+let lastJobName = ''
+
 const benchJobs = allBenches.map((benchFile, index, array) => {
   const jobName = formatJobName(benchFile);
-
+  lastJobName = jobName;
   return `
   ${jobName}:
     ${ index > 0 ? `needs: ${formatJobName(array[index - 1])}` : '' }
@@ -22,7 +24,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
     with:
       bench-file: ${benchFile}
       node-versions: \${{ inputs.node-versions }}
-      detach-start-stop: true
+      run-start-stop: false
 `;
 });
 
@@ -66,6 +68,7 @@ jobs:
   ## Stop Runner
   runner-stop:
     runs-on: ubuntu-latest
+    needs: [${lastJobName}]
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -73,6 +76,8 @@ jobs:
           aws-access-key-id: \${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: \${{ secrets.AWS_SECRET_KEY }}
           aws-region: \${{ secrets.AWS_REGION }}
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Stop Runner
         uses: ./.github/workflows/runner-starter
