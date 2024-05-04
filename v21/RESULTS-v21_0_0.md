@@ -695,23 +695,23 @@ new Array(length)|100,000,000|4,821.549ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|822,891,837|96|
-|Using indexof|820,995,080|98|
-|Using RegExp.test|16,916,567|98|
-|Using RegExp.text with cached regex pattern|17,708,358|97|
-|Using new RegExp.test|4,622,691|97|
-|Using new RegExp.test with cached regex pattern|5,119,554|93|
+|Using includes|910,644,801|99|
+|Using indexof|911,432,621|98|
+|Using RegExp.test|18,841,126|94|
+|Using RegExp.text with cached regex pattern|19,623,929|97|
+|Using new RegExp.test|5,118,286|96|
+|Using new RegExp.test with cached regex pattern|5,689,864|96|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Tue Mar 12 2024 19:28:24 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Sat May 04 2024 01:38:01 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606494903564453},"benchmarks":[{"name":"Using includes","opsSec":822891836.7289296,"samples":8},{"name":"Using indexof","opsSec":820995079.8876286,"samples":6},{"name":"Using RegExp.test","opsSec":16916566.83099029,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":17708357.771944508,"samples":5},{"name":"Using new RegExp.test","opsSec":4622690.9102385435,"samples":5},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5119553.790215294,"samples":6}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using includes","opsSec":910644801.285094,"samples":6},{"name":"Using indexof","opsSec":911432621.3864248,"samples":10},{"name":"Using RegExp.test","opsSec":18841125.534600124,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":19623928.889261287,"samples":5},{"name":"Using new RegExp.test","opsSec":5118286.1457346175,"samples":6},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5689863.739706883,"samples":5}]}-->
 
 ## startsWith comparison
 

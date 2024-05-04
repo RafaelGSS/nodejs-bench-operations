@@ -672,3 +672,25 @@ new Array(length)|100,000,000|4,212.672ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":91741294.84526499,"samples":5},{"name":"(short string) (true) String#slice and strict comparison","opsSec":946464944.7699884,"samples":6},{"name":"(long string) (true) String#endsWith","opsSec":85483671.98302616,"samples":6},{"name":"(long string) (true) String#slice and strict comparison","opsSec":949575677.7114993,"samples":7},{"name":"(short string) (false) String#endsWith","opsSec":109502632.58243582,"samples":6},{"name":"(short string) (false) String#slice and strict comparison","opsSec":948609038.6587822,"samples":6},{"name":"(long string) (false) String#endsWith","opsSec":99851837.28841552,"samples":7},{"name":"(long string) (false) String#slice and strict comparison","opsSec":949200550.9682648,"samples":6}]}-->
+
+## String searching
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using includes|937,529,672|98|
+|Using indexof|937,404,271|99|
+|Using RegExp.test|19,183,317|97|
+|Using RegExp.text with cached regex pattern|19,882,118|97|
+|Using new RegExp.test|5,002,511|97|
+|Using new RegExp.test with cached regex pattern|5,893,128|95|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Sat May 04 2024 01:36:19 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using includes","opsSec":937529671.7173458,"samples":5},{"name":"Using indexof","opsSec":937404270.6357776,"samples":6},{"name":"Using RegExp.test","opsSec":19183316.679377496,"samples":5},{"name":"Using RegExp.text with cached regex pattern","opsSec":19882117.916569065,"samples":4},{"name":"Using new RegExp.test","opsSec":5002510.835635637,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5893127.602561776,"samples":6}]}-->

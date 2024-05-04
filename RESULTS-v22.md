@@ -672,3 +672,25 @@ new Array(length)|100,000,000|4,032.636ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":128463694.96222468,"samples":5},{"name":"(short string) (true) String#slice and strict comparison","opsSec":145742117.63075015,"samples":4},{"name":"(long string) (true) String#endsWith","opsSec":91574908.51951411,"samples":5},{"name":"(long string) (true) String#slice and strict comparison","opsSec":147343699.76467088,"samples":5},{"name":"(short string) (false) String#endsWith","opsSec":141073778.168106,"samples":5},{"name":"(short string) (false) String#slice and strict comparison","opsSec":149331181.91171136,"samples":5},{"name":"(long string) (false) String#endsWith","opsSec":141674814.25705007,"samples":6},{"name":"(long string) (false) String#slice and strict comparison","opsSec":148017269.01852846,"samples":5}]}-->
+
+## String searching
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using includes|141,572,757|82|
+|Using indexof|146,185,452|83|
+|Using RegExp.test|17,105,310|97|
+|Using RegExp.text with cached regex pattern|17,854,069|96|
+|Using new RegExp.test|5,122,749|94|
+|Using new RegExp.test with cached regex pattern|5,836,007|96|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Sat May 04 2024 01:41:26 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using includes","opsSec":141572757.1135388,"samples":5},{"name":"Using indexof","opsSec":146185451.94899634,"samples":7},{"name":"Using RegExp.test","opsSec":17105310.036777463,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":17854068.77976062,"samples":5},{"name":"Using new RegExp.test","opsSec":5122748.6367733665,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5836006.53829842,"samples":5}]}-->

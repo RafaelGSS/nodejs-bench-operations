@@ -672,3 +672,25 @@ new Array(length)|100,000,000|4,915.579ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":309247162.27773964,"samples":5},{"name":"(short string) (true) String#slice and strict comparison","opsSec":909396782.0209001,"samples":6},{"name":"(long string) (true) String#endsWith","opsSec":194989434.90862694,"samples":8},{"name":"(long string) (true) String#slice and strict comparison","opsSec":908184495.3033423,"samples":7},{"name":"(short string) (false) String#endsWith","opsSec":870542027.85542,"samples":7},{"name":"(short string) (false) String#slice and strict comparison","opsSec":909313810.4226412,"samples":6},{"name":"(long string) (false) String#endsWith","opsSec":868328281.671055,"samples":6},{"name":"(long string) (false) String#slice and strict comparison","opsSec":909962029.0694051,"samples":6}]}-->
+
+## String searching
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using includes|910,089,909|97|
+|Using indexof|910,872,486|96|
+|Using RegExp.test|18,537,001|95|
+|Using RegExp.text with cached regex pattern|19,386,045|98|
+|Using new RegExp.test|4,938,292|96|
+|Using new RegExp.test with cached regex pattern|5,608,387|98|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Sat May 04 2024 01:39:46 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using includes","opsSec":910089909.1593091,"samples":7},{"name":"Using indexof","opsSec":910872486.2463844,"samples":10},{"name":"Using RegExp.test","opsSec":18537000.797138978,"samples":6},{"name":"Using RegExp.text with cached regex pattern","opsSec":19386045.25181551,"samples":6},{"name":"Using new RegExp.test","opsSec":4938292.351710335,"samples":4},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5608386.781154526,"samples":6}]}-->
