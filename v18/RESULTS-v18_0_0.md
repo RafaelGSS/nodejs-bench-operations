@@ -616,19 +616,19 @@ new Array(length)|100,000,000|4,625.693ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Readable reading 1e3 * "some data"|2,363|83|
-|streams.web.Readable reading 1e3 * "some data"|529|87|
+|streams.Readable reading 1e3 * "some data"|2,703|88|
+|streams.web.Readable reading 1e3 * "some data"|588|89|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Run:__ Tue Mar 12 2024 19:22:23 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Sat May 04 2024 00:57:08 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.606487274169922},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2363.257598285833,"samples":8},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":528.9596202800525,"samples":5}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2703.238396071481,"samples":6},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":587.7251222247844,"samples":5}]}-->
 
 ## Stream.Writable
 
