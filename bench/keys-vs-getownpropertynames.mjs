@@ -19,4 +19,5 @@ suite
     }
     const keys = Object.getOwnPropertyNames(object)
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

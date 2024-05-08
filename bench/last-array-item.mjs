@@ -25,4 +25,5 @@ suite
   .add('Length = 1_000_000 - Array[length - 1]', function () {
     arr100_000_0[arr100_000_0.length - 1]
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

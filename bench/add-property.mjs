@@ -41,4 +41,5 @@ suite
       configurable: true,
     })
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -35,4 +35,5 @@ suite
   .add('Format using date.get*', function () {
     const date = new Date()`${date.getMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

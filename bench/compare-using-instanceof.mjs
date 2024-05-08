@@ -39,4 +39,5 @@ suite
       1 + 1
     }
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

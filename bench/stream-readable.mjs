@@ -52,4 +52,5 @@ suite
       }
     },
   })
-  .run()
+
+await suite.runAndPrintResults()

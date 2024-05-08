@@ -58,4 +58,5 @@ suite
   .add(`crypto.verify('${algorithm}')`, function () {
     verify(algorithm, thing, rsaPublicKey, Buffer.from(signature, 'base64'))
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

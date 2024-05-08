@@ -9,4 +9,5 @@ suite
   .add('Date.now()', function () {
     Date.now()
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

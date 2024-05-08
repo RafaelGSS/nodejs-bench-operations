@@ -12,4 +12,5 @@ suite
   .add('NodeError Range', function () {
     new RangeError('test')
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -10,4 +10,5 @@ suite
   .add('fromUnixToISOString(new Date())', function () {
     fromUnixToISOString(new Date())
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

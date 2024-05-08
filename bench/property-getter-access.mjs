@@ -156,4 +156,5 @@ suite
   .add('DefineProperties (getter & enumerable=false & configurable=false)', function () {
     const v = definePropertiesEnumerableFalseAndConfigFalseObj.test
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -24,4 +24,5 @@ suite
   .add('Using new RegExp.test with cached regex pattern', function () {
     new RegExp(regex).test(text)
   })
-  .run()
+
+await suite.runAndPrintResults()

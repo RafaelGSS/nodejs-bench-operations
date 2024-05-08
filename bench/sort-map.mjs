@@ -20,4 +20,5 @@ suite
   .add('Sort using localeCompare', function () {
     new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

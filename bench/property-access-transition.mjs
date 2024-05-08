@@ -56,4 +56,5 @@ suite
     const obj = new Klass()
     console.assert(obj.d)
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -56,4 +56,5 @@ suite
   .add('slice (0, 512)', function (deferred) {
     blob1024.slice(0, 512)
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

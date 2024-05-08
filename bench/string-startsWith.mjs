@@ -40,4 +40,5 @@ suite
     longString.slice(0, comparison2.length) === comparison2
     }
 )
-.run({ async: false })
+
+await suite.runAndPrintResults()

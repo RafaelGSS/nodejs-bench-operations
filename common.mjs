@@ -1,18 +1,27 @@
-import Benchmark from 'benchmark'
-import { createTableHeader, H2, eventToMdTable } from './markdown.mjs'
+import { Bench } from 'tinybench'
+import { createTableHeader, H2, taskToMdTable } from './markdown.mjs'
 import { platform, arch, cpus, totalmem } from 'os'
 
-export function installMarkdownEmitter(suite, name, tableHeaderColumns = ['name', 'ops/sec', 'samples']) {
+export function printMdHeader(name, tableHeaderColumns = ['name', 'ops/sec', 'samples']) {
   const tableHeader = createTableHeader(tableHeaderColumns)
+  console.log(H2(name))
+  console.log(tableHeader)
+}
 
-  suite
-    .on('start', function () {
-      console.log(H2(name))
-      console.log(tableHeader)
-    })
-    .on('cycle', function (event) {
-      console.log(eventToMdTable(event))
-    })
+function printMdResults(tasks) {
+  const cycleEvents = []
+  for (const task of tasks) {
+    if (process.env.CI) {
+      cycleEvents.push({
+        name: task.name,
+        opsSec: task.result.hz,
+        samples: task.result.samples.length,
+      })
+    }
+    console.log(taskToMdTable(task))
+  }
+  printMarkdownMachineInfo(cycleEvents)
+  printMarkdownHiddenDetailedInfo(cycleEvents)
 }
 
 function getMachineInfo() {
@@ -24,61 +33,55 @@ function getMachineInfo() {
   }
 }
 
-export function installMarkdownMachineInfo(suite) {
+export function printMarkdownMachineInfo() {
   if (!process.env.CI) return
 
   const { platform, arch, cpus, totalMemory } = getMachineInfo()
 
   const machineInfo = `${platform} ${arch} | ${cpus} vCPUs | ${totalMemory.toFixed(1)}GB Mem`
 
-  suite.on('complete', () => {
-    const writter = process.stdout
+  const writter = process.stdout
 
-    writter.write('\n\n')
-    writter.write('<details>\n')
-    writter.write('<summary>Environment</summary>')
-    writter.write(`\n
+  writter.write('\n\n')
+  writter.write('<details>\n')
+  writter.write('<summary>Environment</summary>')
+  writter.write(`\n
 * __Machine:__ ${machineInfo}
 * __Run:__ ${new Date()}
 `)
-    writter.write('</details>')
-    writter.write('\n\n')
-  })
+  writter.write('</details>')
+  writter.write('\n\n')
 }
 
-export function installMarkdownHiddenDetailedInfo(suite) {
+export function printMarkdownHiddenDetailedInfo(cycleEvents) {
   if (!process.env.CI) return
 
-  const cycleEvents = []
+  const writter = process.stdout
 
-  suite
-    .on('cycle', function (event) {
-      cycleEvents.push({
-        name: event.target.name,
-        opsSec: event.target.hz,
-        samples: event.target.cycles,
-      })
-    })
-    .on('complete', function () {
-      const writter = process.stdout
+  // We use it to check regressions.yml
+  writter.write('<!--\n')
+  writter.write(
+    JSON.stringify({
+      environment: getMachineInfo(),
+      benchmarks: cycleEvents,
+    }),
+  )
+  writter.write('-->\n')
+}
 
-      writter.write('<!--\n')
-      writter.write(
-        JSON.stringify({
-          environment: getMachineInfo(),
-          benchmarks: cycleEvents,
-        }),
-      )
-      writter.write('-->\n')
-    })
+Bench.prototype.runAndPrintResults = async function () {
+  await this.warmup()
+  await this.run()
+  printMdResults(this.tasks)
 }
 
 export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
-  const suite = new Benchmark.Suite()
+  const suite = new Bench()
 
-  installMarkdownEmitter(suite, name, tableHeaderColumns)
-  installMarkdownMachineInfo(suite)
-  installMarkdownHiddenDetailedInfo(suite)
+  printMdHeader(name, tableHeaderColumns)
+  // installMarkdownEmitter(suite, name, tableHeaderColumns)
+  // installMarkdownMachineInfo(suite)
+  // installMarkdownHiddenDetailedInfo(suite)
 
   return suite
 }

@@ -27,4 +27,5 @@ suite
   .add('Using and operator (obj.field && obj.field.field2) (undefined)', function () {
     nullObj.field && nullObj.field.field2
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -132,4 +132,5 @@ suite
     b.increaseSize()
     b.dimension
   })
-  .run({ async: true })
+
+await suite.runAndPrintResults()
