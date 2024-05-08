@@ -1,14 +1,14 @@
-const semver = require('semver')
-const { H2 } = require('./markdown')
+import { satisfies } from 'semver'
+import { H2 } from './markdown'
 
 function skipIfVersion(version) {
-  if (semver.satisfies(process.version, version)) {
+  if (satisfies(process.version, version)) {
     process.exit(0)
   }
 }
 
 function skipIfVersionWithMessage(version, name) {
-  if (semver.satisfies(process.version, version)) {
+  if (satisfies(process.version, version)) {
     console.log(H2(name))
     console.log('This is not supported in this Node.js version')
 
@@ -16,7 +16,7 @@ function skipIfVersionWithMessage(version, name) {
   }
 }
 
-module.exports = {
+export default {
   skipIfVersion,
   skipIfVersionWithMessage,
 }
