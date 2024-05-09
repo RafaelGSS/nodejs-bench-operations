@@ -196,3 +196,23 @@ new Array(length)|100,000,000|4,636.513ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Function returning null","opsSec":1663701.0337429717,"samples":831851},{"name":"Function returning explicitly undefined","opsSec":1594955.3200826377,"samples":797478},{"name":"Function returning implicitly undefined","opsSec":1698133.62428379,"samples":849067},{"name":"Function returning string","opsSec":1600697.5641716437,"samples":800349},{"name":"Function returning integer","opsSec":1659506.6832527537,"samples":829754},{"name":"Function returning float","opsSec":1675311.3856837961,"samples":837656},{"name":"Function returning functions","opsSec":1623981.933403756,"samples":811991},{"name":"Function returning arrow functions","opsSec":1650704.3919195782,"samples":825353},{"name":"Function returning empty object","opsSec":1663642.7410540436,"samples":831822},{"name":"Function returning empty array","opsSec":1676536.8072429101,"samples":838269}]}-->
+
+## Array.includes vs raw comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|using Array.includes|17,200,309|8600155|
+|using Array.includes (first item)|20,392,691|10196346|
+|Using raw comparison|21,091,876|10545939|
+|Using raw comparison (first item)|21,070,304|10535153|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Thu May 09 2024 21:40:25 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"using Array.includes","opsSec":17200309.393070746,"samples":8600155},{"name":"using Array.includes (first item)","opsSec":20392691.017876726,"samples":10196346},{"name":"Using raw comparison","opsSec":21091876.26007147,"samples":10545939},{"name":"Using raw comparison (first item)","opsSec":21070304.533122797,"samples":10535153}]}-->
