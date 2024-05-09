@@ -2,13 +2,13 @@ import { Bench } from 'tinybench'
 import { createTableHeader, H2, taskToMdTable } from './markdown.mjs'
 import { platform, arch, cpus, totalmem } from 'os'
 
-export function printMdHeader(name, tableHeaderColumns = ['name', 'ops/sec', 'samples']) {
+function printMdHeader(name, tableHeaderColumns = ['name', 'ops/sec', 'samples']) {
   const tableHeader = createTableHeader(tableHeaderColumns)
   console.log(H2(name))
   console.log(tableHeader)
 }
 
-function printMdResults(tasks) {
+function printMarkdownResults(tasks) {
   const cycleEvents = []
   for (const task of tasks) {
     if (process.env.CI) {
@@ -33,7 +33,7 @@ function getMachineInfo() {
   }
 }
 
-export function printMarkdownMachineInfo() {
+function printMarkdownMachineInfo() {
   if (!process.env.CI) return
 
   const { platform, arch, cpus, totalMemory } = getMachineInfo()
@@ -53,7 +53,7 @@ export function printMarkdownMachineInfo() {
   writter.write('\n\n')
 }
 
-export function printMarkdownHiddenDetailedInfo(cycleEvents) {
+function printMarkdownHiddenDetailedInfo(cycleEvents) {
   if (!process.env.CI) return
 
   const writter = process.stdout
@@ -72,16 +72,12 @@ export function printMarkdownHiddenDetailedInfo(cycleEvents) {
 Bench.prototype.runAndPrintResults = async function () {
   await this.warmup()
   await this.run()
-  printMdResults(this.tasks)
+  printMarkdownResults(this.tasks)
 }
 
 export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
   const suite = new Bench()
-
+  // TODO: move it to runAndPrintResults
   printMdHeader(name, tableHeaderColumns)
-  // installMarkdownEmitter(suite, name, tableHeaderColumns)
-  // installMarkdownMachineInfo(suite)
-  // installMarkdownHiddenDetailedInfo(suite)
-
   return suite
 }
