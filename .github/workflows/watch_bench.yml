@@ -36,6 +36,7 @@ jobs:
   benchmark:
     needs: changes
     if: needs.changes.outputs.files != '[]'
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
