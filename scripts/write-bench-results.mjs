@@ -20,7 +20,7 @@ const benchResult = JSON.parse(process.env.BENCH_ARTIFACTS);
 function getBenchmarkFile(key) {
   const filepath = process.env.BENCH_FILE || key.split(':')[0];
 
-  return basename(filepath, '.js');
+  return basename(filepath, '.mjs');
 }
 
 function getBenchmarkNodeVersion(key) {
