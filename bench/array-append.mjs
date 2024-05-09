@@ -1,4 +1,4 @@
-import { H2, createTableHeader } from '../markdown.js'
+import { H2, createTableHeader } from '../markdown.mjs'
 
 function compareToMdTable(name, amount, ms) {
   const numberFormat = new Intl.NumberFormat()
