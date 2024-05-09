@@ -216,6 +216,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Stop Runner
         uses: ./.github/workflows/runner-starter
         with:
