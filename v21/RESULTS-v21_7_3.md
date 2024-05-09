@@ -437,3 +437,30 @@ new Array(length)|100,000,000|4,798.587ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Setter (class)","opsSec":15030668.196331782,"samples":7515335},{"name":"Setter","opsSec":6822931.754374311,"samples":3411466},{"name":"Method","opsSec":15241206.780721953,"samples":7620604},{"name":"DefineProperty (setter)","opsSec":15144556.394729372,"samples":7572279},{"name":"DefineProperty (setter & enumerable=false)","opsSec":6773104.076436658,"samples":3386553},{"name":"DefineProperty (setter & configurable=false)","opsSec":6716254.885085284,"samples":3358128},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":6700258.150714816,"samples":3350130},{"name":"DefineProperty (writable)","opsSec":15192559.847944355,"samples":7596280},{"name":"DefineProperty (writable & enumerable=false)","opsSec":15227529.513688661,"samples":7613859},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":15195151.301093008,"samples":7597576},{"name":"DefineProperties (setter)","opsSec":15139332.213622523,"samples":7569667},{"name":"DefineProperties (setter & enumerable=false)","opsSec":6597991.762553155,"samples":3298996},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":6610611.524062744,"samples":3305306}]}-->
+
+## Shallow Copy
+
+|name|ops/sec|samples|
+|-|-|-|
+|{ ...object }|10,277,071|5138536|
+|{ ...object, __proto__: null }|2,218,596|1109299|
+|{ ...object, newProp: true }|10,064,957|5032480|
+|structuredClone|295,187|147594|
+|JSON.parse + JSON.stringify|248,426|124214|
+|loop + object.keys starting with {}|1,417,723|708862|
+|loop + object.keys starting with { __proto__: null }|809,392|404697|
+|loop + object.keys starting with { randomProp: true }|662,177|331089|
+|object.keys + reduce(FN, {})|647,527|323764|
+|object.keys + reduce(FN, { __proto__: null })|827,986|413994|
+|object.keys + reduce(FN, { newProp: true })|673,295|336648|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Thu May 09 2024 23:28:06 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"{ ...object }","opsSec":10277071.815009462,"samples":5138536},{"name":"{ ...object, __proto__: null }","opsSec":2218596.2029366186,"samples":1109299},{"name":"{ ...object, newProp: true }","opsSec":10064957.926615676,"samples":5032480},{"name":"structuredClone","opsSec":295187.55013419525,"samples":147594},{"name":"JSON.parse + JSON.stringify","opsSec":248426.20884727375,"samples":124214},{"name":"loop + object.keys starting with {}","opsSec":1417723.937620296,"samples":708862},{"name":"loop + object.keys starting with { __proto__: null }","opsSec":809392.9089385048,"samples":404697},{"name":"loop + object.keys starting with { randomProp: true }","opsSec":662177.219956197,"samples":331089},{"name":"object.keys + reduce(FN, {})","opsSec":647527.7448736689,"samples":323764},{"name":"object.keys + reduce(FN, { __proto__: null })","opsSec":827986.8805610242,"samples":413994},{"name":"object.keys + reduce(FN, { newProp: true })","opsSec":673295.2849610691,"samples":336648}]}-->
