@@ -8,7 +8,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["18.0.0","18.20.1","18.20.2","20.0.0","20.12.1","20.12.2","21.0.0","21.7.2","21.7.3","22.0.0","22.1.0"]'
+        default: '["18.0.0","18.20.1","18.20.2","20.0.0","20.13.0","20.13.1","21.0.0","21.7.2","21.7.3","22.0.0","22.0.0","22.1.0"]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
@@ -37,325 +37,325 @@ jobs:
   
   add-property:
     needs: runner-start
-    name: Running "add-property.js"
+    name: Running "add-property.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: add-property.js
+      bench-file: add-property.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   array-append:
     needs: add-property
-    name: Running "array-append.js"
+    name: Running "array-append.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: array-append.js
+      bench-file: array-append.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   array-creation:
     needs: array-append
-    name: Running "array-creation.js"
+    name: Running "array-creation.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: array-creation.js
+      bench-file: array-creation.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   async-function-vs-function:
     needs: array-creation
-    name: Running "async-function-vs-function.js"
+    name: Running "async-function-vs-function.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: async-function-vs-function.js
+      bench-file: async-function-vs-function.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   blob:
     needs: async-function-vs-function
-    name: Running "blob.js"
+    name: Running "blob.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: blob.js
+      bench-file: blob.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   compare-using-instanceof:
     needs: blob
-    name: Running "compare-using-instanceof.js"
+    name: Running "compare-using-instanceof.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: compare-using-instanceof.js
+      bench-file: compare-using-instanceof.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   crypto-verify:
     needs: compare-using-instanceof
-    name: Running "crypto-verify.js"
+    name: Running "crypto-verify.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: crypto-verify.js
+      bench-file: crypto-verify.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   date-format-iso:
     needs: crypto-verify
-    name: Running "date-format-iso.js"
+    name: Running "date-format-iso.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: date-format-iso.js
+      bench-file: date-format-iso.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   date-format:
     needs: date-format-iso
-    name: Running "date-format.js"
+    name: Running "date-format.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: date-format.js
+      bench-file: date-format.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   date-string-coersion:
     needs: date-format
-    name: Running "date-string-coersion.js"
+    name: Running "date-string-coersion.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: date-string-coersion.js
+      bench-file: date-string-coersion.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   deleting-properties:
     needs: date-string-coersion
-    name: Running "deleting-properties.js"
+    name: Running "deleting-properties.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: deleting-properties.js
+      bench-file: deleting-properties.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   error:
     needs: deleting-properties
-    name: Running "error.js"
+    name: Running "error.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: error.js
+      bench-file: error.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   function-return:
     needs: error
-    name: Running "function-return.js"
+    name: Running "function-return.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: function-return.js
+      bench-file: function-return.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   includes-vs-raw-comparison:
     needs: function-return
-    name: Running "includes-vs-raw-comparison.js"
+    name: Running "includes-vs-raw-comparison.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: includes-vs-raw-comparison.js
+      bench-file: includes-vs-raw-comparison.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   keys-vs-getownpropertynames:
     needs: includes-vs-raw-comparison
-    name: Running "keys-vs-getownpropertynames.js"
+    name: Running "keys-vs-getownpropertynames.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: keys-vs-getownpropertynames.js
+      bench-file: keys-vs-getownpropertynames.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   last-array-item:
     needs: keys-vs-getownpropertynames
-    name: Running "last-array-item.js"
+    name: Running "last-array-item.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: last-array-item.js
+      bench-file: last-array-item.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   object-creation:
     needs: last-array-item
-    name: Running "object-creation.js"
+    name: Running "object-creation.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: object-creation.js
+      bench-file: object-creation.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   optional-chain-vs-and-operator:
     needs: object-creation
-    name: Running "optional-chain-vs-and-operator.js"
+    name: Running "optional-chain-vs-and-operator.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: optional-chain-vs-and-operator.js
+      bench-file: optional-chain-vs-and-operator.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   parse-int:
     needs: optional-chain-vs-and-operator
-    name: Running "parse-int.js"
+    name: Running "parse-int.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: parse-int.js
+      bench-file: parse-int.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   possible-undefined-function:
     needs: parse-int
-    name: Running "possible-undefined-function.js"
+    name: Running "possible-undefined-function.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: possible-undefined-function.js
+      bench-file: possible-undefined-function.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   private-property:
     needs: possible-undefined-function
-    name: Running "private-property.js"
+    name: Running "private-property.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: private-property.js
+      bench-file: private-property.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   property-access-transition:
     needs: private-property
-    name: Running "property-access-transition.js"
+    name: Running "property-access-transition.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: property-access-transition.js
+      bench-file: property-access-transition.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   property-getter-access:
     needs: property-access-transition
-    name: Running "property-getter-access.js"
+    name: Running "property-getter-access.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: property-getter-access.js
+      bench-file: property-getter-access.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   property-setter-access:
     needs: property-getter-access
-    name: Running "property-setter-access.js"
+    name: Running "property-setter-access.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: property-setter-access.js
+      bench-file: property-setter-access.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   replace-vs-replaceall-comparison:
     needs: property-setter-access
-    name: Running "replace-vs-replaceall-comparison.js"
+    name: Running "replace-vs-replaceall-comparison.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: replace-vs-replaceall-comparison.js
+      bench-file: replace-vs-replaceall-comparison.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   shallow-copy:
     needs: replace-vs-replaceall-comparison
-    name: Running "shallow-copy.js"
+    name: Running "shallow-copy.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: shallow-copy.js
+      bench-file: shallow-copy.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   sort-map:
     needs: shallow-copy
-    name: Running "sort-map.js"
+    name: Running "sort-map.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: sort-map.js
+      bench-file: sort-map.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   spread-vs-object-assign:
     needs: sort-map
-    name: Running "spread-vs-object-assign.js"
+    name: Running "spread-vs-object-assign.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: spread-vs-object-assign.js
+      bench-file: spread-vs-object-assign.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   stream-readable:
     needs: spread-vs-object-assign
-    name: Running "stream-readable.js"
+    name: Running "stream-readable.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: stream-readable.js
+      bench-file: stream-readable.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   stream-writable:
     needs: stream-readable
-    name: Running "stream-writable.js"
+    name: Running "stream-writable.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: stream-writable.js
+      bench-file: stream-writable.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   string-concat:
     needs: stream-writable
-    name: Running "string-concat.js"
+    name: Running "string-concat.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: string-concat.js
+      bench-file: string-concat.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   string-endsWith:
     needs: string-concat
-    name: Running "string-endsWith.js"
+    name: Running "string-endsWith.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: string-endsWith.js
+      bench-file: string-endsWith.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   string-searching:
     needs: string-endsWith
-    name: Running "string-searching.js"
+    name: Running "string-searching.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: string-searching.js
+      bench-file: string-searching.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   string-startsWith:
     needs: string-searching
-    name: Running "string-startsWith.js"
+    name: Running "string-startsWith.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: string-startsWith.js
+      bench-file: string-startsWith.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   super-vs-this:
     needs: string-startsWith
-    name: Running "super-vs-this.js"
+    name: Running "super-vs-this.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: super-vs-this.js
+      bench-file: super-vs-this.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
   unix-time:
     needs: super-vs-this
-    name: Running "unix-time.js"
+    name: Running "unix-time.mjs"
     uses: ./.github/workflows/bench.yml
     with:
-      bench-file: unix-time.js
+      bench-file: unix-time.mjs
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 

@@ -5,11 +5,11 @@ import { rootFolder } from './utils.mjs';
 import nv from '@pkgjs/nv';
 
 const allBenches = await readdir(join(rootFolder, 'bench')).then(items => {
-  return items.filter(item => item.endsWith('.js'));
+  return items.filter(item => item.endsWith('.mjs'));
 });
 
 const formatJobName = name => name
-.replace('.js', '')
+.replace('.mjs', '')
 .replace(/[^a-zA-Z\-_]/g, '_')
 .slice(0, 100)
 
