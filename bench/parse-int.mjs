@@ -15,4 +15,5 @@ suite
   .add('Using + - big number (10 len)', function () {
     ;+'9999999999'
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

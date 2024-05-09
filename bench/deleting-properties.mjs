@@ -64,4 +64,5 @@ suite
     data.y
     data.z
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -19,4 +19,5 @@ suite
     const date = new Date()
     const value = date.toString()
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

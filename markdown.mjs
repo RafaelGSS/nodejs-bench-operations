@@ -1,6 +1,6 @@
-export function eventToMdTable (event) {
-  const { target } = event
-  return `|${target.name}|${Math.round(target.hz).toLocaleString()}|${target.stats.sample.length}|`
+export function taskToMdTable (task) {
+  const { result } = task
+  return `|${task.name}|${parseInt(result.hz.toString(), 10).toLocaleString()}|${result.samples.length}|`
 }
 
 export function createTableHeader(columns) {

@@ -31,4 +31,5 @@ suite
     const cls = new ThisClass()
     const value = cls.bar()
   })
-  .run()
+
+await suite.runAndPrintResults()

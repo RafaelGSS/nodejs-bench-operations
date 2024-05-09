@@ -19,4 +19,5 @@ suite
     const httpVersion = '2.0'
     const exists = httpVersion === '2.0' || httpVersion === '1.0' || httpVersion === '1.1'
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -173,4 +173,5 @@ suite
   .add('DefineProperties (setter & enumerable=false & configurable=false)', function () {
     definePropertiesEnumerableFalseAndConfigFalseObj.test = 'Hello'
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

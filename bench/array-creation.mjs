@@ -9,4 +9,5 @@ suite
   .add('Array.from', function () {
     Array.from({ length: 1024 * 1024 })
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

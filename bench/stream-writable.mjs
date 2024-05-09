@@ -34,4 +34,5 @@ suite
       ++i
     }
   })
-  .run()
+
+await suite.runAndPrintResults()

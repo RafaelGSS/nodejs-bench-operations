@@ -18,4 +18,5 @@ suite
     const text = '1+2+3+4+5+6+7+8+9'
     const replaced = text.replaceAll(/\+/g, ' ')
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

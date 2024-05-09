@@ -24,4 +24,5 @@ suite
     function C() {}
     new C()
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

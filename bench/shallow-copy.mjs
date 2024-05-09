@@ -98,4 +98,5 @@ suite
       { newProp: true },
     )
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

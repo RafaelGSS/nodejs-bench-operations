@@ -33,4 +33,5 @@ suite
     },
     defer: true,
   })
-  .run({ async: false });
+  
+await suite.runAndPrintResults()

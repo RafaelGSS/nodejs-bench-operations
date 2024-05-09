@@ -95,4 +95,5 @@ suite
   .add('{ ...smallObject, ...anotherSmallObject }', function () {
     const nextObject = { ...smallObject, ...anotherSmallObject }
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

@@ -16,4 +16,5 @@ suite
   .add('Using array.join', function () {
     ;[k, o, l].join('-')
   })
-  .run()
+
+await suite.runAndPrintResults()

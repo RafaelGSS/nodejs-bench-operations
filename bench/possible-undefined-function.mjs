@@ -13,4 +13,5 @@ suite
     const emptyObject = Object.create({})
     emptyObject.undefinedFunction?.()
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()

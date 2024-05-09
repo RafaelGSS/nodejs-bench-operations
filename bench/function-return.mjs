@@ -43,4 +43,5 @@ suite
     const test = new Function('test', 'return []')
     const a = test()
   })
-  .run({ async: false })
+
+await suite.runAndPrintResults()
