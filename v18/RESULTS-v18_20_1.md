@@ -507,3 +507,22 @@ new Array(length)|100,000,000|4,653.765ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":2193.0585694752904,"samples":1097},{"name":"{...smallObject} - Total keys: 2","opsSec":13509521.123909533,"samples":6754761},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":2472.2708761943913,"samples":1237},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6618.705150664142,"samples":3310},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1326.791184711251,"samples":664},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":6602938.221082642,"samples":3301470},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":10948730.981951455,"samples":5474366},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":9267781.96906544,"samples":4633891}]}-->
+
+## String concat
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using + sign|17,119,984|8559993|
+|Using backtick (`)|17,293,673|8646837|
+|Using array.join|6,640,334|3320168|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Thu May 09 2024 23:57:33 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using + sign","opsSec":17119984.538743384,"samples":8559993},{"name":"Using backtick (`)","opsSec":17293673.967014935,"samples":8646837},{"name":"Using array.join","opsSec":6640334.628966859,"samples":3320168}]}-->
