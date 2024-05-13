@@ -1,5 +1,5 @@
 import { satisfies } from 'semver'
-import { H2 } from './markdown'
+import { H2 } from './markdown.mjs'
 
 export function skipIfVersion(version) {
   if (satisfies(process.version, version)) {
