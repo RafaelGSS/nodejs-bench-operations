@@ -2,18 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|15,047,655|7523828|
-|Using optional chain (obj.field?.field2) (undefined)|15,178,391|7589196|
-|Using and operator (obj.field && obj.field.field2) (Valid)|15,103,023|7551512|
-|Using and operator (obj.field && obj.field.field2) (undefined)|15,204,569|7602285|
+|Using optional chain (obj.field?.field2) (Valid)|15,145,834|7572919|
+|Using optional chain (obj.field?.field2) (undefined)|15,176,166|7588084|
+|Using and operator (obj.field && obj.field.field2) (Valid)|15,213,603|7606802|
+|Using and operator (obj.field && obj.field.field2) (undefined)|15,259,820|7629911|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Thu May 09 2024 22:14:59 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon May 13 2024 17:06:54 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":15047655.368016765,"samples":7523828},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":15178391.939310761,"samples":7589196},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":15103023.848996412,"samples":7551512},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":15204569.543895671,"samples":7602285}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":15145834.910236724,"samples":7572919},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":15176166.755535465,"samples":7588084},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":15213603.269764507,"samples":7606802},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":15259820.870777205,"samples":7629911}]}-->
