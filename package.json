@@ -1,6 +1,6 @@
 {
   "name": "nodejs-bench-operations",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Is X faster than Y in Node.js vX.Z?",
   "main": "bin.js",
   "dependencies": {
