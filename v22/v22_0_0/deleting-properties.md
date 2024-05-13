@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|3,384,837|1692419|
-|Using delete property (proto: null)|9,082,113|4541057|
-|Using delete property (cached proto: null)|3,308,712|1654357|
-|Using undefined assignment|16,117,812|8058907|
-|Using undefined assignment (proto: null)|8,615,860|4307931|
-|Using undefined property (cached proto: null)|16,149,575|8074788|
+|Using delete property|3,381,200|1690601|
+|Using delete property (proto: null)|9,243,254|4621628|
+|Using delete property (cached proto: null)|3,348,564|1674283|
+|Using undefined assignment|16,122,285|8061143|
+|Using undefined assignment (proto: null)|9,015,830|4507916|
+|Using undefined property (cached proto: null)|16,129,002|8064502|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Thu May 09 2024 21:25:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon May 13 2024 16:52:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using delete property","opsSec":3384837.6141289324,"samples":1692419},{"name":"Using delete property (proto: null)","opsSec":9082113.945510445,"samples":4541057},{"name":"Using delete property (cached proto: null)","opsSec":3308712.2000602908,"samples":1654357},{"name":"Using undefined assignment","opsSec":16117812.581603399,"samples":8058907},{"name":"Using undefined assignment (proto: null)","opsSec":8615860.173427623,"samples":4307931},{"name":"Using undefined property (cached proto: null)","opsSec":16149575.806213072,"samples":8074788}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using delete property","opsSec":3381200.816579621,"samples":1690601},{"name":"Using delete property (proto: null)","opsSec":9243254.70595051,"samples":4621628},{"name":"Using delete property (cached proto: null)","opsSec":3348564.4998463425,"samples":1674283},{"name":"Using undefined assignment","opsSec":16122285.322874255,"samples":8061143},{"name":"Using undefined assignment (proto: null)","opsSec":9015830.629597118,"samples":4507916},{"name":"Using undefined property (cached proto: null)","opsSec":16129002.32263459,"samples":8064502}]}-->
