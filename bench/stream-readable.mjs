@@ -1,4 +1,4 @@
-import { skipIfVersion } from '../utils'
+import { skipIfVersion } from '../utils.mjs'
 import { Readable } from 'node:stream'
 import { ReadableStream } from 'node:stream/web'
 import { createBenchmarkSuite } from '../common.mjs'

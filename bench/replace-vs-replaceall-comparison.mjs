@@ -1,4 +1,4 @@
-import { skipIfVersionWithMessage } from '../utils'
+import { skipIfVersionWithMessage } from '../utils.mjs'
 import { createBenchmarkSuite } from '../common.mjs'
 
 skipIfVersionWithMessage('<15.0.0', 'replace vs replaceAll comparison')
