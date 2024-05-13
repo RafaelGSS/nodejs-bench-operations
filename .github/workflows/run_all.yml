@@ -62,17 +62,8 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  async-function-vs-function:
-    needs: array-creation
-    name: Running "async-function-vs-function.mjs"
-    uses: ./.github/workflows/bench.yml
-    with:
-      bench-file: async-function-vs-function.mjs
-      node-versions: ${{ inputs.node-versions }}
-      run-start-stop: false
-
   blob:
-    needs: async-function-vs-function
+    needs: array-creation
     name: Running "blob.mjs"
     uses: ./.github/workflows/bench.yml
     with:
