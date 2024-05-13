@@ -531,25 +531,25 @@ new Array(length)|100,000,000|4,124.742ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|(short string) (true) String#endsWith|15,601,015|7800508|
-|(short string) (true) String#slice and strict comparison|16,112,363|8056182|
-|(long string) (true) String#endsWith|14,425,531|7212766|
-|(long string) (true) String#slice and strict comparison|16,168,151|8084076|
-|(short string) (false) String#endsWith|15,996,664|7998333|
-|(short string) (false) String#slice and strict comparison|16,172,414|8086208|
-|(long string) (false) String#endsWith|15,575,459|7787730|
-|(long string) (false) String#slice and strict comparison|16,030,216|8015109|
+|(short string) (true) String#endsWith|14,138,877|7069439|
+|(short string) (true) String#slice and strict comparison|15,533,805|7766904|
+|(long string) (true) String#endsWith|13,923,301|6961651|
+|(long string) (true) String#slice and strict comparison|15,610,173|7805087|
+|(short string) (false) String#endsWith|14,731,307|7365654|
+|(short string) (false) String#slice and strict comparison|15,078,548|7539275|
+|(long string) (false) String#endsWith|15,057,272|7528637|
+|(long string) (false) String#slice and strict comparison|14,433,867|7216935|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Fri May 10 2024 00:16:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon May 13 2024 17:38:31 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":15601015.18874258,"samples":7800508},{"name":"(short string) (true) String#slice and strict comparison","opsSec":16112363.613321284,"samples":8056182},{"name":"(long string) (true) String#endsWith","opsSec":14425531.249886973,"samples":7212766},{"name":"(long string) (true) String#slice and strict comparison","opsSec":16168151.579686679,"samples":8084076},{"name":"(short string) (false) String#endsWith","opsSec":15996664.464360194,"samples":7998333},{"name":"(short string) (false) String#slice and strict comparison","opsSec":16172414.318119409,"samples":8086208},{"name":"(long string) (false) String#endsWith","opsSec":15575459.127796886,"samples":7787730},{"name":"(long string) (false) String#slice and strict comparison","opsSec":16030216.813807176,"samples":8015109}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":14138877.773771191,"samples":7069439},{"name":"(short string) (true) String#slice and strict comparison","opsSec":15533805.8252695,"samples":7766904},{"name":"(long string) (true) String#endsWith","opsSec":13923301.108904073,"samples":6961651},{"name":"(long string) (true) String#slice and strict comparison","opsSec":15610173.906323818,"samples":7805087},{"name":"(short string) (false) String#endsWith","opsSec":14731307.14552859,"samples":7365654},{"name":"(short string) (false) String#slice and strict comparison","opsSec":15078548.974701108,"samples":7539275},{"name":"(long string) (false) String#endsWith","opsSec":15057272.584579855,"samples":7528637},{"name":"(long string) (false) String#slice and strict comparison","opsSec":14433867.69067228,"samples":7216935}]}-->
 
 ## String searching
 
