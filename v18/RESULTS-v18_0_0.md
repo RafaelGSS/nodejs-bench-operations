@@ -56,19 +56,19 @@ new Array(length)|100,000,000|4,607.543ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|226|114|
-|Array.from|21|11|
+|new Array|230|116|
+|Array.from|22|12|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Thu May 09 2024 20:37:37 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon May 13 2024 15:32:06 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Array","opsSec":226.1587820890989,"samples":114},{"name":"Array.from","opsSec":21.84401017792516,"samples":11}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Array","opsSec":230.20697755944107,"samples":116},{"name":"Array.from","opsSec":22.237757411369792,"samples":12}]}-->
 
 ## Comparison using `instanceof`
 
