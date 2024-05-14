@@ -86,9 +86,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: \${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: \${{ secrets.AWS_SECRET_KEY }}
-          aws-region: \${{ secrets.AWS_REGION }}
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::800406105498:role/RafaelGSS-nodejs-bench-operations
       - name: Checkout
         uses: actions/checkout@v4
 
