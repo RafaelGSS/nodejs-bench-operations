@@ -72,9 +72,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Start Runner
-        uses: ./.github/workflows/runner-starter
+        uses: nodesource/aws-eco-runner@v1.0.0-beta.3
         with:
-          instance_id: 'i-065f0f848eb1615ae'
+          instances_id: '["i-065f0f848eb1615ae"]'
           action: 'start'
           aws_default_region: 'us-west-2'
   ${benchJobs.join('')}
@@ -92,9 +92,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Stop Runner
-        uses: ./.github/workflows/runner-starter
+        uses: nodesource/aws-eco-runner@v1.0.0-beta.3
         with:
-          instance_id: 'i-065f0f848eb1615ae'
+          instances_id: '["i-065f0f848eb1615ae"]'
           action: 'stop'
           aws_default_region: 'us-west-2'
 `;
