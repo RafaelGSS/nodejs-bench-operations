@@ -29,13 +29,6 @@ This repository contains an action to automatically identify regressions and imp
 
 See: [check-regressions.yml](https://github.com/RafaelGSS/nodejs-bench-operations/actions/workflows/check_regressions.yml)
 
-## Affiliates
-
-Some projects have done some perfomance comparisson on a dedicated topic.
-Here is a useful list:
-
-- [Loops](https://github.com/simone-sanfratello/node-bench-iteration)
-
 ## Sponsors
 
 Benchmark machines are sponsored by [NodeSource](https://nodesource.com/)
