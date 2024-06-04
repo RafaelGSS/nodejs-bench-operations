@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 jobs:
-  start_windows_runner:
+  start_runner:
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credentials
@@ -34,7 +34,17 @@ jobs:
       - name: Run task to keep the runner active
         run: echo "Keep the runner active"
 
-      - name: Stop Runner
+  stop_runner:
+    runs-on: ubuntu-latest
+    needs: keep-runner-active
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::800406105498:role/RafaelGSS-nodejs-bench-operations
+
+      - name: Start Runner
         uses: nodesource/aws-eco-runner@v1.0.0-beta.3
         with:
           instances_id: '["i-065f0f848eb1615ae"]'
