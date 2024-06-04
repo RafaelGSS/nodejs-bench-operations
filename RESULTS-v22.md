@@ -93,3 +93,25 @@ new Array(length)|100,000,000|4,189.174ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245220184326172},"benchmarks":[{"name":"new Blob (128)","opsSec":6460.842346268459,"samples":3231},{"name":"new Blob (1024)","opsSec":793.8009940907792,"samples":397},{"name":"text (128)","opsSec":6379.490049083555,"samples":3190},{"name":"text (1024)","opsSec":812.3722140503185,"samples":407},{"name":"arrayBuffer (128)","opsSec":6508.30916731152,"samples":3255},{"name":"arrayBuffer (1024)","opsSec":809.2990094769671,"samples":405},{"name":"slice (0, 64)","opsSec":233246.955520094,"samples":116624},{"name":"slice (0, 512)","opsSec":42180.55599085148,"samples":21091}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|334,413|167207|
+|[True conditional] Using constructor name|324,701|162351|
+|[True conditional] Check if property is valid then instanceof |334,429|167215|
+|[False conditional] Using instanceof only|16,151,322|8075662|
+|[False conditional] Using constructor name|16,026,072|8013037|
+|[False conditional] Check if property is valid then instanceof |16,150,461|8075231|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Tue Jun 04 2024 16:14:58 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245220184326172},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":334413.9819416551,"samples":167207},{"name":"[True conditional] Using constructor name","opsSec":324701.3603383026,"samples":162351},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":334429.0803200125,"samples":167215},{"name":"[False conditional] Using instanceof only","opsSec":16151322.22339761,"samples":8075662},{"name":"[False conditional] Using constructor name","opsSec":16026072.205056304,"samples":8013037},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":16150461.547758074,"samples":8075231}]}-->
