@@ -138,19 +138,19 @@ new Array(length)|100,000,000|4,154.497ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,405,381|702691|
-|fromUnixToISOString(new Date())|2,048,490|1024246|
+|new Date().toISOString()|1,372,093|686047|
+|fromUnixToISOString(new Date())|1,991,038|995520|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Mon May 13 2024 19:28:28 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Jun 23 2024 23:09:48 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1405381.6430327094,"samples":702691},{"name":"fromUnixToISOString(new Date())","opsSec":2048490.3653042095,"samples":1024246}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1372093.3523721131,"samples":686047},{"name":"fromUnixToISOString(new Date())","opsSec":1991038.5624688843,"samples":995520}]}-->
 
 ## Date String coersion
 
