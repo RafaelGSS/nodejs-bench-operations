@@ -221,20 +221,20 @@ new Array(length)|100,000,000|4,137.495ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|311,972|155987|
-|NodeError|314,769|157385|
-|NodeError Range|315,260|157631|
+|Error|295,443|147722|
+|NodeError|311,862|155932|
+|NodeError Range|320,623|160312|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Tue Jun 04 2024 16:19:50 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Jun 23 2024 23:29:26 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245220184326172},"benchmarks":[{"name":"Error","opsSec":311972.633559875,"samples":155987},{"name":"NodeError","opsSec":314769.4932211209,"samples":157385},{"name":"NodeError Range","opsSec":315260.73895705957,"samples":157631}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Error","opsSec":295443.92672992876,"samples":147722},{"name":"NodeError","opsSec":311862.65649565746,"samples":155932},{"name":"NodeError Range","opsSec":320623.1593260736,"samples":160312}]}-->
 
 ## Function return
 
