@@ -304,23 +304,23 @@ new Array(length)|100,000,000|4,833.128ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|8,760,348|4380175|
-|Length = 10_000 - Array.at|9,220,929|4610465|
-|Length = 1_000_000 - Array.at|9,219,635|4609818|
-|Length = 100 - Array[length - 1]|16,605,450|8302726|
-|Length = 10_000 - Array[length - 1]|16,361,477|8180739|
-|Length = 1_000_000 - Array[length - 1]|16,408,726|8204364|
+|Length = 100 - Array.at|9,788,863|4894432|
+|Length = 10_000 - Array.at|9,015,006|4507504|
+|Length = 1_000_000 - Array.at|9,217,569|4608785|
+|Length = 100 - Array[length - 1]|16,890,436|8445219|
+|Length = 10_000 - Array[length - 1]|16,903,863|8451932|
+|Length = 1_000_000 - Array[length - 1]|16,449,296|8224649|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Thu May 09 2024 21:53:01 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Sun Jun 23 2024 23:48:57 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":8760348.136942258,"samples":4380175},{"name":"Length = 10_000 - Array.at","opsSec":9220929.142608078,"samples":4610465},{"name":"Length = 1_000_000 - Array.at","opsSec":9219635.18669104,"samples":4609818},{"name":"Length = 100 - Array[length - 1]","opsSec":16605450.15508371,"samples":8302726},{"name":"Length = 10_000 - Array[length - 1]","opsSec":16361477.110599332,"samples":8180739},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":16408726.92024788,"samples":8204364}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":9788863.890673853,"samples":4894432},{"name":"Length = 10_000 - Array.at","opsSec":9015006.731231516,"samples":4507504},{"name":"Length = 1_000_000 - Array.at","opsSec":9217569.447585462,"samples":4608785},{"name":"Length = 100 - Array[length - 1]","opsSec":16890436.830598712,"samples":8445219},{"name":"Length = 10_000 - Array[length - 1]","opsSec":16903863.998425707,"samples":8451932},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":16449296.059282336,"samples":8224649}]}-->
 
 ## Object Creation
 
