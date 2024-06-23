@@ -32,8 +32,5 @@ suite
   .add('Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)', function () {
     new Date().toLocaleDateString(undefined, twoDigitsLocaleOptions)
   })
-  .add('Format using date.get*', function () {
-    const date = new Date()`${date.getMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`
-  })
 
 await suite.runAndPrintResults()
