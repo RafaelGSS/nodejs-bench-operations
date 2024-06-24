@@ -526,28 +526,28 @@ new Array(length)|100,000,000|4,137.495ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|{ ...object }|10,373,045|5186523|
-|{ ...object, __proto__: null }|2,264,497|1132249|
-|{ ...object, newProp: true }|9,931,504|4965753|
-|structuredClone|311,133|155567|
-|JSON.parse + JSON.stringify|289,917|144959|
-|loop + object.keys starting with {}|1,457,029|728515|
-|loop + object.keys starting with { __proto__: null }|892,235|446118|
-|loop + object.keys starting with { randomProp: true }|652,421|326211|
-|object.keys + reduce(FN, {})|1,487,645|743823|
-|object.keys + reduce(FN, { __proto__: null })|889,207|444604|
-|object.keys + reduce(FN, { newProp: true })|691,236|345619|
+|{ ...object }|10,577,542|5288772|
+|{ ...object, __proto__: null }|2,280,674|1140338|
+|{ ...object, newProp: true }|10,367,929|5183965|
+|structuredClone|313,860|156931|
+|JSON.parse + JSON.stringify|290,907|145454|
+|loop + object.keys starting with {}|1,470,018|735010|
+|loop + object.keys starting with { __proto__: null }|887,655|443828|
+|loop + object.keys starting with { randomProp: true }|647,719|323860|
+|object.keys + reduce(FN, {})|1,493,199|746600|
+|object.keys + reduce(FN, { __proto__: null })|884,200|442101|
+|object.keys + reduce(FN, { newProp: true })|700,927|350464|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Tue Jun 04 2024 16:34:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Jun 24 2024 01:03:12 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245220184326172},"benchmarks":[{"name":"{ ...object }","opsSec":10373045.917015143,"samples":5186523},{"name":"{ ...object, __proto__: null }","opsSec":2264497.2934764773,"samples":1132249},{"name":"{ ...object, newProp: true }","opsSec":9931504.212338192,"samples":4965753},{"name":"structuredClone","opsSec":311133.2663478712,"samples":155567},{"name":"JSON.parse + JSON.stringify","opsSec":289917.2711477199,"samples":144959},{"name":"loop + object.keys starting with {}","opsSec":1457029.825154724,"samples":728515},{"name":"loop + object.keys starting with { __proto__: null }","opsSec":892235.8447513616,"samples":446118},{"name":"loop + object.keys starting with { randomProp: true }","opsSec":652421.3880276455,"samples":326211},{"name":"object.keys + reduce(FN, {})","opsSec":1487645.53585285,"samples":743823},{"name":"object.keys + reduce(FN, { __proto__: null })","opsSec":889207.9697672682,"samples":444604},{"name":"object.keys + reduce(FN, { newProp: true })","opsSec":691236.2511729875,"samples":345619}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"{ ...object }","opsSec":10577542.51915319,"samples":5288772},{"name":"{ ...object, __proto__: null }","opsSec":2280674.5722979726,"samples":1140338},{"name":"{ ...object, newProp: true }","opsSec":10367929.460868843,"samples":5183965},{"name":"structuredClone","opsSec":313860.4871924426,"samples":156931},{"name":"JSON.parse + JSON.stringify","opsSec":290907.8626914561,"samples":145454},{"name":"loop + object.keys starting with {}","opsSec":1470018.6505245664,"samples":735010},{"name":"loop + object.keys starting with { __proto__: null }","opsSec":887655.2277400295,"samples":443828},{"name":"loop + object.keys starting with { randomProp: true }","opsSec":647719.2551220884,"samples":323860},{"name":"object.keys + reduce(FN, {})","opsSec":1493199.2862519987,"samples":746600},{"name":"object.keys + reduce(FN, { __proto__: null })","opsSec":884200.1396440713,"samples":442101},{"name":"object.keys + reduce(FN, { newProp: true })","opsSec":700927.2640269855,"samples":350464}]}-->
 
 ## Sorting Map
 
