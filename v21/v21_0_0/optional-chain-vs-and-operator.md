@@ -2,18 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|16,502,256|8251129|
-|Using optional chain (obj.field?.field2) (undefined)|16,571,001|8285501|
-|Using and operator (obj.field && obj.field.field2) (Valid)|16,565,117|8282559|
-|Using and operator (obj.field && obj.field.field2) (undefined)|16,619,824|8309913|
+|Using optional chain (obj.field?.field2) (Valid)|16,526,314|8263158|
+|Using optional chain (obj.field?.field2) (undefined)|16,595,668|8297835|
+|Using and operator (obj.field && obj.field.field2) (Valid)|16,638,390|8319196|
+|Using and operator (obj.field && obj.field.field2) (undefined)|16,657,852|8328927|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Thu May 09 2024 22:14:26 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Jun 24 2024 00:04:11 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":16502256.9691755,"samples":8251129},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":16571001.636523211,"samples":8285501},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":16565117.65245,"samples":8282559},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":16619824.383310234,"samples":8309913}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":16526314.119764416,"samples":8263158},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":16595668.488380043,"samples":8297835},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":16638390.602225086,"samples":8319196},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":16657852.897028428,"samples":8328927}]}-->
