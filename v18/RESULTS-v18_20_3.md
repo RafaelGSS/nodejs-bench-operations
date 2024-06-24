@@ -591,3 +591,21 @@ new Array(length)|100,000,000|4,959.206ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":2174.8882972289566,"samples":1088},{"name":"{...smallObject} - Total keys: 2","opsSec":13340143.621565664,"samples":6670072},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":2424.5798120337704,"samples":1213},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6564.703365035919,"samples":3283},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1291.1835976023137,"samples":646},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":6510774.78506653,"samples":3255388},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":10482471.167917313,"samples":5241236},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":9254342.194572901,"samples":4627172}]}-->
+
+## Stream.Readable
+
+|name|ops/sec|samples|
+|-|-|-|
+|streams.Readable reading 1e3 * "some data"|2,295|1148|
+|streams.web.Readable reading 1e3 * "some data"|742|372|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Mon Jun 24 2024 01:15:29 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2295.163669865959,"samples":1148},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":742.7550518958263,"samples":372}]}-->
