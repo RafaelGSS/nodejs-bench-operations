@@ -503,6 +503,25 @@ new Array(length)|100,000,000|4,943.758ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Setter (class)","opsSec":16344656.153127318,"samples":8172329},{"name":"Setter","opsSec":6665790.7495346945,"samples":3332896},{"name":"Method","opsSec":16106981.809519896,"samples":8053491},{"name":"DefineProperty (setter)","opsSec":16116439.805745704,"samples":8058220},{"name":"DefineProperty (setter & enumerable=false)","opsSec":6668063.968663742,"samples":3334032},{"name":"DefineProperty (setter & configurable=false)","opsSec":6680722.192486127,"samples":3340362},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":6762016.78666296,"samples":3381009},{"name":"DefineProperty (writable)","opsSec":16273574.17010127,"samples":8136788},{"name":"DefineProperty (writable & enumerable=false)","opsSec":16312717.583758565,"samples":8156359},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":16125476.307679385,"samples":8062739},{"name":"DefineProperties (setter)","opsSec":16262158.48843695,"samples":8131080},{"name":"DefineProperties (setter & enumerable=false)","opsSec":6310602.370238898,"samples":3155302},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":6582782.38134969,"samples":3291392}]}-->
 
+## replace vs replaceAll comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using replace(//g)|2,837,472|1418737|
+|Using replaceAll()|2,622,071|1311036|
+|Using replaceAll(//g)|2,593,490|1296746|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Mon Jun 24 2024 00:56:16 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using replace(//g)","opsSec":2837472.906660182,"samples":1418737},{"name":"Using replaceAll()","opsSec":2622071.070274284,"samples":1311036},{"name":"Using replaceAll(//g)","opsSec":2593490.38726301,"samples":1296746}]}-->
+
 ## Shallow Copy
 
 |name|ops/sec|samples|

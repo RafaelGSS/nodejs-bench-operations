@@ -503,6 +503,25 @@ new Array(length)|100,000,000|4,842.155ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Setter (class)","opsSec":19741381.289295543,"samples":9870691},{"name":"Setter","opsSec":6807806.366126464,"samples":3403904},{"name":"Method","opsSec":18493735.33425982,"samples":9246868},{"name":"DefineProperty (setter)","opsSec":18543293.33245032,"samples":9271647},{"name":"DefineProperty (setter & enumerable=false)","opsSec":6764404.214163854,"samples":3382203},{"name":"DefineProperty (setter & configurable=false)","opsSec":6706867.691455142,"samples":3353434},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":6838513.699119426,"samples":3419257},{"name":"DefineProperty (writable)","opsSec":18657635.365628507,"samples":9328818},{"name":"DefineProperty (writable & enumerable=false)","opsSec":18524794.18459867,"samples":9262398},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":18536507.851610646,"samples":9268254},{"name":"DefineProperties (setter)","opsSec":19546379.68727318,"samples":9773190},{"name":"DefineProperties (setter & enumerable=false)","opsSec":6670838.985917779,"samples":3335420},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":6876607.436097186,"samples":3438304}]}-->
 
+## replace vs replaceAll comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using replace(//g)|3,069,853|1534927|
+|Using replaceAll()|2,628,110|1314056|
+|Using replaceAll(//g)|2,815,580|1407791|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Mon Jun 24 2024 00:55:11 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using replace(//g)","opsSec":3069853.9631614136,"samples":1534927},{"name":"Using replaceAll()","opsSec":2628110.41787855,"samples":1314056},{"name":"Using replaceAll(//g)","opsSec":2815580.8794015776,"samples":1407791}]}-->
+
 ## Shallow Copy
 
 |name|ops/sec|samples|
