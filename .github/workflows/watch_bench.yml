@@ -31,7 +31,7 @@ jobs:
           working-directory: bench
           filters: |
             benchmarks:
-              - added|modified: 'bench/*.js'
+              - added|modified: 'bench/*.mjs'
 
   benchmark:
     needs: changes
