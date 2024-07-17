@@ -322,6 +322,26 @@ new Array(length)|100,000,000|5,052.399ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":16004157.48300402,"samples":8002079},{"name":"Length = 10_000 - Array.at","opsSec":15908343.709017694,"samples":7954172},{"name":"Length = 1_000_000 - Array.at","opsSec":16078944.732782323,"samples":8039473},{"name":"Length = 100 - Array[length - 1]","opsSec":16116127.878034318,"samples":8058064},{"name":"Length = 10_000 - Array[length - 1]","opsSec":16116245.204410525,"samples":8058123},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":16123630.806564434,"samples":8061816}]}-->
 
+## Math.floor vs ~
+
+|name|ops/sec|samples|
+|-|-|-|
+|Math.floor (small)|15,625,513|7812757|
+|~ (small)|15,683,567|7841784|
+|Math.floor (long)|15,730,292|7865147|
+|~ (long)|15,701,224|7850613|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
+* __Run:__ Wed Jul 17 2024 13:24:13 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245231628417969},"benchmarks":[{"name":"Math.floor (small)","opsSec":15625513.062542114,"samples":7812757},{"name":"~ (small)","opsSec":15683567.092317142,"samples":7841784},{"name":"Math.floor (long)","opsSec":15730292.992416702,"samples":7865147},{"name":"~ (long)","opsSec":15701224.334761895,"samples":7850613}]}-->
+
 ## Object Creation
 
 |name|ops/sec|samples|
