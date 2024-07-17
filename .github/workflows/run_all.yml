@@ -8,7 +8,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["18.0.0","18.20.2","18.20.3","20.0.0","20.13.1","20.14.0","21.0.0","21.7.2","21.7.3","22.0.0","22.1.0","22.2.0"]'
+        default: '["18.0.0","18.20.3","18.20.4","20.0.0","20.15.0","20.15.1","21.0.0","21.7.2","21.7.3","22.0.0","22.4.0","22.4.1"]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
@@ -170,8 +170,17 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  object-creation:
+  math-floor-vs-tilde:
     needs: last-array-item
+    name: Running "math-floor-vs-tilde.mjs"
+    uses: ./.github/workflows/bench.yml
+    with:
+      bench-file: math-floor-vs-tilde.mjs
+      node-versions: ${{ inputs.node-versions }}
+      run-start-stop: false
+
+  object-creation:
+    needs: math-floor-vs-tilde
     name: Running "object-creation.mjs"
     uses: ./.github/workflows/bench.yml
     with:
