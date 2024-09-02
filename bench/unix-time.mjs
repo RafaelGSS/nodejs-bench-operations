@@ -4,10 +4,10 @@ const suite = createBenchmarkSuite('Getting unix time')
 
 suite
   .add('new Date().getTime()', function () {
-    new Date().getTime()
+    return new Date().getTime()
   })
   .add('Date.now()', function () {
-    Date.now()
+    return Date.now()
   })
 
 await suite.runAndPrintResults()

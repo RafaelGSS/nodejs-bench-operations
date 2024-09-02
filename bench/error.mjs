@@ -4,13 +4,13 @@ const suite = createBenchmarkSuite('Node.js Error')
 
 suite
   .add('Error', function () {
-    new Error('test')
+    return new Error('test')
   })
   .add('NodeError', function () {
-    new TypeError('test')
+    return new TypeError('test')
   })
   .add('NodeError Range', function () {
-    new RangeError('test')
+    return new RangeError('test')
   })
 
 await suite.runAndPrintResults()

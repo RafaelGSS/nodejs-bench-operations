@@ -16,11 +16,11 @@ const blob1024 = new Blob(source1024)
 suite
   .add('new Blob (128)', function () {
     const result = new Blob(source128)
-    assert.ok(result)
+    return result
   })
   .add('new Blob (1024)', function () {
     const result = new Blob(source1024)
-    assert.ok(result)
+    return result
   })
   .add(
     'text (128)',
@@ -48,11 +48,11 @@ suite
   )
   .add('slice (0, 64)', function () {
     const blob = blob128.slice(0, 64)
-    assert.ok(blob)
+    return blob
   })
   .add('slice (0, 512)', function (deferred) {
     const blob = blob1024.slice(0, 512)
-    assert.ok(blob)
+    return blob
   })
 
 await suite.runAndPrintResults()

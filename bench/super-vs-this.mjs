@@ -26,10 +26,12 @@ suite
   .add('Using super', function () {
     const cls = new SuperClass()
     const value = cls.bar()
+    return value
   })
   .add('Using this', function () {
     const cls = new ThisClass()
     const value = cls.bar()
+    return value
   })
 
 await suite.runAndPrintResults()

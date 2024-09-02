@@ -7,22 +7,22 @@ Empty.prototype = Object.create(null)
 
 suite
   .add('Object.create(null)', function () {
-    Object.create(null)
+    return Object.create(null)
   })
   .add('Object.create({})', function () {
-    Object.create({})
+    return Object.create({})
   })
   .add('Cached Empty.prototype', function () {
-    new Empty()
+    return new Empty()
   })
   .add('Empty.prototype', function () {
     function NE() {}
     NE.prototype = Object.create(null)
-    new NE()
+    return new NE()
   })
   .add('Empty class', function () {
     function C() {}
-    new C()
+    return new C()
   })
 
 await suite.runAndPrintResults()

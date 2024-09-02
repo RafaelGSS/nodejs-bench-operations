@@ -16,16 +16,16 @@ const nullObj = {
 
 suite
   .add('Using optional chain (obj.field?.field2) (Valid)', function () {
-    validObj.field?.field2
+    return validObj.field?.field2
   })
   .add('Using optional chain (obj.field?.field2) (undefined)', function () {
-    nullObj.field?.field2
+    return nullObj.field?.field2
   })
   .add('Using and operator (obj.field && obj.field.field2) (Valid)', function () {
-    validObj.field && validObj.field.field2
+    return validObj.field && validObj.field.field2
   })
   .add('Using and operator (obj.field && obj.field.field2) (undefined)', function () {
-    nullObj.field && nullObj.field.field2
+    return nullObj.field && nullObj.field.field2
   })
 
 await suite.runAndPrintResults()

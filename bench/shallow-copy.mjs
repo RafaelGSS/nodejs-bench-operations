@@ -31,18 +31,23 @@ const headers = {
 suite
   .add('{ ...object }', () => {
     const result = { ...headers }
+    return result
   })
   .add('{ ...object, __proto__: null }', () => {
     const result = { ...headers, __proto__: null }
+    return result
   })
   .add('{ ...object, newProp: true }', () => {
     const result = { ...headers, newProp: true }
+    return result
   })
   .add('structuredClone', () => {
     const result = structuredClone(headers)
+    return result
   })
   .add('JSON.parse + JSON.stringify', () => {
     const result = JSON.parse(JSON.stringify(headers))
+    return result
   })
   .add('loop + object.keys starting with {}', () => {
     const result = {}
@@ -52,6 +57,7 @@ suite
       const headerKey = keys[i]
       result[headerKey] = headers[headerKey]
     }
+    return result
   })
   .add('loop + object.keys starting with { __proto__: null }', () => {
     const result = { __proto__: null }
@@ -61,6 +67,7 @@ suite
       const headerKey = keys[i]
       result[headerKey] = headers[headerKey]
     }
+    return result
   })
   .add('loop + object.keys starting with { randomProp: true }', () => {
     const result = { randomProp: true }
@@ -70,6 +77,7 @@ suite
       const headerKey = keys[i]
       result[headerKey] = headers[headerKey]
     }
+    return result
   })
   .add('object.keys + reduce(FN, {})', () => {
     const result = Object.keys(headers).reduce((acc, key) => {
@@ -77,6 +85,7 @@ suite
 
       return acc
     }, {})
+    return result
   })
   .add('object.keys + reduce(FN, { __proto__: null })', () => {
     const result = Object.keys(headers).reduce(
@@ -87,6 +96,7 @@ suite
       },
       { __proto__: null },
     )
+    return result
   })
   .add('object.keys + reduce(FN, { newProp: true })', () => {
     const result = Object.keys(headers).reduce(
@@ -97,6 +107,7 @@ suite
       },
       { newProp: true },
     )
+    return result
   })
 
 await suite.runAndPrintResults()

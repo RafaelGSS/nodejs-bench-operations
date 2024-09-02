@@ -7,22 +7,22 @@ const regex = /application\/json/
 
 suite
   .add('Using includes', function () {
-    text.includes('application/json')
+    return text.includes('application/json')
   })
   .add('Using indexof', function () {
-    text.indexOf('application/json') !== -1
+    return text.indexOf('application/json') !== -1
   })
   .add('Using RegExp.test', function () {
-    ;/application\/json/.test(text)
+    return /application\/json/.test(text)
   })
   .add('Using RegExp.text with cached regex pattern', function () {
-    regex.test(text)
+    return regex.test(text)
   })
   .add('Using new RegExp.test', function () {
-    new RegExp('application/json').test(text)
+    return new RegExp('application/json').test(text)
   })
   .add('Using new RegExp.test with cached regex pattern', function () {
-    new RegExp(regex).test(text)
+    return new RegExp(regex).test(text)
   })
 
 await suite.runAndPrintResults()

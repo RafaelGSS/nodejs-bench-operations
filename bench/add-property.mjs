@@ -5,11 +5,13 @@ const suite = createBenchmarkSuite('Adding property')
 suite
   .add('Directly in the object', function () {
     const data = { test: 'Hello' }
+    return data
   })
   .add('Using dot notation', function () {
     const data = {}
 
     data.test = 'Hello'
+    return data
   })
   .add('Using define property (writable)', function () {
     const data = {}
@@ -20,6 +22,7 @@ suite
       enumerable: true,
       configurable: true,
     })
+    return data
   })
   .add('Using define property initialized (writable)', function () {
     const data = { test: undefined }
@@ -29,6 +32,7 @@ suite
       enumerable: true,
       configurable: true,
     })
+    return data
   })
   .add('Using define property (getter)', function () {
     const data = {}
@@ -40,6 +44,7 @@ suite
       enumerable: true,
       configurable: true,
     })
+    return data
   })
 
 await suite.runAndPrintResults()

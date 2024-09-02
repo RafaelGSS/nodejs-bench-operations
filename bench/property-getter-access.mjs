@@ -119,42 +119,55 @@ Object.defineProperties(definePropertiesEnumerableFalseAndConfigFalseObj, {
 suite
   .add('Getter (class)', function () {
     const v = classGetter.test
+    return v
   })
   .add('Getter', function () {
     const v = getterObj.test
+    return v
   })
   .add('Method', function () {
     const v = methodObj.test()
+    return v
   })
   .add('DefineProperty (getter)', function () {
     const v = defineObj.test
+    return v
   })
   .add('DefineProperty (getter & enumerable=false)', function () {
     const v = defineEnumerableFalseObj.test
+    return v
   })
   .add('DefineProperty (getter & configurable=false)', function () {
     const v = defineConfigFalseObj.test
+    return v
   })
   .add('DefineProperty (getter & enumerable=false & configurable=false)', function () {
     const v = defineEnumerableFalseAndConfigFalseObj.test
+    return v
   })
   .add('DefineProperty (writable)', function () {
     const v = defineOnlyWritableObj.test
+    return v
   })
   .add('DefineProperty (writable & enumerable=false)', function () {
     const v = defineWritableEnumerableFalseObj.test
+    return v
   })
   .add('DefineProperty (writable & enumerable=false & configurable=false)', function () {
     const v = defineWritableEnumerableFalseAndConfigFalseObj.test
+    return v
   })
   .add('DefineProperties (getter)', function () {
     const v = definePropertiesObj.test
+    return v
   })
   .add('DefineProperties (getter & enumerable=false)', function () {
     const v = definePropertiesEnumerableFalseObj.test
+    return v
   })
   .add('DefineProperties (getter & enumerable=false & configurable=false)', function () {
     const v = definePropertiesEnumerableFalseAndConfigFalseObj.test
+    return v
   })
 
 await suite.runAndPrintResults()

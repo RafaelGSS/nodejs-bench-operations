@@ -13,6 +13,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
   .add('Using delete property (proto: null)', function () {
     const data = { __proto__: null, x: 1, y: 2, z: 3 }
@@ -21,6 +22,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
   .add('Using delete property (cached proto: null)', function () {
     const data = new NullObject()
@@ -34,6 +36,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
   .add('Using undefined assignment', function () {
     const data = { x: 1, y: 2, z: 3 }
@@ -42,6 +45,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
   .add('Using undefined assignment (proto: null)', function () {
     const data = { __proto__: null, x: 1, y: 2, z: 3 }
@@ -50,6 +54,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
   .add('Using undefined property (cached proto: null)', function () {
     const data = new NullObject()
@@ -63,6 +68,7 @@ suite
     data.x
     data.y
     data.z
+    return data
   })
 
 await suite.runAndPrintResults()

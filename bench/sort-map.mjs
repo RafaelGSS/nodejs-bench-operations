@@ -12,13 +12,13 @@ map.set('b', 1)
 
 suite
   .add('Sort using default', function () {
-    new Map([...map].sort())
+    return new Map([...map].sort())
   })
   .add('Sort using first char', function () {
-    new Map([...map].sort((a, b) => (a[0] > b[0] ? 1 : -1)))
+    return new Map([...map].sort((a, b) => (a[0] > b[0] ? 1 : -1)))
   })
   .add('Sort using localeCompare', function () {
-    new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
+    return new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
   })
 
 await suite.runAndPrintResults()

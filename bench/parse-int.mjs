@@ -4,16 +4,16 @@ const suite = createBenchmarkSuite('Parsing Integer')
 
 suite
   .add('Using parseInt(x, 10) - small number (2 len)', function () {
-    parseInt('5', 10)
+    return parseInt('5', 10)
   })
   .add('Using parseInt(x, 10) - big number (10 len)', function () {
-    parseInt('9999999999', 10)
+    return parseInt('9999999999', 10)
   })
   .add('Using + - small number (2 len)', function () {
-    ;+'5'
+    return +'5'
   })
   .add('Using + - big number (10 len)', function () {
-    ;+'9999999999'
+    return +'9999999999'
   })
 
 await suite.runAndPrintResults()

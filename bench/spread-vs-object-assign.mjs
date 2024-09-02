@@ -70,30 +70,34 @@ const smallObjectTotalKeys = Object.keys(smallObject).length
 suite
   .add(`{...bigObject} - Total keys: ${bigObjectTotalKeys}`, function () {
     const nextObject = { ...bigObject }
+    return nextObject
   })
   .add(`{...smallObject} - Total keys: ${smallObjectTotalKeys}`, function () {
     const nextObject = { ...smallObject }
+    return nextObject
   })
   .add(
     `Object.assign({}, bigObject, anotherBigObject) - Total keys: ${bigObjectTotalKeys} - creating new object`,
     function () {
-      Object.assign({}, bigObject, anotherBigObject)
+      return Object.assign({}, bigObject, anotherBigObject)
     },
   )
   .add('Object.assign(bigObject, anotherBigObject) - mutating bigObject', function () {
-    Object.assign(bigObject, anotherBigObject)
+    return Object.assign(bigObject, anotherBigObject)
   })
   .add('{ ...bigObject, ...anotherBigObject }', function () {
     const nextObject = { ...bigObject, ...anotherBigObject }
+    return nextObject
   })
   .add('Object.assign({}, smallObject, anotherSmallObject) - creating new object', function () {
-    Object.assign({}, smallObject, anotherSmallObject)
+    return Object.assign({}, smallObject, anotherSmallObject)
   })
   .add('Object.assign(smallObject, anotherSmallObject) - mutating smallObject', function () {
-    Object.assign(smallObject, anotherSmallObject)
+    return Object.assign(smallObject, anotherSmallObject)
   })
   .add('{ ...smallObject, ...anotherSmallObject }', function () {
     const nextObject = { ...smallObject, ...anotherSmallObject }
+    return nextObject
   })
 
 await suite.runAndPrintResults()

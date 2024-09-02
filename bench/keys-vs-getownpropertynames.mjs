@@ -10,6 +10,7 @@ suite
       c: false,
     }
     const keys = Object.keys(object)
+    return keys
   })
   .add('Using Object.getOwnPropertyNames()', function () {
     const object = {
@@ -18,6 +19,7 @@ suite
       c: false,
     }
     const keys = Object.getOwnPropertyNames(object)
+    return keys
   })
 
 await suite.runAndPrintResults()
