@@ -44,6 +44,8 @@ jobs:
         # e.g. ['add-property.js', 'array-append.js'] if both bench files contains changes
         bench-file: ${{ fromJSON(needs.changes.outputs.files) }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Running ${{ matrix.bench-file }}
         uses: ./.github/workflows/bench.yml
         with:
