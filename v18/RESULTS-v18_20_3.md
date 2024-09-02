@@ -367,21 +367,21 @@ new Array(length)|100,000,000|4,417.199ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|16,946,250|8473126|
-|Using optional chain (obj.field?.field2) (undefined)|17,167,024|8583513|
-|Using and operator (obj.field && obj.field.field2) (Valid)|16,595,558|8297780|
-|Using and operator (obj.field && obj.field.field2) (undefined)|16,531,205|8265603|
+|Using optional chain (obj.field?.field2) (Valid)|15,109,718|7554861|
+|Using optional chain (obj.field?.field2) (undefined)|14,874,329|7437165|
+|Using and operator (obj.field && obj.field.field2) (Valid)|15,153,883|7576942|
+|Using and operator (obj.field && obj.field.field2) (undefined)|15,036,580|7518291|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Mon Jun 24 2024 00:01:10 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 16:31:41 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":16946250.607358754,"samples":8473126},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":17167024.373441033,"samples":8583513},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":16595558.047497442,"samples":8297780},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":16531205.328770218,"samples":8265603}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":15109718.884960856,"samples":7554861},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":14874329.873884117,"samples":7437165},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":15153883.545274183,"samples":7576942},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":15036580.35311256,"samples":7518291}]}-->
 
 ## Parsing Integer
 
