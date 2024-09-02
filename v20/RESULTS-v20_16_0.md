@@ -522,3 +522,22 @@ new Array(length)|100,000,000|4,140.393ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Setter (class)","opsSec":19103799.388127502,"samples":9551900},{"name":"Setter","opsSec":6155525.692247617,"samples":3077763},{"name":"Method","opsSec":18950353.92432679,"samples":9475177},{"name":"DefineProperty (setter)","opsSec":18801731.474167492,"samples":9400866},{"name":"DefineProperty (setter & enumerable=false)","opsSec":6241571.862650313,"samples":3120786},{"name":"DefineProperty (setter & configurable=false)","opsSec":6218919.664221391,"samples":3109460},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":6276731.096165304,"samples":3138366},{"name":"DefineProperty (writable)","opsSec":19197669.07922898,"samples":9598835},{"name":"DefineProperty (writable & enumerable=false)","opsSec":18790173.623810314,"samples":9395087},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":19356975.651074897,"samples":9678488},{"name":"DefineProperties (setter)","opsSec":18861699.548495453,"samples":9430850},{"name":"DefineProperties (setter & enumerable=false)","opsSec":6133159.914265053,"samples":3066580},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":6174493.727937926,"samples":3087248}]}-->
+
+## replace vs replaceAll comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using replace(//g)|2,775,439|1387720|
+|Using replaceAll()|2,450,552|1225277|
+|Using replaceAll(//g)|2,536,491|1268246|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 18:02:10 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using replace(//g)","opsSec":2775439.800167363,"samples":1387720},{"name":"Using replaceAll()","opsSec":2450552.2307072254,"samples":1225277},{"name":"Using replaceAll(//g)","opsSec":2536491.426754252,"samples":1268246}]}-->
