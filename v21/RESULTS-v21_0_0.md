@@ -592,25 +592,25 @@ new Array(length)|100,000,000|4,516.042ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|{...bigObject} - Total keys: 1000|2,162|1082|
-|{...smallObject} - Total keys: 2|13,173,673|6586837|
-|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|2,388|1195|
-|Object.assign(bigObject, anotherBigObject) - mutating bigObject|6,764|3383|
-|{ ...bigObject, ...anotherBigObject }|1,372|687|
-|Object.assign({}, smallObject, anotherSmallObject) - creating new object|6,665,712|3332857|
-|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|10,576,694|5288348|
-|{ ...smallObject, ...anotherSmallObject }|9,608,266|4804134|
+|{...bigObject} - Total keys: 1000|1,885|943|
+|{...smallObject} - Total keys: 2|11,998,265|5999133|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|2,217|1109|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|6,767|3384|
+|{ ...bigObject, ...anotherBigObject }|1,179|590|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|6,363,553|3181777|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|10,321,595|5160798|
+|{ ...smallObject, ...anotherSmallObject }|9,020,046|4510024|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Mon Jun 24 2024 01:12:12 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 18:26:30 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":2162.333536988389,"samples":1082},{"name":"{...smallObject} - Total keys: 2","opsSec":13173673.78082766,"samples":6586837},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":2388.7318842363943,"samples":1195},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6764.809014044365,"samples":3383},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1372.744452260117,"samples":687},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":6665712.38534265,"samples":3332857},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":10576694.183877897,"samples":5288348},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":9608266.488437034,"samples":4804134}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":1885.0502965115113,"samples":943},{"name":"{...smallObject} - Total keys: 2","opsSec":11998265.268399157,"samples":5999133},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":2217.0400970639366,"samples":1109},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6767.387456940408,"samples":3384},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1179.9751545133095,"samples":590},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":6363553.892326959,"samples":3181777},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":10321595.427696219,"samples":5160798},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":9020046.973685151,"samples":4510024}]}-->
 
 ## Stream.Readable
 
