@@ -442,3 +442,25 @@ new Array(length)|100,000,000|4,625.878ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Raw usage private field","opsSec":15078125.33655524,"samples":7539063},{"name":"Raw usage underscore usage","opsSec":13529615.756406784,"samples":6764808},{"name":"Manipulating private properties using #","opsSec":13569223.53871427,"samples":6784612},{"name":"Manipulating private properties using underscore(_)","opsSec":14566365.465274028,"samples":7283184},{"name":"Manipulating private properties using Symbol","opsSec":15079550.522315461,"samples":7539776},{"name":"Manipulating private properties using PrivateSymbol","opsSec":10612030.450585738,"samples":5306016}]}-->
+
+## Property access after shape transition
+
+|name|ops/sec|samples|
+|-|-|-|
+|Adding property after object creation - small object|4,955,774|2477888|
+|Adding property in the object creation - small object|4,937,509|2468755|
+|Adding property after the function creation - small class|260,675|130338|
+|Adding property in the function creation - small class|273,535|136768|
+|Adding property after the class creation - small class|273,512|136757|
+|Adding property in the class creation - small class|274,201|137101|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 17:15:01 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Adding property after object creation - small object","opsSec":4955774.939462461,"samples":2477888},{"name":"Adding property in the object creation - small object","opsSec":4937509.5654928675,"samples":2468755},{"name":"Adding property after the function creation - small class","opsSec":260675.9103275238,"samples":130338},{"name":"Adding property in the function creation - small class","opsSec":273535.13617641723,"samples":136768},{"name":"Adding property after the class creation - small class","opsSec":273512.9978482406,"samples":136757},{"name":"Adding property in the class creation - small class","opsSec":274201.9210299058,"samples":137101}]}-->
