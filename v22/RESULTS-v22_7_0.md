@@ -51,3 +51,21 @@ array.push|1,000,000|18.738ms
 new Array(length)|1,000,000|7.031ms
 array.push|100,000,000|2,025.084ms
 new Array(length)|100,000,000|4,625.878ms
+
+## Array Creation
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Array|335|168|
+|Array.from|24|13|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 14:34:48 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"new Array","opsSec":335.834667921311,"samples":168},{"name":"Array.from","opsSec":24.483773156161742,"samples":13}]}-->
