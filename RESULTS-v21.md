@@ -134,6 +134,24 @@ new Array(length)|100,000,000|4,524.233ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":6466.416083754484,"samples":3237},{"name":"crypto.verify('RSA-SHA256')","opsSec":6792.5055672650005,"samples":3397}]}-->
 
+## Date toISOString
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().toISOString()|1,128,254|564128|
+|fromUnixToISOString(new Date())|1,781,535|890768|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 15:00:17 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1128254.5874258794,"samples":564128},{"name":"fromUnixToISOString(new Date())","opsSec":1781535.8824168532,"samples":890768}]}-->
+
 ## Date String coersion
 
 |name|ops/sec|samples|

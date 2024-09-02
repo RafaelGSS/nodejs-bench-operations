@@ -2,16 +2,16 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,327,206|663604|
-|fromUnixToISOString(new Date())|1,835,718|917860|
+|new Date().toISOString()|1,246,070|623036|
+|fromUnixToISOString(new Date())|1,747,751|873876|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Sun Jun 23 2024 23:08:06 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 14:58:25 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1327206.7048360158,"samples":663604},{"name":"fromUnixToISOString(new Date())","opsSec":1835718.2127431065,"samples":917860}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1246070.5229074892,"samples":623036},{"name":"fromUnixToISOString(new Date())","opsSec":1747751.3216947853,"samples":873876}]}-->
