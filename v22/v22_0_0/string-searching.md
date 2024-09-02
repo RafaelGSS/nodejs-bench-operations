@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|16,077,564|8038783|
-|Using indexof|16,134,997|8067499|
-|Using RegExp.test|7,885,531|3942767|
-|Using RegExp.text with cached regex pattern|8,041,043|4020522|
-|Using new RegExp.test|3,561,331|1780666|
-|Using new RegExp.test with cached regex pattern|3,887,029|1943515|
+|Using includes|8,051,188|4025595|
+|Using indexof|8,197,164|4098583|
+|Using RegExp.test|7,590,803|3795402|
+|Using RegExp.text with cached regex pattern|7,523,245|3761623|
+|Using new RegExp.test|3,303,451|1651726|
+|Using new RegExp.test with cached regex pattern|3,678,067|1839034|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Mon Jun 24 2024 01:43:11 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 19:13:43 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using includes","opsSec":16077564.9388786,"samples":8038783},{"name":"Using indexof","opsSec":16134997.515932828,"samples":8067499},{"name":"Using RegExp.test","opsSec":7885531.965546121,"samples":3942767},{"name":"Using RegExp.text with cached regex pattern","opsSec":8041043.935666829,"samples":4020522},{"name":"Using new RegExp.test","opsSec":3561331.3019800335,"samples":1780666},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3887029.4946913966,"samples":1943515}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using includes","opsSec":8051188.212634382,"samples":4025595},{"name":"Using indexof","opsSec":8197164.180210536,"samples":4098583},{"name":"Using RegExp.test","opsSec":7590803.741899717,"samples":3795402},{"name":"Using RegExp.text with cached regex pattern","opsSec":7523245.172402517,"samples":3761623},{"name":"Using new RegExp.test","opsSec":3303451.365731739,"samples":1651726},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3678067.1981838625,"samples":1839034}]}-->
