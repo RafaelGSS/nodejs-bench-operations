@@ -199,23 +199,23 @@ new Array(length)|100,000,000|4,426.404ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|3,140,202|1570102|
-|Using delete property (proto: null)|9,602,344|4801173|
-|Using delete property (cached proto: null)|3,186,017|1593009|
-|Using undefined assignment|21,061,591|10530796|
-|Using undefined assignment (proto: null)|10,743,953|5371977|
-|Using undefined property (cached proto: null)|21,055,252|10527627|
+|Using delete property|2,722,165|1361083|
+|Using delete property (proto: null)|8,387,797|4193899|
+|Using delete property (cached proto: null)|2,694,965|1347483|
+|Using undefined assignment|15,960,402|7983047|
+|Using undefined assignment (proto: null)|9,116,171|4558086|
+|Using undefined property (cached proto: null)|15,066,697|7533349|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Sun Jun 23 2024 23:20:12 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 15:16:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"Using delete property","opsSec":3140202.9055487015,"samples":1570102},{"name":"Using delete property (proto: null)","opsSec":9602344.735521423,"samples":4801173},{"name":"Using delete property (cached proto: null)","opsSec":3186017.401881691,"samples":1593009},{"name":"Using undefined assignment","opsSec":21061591.91696913,"samples":10530796},{"name":"Using undefined assignment (proto: null)","opsSec":10743953.311411161,"samples":5371977},{"name":"Using undefined property (cached proto: null)","opsSec":21055252.603665803,"samples":10527627}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using delete property","opsSec":2722165.3042764333,"samples":1361083},{"name":"Using delete property (proto: null)","opsSec":8387797.390074569,"samples":4193899},{"name":"Using delete property (cached proto: null)","opsSec":2694965.072177011,"samples":1347483},{"name":"Using undefined assignment","opsSec":15960402.996059248,"samples":7983047},{"name":"Using undefined assignment (proto: null)","opsSec":9116171.358327022,"samples":4558086},{"name":"Using undefined property (cached proto: null)","opsSec":15066697.73624133,"samples":7533349}]}-->
 
 ## Node.js Error
 
