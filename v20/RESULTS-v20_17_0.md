@@ -736,3 +736,21 @@ new Array(length)|100,000,000|4,135.22ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"(short string) (true) String#startsWith","opsSec":17293776.339597218,"samples":8646889},{"name":"(short string) (true) String#slice and strict comparison","opsSec":15161007.424045445,"samples":7580504},{"name":"(long string) (true) String#startsWith","opsSec":16711279.632666886,"samples":8355640},{"name":"(long string) (true) String#slice and strict comparison","opsSec":14038766.146573149,"samples":7019384},{"name":"(short string) (false) String#startsWith","opsSec":18418756.71119022,"samples":9209379},{"name":"(short string) (false) String#slice and strict comparison","opsSec":15349438.311351253,"samples":7674720},{"name":"(long string) (false) String#startsWith","opsSec":18319288.424328998,"samples":9159645},{"name":"(long string) (false) String#slice and strict comparison","opsSec":14476633.971138151,"samples":7238317}]}-->
+
+## Super vs This
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using super|19,141,143|9570572|
+|Using this|19,233,446|9616724|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 19:36:21 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using super","opsSec":19141143.578765664,"samples":9570572},{"name":"Using this","opsSec":19233446.76903877,"samples":9616724}]}-->
