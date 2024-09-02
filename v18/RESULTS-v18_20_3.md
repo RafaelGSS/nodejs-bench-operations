@@ -759,16 +759,16 @@ new Array(length)|100,000,000|4,417.199ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().getTime()|6,317,228|3158615|
-|Date.now()|9,091,016|4545509|
+|new Date().getTime()|5,942,044|2971023|
+|Date.now()|8,961,998|4481000|
 
 
 <details>
 <summary>Environment</summary>
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.2GB Mem
-* __Run:__ Mon Jun 24 2024 02:02:37 GMT+0000 (Coordinated Universal Time)
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 02 2024 19:41:19 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":15.245216369628906},"benchmarks":[{"name":"new Date().getTime()","opsSec":6317228.603192022,"samples":3158615},{"name":"Date.now()","opsSec":9091016.138823051,"samples":4545509}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"new Date().getTime()","opsSec":5942044.54425856,"samples":2971023},{"name":"Date.now()","opsSec":8961998.738274515,"samples":4481000}]}-->
