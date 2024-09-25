@@ -346,22 +346,22 @@ new Array(length)|100,000,000|4,714.528ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|11,942,942|5971472|
-|Object.create({})|1,731,556|866614|
-|Cached Empty.prototype|15,058,999|7529500|
-|Empty.prototype|2,050,091|1025046|
-|Empty class|1,184,285|592143|
+|Object.create(null)|11,699,186|5849594|
+|Object.create({})|1,673,287|836644|
+|Cached Empty.prototype|15,351,951|7675977|
+|Empty.prototype|1,841,671|920836|
+|Empty class|1,207,685|603843|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 16:25:15 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 21:04:47 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Object.create(null)","opsSec":11942942.334014984,"samples":5971472},{"name":"Object.create({})","opsSec":1731556.206299975,"samples":866614},{"name":"Cached Empty.prototype","opsSec":15058999.190601557,"samples":7529500},{"name":"Empty.prototype","opsSec":2050091.720715716,"samples":1025046},{"name":"Empty class","opsSec":1184285.9022232878,"samples":592143}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Object.create(null)","opsSec":11699186.330340428,"samples":5849594},{"name":"Object.create({})","opsSec":1673287.5376439523,"samples":836644},{"name":"Cached Empty.prototype","opsSec":15351951.171301927,"samples":7675977},{"name":"Empty.prototype","opsSec":1841671.4877481463,"samples":920836},{"name":"Empty class","opsSec":1207685.2615107263,"samples":603843}]}-->
 
 ## Optional Chain (?) vs && operator
 
