@@ -2,18 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|19,304,917|9652460|
-|Using optional chain (obj.field?.field2) (undefined)|17,501,999|8751000|
-|Using and operator (obj.field && obj.field.field2) (Valid)|19,226,056|9613029|
-|Using and operator (obj.field && obj.field.field2) (undefined)|18,943,527|9471764|
+|Using optional chain (obj.field?.field2) (Valid)|17,507,336|8753670|
+|Using optional chain (obj.field?.field2) (undefined)|18,375,231|9187616|
+|Using and operator (obj.field && obj.field.field2) (Valid)|17,916,771|8958386|
+|Using and operator (obj.field && obj.field.field2) (undefined)|18,105,133|9052567|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 16:33:23 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 21:12:10 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":19304917.297359966,"samples":9652460},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":17501999.719928943,"samples":8751000},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":19226056.346260354,"samples":9613029},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":18943527.886303507,"samples":9471764}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":17507336.813659035,"samples":8753670},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":18375231.338665657,"samples":9187616},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":17916771.426534973,"samples":8958386},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":18105133.529354893,"samples":9052567}]}-->
