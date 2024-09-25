@@ -2,21 +2,21 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|21,477|10739|
-|Intl.DateTimeFormat().format(new Date())|21,083|10542|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|21,803|10902|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|21,365|10683|
-|Reusing Intl.DateTimeFormat()|657,401|328701|
-|Date.toLocaleDateString()|664,893|332447|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|21,176|10589|
+|Intl.DateTimeFormat().format(Date.now())|21,259|10630|
+|Intl.DateTimeFormat().format(new Date())|20,564|10283|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|21,460|10731|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|20,470|10236|
+|Reusing Intl.DateTimeFormat()|643,023|321512|
+|Date.toLocaleDateString()|661,410|330706|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|20,986|10494|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 15:03:12 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 19:37:56 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":21477.17579204658,"samples":10739},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":21083.189730926482,"samples":10542},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":21803.303516588814,"samples":10902},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":21365.4541136941,"samples":10683},{"name":"Reusing Intl.DateTimeFormat()","opsSec":657401.1321920607,"samples":328701},{"name":"Date.toLocaleDateString()","opsSec":664893.7394637002,"samples":332447},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":21176.042910516022,"samples":10589}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":21259.050997844824,"samples":10630},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":20564.988120874335,"samples":10283},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":21460.34527851865,"samples":10731},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":20470.805283497524,"samples":10236},{"name":"Reusing Intl.DateTimeFormat()","opsSec":643023.6348891486,"samples":321512},{"name":"Date.toLocaleDateString()","opsSec":661410.3833103747,"samples":330706},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":20986.861377843954,"samples":10494}]}-->

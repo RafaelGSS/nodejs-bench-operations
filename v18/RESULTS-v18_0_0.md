@@ -156,24 +156,24 @@ new Array(length)|100,000,000|4,535.07ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|15,777|7889|
-|Intl.DateTimeFormat().format(new Date())|15,477|7739|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|16,422|8212|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|16,092|8047|
-|Reusing Intl.DateTimeFormat()|616,637|308319|
-|Date.toLocaleDateString()|627,635|313818|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|16,141|8071|
+|Intl.DateTimeFormat().format(Date.now())|15,445|7723|
+|Intl.DateTimeFormat().format(new Date())|13,634|6818|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|15,983|7992|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|15,812|7907|
+|Reusing Intl.DateTimeFormat()|610,651|305326|
+|Date.toLocaleDateString()|623,632|311817|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|16,060|8031|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 15:03:48 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 19:37:25 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":15777.352213602264,"samples":7889},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":15477.62590629913,"samples":7739},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":16422.32410130758,"samples":8212},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":16092.23114347081,"samples":8047},{"name":"Reusing Intl.DateTimeFormat()","opsSec":616637.5547495509,"samples":308319},{"name":"Date.toLocaleDateString()","opsSec":627635.5480036859,"samples":313818},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":16141.28971872064,"samples":8071}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":15445.939915346888,"samples":7723},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":13634.421052561549,"samples":6818},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":15983.232741081854,"samples":7992},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":15812.942081628555,"samples":7907},{"name":"Reusing Intl.DateTimeFormat()","opsSec":610651.1217271446,"samples":305326},{"name":"Date.toLocaleDateString()","opsSec":623632.5596321719,"samples":311817},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":16060.727604142447,"samples":8031}]}-->
 
 ## Date String coersion
 
