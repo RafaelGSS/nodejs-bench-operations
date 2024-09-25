@@ -381,3 +381,25 @@ new Array(length)|100,000,000|4,868.68ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using if to check function existence","opsSec":1068995.5788158122,"samples":534498},{"name":"Using ? operator to avoid rejection","opsSec":1048615.5029563427,"samples":524308}]}-->
+
+## Private Property
+
+|name|ops/sec|samples|
+|-|-|-|
+|Raw usage private field|13,595,880|6797941|
+|Raw usage underscore usage|13,570,850|6785426|
+|Manipulating private properties using #|14,314,939|7157470|
+|Manipulating private properties using underscore(_)|14,372,781|7186391|
+|Manipulating private properties using Symbol|14,366,256|7183129|
+|Manipulating private properties using PrivateSymbol|11,111,259|5555630|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Sep 25 2024 21:47:33 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Raw usage private field","opsSec":13595880.803662194,"samples":6797941},{"name":"Raw usage underscore usage","opsSec":13570850.452919958,"samples":6785426},{"name":"Manipulating private properties using #","opsSec":14314939.227137066,"samples":7157470},{"name":"Manipulating private properties using underscore(_)","opsSec":14372781.913648037,"samples":7186391},{"name":"Manipulating private properties using Symbol","opsSec":14366256.793195136,"samples":7183129},{"name":"Manipulating private properties using PrivateSymbol","opsSec":11111259.622199906,"samples":5555630}]}-->
