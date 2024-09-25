@@ -94,3 +94,21 @@ new Array(length)|100,000,000|4,868.68ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":7085.240136336044,"samples":3543},{"name":"crypto.verify('RSA-SHA256')","opsSec":7116.0398441287125,"samples":3559}]}-->
+
+## Date toISOString
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Date().toISOString()|1,103,405|551703|
+|fromUnixToISOString(new Date())|1,819,979|909990|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Sep 25 2024 19:35:57 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1103405.655737614,"samples":551703},{"name":"fromUnixToISOString(new Date())","opsSec":1819979.1191301278,"samples":909990}]}-->
