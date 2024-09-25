@@ -326,21 +326,21 @@ new Array(length)|100,000,000|4,775.388ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Math.floor (small)|14,411,273|7205637|
-|~ (small)|14,082,236|7041119|
-|Math.floor (long)|14,677,100|7338551|
-|~ (long)|14,047,367|7023684|
+|Math.floor (small)|14,718,252|7359127|
+|~ (small)|14,946,089|7473051|
+|Math.floor (long)|14,758,233|7379117|
+|~ (long)|15,016,215|7508108|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 16:17:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 20:57:18 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Math.floor (small)","opsSec":14411273.481348693,"samples":7205637},{"name":"~ (small)","opsSec":14082236.620068524,"samples":7041119},{"name":"Math.floor (long)","opsSec":14677100.56163266,"samples":7338551},{"name":"~ (long)","opsSec":14047367.494423585,"samples":7023684}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Math.floor (small)","opsSec":14718252.734196693,"samples":7359127},{"name":"~ (small)","opsSec":14946089.116164938,"samples":7473051},{"name":"Math.floor (long)","opsSec":14758233.557007695,"samples":7379117},{"name":"~ (long)","opsSec":15016215.158937613,"samples":7508108}]}-->
 
 ## Object Creation
 
