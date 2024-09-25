@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using replace(//g)|2,666,711|1333356|
-|Using replaceAll()|2,518,087|1259045|
-|Using replaceAll(//g)|2,456,079|1228040|
+|Using replace(//g)|2,573,521|1286761|
+|Using replaceAll()|2,448,103|1224053|
+|Using replaceAll(//g)|2,401,188|1200595|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 18:04:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 22:44:58 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using replace(//g)","opsSec":2666711.8933331813,"samples":1333356},{"name":"Using replaceAll()","opsSec":2518087.5222038976,"samples":1259045},{"name":"Using replaceAll(//g)","opsSec":2456079.115813051,"samples":1228040}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using replace(//g)","opsSec":2573521.5727936123,"samples":1286761},{"name":"Using replaceAll()","opsSec":2448103.8456688575,"samples":1224053},{"name":"Using replaceAll(//g)","opsSec":2401188.79460466,"samples":1200595}]}-->
