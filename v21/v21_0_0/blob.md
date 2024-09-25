@@ -2,22 +2,22 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|3,927|1964|
-|new Blob (1024)|583|296|
-|text (128)|5,239|2620|
-|text (1024)|641|321|
-|arrayBuffer (128)|4,961|2482|
-|arrayBuffer (1024)|638|320|
-|slice (0, 64)|229,854|115042|
-|slice (0, 512)|36,345|18173|
+|new Blob (128)|2,335|1168|
+|new Blob (1024)|554|278|
+|text (128)|4,887|2444|
+|text (1024)|613|307|
+|arrayBuffer (128)|4,897|2449|
+|arrayBuffer (1024)|620|311|
+|slice (0, 64)|274,087|137044|
+|slice (0, 512)|29,891|14946|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 14:39:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 19:13:55 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"new Blob (128)","opsSec":3927.7488440194825,"samples":1964},{"name":"new Blob (1024)","opsSec":583.3834900239217,"samples":296},{"name":"text (128)","opsSec":5239.917838138565,"samples":2620},{"name":"text (1024)","opsSec":641.4894475288686,"samples":321},{"name":"arrayBuffer (128)","opsSec":4961.954225931778,"samples":2482},{"name":"arrayBuffer (1024)","opsSec":638.5690727087068,"samples":320},{"name":"slice (0, 64)","opsSec":229854.25792080205,"samples":115042},{"name":"slice (0, 512)","opsSec":36345.268150592885,"samples":18173}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Blob (128)","opsSec":2335.8331093869533,"samples":1168},{"name":"new Blob (1024)","opsSec":554.8143229593883,"samples":278},{"name":"text (128)","opsSec":4887.720735194246,"samples":2444},{"name":"text (1024)","opsSec":613.7422000416715,"samples":307},{"name":"arrayBuffer (128)","opsSec":4897.388864721513,"samples":2449},{"name":"arrayBuffer (1024)","opsSec":620.9327457629786,"samples":311},{"name":"slice (0, 64)","opsSec":274087.6026036449,"samples":137044},{"name":"slice (0, 512)","opsSec":29891.533213868097,"samples":14946}]}-->
