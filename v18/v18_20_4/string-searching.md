@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|8,313,526|4156764|
-|Using indexof|8,292,643|4146322|
-|Using RegExp.test|7,631,183|3815592|
-|Using RegExp.text with cached regex pattern|7,740,790|3870396|
-|Using new RegExp.test|3,177,946|1588974|
-|Using new RegExp.test with cached regex pattern|3,509,829|1754915|
+|Using includes|8,234,221|4117111|
+|Using indexof|8,157,862|4078932|
+|Using RegExp.test|7,513,995|3756998|
+|Using RegExp.text with cached regex pattern|7,676,740|3838453|
+|Using new RegExp.test|3,143,441|1571721|
+|Using new RegExp.test with cached regex pattern|3,501,367|1750684|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 02 2024 19:09:17 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Sep 25 2024 23:51:19 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.588970184326172},"benchmarks":[{"name":"Using includes","opsSec":8313526.326674746,"samples":4156764},{"name":"Using indexof","opsSec":8292643.604205229,"samples":4146322},{"name":"Using RegExp.test","opsSec":7631183.757505963,"samples":3815592},{"name":"Using RegExp.text with cached regex pattern","opsSec":7740790.75673483,"samples":3870396},{"name":"Using new RegExp.test","opsSec":3177946.5851244917,"samples":1588974},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3509829.612740675,"samples":1754915}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using includes","opsSec":8234221.304355417,"samples":4117111},{"name":"Using indexof","opsSec":8157862.875311802,"samples":4078932},{"name":"Using RegExp.test","opsSec":7513995.379701399,"samples":3756998},{"name":"Using RegExp.text with cached regex pattern","opsSec":7676740.104107891,"samples":3838453},{"name":"Using new RegExp.test","opsSec":3143441.325537508,"samples":1571721},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3501367.2109138113,"samples":1750684}]}-->
