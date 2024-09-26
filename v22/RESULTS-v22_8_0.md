@@ -1,35 +1,74 @@
+## Adding property
+
+|name|ops/sec|samples|
+|-|-|-|
+|Directly in the object|97,494,014|48751961|
+|Using dot notation|67,585,906|33801913|
+|Using define property (writable)|4,785,017|2392885|
+|Using define property initialized (writable)|6,618,185|3309425|
+|Using define property (getter)|2,370,855|1185488|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 30 2024 20:59:08 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Directly in the object","opsSec":97494014.07332578,"samples":48751961},{"name":"Using dot notation","opsSec":67585906.13767485,"samples":33801913},{"name":"Using define property (writable)","opsSec":4785017.9578676345,"samples":2392885},{"name":"Using define property initialized (writable)","opsSec":6618185.957693748,"samples":3309425},{"name":"Using define property (getter)","opsSec":2370855.3945860774,"samples":1185488}]}-->
+
 ## Array.append (number)
 
 |type|amount|time elapsed|
 |-|-|-|
 array.push|10|0.004ms
 new Array(length)|10|0.002ms
-array.push|100|0.09ms
-new Array(length)|100|0.01ms
-array.push|1,000|0.027ms
+array.push|100|0.073ms
+new Array(length)|100|0.007ms
+array.push|1,000|0.029ms
 new Array(length)|1,000|0.016ms
-array.push|10,000|0.297ms
-new Array(length)|10,000|0.138ms
-array.push|1,000,000|28.774ms
-new Array(length)|1,000,000|6.867ms
-array.push|100,000,000|1,921.474ms
-new Array(length)|100,000,000|4,139.22ms
+array.push|10,000|0.292ms
+new Array(length)|10,000|0.197ms
+array.push|1,000,000|28.441ms
+new Array(length)|1,000,000|6.222ms
+array.push|100,000,000|1,876.111ms
+new Array(length)|100,000,000|4,011.753ms
 ## Array.append (string)
 
 |type|amount|time elapsed|
 |-|-|-|
 array.push|10|0.005ms
-new Array(length)|10|0.004ms
+new Array(length)|10|0.003ms
 array.push|100|0.016ms
-new Array(length)|100|0.012ms
+new Array(length)|100|0.011ms
 array.push|1,000|0.036ms
-new Array(length)|1,000|0.02ms
-array.push|10,000|176.347ms
-new Array(length)|10,000|0.049ms
-array.push|1,000,000|19.261ms
-new Array(length)|1,000,000|7.215ms
-array.push|100,000,000|2,075.939ms
-new Array(length)|100,000,000|4,761.87ms
+new Array(length)|1,000|0.021ms
+array.push|10,000|160.121ms
+new Array(length)|10,000|0.051ms
+array.push|1,000,000|18.348ms
+new Array(length)|1,000,000|6.98ms
+array.push|100,000,000|2,037.762ms
+new Array(length)|100,000,000|4,660.058ms
+
+## Array Creation
+
+|name|ops/sec|samples|
+|-|-|-|
+|new Array|329|166|
+|Array.from|24|13|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Mon Sep 30 2024 21:03:02 GMT+0000 (Coordinated Universal Time)
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"new Array","opsSec":329.99547023567294,"samples":166},{"name":"Array.from","opsSec":24.394313084394035,"samples":13}]}-->
 
 ## Blob
 
@@ -59,677 +98,677 @@ new Array(length)|100,000,000|4,761.87ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|288,754|144378|
-|[True conditional] Using constructor name|306,969|153485|
-|[True conditional] Check if property is valid then instanceof |320,325|160164|
-|[False conditional] Using instanceof only|14,854,366|7427184|
-|[False conditional] Using constructor name|15,214,345|7607173|
-|[False conditional] Check if property is valid then instanceof |13,692,590|6846296|
+|[True conditional] Using instanceof only|426,330|213166|
+|[True conditional] Using constructor name|331,239|165629|
+|[True conditional] Check if property is valid then instanceof |340,421|170214|
+|[False conditional] Using instanceof only|95,736,213|47868142|
+|[False conditional] Using constructor name|96,593,076|48297318|
+|[False conditional] Check if property is valid then instanceof |96,614,721|48307392|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:25:39 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:06:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":288754.87039093126,"samples":144378},{"name":"[True conditional] Using constructor name","opsSec":306969.79862806445,"samples":153485},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":320325.835238135,"samples":160164},{"name":"[False conditional] Using instanceof only","opsSec":14854366.276986094,"samples":7427184},{"name":"[False conditional] Using constructor name","opsSec":15214345.574190352,"samples":7607173},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":13692590.904629616,"samples":6846296}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":426330.0405871335,"samples":213166},{"name":"[True conditional] Using constructor name","opsSec":331239.8679296296,"samples":165629},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":340421.4577804244,"samples":170214},{"name":"[False conditional] Using instanceof only","opsSec":95736213.34667455,"samples":47868142},{"name":"[False conditional] Using constructor name","opsSec":96593076.60137135,"samples":48297318},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":96614721.39366053,"samples":48307392}]}-->
 
 ## Crypto Verify
 
 |name|ops/sec|samples|
 |-|-|-|
-|crypto.createVerify('RSA-SHA256')|7,118|3560|
-|crypto.verify('RSA-SHA256')|7,125|3563|
+|crypto.createVerify('RSA-SHA256')|6,809|3405|
+|crypto.verify('RSA-SHA256')|6,903|3452|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:30:54 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:07:09 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":7118.121285776562,"samples":3560},{"name":"crypto.verify('RSA-SHA256')","opsSec":7125.458564905455,"samples":3563}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","opsSec":6809.110757371531,"samples":3405},{"name":"crypto.verify('RSA-SHA256')","opsSec":6903.754240156559,"samples":3452}]}-->
 
 ## Date toISOString
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,096,577|548289|
-|fromUnixToISOString(new Date())|1,901,356|950679|
+|new Date().toISOString()|1,419,461|709845|
+|fromUnixToISOString(new Date())|1,987,264|993651|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:36:19 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:08:56 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1096577.048171502,"samples":548289},{"name":"fromUnixToISOString(new Date())","opsSec":1901356.3001878657,"samples":950679}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"new Date().toISOString()","opsSec":1419461.0664802757,"samples":709845},{"name":"fromUnixToISOString(new Date())","opsSec":1987264.9017388143,"samples":993651}]}-->
 
 ## Date format MM/DD/YYYY
 
 |name|ops/sec|samples|
 |-|-|-|
-|Intl.DateTimeFormat().format(Date.now())|19,330|9666|
-|Intl.DateTimeFormat().format(new Date())|21,292|10647|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|22,595|11298|
-|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|22,299|11150|
-|Reusing Intl.DateTimeFormat()|897,345|448673|
-|Date.toLocaleDateString()|900,660|450331|
-|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|22,947|11474|
+|Intl.DateTimeFormat().format(Date.now())|18,848|9426|
+|Intl.DateTimeFormat().format(new Date())|18,203|9123|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())|17,764|8883|
+|Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())|18,606|9305|
+|Reusing Intl.DateTimeFormat()|519,535|259770|
+|Date.toLocaleDateString()|963,224|481666|
+|Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)|22,767|11384|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:42:33 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:10:55 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":19330.925548497555,"samples":9666},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":21292.426447101014,"samples":10647},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":22595.5105812392,"samples":11298},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":22299.444966812818,"samples":11150},{"name":"Reusing Intl.DateTimeFormat()","opsSec":897345.7254123534,"samples":448673},{"name":"Date.toLocaleDateString()","opsSec":900660.5553416578,"samples":450331},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":22947.641695521987,"samples":11474}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Intl.DateTimeFormat().format(Date.now())","opsSec":18848.865509061307,"samples":9426},{"name":"Intl.DateTimeFormat().format(new Date())","opsSec":18203.22478816703,"samples":9123},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(Date.now())","opsSec":17764.013592472063,"samples":8883},{"name":"Intl.DateTimeFormat(undefined, twoDigitsLocaleOptions).format(new Date())","opsSec":18606.706724549993,"samples":9305},{"name":"Reusing Intl.DateTimeFormat()","opsSec":519535.8852757886,"samples":259770},{"name":"Date.toLocaleDateString()","opsSec":963224.0091034434,"samples":481666},{"name":"Date.toLocaleDateString(undefined, twoDigitsLocaleOptions)","opsSec":22767.097193527887,"samples":11384}]}-->
 
 ## Date String coersion
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|873,702|436855|
-|Using brackets {}|874,296|437149|
-|Using '' + |871,236|435619|
-|Using date.toString()|932,886|466444|
+|Using String()|1,031,812|516156|
+|Using brackets {}|1,056,715|528919|
+|Using '' + |1,060,341|530172|
+|Using date.toString()|1,152,867|576443|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:48:25 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:12:17 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using String()","opsSec":873702.7465198999,"samples":436855},{"name":"Using brackets {}","opsSec":874296.816202168,"samples":437149},{"name":"Using '' + ","opsSec":871236.5067010903,"samples":435619},{"name":"Using date.toString()","opsSec":932886.7536634401,"samples":466444}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using String()","opsSec":1031812.150985201,"samples":516156},{"name":"Using brackets {}","opsSec":1056715.2865035625,"samples":528919},{"name":"Using '' + ","opsSec":1060341.6863344405,"samples":530172},{"name":"Using date.toString()","opsSec":1152867.9553107633,"samples":576443}]}-->
 
 ## Deleting properties
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|2,734,802|1367402|
-|Using delete property (proto: null)|7,465,086|3732544|
-|Using delete property (cached proto: null)|2,711,183|1355592|
-|Using undefined assignment|13,737,192|6868597|
-|Using undefined assignment (proto: null)|7,885,619|3942810|
-|Using undefined property (cached proto: null)|13,031,192|6515597|
+|Using delete property|3,923,544|1961908|
+|Using delete property (proto: null)|16,644,493|8339015|
+|Using delete property (cached proto: null)|3,908,954|1954808|
+|Using undefined assignment|68,852,768|34426412|
+|Using undefined assignment (proto: null)|17,719,213|8860183|
+|Using undefined property (cached proto: null)|69,436,591|34718333|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:58:22 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:13:10 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using delete property","opsSec":2734802.457568355,"samples":1367402},{"name":"Using delete property (proto: null)","opsSec":7465086.402483462,"samples":3732544},{"name":"Using delete property (cached proto: null)","opsSec":2711183.468619775,"samples":1355592},{"name":"Using undefined assignment","opsSec":13737192.845988153,"samples":6868597},{"name":"Using undefined assignment (proto: null)","opsSec":7885619.132525202,"samples":3942810},{"name":"Using undefined property (cached proto: null)","opsSec":13031192.38396899,"samples":6515597}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using delete property","opsSec":3923544.4044092377,"samples":1961908},{"name":"Using delete property (proto: null)","opsSec":16644493.542584838,"samples":8339015},{"name":"Using delete property (cached proto: null)","opsSec":3908954.4641822996,"samples":1954808},{"name":"Using undefined assignment","opsSec":68852768.22925773,"samples":34426412},{"name":"Using undefined assignment (proto: null)","opsSec":17719213.93214856,"samples":8860183},{"name":"Using undefined property (cached proto: null)","opsSec":69436591.98059295,"samples":34718333}]}-->
 
 ## Node.js Error
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|304,813|152407|
-|NodeError|307,224|153613|
-|NodeError Range|304,311|152156|
+|Error|401,490|200797|
+|NodeError|328,383|164192|
+|NodeError Range|323,436|161739|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:04:13 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:15:09 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Error","opsSec":304813.7671222729,"samples":152407},{"name":"NodeError","opsSec":307224.25742392294,"samples":153613},{"name":"NodeError Range","opsSec":304311.9963483932,"samples":152156}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Error","opsSec":401490.62901072984,"samples":200797},{"name":"NodeError","opsSec":328383.70576819964,"samples":164192},{"name":"NodeError Range","opsSec":323436.0057158898,"samples":161739}]}-->
 
 ## Function return
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,534,502|767252|
-|Function returning explicitly undefined|1,503,234|751618|
-|Function returning implicitly undefined|1,495,435|747718|
-|Function returning string|1,506,194|753098|
-|Function returning integer|1,513,091|756657|
-|Function returning float|1,529,557|764779|
-|Function returning functions|1,495,141|747571|
-|Function returning arrow functions|1,511,164|755583|
-|Function returning empty object|1,537,273|768637|
-|Function returning empty array|1,526,553|763277|
+|Function returning null|1,683,061|841547|
+|Function returning explicitly undefined|1,585,153|792670|
+|Function returning implicitly undefined|1,623,763|811882|
+|Function returning string|1,606,354|805771|
+|Function returning integer|1,628,658|814330|
+|Function returning float|1,618,155|809078|
+|Function returning functions|1,634,637|817319|
+|Function returning arrow functions|1,605,346|802727|
+|Function returning empty object|1,639,157|819579|
+|Function returning empty array|1,614,479|807328|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:15:56 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:17:04 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Function returning null","opsSec":1534502.137114322,"samples":767252},{"name":"Function returning explicitly undefined","opsSec":1503234.938714527,"samples":751618},{"name":"Function returning implicitly undefined","opsSec":1495435.1535845208,"samples":747718},{"name":"Function returning string","opsSec":1506194.1534076552,"samples":753098},{"name":"Function returning integer","opsSec":1513091.542251338,"samples":756657},{"name":"Function returning float","opsSec":1529557.1893352275,"samples":764779},{"name":"Function returning functions","opsSec":1495141.028149713,"samples":747571},{"name":"Function returning arrow functions","opsSec":1511164.954274784,"samples":755583},{"name":"Function returning empty object","opsSec":1537273.5111472271,"samples":768637},{"name":"Function returning empty array","opsSec":1526553.0382771913,"samples":763277}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Function returning null","opsSec":1683061.3519758943,"samples":841547},{"name":"Function returning explicitly undefined","opsSec":1585153.6525069186,"samples":792670},{"name":"Function returning implicitly undefined","opsSec":1623763.480395686,"samples":811882},{"name":"Function returning string","opsSec":1606354.0002505947,"samples":805771},{"name":"Function returning integer","opsSec":1628658.990231426,"samples":814330},{"name":"Function returning float","opsSec":1618155.9676368805,"samples":809078},{"name":"Function returning functions","opsSec":1634637.156527227,"samples":817319},{"name":"Function returning arrow functions","opsSec":1605346.9907802886,"samples":802727},{"name":"Function returning empty object","opsSec":1639157.2197611632,"samples":819579},{"name":"Function returning empty array","opsSec":1614479.2758695048,"samples":807328}]}-->
 
 ## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|13,337,579|6668790|
-|using Array.includes (first item)|13,131,139|6565571|
-|Using raw comparison|14,430,227|7215114|
-|Using raw comparison (first item)|14,600,295|7300148|
+|using Array.includes|85,173,205|42653516|
+|using Array.includes (first item)|82,206,304|41157646|
+|Using raw comparison|95,848,945|47931186|
+|Using raw comparison (first item)|97,230,979|48627385|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:26:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:18:34 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"using Array.includes","opsSec":13337579.626500191,"samples":6668790},{"name":"using Array.includes (first item)","opsSec":13131139.00630576,"samples":6565571},{"name":"Using raw comparison","opsSec":14430227.018621072,"samples":7215114},{"name":"Using raw comparison (first item)","opsSec":14600295.561812943,"samples":7300148}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"using Array.includes","opsSec":85173205.98494592,"samples":42653516},{"name":"using Array.includes (first item)","opsSec":82206304.0330013,"samples":41157646},{"name":"Using raw comparison","opsSec":95848945.4797172,"samples":47931186},{"name":"Using raw comparison (first item)","opsSec":97230979.1351013,"samples":48627385}]}-->
 
 ## Object.keys vs Object.getOwnPropertyNames comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using Object.keys()|13,131,123|6565562|
-|Using Object.getOwnPropertyNames()|13,200,562|6600282|
+|Using Object.keys()|46,515,994|23258576|
+|Using Object.getOwnPropertyNames()|40,184,996|20094966|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:34:03 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:19:39 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using Object.keys()","opsSec":13131123.94743997,"samples":6565562},{"name":"Using Object.getOwnPropertyNames()","opsSec":13200562.917537434,"samples":6600282}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using Object.keys()","opsSec":46515994.12387426,"samples":23258576},{"name":"Using Object.getOwnPropertyNames()","opsSec":40184996.47873248,"samples":20094966}]}-->
 
 ## Get the last item of an Array
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|14,422,998|7211500|
-|Length = 10_000 - Array.at|14,249,008|7124505|
-|Length = 1_000_000 - Array.at|15,055,205|7527603|
-|Length = 100 - Array[length - 1]|15,124,091|7562046|
-|Length = 10_000 - Array[length - 1]|14,430,418|7215210|
-|Length = 1_000_000 - Array[length - 1]|14,976,832|7488417|
+|Length = 100 - Array.at|123,314,828|61670542|
+|Length = 10_000 - Array.at|98,871,669|49436574|
+|Length = 1_000_000 - Array.at|97,082,047|48541038|
+|Length = 100 - Array[length - 1]|96,867,069|48444675|
+|Length = 10_000 - Array[length - 1]|97,221,546|48610784|
+|Length = 1_000_000 - Array[length - 1]|95,320,455|47660593|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:48:10 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:21:27 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":14422998.15391973,"samples":7211500},{"name":"Length = 10_000 - Array.at","opsSec":14249008.689082256,"samples":7124505},{"name":"Length = 1_000_000 - Array.at","opsSec":15055205.187180985,"samples":7527603},{"name":"Length = 100 - Array[length - 1]","opsSec":15124091.606540525,"samples":7562046},{"name":"Length = 10_000 - Array[length - 1]","opsSec":14430418.210650215,"samples":7215210},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":14976832.292854125,"samples":7488417}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":123314828.30001768,"samples":61670542},{"name":"Length = 10_000 - Array.at","opsSec":98871669.27531432,"samples":49436574},{"name":"Length = 1_000_000 - Array.at","opsSec":97082047.45787805,"samples":48541038},{"name":"Length = 100 - Array[length - 1]","opsSec":96867069.99269927,"samples":48444675},{"name":"Length = 10_000 - Array[length - 1]","opsSec":97221546.02793059,"samples":48610784},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":95320455.08275042,"samples":47660593}]}-->
 
 ## Math.floor vs ~
 
 |name|ops/sec|samples|
 |-|-|-|
-|Math.floor (small)|15,085,722|7542862|
-|~ (small)|15,339,615|7669810|
-|Math.floor (long)|14,327,293|7163647|
-|~ (long)|14,268,305|7134153|
+|Math.floor (small)|129,334,602|64669041|
+|~ (small)|90,908,039|45454970|
+|Math.floor (long)|95,267,474|47637884|
+|~ (long)|98,049,894|49025037|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:58:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:22:56 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Math.floor (small)","opsSec":15085722.491448697,"samples":7542862},{"name":"~ (small)","opsSec":15339615.551323708,"samples":7669810},{"name":"Math.floor (long)","opsSec":14327293.741918065,"samples":7163647},{"name":"~ (long)","opsSec":14268305.172243573,"samples":7134153}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Math.floor (small)","opsSec":129334602.12319528,"samples":64669041},{"name":"~ (small)","opsSec":90908039.29471442,"samples":45454970},{"name":"Math.floor (long)","opsSec":95267474.20423073,"samples":47637884},{"name":"~ (long)","opsSec":98049894.37259352,"samples":49025037}]}-->
 
 ## Object Creation
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|12,212,114|6106058|
-|Object.create({})|1,813,237|906620|
-|Cached Empty.prototype|14,046,879|7023440|
-|Empty.prototype|2,000,531|1000266|
-|Empty class|1,263,236|632922|
+|Object.create(null)|42,410,218|21206263|
+|Object.create({})|1,937,662|986351|
+|Cached Empty.prototype|96,865,999|48433783|
+|Empty.prototype|2,511,324|1258265|
+|Empty class|1,434,015|727098|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:07:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:24:02 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Object.create(null)","opsSec":12212114.534622042,"samples":6106058},{"name":"Object.create({})","opsSec":1813237.4397123342,"samples":906620},{"name":"Cached Empty.prototype","opsSec":14046879.747148873,"samples":7023440},{"name":"Empty.prototype","opsSec":2000531.7599346954,"samples":1000266},{"name":"Empty class","opsSec":1263236.8282420817,"samples":632922}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Object.create(null)","opsSec":42410218.54482941,"samples":21206263},{"name":"Object.create({})","opsSec":1937662.2079559406,"samples":986351},{"name":"Cached Empty.prototype","opsSec":96865999.09559864,"samples":48433783},{"name":"Empty.prototype","opsSec":2511324.772122173,"samples":1258265},{"name":"Empty class","opsSec":1434015.843589436,"samples":727098}]}-->
 
 ## Optional Chain (?) vs && operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|14,851,474|7425738|
-|Using optional chain (obj.field?.field2) (undefined)|14,531,179|7265590|
-|Using and operator (obj.field && obj.field.field2) (Valid)|14,716,355|7358178|
-|Using and operator (obj.field && obj.field.field2) (undefined)|14,812,728|7406365|
+|Using optional chain (obj.field?.field2) (Valid)|140,916,238|70464688|
+|Using optional chain (obj.field?.field2) (undefined)|98,749,808|49423384|
+|Using and operator (obj.field && obj.field.field2) (Valid)|95,888,461|47948051|
+|Using and operator (obj.field && obj.field.field2) (undefined)|97,317,396|48659439|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:18:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:25:13 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":14851474.633670948,"samples":7425738},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":14531179.622078823,"samples":7265590},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":14716355.617422808,"samples":7358178},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":14812728.4002734,"samples":7406365}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":140916238.94270834,"samples":70464688},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":98749808.92011483,"samples":49423384},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":95888461.0320942,"samples":47948051},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":97317396.82922025,"samples":48659439}]}-->
 
 ## Parsing Integer
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|14,815,103|7407552|
-|Using parseInt(x, 10) - big number (10 len)|15,271,351|7635676|
-|Using + - small number (2 len)|14,836,862|7418435|
-|Using + - big number (10 len)|15,435,719|7717860|
+|Using parseInt(x, 10) - small number (2 len)|133,238,497|66619305|
+|Using parseInt(x, 10) - big number (10 len)|99,757,567|49878786|
+|Using + - small number (2 len)|84,995,945|42499262|
+|Using + - big number (10 len)|97,465,305|48734713|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:28:36 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:27:00 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","opsSec":14815103.496370388,"samples":7407552},{"name":"Using parseInt(x, 10) - big number (10 len)","opsSec":15271351.205824688,"samples":7635676},{"name":"Using + - small number (2 len)","opsSec":14836862.84862591,"samples":7418435},{"name":"Using + - big number (10 len)","opsSec":15435719.44394621,"samples":7717860}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","opsSec":133238497.54670806,"samples":66619305},{"name":"Using parseInt(x, 10) - big number (10 len)","opsSec":99757567.4111519,"samples":49878786},{"name":"Using + - small number (2 len)","opsSec":84995945.5629954,"samples":42499262},{"name":"Using + - big number (10 len)","opsSec":97465305.36181991,"samples":48734713}]}-->
 
 ## Possible undefined Function
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using if to check function existence|1,005,345|502673|
-|Using ? operator to avoid rejection|1,022,996|511499|
+|Using if to check function existence|1,011,355|505755|
+|Using ? operator to avoid rejection|1,089,811|545596|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:34:01 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:29:01 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using if to check function existence","opsSec":1005345.185670659,"samples":502673},{"name":"Using ? operator to avoid rejection","opsSec":1022996.4204932256,"samples":511499}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using if to check function existence","opsSec":1011355.3941009038,"samples":505755},{"name":"Using ? operator to avoid rejection","opsSec":1089811.002395874,"samples":545596}]}-->
 
 ## Private Property
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|14,691,071|7345536|
-|Raw usage underscore usage|14,347,253|7173627|
-|Manipulating private properties using #|13,853,773|6926887|
-|Manipulating private properties using underscore(_)|14,620,010|7310006|
-|Manipulating private properties using Symbol|13,848,244|6924123|
-|Manipulating private properties using PrivateSymbol|11,269,159|5634580|
+|Raw usage private field|129,542,844|64772134|
+|Raw usage underscore usage|95,019,508|47509758|
+|Manipulating private properties using #|90,191,827|45095924|
+|Manipulating private properties using underscore(_)|89,016,931|44514758|
+|Manipulating private properties using Symbol|89,795,460|44901793|
+|Manipulating private properties using PrivateSymbol|34,560,322|17280166|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:46:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:30:02 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Raw usage private field","opsSec":14691071.706314754,"samples":7345536},{"name":"Raw usage underscore usage","opsSec":14347253.971325943,"samples":7173627},{"name":"Manipulating private properties using #","opsSec":13853773.806023413,"samples":6926887},{"name":"Manipulating private properties using underscore(_)","opsSec":14620010.537848677,"samples":7310006},{"name":"Manipulating private properties using Symbol","opsSec":13848244.420970319,"samples":6924123},{"name":"Manipulating private properties using PrivateSymbol","opsSec":11269159.3462398,"samples":5634580}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Raw usage private field","opsSec":129542844.32414088,"samples":64772134},{"name":"Raw usage underscore usage","opsSec":95019508.39843933,"samples":47509758},{"name":"Manipulating private properties using #","opsSec":90191827.79703057,"samples":45095924},{"name":"Manipulating private properties using underscore(_)","opsSec":89016931.32035151,"samples":44514758},{"name":"Manipulating private properties using Symbol","opsSec":89795460.22921294,"samples":44901793},{"name":"Manipulating private properties using PrivateSymbol","opsSec":34560322.461351,"samples":17280166}]}-->
 
 ## Property access after shape transition
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|5,021,879|2510940|
-|Adding property in the object creation - small object|5,065,451|2532726|
-|Adding property after the function creation - small class|246,939|123470|
-|Adding property in the function creation - small class|274,739|137370|
-|Adding property after the class creation - small class|267,408|133705|
-|Adding property in the class creation - small class|250,266|125134|
+|Adding property after object creation - small object|7,943,167|3982580|
+|Adding property in the object creation - small object|7,691,465|3845733|
+|Adding property after the function creation - small class|248,435|125903|
+|Adding property in the function creation - small class|264,819|132898|
+|Adding property after the class creation - small class|256,010|130181|
+|Adding property in the class creation - small class|260,452|131399|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 21:54:13 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:31:40 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Adding property after object creation - small object","opsSec":5021879.387321061,"samples":2510940},{"name":"Adding property in the object creation - small object","opsSec":5065451.604898511,"samples":2532726},{"name":"Adding property after the function creation - small class","opsSec":246939.2631333846,"samples":123470},{"name":"Adding property in the function creation - small class","opsSec":274739.13512090786,"samples":137370},{"name":"Adding property after the class creation - small class","opsSec":267408.47149335995,"samples":133705},{"name":"Adding property in the class creation - small class","opsSec":250266.3712664698,"samples":125134}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Adding property after object creation - small object","opsSec":7943167.196960072,"samples":3982580},{"name":"Adding property in the object creation - small object","opsSec":7691465.215470548,"samples":3845733},{"name":"Adding property after the function creation - small class","opsSec":248435.80140508155,"samples":125903},{"name":"Adding property in the function creation - small class","opsSec":264819.633843785,"samples":132898},{"name":"Adding property after the class creation - small class","opsSec":256010.44052035734,"samples":130181},{"name":"Adding property in the class creation - small class","opsSec":260452.81410228013,"samples":131399}]}-->
 
 ## Property Getter Access
 
 |name|ops/sec|samples|
 |-|-|-|
-|Getter (class)|14,989,301|7494651|
-|Getter|12,029,443|6014722|
-|Method|14,247,347|7123674|
-|DefineProperty (getter)|14,031,532|7015767|
-|DefineProperty (getter & enumerable=false)|12,028,446|6014332|
-|DefineProperty (getter & configurable=false)|14,478,516|7239259|
-|DefineProperty (getter & enumerable=false & configurable=false)|12,592,022|6296012|
-|DefineProperty (writable)|14,638,395|7319198|
-|DefineProperty (writable & enumerable=false)|14,658,071|7329036|
-|DefineProperty (writable & enumerable=false & configurable=false)|14,842,720|7421361|
-|DefineProperties (getter)|12,682,061|6341031|
-|DefineProperties (getter & enumerable=false)|12,697,216|6348609|
-|DefineProperties (getter & enumerable=false & configurable=false)|12,697,950|6348976|
+|Getter (class)|134,425,528|67221536|
+|Getter|47,928,637|23964329|
+|Method|87,918,353|43965558|
+|DefineProperty (getter)|87,629,030|43814538|
+|DefineProperty (getter & enumerable=false)|48,044,683|24032101|
+|DefineProperty (getter & configurable=false)|81,236,585|40623212|
+|DefineProperty (getter & enumerable=false & configurable=false)|49,330,126|24667697|
+|DefineProperty (writable)|88,862,791|44567654|
+|DefineProperty (writable & enumerable=false)|88,942,500|44473792|
+|DefineProperty (writable & enumerable=false & configurable=false)|89,040,173|44520089|
+|DefineProperties (getter)|47,695,762|23847910|
+|DefineProperties (getter & enumerable=false)|47,776,971|23889887|
+|DefineProperties (getter & enumerable=false & configurable=false)|49,181,929|24592116|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 22:15:22 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:33:12 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Getter (class)","opsSec":14989301.13050987,"samples":7494651},{"name":"Getter","opsSec":12029443.927604323,"samples":6014722},{"name":"Method","opsSec":14247347.174048748,"samples":7123674},{"name":"DefineProperty (getter)","opsSec":14031532.90560928,"samples":7015767},{"name":"DefineProperty (getter & enumerable=false)","opsSec":12028446.694150763,"samples":6014332},{"name":"DefineProperty (getter & configurable=false)","opsSec":14478516.233873248,"samples":7239259},{"name":"DefineProperty (getter & enumerable=false & configurable=false)","opsSec":12592022.992756557,"samples":6296012},{"name":"DefineProperty (writable)","opsSec":14638395.73597305,"samples":7319198},{"name":"DefineProperty (writable & enumerable=false)","opsSec":14658071.355769018,"samples":7329036},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":14842720.278632646,"samples":7421361},{"name":"DefineProperties (getter)","opsSec":12682061.51785801,"samples":6341031},{"name":"DefineProperties (getter & enumerable=false)","opsSec":12697216.628214937,"samples":6348609},{"name":"DefineProperties (getter & enumerable=false & configurable=false)","opsSec":12697950.958491053,"samples":6348976}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Getter (class)","opsSec":134425528.66195643,"samples":67221536},{"name":"Getter","opsSec":47928637.965829335,"samples":23964329},{"name":"Method","opsSec":87918353.42014411,"samples":43965558},{"name":"DefineProperty (getter)","opsSec":87629030.9586781,"samples":43814538},{"name":"DefineProperty (getter & enumerable=false)","opsSec":48044683.84718708,"samples":24032101},{"name":"DefineProperty (getter & configurable=false)","opsSec":81236585.9244982,"samples":40623212},{"name":"DefineProperty (getter & enumerable=false & configurable=false)","opsSec":49330126.52908922,"samples":24667697},{"name":"DefineProperty (writable)","opsSec":88862791.94277234,"samples":44567654},{"name":"DefineProperty (writable & enumerable=false)","opsSec":88942500.22457217,"samples":44473792},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":89040173.36991097,"samples":44520089},{"name":"DefineProperties (getter)","opsSec":47695762.09734481,"samples":23847910},{"name":"DefineProperties (getter & enumerable=false)","opsSec":47776971.49840585,"samples":23889887},{"name":"DefineProperties (getter & enumerable=false & configurable=false)","opsSec":49181929.59714784,"samples":24592116}]}-->
 
 ## Property Setter Access
 
 |name|ops/sec|samples|
 |-|-|-|
-|Setter (class)|14,627,267|7313634|
-|Setter|5,975,219|2987610|
-|Method|14,354,646|7177324|
-|DefineProperty (setter)|14,724,123|7362062|
-|DefineProperty (setter & enumerable=false)|5,911,597|2955799|
-|DefineProperty (setter & configurable=false)|5,976,434|2988218|
-|DefineProperty (setter & enumerable=false & configurable=false)|5,959,772|2979887|
-|DefineProperty (writable)|14,540,176|7270089|
-|DefineProperty (writable & enumerable=false)|14,704,376|7352190|
-|DefineProperty (writable & enumerable=false & configurable=false)|15,217,289|7608645|
-|DefineProperties (setter)|14,763,653|7381827|
-|DefineProperties (setter & enumerable=false)|6,105,677|3052839|
-|DefineProperties (setter & enumerable=false & configurable=false)|6,118,835|3059418|
+|Setter (class)|127,759,288|63881334|
+|Setter|11,104,442|5552460|
+|Method|90,029,704|45014869|
+|DefineProperty (setter)|93,258,399|46629233|
+|DefineProperty (setter & enumerable=false)|11,589,276|5794644|
+|DefineProperty (setter & configurable=false)|11,367,055|5683531|
+|DefineProperty (setter & enumerable=false & configurable=false)|11,484,775|5742393|
+|DefineProperty (writable)|92,405,199|46202635|
+|DefineProperty (writable & enumerable=false)|85,328,641|42665152|
+|DefineProperty (writable & enumerable=false & configurable=false)|91,989,462|45996583|
+|DefineProperties (setter)|91,712,668|45858734|
+|DefineProperties (setter & enumerable=false)|11,251,930|5626229|
+|DefineProperties (setter & enumerable=false & configurable=false)|10,903,871|5451992|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 22:37:43 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:35:02 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Setter (class)","opsSec":14627267.063387375,"samples":7313634},{"name":"Setter","opsSec":5975219.067711781,"samples":2987610},{"name":"Method","opsSec":14354646.622319011,"samples":7177324},{"name":"DefineProperty (setter)","opsSec":14724123.175570741,"samples":7362062},{"name":"DefineProperty (setter & enumerable=false)","opsSec":5911597.680734304,"samples":2955799},{"name":"DefineProperty (setter & configurable=false)","opsSec":5976434.613522968,"samples":2988218},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":5959772.223956662,"samples":2979887},{"name":"DefineProperty (writable)","opsSec":14540176.691301348,"samples":7270089},{"name":"DefineProperty (writable & enumerable=false)","opsSec":14704376.823767727,"samples":7352190},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":15217289.939016113,"samples":7608645},{"name":"DefineProperties (setter)","opsSec":14763653.11395751,"samples":7381827},{"name":"DefineProperties (setter & enumerable=false)","opsSec":6105677.059664374,"samples":3052839},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":6118835.95103131,"samples":3059418}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Setter (class)","opsSec":127759288.51130031,"samples":63881334},{"name":"Setter","opsSec":11104442.797675211,"samples":5552460},{"name":"Method","opsSec":90029704.68900926,"samples":45014869},{"name":"DefineProperty (setter)","opsSec":93258399.97305283,"samples":46629233},{"name":"DefineProperty (setter & enumerable=false)","opsSec":11589276.086224183,"samples":5794644},{"name":"DefineProperty (setter & configurable=false)","opsSec":11367055.907258034,"samples":5683531},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","opsSec":11484775.319158955,"samples":5742393},{"name":"DefineProperty (writable)","opsSec":92405199.21761739,"samples":46202635},{"name":"DefineProperty (writable & enumerable=false)","opsSec":85328641.45674986,"samples":42665152},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","opsSec":91989462.87218262,"samples":45996583},{"name":"DefineProperties (setter)","opsSec":91712668.85946393,"samples":45858734},{"name":"DefineProperties (setter & enumerable=false)","opsSec":11251930.14945283,"samples":5626229},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","opsSec":10903871.27577875,"samples":5451992}]}-->
 
 ## replace vs replaceAll comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using replace(//g)|2,576,071|1288036|
-|Using replaceAll()|2,407,649|1203825|
-|Using replaceAll(//g)|2,379,218|1189610|
+|Using replace(//g)|3,302,978|1651491|
+|Using replaceAll()|3,116,922|1558601|
+|Using replaceAll(//g)|2,956,318|1478467|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 22:44:33 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:36:54 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using replace(//g)","opsSec":2576071.402350567,"samples":1288036},{"name":"Using replaceAll()","opsSec":2407649.57625386,"samples":1203825},{"name":"Using replaceAll(//g)","opsSec":2379218.796113384,"samples":1189610}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using replace(//g)","opsSec":3302978.280846456,"samples":1651491},{"name":"Using replaceAll()","opsSec":3116922.5865916475,"samples":1558601},{"name":"Using replaceAll(//g)","opsSec":2956318.872819495,"samples":1478467}]}-->
 
 ## Shallow Copy
 
 |name|ops/sec|samples|
 |-|-|-|
-|{ ...object }|10,250,367|5125184|
-|{ ...object, __proto__: null }|2,128,245|1064123|
-|{ ...object, newProp: true }|9,367,687|4683844|
-|structuredClone|286,282|143142|
-|JSON.parse + JSON.stringify|279,716|139859|
-|loop + object.keys starting with {}|1,397,220|698611|
-|loop + object.keys starting with { __proto__: null }|760,501|380251|
-|loop + object.keys starting with { randomProp: true }|536,620|268311|
-|object.keys + reduce(FN, {})|1,403,229|701615|
-|object.keys + reduce(FN, { __proto__: null })|693,245|346623|
-|object.keys + reduce(FN, { newProp: true })|563,036|281519|
+|{ ...object }|21,921,008|10960669|
+|{ ...object, __proto__: null }|2,526,390|1263196|
+|{ ...object, newProp: true }|19,435,632|9732147|
+|structuredClone|303,315|151730|
+|JSON.parse + JSON.stringify|299,624|149824|
+|loop + object.keys starting with {}|1,616,158|808080|
+|loop + object.keys starting with { __proto__: null }|872,510|436306|
+|loop + object.keys starting with { randomProp: true }|652,358|326215|
+|object.keys + reduce(FN, {})|1,705,071|852623|
+|object.keys + reduce(FN, { __proto__: null })|888,111|444121|
+|object.keys + reduce(FN, { newProp: true })|672,567|336331|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 22:54:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:38:27 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"{ ...object }","opsSec":10250367.71291622,"samples":5125184},{"name":"{ ...object, __proto__: null }","opsSec":2128245.94466856,"samples":1064123},{"name":"{ ...object, newProp: true }","opsSec":9367687.044431187,"samples":4683844},{"name":"structuredClone","opsSec":286282.3235305437,"samples":143142},{"name":"JSON.parse + JSON.stringify","opsSec":279716.2260393361,"samples":139859},{"name":"loop + object.keys starting with {}","opsSec":1397220.527325111,"samples":698611},{"name":"loop + object.keys starting with { __proto__: null }","opsSec":760501.2957757442,"samples":380251},{"name":"loop + object.keys starting with { randomProp: true }","opsSec":536620.9568082999,"samples":268311},{"name":"object.keys + reduce(FN, {})","opsSec":1403229.000900307,"samples":701615},{"name":"object.keys + reduce(FN, { __proto__: null })","opsSec":693245.2499089204,"samples":346623},{"name":"object.keys + reduce(FN, { newProp: true })","opsSec":563036.4111116071,"samples":281519}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"{ ...object }","opsSec":21921008.43955912,"samples":10960669},{"name":"{ ...object, __proto__: null }","opsSec":2526390.084996315,"samples":1263196},{"name":"{ ...object, newProp: true }","opsSec":19435632.816483248,"samples":9732147},{"name":"structuredClone","opsSec":303315.6508684891,"samples":151730},{"name":"JSON.parse + JSON.stringify","opsSec":299624.14931846596,"samples":149824},{"name":"loop + object.keys starting with {}","opsSec":1616158.7232346085,"samples":808080},{"name":"loop + object.keys starting with { __proto__: null }","opsSec":872510.0489458008,"samples":436306},{"name":"loop + object.keys starting with { randomProp: true }","opsSec":652358.0618670856,"samples":326215},{"name":"object.keys + reduce(FN, {})","opsSec":1705071.2097401472,"samples":852623},{"name":"object.keys + reduce(FN, { __proto__: null })","opsSec":888111.1847749274,"samples":444121},{"name":"object.keys + reduce(FN, { newProp: true })","opsSec":672567.3469070004,"samples":336331}]}-->
 
 ## Sorting Map
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|297,914|148958|
-|Sort using first char|1,102,033|551017|
-|Sort using localeCompare|1,014,734|507368|
+|Sort using default|294,367|147372|
+|Sort using first char|1,314,868|657435|
+|Sort using localeCompare|1,200,593|600356|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:00:24 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:40:18 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Sort using default","opsSec":297914.4848069584,"samples":148958},{"name":"Sort using first char","opsSec":1102033.3475966267,"samples":551017},{"name":"Sort using localeCompare","opsSec":1014734.7681107235,"samples":507368}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Sort using default","opsSec":294367.45633581857,"samples":147372},{"name":"Sort using first char","opsSec":1314868.9033993345,"samples":657435},{"name":"Sort using localeCompare","opsSec":1200593.3861758192,"samples":600356}]}-->
 
 ## Object.assign VS spread operator
 
 |name|ops/sec|samples|
 |-|-|-|
-|{...bigObject} - Total keys: 1000|1,742|872|
-|{...smallObject} - Total keys: 2|10,440,306|5220154|
-|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|2,163|1082|
-|Object.assign(bigObject, anotherBigObject) - mutating bigObject|6,528|3265|
-|{ ...bigObject, ...anotherBigObject }|1,086|544|
-|Object.assign({}, smallObject, anotherSmallObject) - creating new object|6,416,150|3208076|
-|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|10,090,608|5045305|
-|{ ...smallObject, ...anotherSmallObject }|8,083,533|4041767|
+|{...bigObject} - Total keys: 1000|1,854|929|
+|{...smallObject} - Total keys: 2|53,367,080|26683548|
+|Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object|1,066|534|
+|Object.assign(bigObject, anotherBigObject) - mutating bigObject|6,434|3218|
+|{ ...bigObject, ...anotherBigObject }|1,130|566|
+|Object.assign({}, smallObject, anotherSmallObject) - creating new object|12,414,408|6207317|
+|Object.assign(smallObject, anotherSmallObject) - mutating smallObject|27,872,642|13936329|
+|{ ...smallObject, ...anotherSmallObject }|20,538,869|10275837|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:09:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:41:59 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":1742.9110257053578,"samples":872},{"name":"{...smallObject} - Total keys: 2","opsSec":10440306.413103614,"samples":5220154},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":2163.5931622684807,"samples":1082},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6528.055044334565,"samples":3265},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1086.6271161829716,"samples":544},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":6416150.216332232,"samples":3208076},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":10090608.970742559,"samples":5045305},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":8083533.6766268425,"samples":4041767}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"{...bigObject} - Total keys: 1000","opsSec":1854.9984714932402,"samples":929},{"name":"{...smallObject} - Total keys: 2","opsSec":53367080.3100784,"samples":26683548},{"name":"Object.assign({}, bigObject, anotherBigObject) - Total keys: 1000 - creating new object","opsSec":1066.9522720739642,"samples":534},{"name":"Object.assign(bigObject, anotherBigObject) - mutating bigObject","opsSec":6434.100820724344,"samples":3218},{"name":"{ ...bigObject, ...anotherBigObject }","opsSec":1130.223762938641,"samples":566},{"name":"Object.assign({}, smallObject, anotherSmallObject) - creating new object","opsSec":12414408.00811662,"samples":6207317},{"name":"Object.assign(smallObject, anotherSmallObject) - mutating smallObject","opsSec":27872642.781537037,"samples":13936329},{"name":"{ ...smallObject, ...anotherSmallObject }","opsSec":20538869.781034324,"samples":10275837}]}-->
 
 ## Stream.Readable
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Readable reading 1e3 * "some data"|2,077|1040|
-|streams.web.Readable reading 1e3 * "some data"|1,867|934|
+|streams.Readable reading 1e3 * "some data"|2,055|1028|
+|streams.web.Readable reading 1e3 * "some data"|1,821|911|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:15:15 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:43:44 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2077.8280297379065,"samples":1040},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":1867.203174779556,"samples":934}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2055.72632526577,"samples":1028},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":1821.7016453479284,"samples":911}]}-->
 
 ## Stream.Writable
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Writable writing 1e3 * "some data"|7,168|3585|
-|streams.web.WritableStream writing 1e3 * "some data"|2,035|1018|
+|streams.Writable writing 1e3 * "some data"|7,568|3785|
+|streams.web.WritableStream writing 1e3 * "some data"|1,611|817|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:21:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:44:50 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":7168.318599189264,"samples":3585},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":2035.9815580789661,"samples":1018}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":7568.142671834334,"samples":3785},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":1611.563681501048,"samples":817}]}-->
 
 ## String concat
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using + sign|14,777,799|7388900|
-|Using backtick (`)|14,677,111|7338556|
-|Using array.join|5,597,731|2798866|
+|Using + sign|129,126,025|64616228|
+|Using backtick (`)|97,944,900|48972459|
+|Using array.join|9,953,087|4977088|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:30:25 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:46:37 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using + sign","opsSec":14777799.615788747,"samples":7388900},{"name":"Using backtick (`)","opsSec":14677111.99996161,"samples":7338556},{"name":"Using array.join","opsSec":5597731.3841939075,"samples":2798866}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using + sign","opsSec":129126025.16501798,"samples":64616228},{"name":"Using backtick (`)","opsSec":97944900.56580769,"samples":48972459},{"name":"Using array.join","opsSec":9953087.828907667,"samples":4977088}]}-->
 
 ## endsWith comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|(short string) (true) String#endsWith|14,489,385|7244693|
-|(short string) (true) String#slice and strict comparison|13,341,251|6670626|
-|(long string) (true) String#endsWith|14,302,476|7151239|
-|(long string) (true) String#slice and strict comparison|13,273,101|6636551|
-|(short string) (false) String#endsWith|14,936,108|7468055|
-|(short string) (false) String#slice and strict comparison|13,195,745|6597873|
-|(long string) (false) String#endsWith|14,096,500|7048251|
-|(long string) (false) String#slice and strict comparison|13,096,026|6548014|
+|(short string) (true) String#endsWith|120,367,595|60183839|
+|(short string) (true) String#slice and strict comparison|50,729,438|25364735|
+|(long string) (true) String#endsWith|54,514,262|27257138|
+|(long string) (true) String#slice and strict comparison|45,254,800|22628249|
+|(short string) (false) String#endsWith|95,741,721|47870907|
+|(short string) (false) String#slice and strict comparison|50,373,874|25187483|
+|(long string) (false) String#endsWith|86,682,288|43341152|
+|(long string) (false) String#slice and strict comparison|44,821,489|22411816|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:48:39 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:47:28 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":14489385.188688615,"samples":7244693},{"name":"(short string) (true) String#slice and strict comparison","opsSec":13341251.439616773,"samples":6670626},{"name":"(long string) (true) String#endsWith","opsSec":14302476.91310463,"samples":7151239},{"name":"(long string) (true) String#slice and strict comparison","opsSec":13273101.362788359,"samples":6636551},{"name":"(short string) (false) String#endsWith","opsSec":14936108.655737378,"samples":7468055},{"name":"(short string) (false) String#slice and strict comparison","opsSec":13195745.31381141,"samples":6597873},{"name":"(long string) (false) String#endsWith","opsSec":14096500.336442959,"samples":7048251},{"name":"(long string) (false) String#slice and strict comparison","opsSec":13096026.690512376,"samples":6548014}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"(short string) (true) String#endsWith","opsSec":120367595.90929958,"samples":60183839},{"name":"(short string) (true) String#slice and strict comparison","opsSec":50729438.04045404,"samples":25364735},{"name":"(long string) (true) String#endsWith","opsSec":54514262.153377414,"samples":27257138},{"name":"(long string) (true) String#slice and strict comparison","opsSec":45254800.0399025,"samples":22628249},{"name":"(short string) (false) String#endsWith","opsSec":95741721.13053049,"samples":47870907},{"name":"(short string) (false) String#slice and strict comparison","opsSec":50373874.29739623,"samples":25187483},{"name":"(long string) (false) String#endsWith","opsSec":86682288.39718808,"samples":43341152},{"name":"(long string) (false) String#slice and strict comparison","opsSec":44821489.263884254,"samples":22411816}]}-->
 
 ## String searching
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|8,086,306|4043154|
-|Using indexof|8,079,033|4039517|
-|Using RegExp.test|7,494,932|3747467|
-|Using RegExp.text with cached regex pattern|7,562,165|3781083|
-|Using new RegExp.test|3,422,465|1711233|
-|Using new RegExp.test with cached regex pattern|3,710,162|1855082|
+|Using includes|127,904,676|63952376|
+|Using indexof|14,268,643|7134325|
+|Using RegExp.test|12,166,186|6083597|
+|Using RegExp.text with cached regex pattern|13,110,389|6555198|
+|Using new RegExp.test|4,613,751|2306910|
+|Using new RegExp.test with cached regex pattern|5,212,994|2606727|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:58:54 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:49:24 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using includes","opsSec":8086306.382736088,"samples":4043154},{"name":"Using indexof","opsSec":8079033.903072282,"samples":4039517},{"name":"Using RegExp.test","opsSec":7494932.545978994,"samples":3747467},{"name":"Using RegExp.text with cached regex pattern","opsSec":7562165.274014556,"samples":3781083},{"name":"Using new RegExp.test","opsSec":3422465.1306736413,"samples":1711233},{"name":"Using new RegExp.test with cached regex pattern","opsSec":3710162.374956563,"samples":1855082}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using includes","opsSec":127904676.79205005,"samples":63952376},{"name":"Using indexof","opsSec":14268643.607647665,"samples":7134325},{"name":"Using RegExp.test","opsSec":12166186.712737305,"samples":6083597},{"name":"Using RegExp.text with cached regex pattern","opsSec":13110389.916779079,"samples":6555198},{"name":"Using new RegExp.test","opsSec":4613751.73492933,"samples":2306910},{"name":"Using new RegExp.test with cached regex pattern","opsSec":5212994.99579062,"samples":2606727}]}-->
 
 ## startsWith comparison
 
 |name|ops/sec|samples|
 |-|-|-|
-|(short string) (true) String#startsWith|14,777,840|7388921|
-|(short string) (true) String#slice and strict comparison|13,424,617|6712309|
-|(long string) (true) String#startsWith|13,801,056|6900529|
-|(long string) (true) String#slice and strict comparison|12,674,946|6337474|
-|(short string) (false) String#startsWith|14,252,659|7126330|
-|(short string) (false) String#slice and strict comparison|12,960,772|6480387|
-|(long string) (false) String#startsWith|13,626,073|6813037|
-|(long string) (false) String#slice and strict comparison|12,712,389|6356195|
+|(short string) (true) String#startsWith|121,334,034|60667052|
+|(short string) (true) String#slice and strict comparison|57,023,251|28511636|
+|(long string) (true) String#startsWith|63,417,009|31709292|
+|(long string) (true) String#slice and strict comparison|51,989,456|25994731|
+|(short string) (false) String#startsWith|95,150,774|47575403|
+|(short string) (false) String#slice and strict comparison|57,072,144|28537929|
+|(long string) (false) String#startsWith|88,223,364|44111693|
+|(long string) (false) String#slice and strict comparison|51,076,645|25538329|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 26 2024 00:14:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:50:32 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"(short string) (true) String#startsWith","opsSec":14777840.788228903,"samples":7388921},{"name":"(short string) (true) String#slice and strict comparison","opsSec":13424617.758412084,"samples":6712309},{"name":"(long string) (true) String#startsWith","opsSec":13801056.895880733,"samples":6900529},{"name":"(long string) (true) String#slice and strict comparison","opsSec":12674946.149559973,"samples":6337474},{"name":"(short string) (false) String#startsWith","opsSec":14252659.886055423,"samples":7126330},{"name":"(short string) (false) String#slice and strict comparison","opsSec":12960772.781422146,"samples":6480387},{"name":"(long string) (false) String#startsWith","opsSec":13626073.427414631,"samples":6813037},{"name":"(long string) (false) String#slice and strict comparison","opsSec":12712389.618584894,"samples":6356195}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"(short string) (true) String#startsWith","opsSec":121334034.83960013,"samples":60667052},{"name":"(short string) (true) String#slice and strict comparison","opsSec":57023251.585675925,"samples":28511636},{"name":"(long string) (true) String#startsWith","opsSec":63417009.98981206,"samples":31709292},{"name":"(long string) (true) String#slice and strict comparison","opsSec":51989456.385138705,"samples":25994731},{"name":"(short string) (false) String#startsWith","opsSec":95150774.60024439,"samples":47575403},{"name":"(short string) (false) String#slice and strict comparison","opsSec":57072144.8862537,"samples":28537929},{"name":"(long string) (false) String#startsWith","opsSec":88223364.29705238,"samples":44111693},{"name":"(long string) (false) String#slice and strict comparison","opsSec":51076645.23083869,"samples":25538329}]}-->
 
 ## Super vs This
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|14,726,529|7363265|
-|Using this|15,127,995|7563998|
+|Using super|115,295,209|57655998|
+|Using this|95,237,156|47770212|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 26 2024 00:26:04 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:52:06 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using super","opsSec":14726529.823258411,"samples":7363265},{"name":"Using this","opsSec":15127995.546193771,"samples":7563998}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using super","opsSec":115295209.01756704,"samples":57655998},{"name":"Using this","opsSec":95237156.702899,"samples":47770212}]}-->
 
 ## Getting unix time
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().getTime()|6,053,726|3026864|
-|Date.now()|8,814,235|4407118|
+|new Date().getTime()|9,991,341|5011159|
+|Date.now()|19,237,094|9619419|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 26 2024 00:32:27 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:53:50 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Date().getTime()","opsSec":6053726.631853123,"samples":3026864},{"name":"Date.now()","opsSec":8814235.559294535,"samples":4407118}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"new Date().getTime()","opsSec":9991341.245256856,"samples":5011159},{"name":"Date.now()","opsSec":19237094.00353183,"samples":9619419}]}-->

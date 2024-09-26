@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|14,422,998|7211500|
-|Length = 10_000 - Array.at|14,249,008|7124505|
-|Length = 1_000_000 - Array.at|15,055,205|7527603|
-|Length = 100 - Array[length - 1]|15,124,091|7562046|
-|Length = 10_000 - Array[length - 1]|14,430,418|7215210|
-|Length = 1_000_000 - Array[length - 1]|14,976,832|7488417|
+|Length = 100 - Array.at|123,314,828|61670542|
+|Length = 10_000 - Array.at|98,871,669|49436574|
+|Length = 1_000_000 - Array.at|97,082,047|48541038|
+|Length = 100 - Array[length - 1]|96,867,069|48444675|
+|Length = 10_000 - Array[length - 1]|97,221,546|48610784|
+|Length = 1_000_000 - Array[length - 1]|95,320,455|47660593|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 20:48:10 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Mon Sep 30 2024 21:21:27 GMT+0000 (Coordinated Universal Time)
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":14422998.15391973,"samples":7211500},{"name":"Length = 10_000 - Array.at","opsSec":14249008.689082256,"samples":7124505},{"name":"Length = 1_000_000 - Array.at","opsSec":15055205.187180985,"samples":7527603},{"name":"Length = 100 - Array[length - 1]","opsSec":15124091.606540525,"samples":7562046},{"name":"Length = 10_000 - Array[length - 1]","opsSec":14430418.210650215,"samples":7215210},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":14976832.292854125,"samples":7488417}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":123314828.30001768,"samples":61670542},{"name":"Length = 10_000 - Array.at","opsSec":98871669.27531432,"samples":49436574},{"name":"Length = 1_000_000 - Array.at","opsSec":97082047.45787805,"samples":48541038},{"name":"Length = 100 - Array[length - 1]","opsSec":96867069.99269927,"samples":48444675},{"name":"Length = 10_000 - Array[length - 1]","opsSec":97221546.02793059,"samples":48610784},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":95320455.08275042,"samples":47660593}]}-->
