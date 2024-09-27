@@ -89,7 +89,7 @@ jobs:
         run: echo "BENCH_REPORT_FILE=report-${{github.run_id}}-${{ matrix.node-version }}-${{ inputs.bench-file }}.md" >> $GITHUB_ENV
 
       - name: Run Benchmark
-        run: node ${{ inputs.node-opts }} bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
+        run: node --allow-natives-sytax ${{ inputs.node-opts }} bench/${{ inputs.bench-file }} > ./${{ env.BENCH_REPORT_FILE }}
         env:
           CI: true
 

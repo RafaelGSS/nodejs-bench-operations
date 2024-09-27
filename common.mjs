@@ -1,4 +1,4 @@
-import { Bench } from 'tinybench'
+import { Suite } from 'bench-node'
 import { createTableHeader, H2, taskToMdTable } from './markdown.mjs'
 import { platform, arch, cpus, totalmem } from 'os'
 
@@ -8,19 +8,19 @@ function printMdHeader(name, tableHeaderColumns = ['name', 'ops/sec', 'samples']
   console.log(tableHeader)
 }
 
-function printMarkdownResults(tasks) {
+function printMarkdownResults(results) {
   const cycleEvents = []
-  for (const task of tasks) {
+  for (const r of results) {
     if (process.env.CI) {
       cycleEvents.push({
-        name: task.name,
-        opsSec: task.result.hz,
-        samples: task.result.samples.length,
+        name: r.name,
+        opsSec: r.opsSec,
+        samples: r.iterations,
       })
     }
-    console.log(taskToMdTable(task))
+    console.log(taskToMdTable(r))
   }
-  printMarkdownMachineInfo(cycleEvents)
+  printMarkdownMachineInfo()
   printMarkdownHiddenDetailedInfo(cycleEvents)
 }
 
@@ -53,7 +53,7 @@ function printMarkdownMachineInfo() {
   writter.write('\n\n')
 }
 
-function printMarkdownHiddenDetailedInfo(cycleEvents) {
+function printMarkdownHiddenDetailedInfo(results) {
   if (!process.env.CI) return
 
   const writter = process.stdout
@@ -63,44 +63,20 @@ function printMarkdownHiddenDetailedInfo(cycleEvents) {
   writter.write(
     JSON.stringify({
       environment: getMachineInfo(),
-      benchmarks: cycleEvents,
+      benchmarks: results,
     }),
   )
   writter.write('-->\n')
 }
 
-Bench.prototype.runAndPrintResults = async function () {
-  await this.warmup()
-  await this.run()
-  printMarkdownResults(this.tasks)
+Suite.prototype.runAndPrintResults = async function () {
+  const results = await this.run()
+  printMarkdownResults(results)
 }
 
 export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
-  const suite = new Bench({ warmupTime: 1000 })
+  const suite = new Suite({ reporter: false })
   // TODO: move it to runAndPrintResults
   printMdHeader(name, tableHeaderColumns)
   return suite
 }
-
-// ➜  nodejs-bench-operations (main) node bench/add-property.mjs
-// ## Adding property
-
-// |name|ops/sec|samples|
-// |-|-|-|
-// |Directly in the object|18,428,648|9214325|
-// |Using dot notation|17,217,733|8608867|
-// |Using define property (writable)|3,052,726|1526364|
-// |Using define property initialized (writable)|3,651,585|1825856|
-// |Using define property (getter)|1,765,147|882574|
-// ➜  nodejs-bench-operations (main) nvm use v22
-// Now using node v22.7.0 (npm v10.8.2)
-// ➜  nodejs-bench-operations (main) node bench/add-property.mjs
-// ## Adding property
-
-// |name|ops/sec|samples|
-// |-|-|-|
-// |Directly in the object|15,205,217|7602609|
-// |Using dot notation|15,432,921|7716461|
-// |Using define property (writable)|3,243,836|1621919|
-// |Using define property initialized (writable)|3,557,399|1778700|
-// |Using define property (getter)|2,047,757|1023879|
