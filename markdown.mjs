@@ -1,6 +1,5 @@
-export function taskToMdTable (task) {
-  const { result } = task
-  return `|${task.name}|${parseInt(result.hz.toString(), 10).toLocaleString()}|${result.samples.length}|`
+export function taskToMdTable (result) {
+  return `|${result.name}|${parseInt(result.opsSec.toString(), 10).toLocaleString()}|${result.iterations}|`
 }
 
 export function createTableHeader(columns) {
