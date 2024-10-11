@@ -598,21 +598,21 @@ new Array(length)|100,000,000|4,467.745ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|287,390|143696|
-|Sort using first char|1,297,804|648903|
-|Sort using localeCompare|1,202,535|601269|
+|Sort using default|301,477|151593|
+|Sort using first char|1,276,433|638254|
+|Sort using localeCompare|1,198,331|599233|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Fri Oct 11 2024 18:52:20 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 21:27:53 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.9.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Sort using default","opsSec":287390.4072823628,"samples":143696},{"name":"Sort using first char","opsSec":1297804.7956371496,"samples":648903},{"name":"Sort using localeCompare","opsSec":1202535.626194674,"samples":601269}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597881317138672},"benchmarks":[{"name":"Sort using default","opsSec":301477.5904084047,"samples":151593},{"name":"Sort using first char","opsSec":1276433.3899154926,"samples":638254},{"name":"Sort using localeCompare","opsSec":1198331.2692187391,"samples":599233}]}-->
 
 ## Object.assign VS spread operator
 
