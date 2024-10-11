@@ -2,17 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|401,490|200797|
-|NodeError|328,383|164192|
-|NodeError Range|323,436|161739|
+|Error|397,934|198968|
+|NodeError|309,452|154727|
+|NodeError Range|320,585|160295|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 30 2024 21:15:09 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 18:20:28 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.8.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Error","opsSec":401490.62901072984,"samples":200797},{"name":"NodeError","opsSec":328383.70576819964,"samples":164192},{"name":"NodeError Range","opsSec":323436.0057158898,"samples":161739}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Error","opsSec":397934.6605519326,"samples":198968},{"name":"NodeError","opsSec":309452.78446946264,"samples":154727},{"name":"NodeError Range","opsSec":320585.6015655465,"samples":160295}]}-->
