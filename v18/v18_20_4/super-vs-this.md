@@ -2,16 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|14,497,172|7248587|
-|Using this|14,873,010|7436506|
+|Using super|101,935,756|50975528|
+|Using this|82,371,037|41196601|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 26 2024 00:21:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 19:07:13 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v18.20.4`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Using super","opsSec":14497172.757533893,"samples":7248587},{"name":"Using this","opsSec":14873010.470010938,"samples":7436506}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using super","opsSec":101935756.46231258,"samples":50975528},{"name":"Using this","opsSec":82371037.60120226,"samples":41196601}]}-->
