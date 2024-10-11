@@ -42,7 +42,7 @@ suite
   )
   .add(
     'arrayBuffer (1024)',
-    async function (deferred) {
+    async function () {
       return blob1024.arrayBuffer()
     },
   )
@@ -50,7 +50,7 @@ suite
     const blob = blob128.slice(0, 64)
     return blob
   })
-  .add('slice (0, 512)', function (deferred) {
+  .add('slice (0, 512)', function () {
     const blob = blob1024.slice(0, 512)
     return blob
   })
