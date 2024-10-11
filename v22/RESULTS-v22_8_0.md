@@ -382,21 +382,22 @@ new Array(length)|100,000,000|4,613.252ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|140,916,238|70464688|
-|Using optional chain (obj.field?.field2) (undefined)|98,749,808|49423384|
-|Using and operator (obj.field && obj.field.field2) (Valid)|95,888,461|47948051|
-|Using and operator (obj.field && obj.field.field2) (undefined)|97,317,396|48659439|
+|Using optional chain (obj.field?.field2) (Valid)|138,886,192|69520399|
+|Using optional chain (obj.field?.field2) (undefined)|96,778,294|48437348|
+|Using and operator (obj.field && obj.field.field2) (Valid)|97,483,998|48742896|
+|Using and operator (obj.field && obj.field.field2) (undefined)|97,395,365|48700043|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 30 2024 21:25:13 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 18:33:26 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.8.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":140916238.94270834,"samples":70464688},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":98749808.92011483,"samples":49423384},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":95888461.0320942,"samples":47948051},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":97317396.82922025,"samples":48659439}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":138886192.6680458,"samples":69520399},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":96778294.17339094,"samples":48437348},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":97483998.87932462,"samples":48742896},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":97395365.0518652,"samples":48700043}]}-->
 
 ## Parsing Integer
 
