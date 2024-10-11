@@ -100,23 +100,24 @@ new Array(length)|100,000,000|4,613.252ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|[True conditional] Using instanceof only|426,330|213166|
-|[True conditional] Using constructor name|331,239|165629|
-|[True conditional] Check if property is valid then instanceof |340,421|170214|
-|[False conditional] Using instanceof only|95,736,213|47868142|
-|[False conditional] Using constructor name|96,593,076|48297318|
-|[False conditional] Check if property is valid then instanceof |96,614,721|48307392|
+|[True conditional] Using instanceof only|417,256|208632|
+|[True conditional] Using constructor name|330,951|165476|
+|[True conditional] Check if property is valid then instanceof |341,005|170505|
+|[False conditional] Using instanceof only|87,378,023|43689037|
+|[False conditional] Using constructor name|87,069,759|43535246|
+|[False conditional] Check if property is valid then instanceof |86,090,628|43047522|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 30 2024 21:06:04 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 18:08:31 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.8.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":426330.0405871335,"samples":213166},{"name":"[True conditional] Using constructor name","opsSec":331239.8679296296,"samples":165629},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":340421.4577804244,"samples":170214},{"name":"[False conditional] Using instanceof only","opsSec":95736213.34667455,"samples":47868142},{"name":"[False conditional] Using constructor name","opsSec":96593076.60137135,"samples":48297318},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":96614721.39366053,"samples":48307392}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":417256.53611508204,"samples":208632},{"name":"[True conditional] Using constructor name","opsSec":330951.0521561866,"samples":165476},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":341005.6317178577,"samples":170505},{"name":"[False conditional] Using instanceof only","opsSec":87378023.32074647,"samples":43689037},{"name":"[False conditional] Using constructor name","opsSec":87069759.74332057,"samples":43535246},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":86090628.92818604,"samples":43047522}]}-->
 
 ## Crypto Verify
 
