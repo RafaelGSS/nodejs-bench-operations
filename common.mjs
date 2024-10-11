@@ -48,6 +48,7 @@ function printMarkdownMachineInfo() {
   writter.write(`\n
 * __Machine:__ ${machineInfo}
 * __Run:__ ${new Date()}
+* __Node:__ \`${process.version}\`
 `)
   writter.write('</details>')
   writter.write('\n\n')
