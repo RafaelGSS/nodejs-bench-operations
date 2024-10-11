@@ -2,18 +2,19 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Math.floor (small)|139,701,187|69850623|
-|~ (small)|96,858,535|48429433|
-|Math.floor (long)|95,832,718|47916368|
-|~ (long)|94,483,102|47241558|
+|Math.floor (small)|139,703,749|69851883|
+|~ (small)|97,410,047|48717361|
+|Math.floor (long)|98,547,559|49273785|
+|~ (long)|99,598,000|49799006|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Oct 10 2024 17:28:32 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 18:30:33 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.9.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Math.floor (small)","opsSec":139701187.04609907,"samples":69850623},{"name":"~ (small)","opsSec":96858535.13124399,"samples":48429433},{"name":"Math.floor (long)","opsSec":95832718.94177602,"samples":47916368},{"name":"~ (long)","opsSec":94483102.58339943,"samples":47241558}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Math.floor (small)","opsSec":139703749.51495755,"samples":69851883},{"name":"~ (small)","opsSec":97410047.25574975,"samples":48717361},{"name":"Math.floor (long)","opsSec":98547559.55395867,"samples":49273785},{"name":"~ (long)","opsSec":99598000.24743597,"samples":49799006}]}-->
