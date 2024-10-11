@@ -2,16 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().getTime()|5,719,772|2859887|
-|Date.now()|8,612,409|4306205|
+|new Date().getTime()|10,009,607|5006251|
+|Date.now()|19,012,526|9510306|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 26 2024 00:27:42 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 11 2024 19:09:25 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v18.20.4`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Date().getTime()","opsSec":5719772.305347074,"samples":2859887},{"name":"Date.now()","opsSec":8612409.670692634,"samples":4306205}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"new Date().getTime()","opsSec":10009607.621860065,"samples":5006251},{"name":"Date.now()","opsSec":19012526.694872685,"samples":9510306}]}-->
