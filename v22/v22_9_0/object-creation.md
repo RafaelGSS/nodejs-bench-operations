@@ -5,9 +5,9 @@
 Platform: linux x64
 CPU Cores: 4 vCPUs | 7.6GB Mem
 
-Object.create(null)                           | ██████████-------------------- | 32702879.08 ops/sec
-Object.create({})                             | █----------------------------- | 2116415.47 ops/sec
-Cached Empty.prototype                        | ██████████████████████████████ | 102497407.86 ops/sec
-Empty.prototype                               | █----------------------------- | 2545470.76 ops/sec
-Empty class                                   | ------------------------------ | 1576326.93 ops/sec
+Object.create(null)                           | ██████████-------------------- | 32,416,019 ops/sec
+Object.create({})                             | █----------------------------- | 2,099,724 ops/sec
+Cached Empty.prototype                        | ██████████████████████████████ | 98,377,220 ops/sec
+Empty.prototype                               | █----------------------------- | 2,440,986 ops/sec
+Empty class                                   | ------------------------------ | 1,586,513 ops/sec
 ```
