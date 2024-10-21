@@ -5,7 +5,7 @@
   "main": "bin.js",
   "dependencies": {
     "autocannon": "^7.7.1",
-    "bench-node": "^0.2.0",
+    "bench-node": "^0.2.1",
     "benchmark": "^2.1.4",
     "fastify": "^4.4.0",
     "on-net-listen": "^1.1.2",
