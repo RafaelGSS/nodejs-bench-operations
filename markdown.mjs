@@ -3,6 +3,9 @@ export function taskToMdTable (result) {
 }
 
 export function createTableHeader(columns) {
+  if (!columns.length) {
+    return '';
+  }
   let header = '|'
   let headerSep = '|'
   for (const col of columns) {

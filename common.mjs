@@ -1,4 +1,4 @@
-import { Suite } from 'bench-node'
+import { Suite, chartReport } from 'bench-node'
 import { createTableHeader, H2, taskToMdTable } from './markdown.mjs'
 import { platform, arch, cpus, totalmem } from 'os'
 
@@ -71,13 +71,15 @@ function printMarkdownHiddenDetailedInfo(results) {
 }
 
 Suite.prototype.runAndPrintResults = async function () {
-  const results = await this.run()
-  printMarkdownResults(results)
+  console.log('```')
+  await this.run()
+  console.log('```')
+  // printMarkdownResults(results)
 }
 
 export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
-  const suite = new Suite({ reporter: false })
+  const suite = new Suite({ reporter: chartReport })
   // TODO: move it to runAndPrintResults
-  printMdHeader(name, tableHeaderColumns)
+  printMdHeader(name, [])
   return suite
 }
