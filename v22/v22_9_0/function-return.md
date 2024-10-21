@@ -5,14 +5,14 @@
 Platform: linux x64
 CPU Cores: 4 vCPUs | 7.6GB Mem
 
-Function returning null                       | █████████████████████████████- | 1950790.76 ops/sec
-Function returning explicitly undefined       | █████████████████████████████- | 1930043.31 ops/sec
-Function returning implicitly undefined       | █████████████████████████████- | 1918187.49 ops/sec
-Function returning string                     | ██████████████████████████████ | 1999436.17 ops/sec
-Function returning integer                    | █████████████████████████████- | 1924399.61 ops/sec
-Function returning float                      | ██████████████████████████████ | 2012078.18 ops/sec
-Function returning functions                  | █████████████████████████████- | 1920364.24 ops/sec
-Function returning arrow functions            | ██████████████████████████---- | 1760445.46 ops/sec
-Function returning empty object               | ██████████████████████████---- | 1776220.90 ops/sec
-Function returning empty array                | ███████████████████████████--- | 1830511.93 ops/sec
+Function returning null                       | ██████████████████████████████ | 1,961,681 ops/sec
+Function returning explicitly undefined       | █████████████████████████████- | 1,915,955 ops/sec
+Function returning implicitly undefined       | █████████████████████████████- | 1,912,928 ops/sec
+Function returning string                     | █████████████████████████████- | 1,941,235 ops/sec
+Function returning integer                    | █████████████████████████████- | 1,917,850 ops/sec
+Function returning float                      | ██████████████████████████████ | 1,988,693 ops/sec
+Function returning functions                  | █████████████████████████████- | 1,902,370 ops/sec
+Function returning arrow functions            | ███████████████████████████--- | 1,766,359 ops/sec
+Function returning empty object               | ███████████████████████████--- | 1,785,114 ops/sec
+Function returning empty array                | ███████████████████████████--- | 1,810,759 ops/sec
 ```
