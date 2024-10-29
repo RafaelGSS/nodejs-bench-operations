@@ -2,16 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Readable reading 1e3 * "some data"|2,198|1100|
-|streams.web.Readable reading 1e3 * "some data"|472|237|
+|streams.Readable reading 1e3 * "some data"|2,361|1181|
+|streams.web.Readable reading 1e3 * "some data"|476|239|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:12:08 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 19:28:07 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v18.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2198.782951462193,"samples":1100},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":472.67129545951303,"samples":237}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"streams.Readable reading 1e3 * \"some data\"","opsSec":2361.150590242064,"samples":1181},{"name":"streams.web.Readable reading 1e3 * \"some data\"","opsSec":476.7934256035807,"samples":239}]}-->
