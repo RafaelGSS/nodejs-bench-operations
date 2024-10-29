@@ -444,23 +444,24 @@ new Array(length)|100,000,000|4,530.18ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|127,382,949|63693176|
-|Raw usage underscore usage|96,140,805|48070880|
-|Manipulating private properties using #|97,261,361|48631382|
-|Manipulating private properties using underscore(_)|90,412,528|45207096|
-|Manipulating private properties using Symbol|95,570,109|47786161|
-|Manipulating private properties using PrivateSymbol|35,011,561|17505786|
+|Raw usage private field|131,844,446|65925677|
+|Raw usage underscore usage|99,788,819|49894439|
+|Manipulating private properties using #|85,107,252|42553641|
+|Manipulating private properties using underscore(_)|97,298,854|48657621|
+|Manipulating private properties using Symbol|96,467,286|48234015|
+|Manipulating private properties using PrivateSymbol|36,378,283|18195339|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Mon Sep 30 2024 21:30:49 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 18:42:17 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597888946533203},"benchmarks":[{"name":"Raw usage private field","opsSec":127382949.85617523,"samples":63693176},{"name":"Raw usage underscore usage","opsSec":96140805.12952346,"samples":48070880},{"name":"Manipulating private properties using #","opsSec":97261361.49116729,"samples":48631382},{"name":"Manipulating private properties using underscore(_)","opsSec":90412528.22865553,"samples":45207096},{"name":"Manipulating private properties using Symbol","opsSec":95570109.74309967,"samples":47786161},{"name":"Manipulating private properties using PrivateSymbol","opsSec":35011561.636577755,"samples":17505786}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Raw usage private field","opsSec":131844446.40576391,"samples":65925677},{"name":"Raw usage underscore usage","opsSec":99788819.9229068,"samples":49894439},{"name":"Manipulating private properties using #","opsSec":85107252.72310506,"samples":42553641},{"name":"Manipulating private properties using underscore(_)","opsSec":97298854.92685321,"samples":48657621},{"name":"Manipulating private properties using Symbol","opsSec":96467286.04429004,"samples":48234015},{"name":"Manipulating private properties using PrivateSymbol","opsSec":36378283.845937125,"samples":18195339}]}-->
 
 ## Property access after shape transition
 
