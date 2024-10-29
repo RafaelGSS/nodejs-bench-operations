@@ -2,21 +2,21 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|100,137,494|50636084|
-|Length = 10_000 - Array.at|79,823,837|39911929|
-|Length = 1_000_000 - Array.at|85,030,880|42656082|
-|Length = 100 - Array[length - 1]|74,690,353|37346271|
-|Length = 10_000 - Array[length - 1]|65,043,748|32521884|
-|Length = 1_000_000 - Array[length - 1]|57,107,861|28553980|
+|Length = 100 - Array.at|123,688,129|61905711|
+|Length = 10_000 - Array.at|96,615,151|48308520|
+|Length = 1_000_000 - Array.at|97,434,391|48765481|
+|Length = 100 - Array[length - 1]|97,367,682|48688874|
+|Length = 10_000 - Array[length - 1]|97,175,810|48593623|
+|Length = 1_000_000 - Array[length - 1]|95,312,261|47656140|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Fri Oct 11 2024 20:09:15 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 18:09:33 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.8.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597881317138672},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":100137494.23114283,"samples":50636084},{"name":"Length = 10_000 - Array.at","opsSec":79823837.24580231,"samples":39911929},{"name":"Length = 1_000_000 - Array.at","opsSec":85030880.31735435,"samples":42656082},{"name":"Length = 100 - Array[length - 1]","opsSec":74690353.27388766,"samples":37346271},{"name":"Length = 10_000 - Array[length - 1]","opsSec":65043748.87713784,"samples":32521884},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":57107861.66026223,"samples":28553980}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Length = 100 - Array.at","opsSec":123688129.17808278,"samples":61905711},{"name":"Length = 10_000 - Array.at","opsSec":96615151.75347413,"samples":48308520},{"name":"Length = 1_000_000 - Array.at","opsSec":97434391.46185285,"samples":48765481},{"name":"Length = 100 - Array[length - 1]","opsSec":97367682.32373674,"samples":48688874},{"name":"Length = 10_000 - Array[length - 1]","opsSec":97175810.73929545,"samples":48593623},{"name":"Length = 1_000_000 - Array[length - 1]","opsSec":95312261.12817231,"samples":47656140}]}-->
