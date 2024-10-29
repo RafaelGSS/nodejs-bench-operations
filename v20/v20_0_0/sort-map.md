@@ -2,17 +2,18 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Sort using default|247,058|123530|
-|Sort using first char|1,014,715|507358|
-|Sort using localeCompare|958,711|479356|
+|Sort using default|271,661|135859|
+|Sort using first char|1,306,817|653410|
+|Sort using localeCompare|1,246,528|623478|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 22:57:36 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 19:17:27 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v20.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"Sort using default","opsSec":247058.3759465521,"samples":123530},{"name":"Sort using first char","opsSec":1014715.0658823445,"samples":507358},{"name":"Sort using localeCompare","opsSec":958711.6791168692,"samples":479356}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Sort using default","opsSec":271661.9871015275,"samples":135859},{"name":"Sort using first char","opsSec":1306817.5118194574,"samples":653410},{"name":"Sort using localeCompare","opsSec":1246528.5229874977,"samples":623478}]}-->
