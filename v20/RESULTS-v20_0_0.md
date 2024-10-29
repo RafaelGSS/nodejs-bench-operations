@@ -662,19 +662,20 @@ new Array(length)|100,000,000|4,091.941ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|streams.Writable writing 1e3 * "some data"|5,943|2972|
-|streams.web.WritableStream writing 1e3 * "some data"|1,847|925|
+|streams.Writable writing 1e3 * "some data"|6,331|3166|
+|streams.web.WritableStream writing 1e3 * "some data"|1,645|823|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 23:18:22 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 19:34:42 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v20.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":5943.841465893247,"samples":2972},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":1847.545011583907,"samples":925}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"streams.Writable writing 1e3 * \"some data\"","opsSec":6331.007766476791,"samples":3166},{"name":"streams.web.WritableStream writing 1e3 * \"some data\"","opsSec":1645.1980284786418,"samples":823}]}-->
 
 ## String concat
 
