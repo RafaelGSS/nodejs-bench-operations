@@ -378,3 +378,24 @@ new Array(length)|100,000,000|4,658.797ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Object.create(null)","opsSec":42581046.72979812,"samples":21294519},{"name":"Object.create({})","opsSec":2098922.729536097,"samples":1053956},{"name":"Cached Empty.prototype","opsSec":82121110.32557389,"samples":41062559},{"name":"Empty.prototype","opsSec":2491134.520132736,"samples":1246281},{"name":"Empty class","opsSec":1710118.8781620157,"samples":855060}]}-->
+
+## Optional Chain (?) vs && operator
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using optional chain (obj.field?.field2) (Valid)|126,550,321|63355075|
+|Using optional chain (obj.field?.field2) (undefined)|92,189,126|46094577|
+|Using and operator (obj.field && obj.field.field2) (Valid)|92,981,235|46562321|
+|Using and operator (obj.field && obj.field.field2) (undefined)|90,923,454|45465509|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Oct 29 2024 18:26:49 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v23.1.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":126550321.24697597,"samples":63355075},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":92189126.15888391,"samples":46094577},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":92981235.18135509,"samples":46562321},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":90923454.07785526,"samples":45465509}]}-->
