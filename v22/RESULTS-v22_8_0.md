@@ -250,28 +250,28 @@ new Array(length)|100,000,000|4,580.019ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Function returning null|1,154,933|578465|
-|Function returning explicitly undefined|1,077,314|539630|
-|Function returning implicitly undefined|1,025,849|513982|
-|Function returning string|959,422|479775|
-|Function returning integer|1,206,948|603475|
-|Function returning float|1,280,289|640145|
-|Function returning functions|1,322,974|661559|
-|Function returning arrow functions|1,296,923|648462|
-|Function returning empty object|1,440,636|720319|
-|Function returning empty array|1,429,292|714676|
+|Function returning null|1,668,057|834119|
+|Function returning explicitly undefined|1,585,848|794420|
+|Function returning implicitly undefined|1,624,108|812769|
+|Function returning string|1,564,467|782235|
+|Function returning integer|1,633,054|816586|
+|Function returning float|1,625,360|812681|
+|Function returning functions|1,629,460|814735|
+|Function returning arrow functions|1,607,007|803504|
+|Function returning empty object|1,635,541|817880|
+|Function returning empty array|1,641,557|820792|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Fri Oct 11 2024 20:02:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 17:51:51 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.8.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597881317138672},"benchmarks":[{"name":"Function returning null","opsSec":1154933.113716785,"samples":578465},{"name":"Function returning explicitly undefined","opsSec":1077314.5337039398,"samples":539630},{"name":"Function returning implicitly undefined","opsSec":1025849.8957077289,"samples":513982},{"name":"Function returning string","opsSec":959422.1090328661,"samples":479775},{"name":"Function returning integer","opsSec":1206948.5275227965,"samples":603475},{"name":"Function returning float","opsSec":1280289.2932803102,"samples":640145},{"name":"Function returning functions","opsSec":1322974.6239481042,"samples":661559},{"name":"Function returning arrow functions","opsSec":1296923.1129045908,"samples":648462},{"name":"Function returning empty object","opsSec":1440636.9656226588,"samples":720319},{"name":"Function returning empty array","opsSec":1429292.275592972,"samples":714676}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Function returning null","opsSec":1668057.949824896,"samples":834119},{"name":"Function returning explicitly undefined","opsSec":1585848.8701836895,"samples":794420},{"name":"Function returning implicitly undefined","opsSec":1624108.5473584766,"samples":812769},{"name":"Function returning string","opsSec":1564467.7190060655,"samples":782235},{"name":"Function returning integer","opsSec":1633054.0902285774,"samples":816586},{"name":"Function returning float","opsSec":1625360.3486338858,"samples":812681},{"name":"Function returning functions","opsSec":1629460.72185065,"samples":814735},{"name":"Function returning arrow functions","opsSec":1607007.7621628512,"samples":803504},{"name":"Function returning empty object","opsSec":1635541.776202968,"samples":817880},{"name":"Function returning empty array","opsSec":1641557.991155188,"samples":820792}]}-->
 
 ## Array.includes vs raw comparison
 
