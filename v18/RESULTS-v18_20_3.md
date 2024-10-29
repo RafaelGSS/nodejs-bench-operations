@@ -76,25 +76,26 @@ new Array(length)|100,000,000|4,352.978ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|4,347|2174|
-|new Blob (1024)|495|248|
-|text (128)|45,551|22776|
-|text (1024)|30,449|15225|
-|arrayBuffer (128)|46,339|23170|
-|arrayBuffer (1024)|31,371|15686|
-|slice (0, 64)|88,873|44437|
-|slice (0, 512)|49,001|24501|
+|new Blob (128)|4,470|2245|
+|new Blob (1024)|557|279|
+|text (128)|47,151|23576|
+|text (1024)|30,692|15357|
+|arrayBuffer (128)|48,768|24404|
+|arrayBuffer (1024)|30,808|15405|
+|slice (0, 64)|77,970|38986|
+|slice (0, 512)|30,456|15229|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Sep 25 2024 19:11:18 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue Oct 29 2024 17:01:24 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v18.20.3`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597896575927734},"benchmarks":[{"name":"new Blob (128)","opsSec":4347.425539880528,"samples":2174},{"name":"new Blob (1024)","opsSec":495.8536150869061,"samples":248},{"name":"text (128)","opsSec":45551.87190703357,"samples":22776},{"name":"text (1024)","opsSec":30449.93867337072,"samples":15225},{"name":"arrayBuffer (128)","opsSec":46339.3827586058,"samples":23170},{"name":"arrayBuffer (1024)","opsSec":31371.20373661737,"samples":15686},{"name":"slice (0, 64)","opsSec":88873.39690128129,"samples":44437},{"name":"slice (0, 512)","opsSec":49001.8233998031,"samples":24501}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"new Blob (128)","opsSec":4470.088206647722,"samples":2245},{"name":"new Blob (1024)","opsSec":557.5383849790798,"samples":279},{"name":"text (128)","opsSec":47151.50764395718,"samples":23576},{"name":"text (1024)","opsSec":30692.227854326975,"samples":15357},{"name":"arrayBuffer (128)","opsSec":48768.29909322058,"samples":24404},{"name":"arrayBuffer (1024)","opsSec":30808.325813958614,"samples":15405},{"name":"slice (0, 64)","opsSec":77970.65204336747,"samples":38986},{"name":"slice (0, 512)","opsSec":30456.330201240387,"samples":15229}]}-->
 
 ## Comparison using `instanceof`
 
