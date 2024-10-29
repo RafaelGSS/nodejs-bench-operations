@@ -6,7 +6,7 @@ on:
       versions:
         required: true
         type: string
-        default: 'v18,v20,v21,v22'
+        default: 'v18,v20,v21,v22,v23'
         description: 'The Node.js Versions (the folder must exist)'
       major-only:
         required: true
@@ -23,7 +23,7 @@ jobs:
       - name: Use Node.js v${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: 'v20.x'
+          node-version: 'v22.x'
 
       - name: NPM Install
         run: npm install
