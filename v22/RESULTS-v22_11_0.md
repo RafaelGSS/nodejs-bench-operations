@@ -96,3 +96,26 @@ new Array(length)|100,000,000|4,548.412ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"new Blob (128)","opsSec":4567.2908184854505,"samples":2284},{"name":"new Blob (1024)","opsSec":625.721714129238,"samples":315},{"name":"text (128)","opsSec":3738.440234777803,"samples":1871},{"name":"text (1024)","opsSec":536.4502379639611,"samples":275},{"name":"arrayBuffer (128)","opsSec":4329.035411084507,"samples":2179},{"name":"arrayBuffer (1024)","opsSec":537.3876929392374,"samples":269},{"name":"slice (0, 64)","opsSec":146774.1617905084,"samples":77711},{"name":"slice (0, 512)","opsSec":31704.75451042381,"samples":15853}]}-->
+
+## Comparison using `instanceof`
+
+|name|ops/sec|samples|
+|-|-|-|
+|[True conditional] Using instanceof only|455,614|228102|
+|[True conditional] Using constructor name|368,301|184151|
+|[True conditional] Check if property is valid then instanceof |367,092|183550|
+|[False conditional] Using instanceof only|94,613,392|47306709|
+|[False conditional] Using constructor name|94,706,984|47375194|
+|[False conditional] Check if property is valid then instanceof |96,160,248|48097177|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Oct 29 2024 17:11:28 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v22.11.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":455614.3075140707,"samples":228102},{"name":"[True conditional] Using constructor name","opsSec":368301.585292415,"samples":184151},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":367092.7440448212,"samples":183550},{"name":"[False conditional] Using instanceof only","opsSec":94613392.2651573,"samples":47306709},{"name":"[False conditional] Using constructor name","opsSec":94706984.35731095,"samples":47375194},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":96160248.84454231,"samples":48097177}]}-->
