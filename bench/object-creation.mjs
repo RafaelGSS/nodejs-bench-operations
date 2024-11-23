@@ -2,8 +2,12 @@ import { createBenchmarkSuite } from '../common.mjs'
 
 const suite = createBenchmarkSuite('Object Creation')
 
-function Empty() {}
-Empty.prototype = Object.create(null)
+function EmptyPrototype() {}
+EmptyPrototype.prototype = Object.create(null)
+
+class C {
+  constructor () {}
+}
 
 suite
   .add('Object.create(null)', function () {
@@ -12,16 +16,10 @@ suite
   .add('Object.create({})', function () {
     return Object.create({})
   })
-  .add('Cached Empty.prototype', function () {
-    return new Empty()
-  })
-  .add('Empty.prototype', function () {
-    function NE() {}
-    NE.prototype = Object.create(null)
-    return new NE()
+  .add('new Function with empty prototype', function () {
+    return new EmptyPrototype()
   })
   .add('Empty class', function () {
-    function C() {}
     return new C()
   })
 
