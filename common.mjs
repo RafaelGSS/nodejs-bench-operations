@@ -70,14 +70,34 @@ function printMarkdownHiddenDetailedInfo(results) {
   writter.write('-->\n')
 }
 
+function printMermaidResults(title, results) {
+  const writter = process.stdout
+
+  const xAxis = results.map((r) => r.name)
+  const bar = results.map((r) => r.opsSec).sort()
+
+  writter.write(`
+  \`\`\`mermaid
+  xychart-beta
+    title "${title}"
+    x-axis ${JSON.stringify(xAxis)}
+    y-axis Operations per second
+    bar [${bar}]
+  \`\`\`
+  `);
+}
+
 Suite.prototype.runAndPrintResults = async function () {
   const results = await this.run()
-  printMarkdownResults(results)
+  // printMarkdownResults(results)
+  printMermaidResults(this._name, results)
 }
 
 export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
   const suite = new Suite({ reporter: false })
+  suite._name = name;
   // TODO: move it to runAndPrintResults
-  printMdHeader(name, tableHeaderColumns)
+  console.log(H2(name))
+  // printMdHeader(name, tableHeaderColumns)
   return suite
 }
