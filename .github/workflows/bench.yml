@@ -75,10 +75,10 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Use Node.js v${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -125,7 +125,7 @@ jobs:
           echo "$result" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload Bench Result
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: benchmark-artifacts-${{github.run_id}}
           retention-days: 1
@@ -167,19 +167,19 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
 
       - name: Use Node.js v22.x
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22.x
 
       - name: Create temporary report folder
         run: mkdir ./temp-reports
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: benchmark-artifacts-${{github.run_id}}
           path: ./temp-reports
