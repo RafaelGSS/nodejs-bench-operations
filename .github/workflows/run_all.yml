@@ -8,7 +8,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["18.0.0","18.20.3","18.20.4","20.0.0","20.17.0","20.18.0","21.0.0","21.7.2","21.7.3","22.0.0","22.10.0","22.11.0","23.0.0","23.1.0"]'
+        default: '["18.0.0","18.20.7","18.20.8","20.0.0","20.18.3","20.19.0","21.0.0","21.7.2","21.7.3","22.0.0","22.13.1","22.14.0","23.0.0","23.9.0","23.10.0"]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
@@ -71,17 +71,8 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  compare-using-instanceof:
-    needs: blob
-    name: Running "compare-using-instanceof.mjs"
-    uses: ./.github/workflows/bench.yml
-    with:
-      bench-file: compare-using-instanceof.mjs
-      node-versions: ${{ inputs.node-versions }}
-      run-start-stop: false
-
   crypto-verify:
-    needs: compare-using-instanceof
+    needs: blob
     name: Running "crypto-verify.mjs"
     uses: ./.github/workflows/bench.yml
     with:
@@ -134,17 +125,8 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  function-return:
-    needs: error
-    name: Running "function-return.mjs"
-    uses: ./.github/workflows/bench.yml
-    with:
-      bench-file: function-return.mjs
-      node-versions: ${{ inputs.node-versions }}
-      run-start-stop: false
-
   includes-vs-raw-comparison:
-    needs: function-return
+    needs: error
     name: Running "includes-vs-raw-comparison.mjs"
     uses: ./.github/workflows/bench.yml
     with:
@@ -188,17 +170,8 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  optional-chain-vs-and-operator:
-    needs: object-creation
-    name: Running "optional-chain-vs-and-operator.mjs"
-    uses: ./.github/workflows/bench.yml
-    with:
-      bench-file: optional-chain-vs-and-operator.mjs
-      node-versions: ${{ inputs.node-versions }}
-      run-start-stop: false
-
   parse-int:
-    needs: optional-chain-vs-and-operator
+    needs: object-creation
     name: Running "parse-int.mjs"
     uses: ./.github/workflows/bench.yml
     with:
@@ -260,8 +233,17 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  shallow-copy:
+  require-node-builtin:
     needs: replace-vs-replaceall-comparison
+    name: Running "require-node-builtin.mjs"
+    uses: ./.github/workflows/bench.yml
+    with:
+      bench-file: require-node-builtin.mjs
+      node-versions: ${{ inputs.node-versions }}
+      run-start-stop: false
+
+  shallow-copy:
+    needs: require-node-builtin
     name: Running "shallow-copy.mjs"
     uses: ./.github/workflows/bench.yml
     with:
