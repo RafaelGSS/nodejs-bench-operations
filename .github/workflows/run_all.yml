@@ -233,17 +233,8 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  require-node-builtin:
-    needs: replace-vs-replaceall-comparison
-    name: Running "require-node-builtin.mjs"
-    uses: ./.github/workflows/bench.yml
-    with:
-      bench-file: require-node-builtin.mjs
-      node-versions: ${{ inputs.node-versions }}
-      run-start-stop: false
-
   shallow-copy:
-    needs: require-node-builtin
+    needs: replace-vs-replaceall-comparison
     name: Running "shallow-copy.mjs"
     uses: ./.github/workflows/bench.yml
     with:

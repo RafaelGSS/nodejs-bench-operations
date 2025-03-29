@@ -179,7 +179,7 @@ jobs:
       - name: Create temporary report folder
         run: mkdir ./temp-reports
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v3
         with:
           name: benchmark-artifacts-${{github.run_id}}
           path: ./temp-reports
