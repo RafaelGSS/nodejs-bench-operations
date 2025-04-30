@@ -12,11 +12,18 @@ function printMarkdownResults(results) {
   const cycleEvents = []
   for (const r of results) {
     if (process.env.CI) {
-      cycleEvents.push({
+      const cycleEvent = {
         name: r.name,
-        opsSec: r.opsSec,
         samples: r.iterations,
-      })
+      }
+
+      if (r.totalTime !== undefined) {
+        cycleEvent.totalTime = r.totalTime
+      } else {
+        cycleEvent.opsSec = r.opsSec
+      }
+
+      cycleEvents.push(cycleEvent)
     }
     console.log(taskToMdTable(r))
   }
@@ -75,8 +82,11 @@ Suite.prototype.runAndPrintResults = async function () {
   printMarkdownResults(results)
 }
 
-export function createBenchmarkSuite(name, { tableHeaderColumns = ['name', 'ops/sec', 'samples'] } = {}) {
-  const suite = new Suite({ reporter: false })
+export function createBenchmarkSuite(name, {
+  tableHeaderColumns = ['name', 'ops/sec', 'samples'],
+  mode = 'ops'
+} = {}) {
+  const suite = new Suite({ reporter: false, benchmarkMode: mode })
   // TODO: move it to runAndPrintResults
   printMdHeader(name, tableHeaderColumns)
   return suite
