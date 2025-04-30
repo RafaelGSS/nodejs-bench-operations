@@ -16,7 +16,7 @@ writter.write(`\n
 
 readdir(join(import.meta.dirname, './bench'), (_err, files) => {
   for (const file of files) {
-    const out = spawnSync(process.execPath, [join(import.meta.dirname, './bench', file)]).stdout
+    const out = spawnSync(process.execPath, ['--allow-natives-syntax', join(import.meta.dirname, './bench', file)]).stdout
     writter.write('\n' + out.toString())
   }
   writter.end()
