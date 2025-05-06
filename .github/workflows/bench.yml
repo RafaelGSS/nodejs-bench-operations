@@ -166,7 +166,6 @@ jobs:
           node scripts/generate-reports.mjs
         env:
           BENCH_FILE: ${{ inputs.bench-file }}
-          BENCH_ARTIFACTS: ${{ needs.read.outputs.result }}
 
       - name: Clean temporary report folder
         run: rm -r ./temp-reports
