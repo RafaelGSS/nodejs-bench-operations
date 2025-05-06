@@ -791,20 +791,20 @@ new Array(length)|100,000,000|4,982.797ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using super|107,085,522|53543434|
-|Using this|94,291,683|47147376|
+|Using super|83,047,218|41523651|
+|Using this|88,386,389|44267490|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 20:10:52 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue May 06 2025 20:26:53 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v23.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Using super","opsSec":107085522.14915763,"samples":53543434},{"name":"Using this","opsSec":94291683.18287914,"samples":47147376}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Using super","samples":41523651,"opsSec":83047218.95278105},{"name":"Using this","samples":44267490,"opsSec":88386389.75118813}]}-->
 
 ## Getting unix time
 
