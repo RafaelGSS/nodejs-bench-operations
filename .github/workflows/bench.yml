@@ -120,15 +120,6 @@ jobs:
             failure: 'true'
             result: ''
 
-      - name: Output Result
-        if: ${{ success() }}
-        uses: cloudposse/github-action-matrix-outputs-write@main
-        with:
-          matrix-step-name: benchmark-${{ inputs.bench-file }}
-          matrix-key: ${{ matrix.node-version }}
-          outputs: |-
-            result: '${{ env.BENCH_REPORT_FILE }}'
-
       - name: Add Job Summary
         run: |
           result=$(cat ./${{ env.BENCH_REPORT_FILE }})
