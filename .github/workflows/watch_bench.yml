@@ -36,17 +36,13 @@ jobs:
   benchmark:
     needs: changes
     if: needs.changes.outputs.files != '[]'
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
         # Parse JSON array containing names of all filters matching any of changed files
         # e.g. ['add-property.js', 'array-append.js'] if both bench files contains changes
         bench-file: ${{ fromJSON(needs.changes.outputs.files) }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Running ${{ matrix.bench-file }}
-        uses: ./.github/workflows/bench.yml
-        with:
-          bench-file: ${{ matrix.bench-file }}
+    uses: ./.github/workflows/bench.yml
+    name: Running ${{ matrix.bench-file }}
+    with:
+      bench-file: ${{ matrix.bench-file }}
