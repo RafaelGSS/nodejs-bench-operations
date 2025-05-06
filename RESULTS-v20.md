@@ -221,3 +221,23 @@ new Array(length)|100,000,000|4,442.547ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Using delete property","samples":1802741,"opsSec":3604501.741333437},{"name":"Using delete property (proto: null)","samples":8233425,"opsSec":16466847.299437042},{"name":"Using delete property (cached proto: null)","samples":1819978,"opsSec":3639871.7078509894},{"name":"Using undefined assignment","samples":41303319,"opsSec":82512010.75071077},{"name":"Using undefined assignment (proto: null)","samples":8378058,"opsSec":16754381.75394465},{"name":"Using undefined property (cached proto: null)","samples":41383034,"opsSec":82764602.90099944}]}-->
+
+## Node.js Error
+
+|name|ops/sec|samples|
+|-|-|-|
+|Error|314,645|157357|
+|NodeError|302,159|151113|
+|NodeError Range|272,820|136428|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue May 06 2025 18:48:25 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v20.19.1`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Error","samples":157357,"opsSec":314645.49349528324},{"name":"NodeError","samples":151113,"opsSec":302159.4107133858},{"name":"NodeError Range","samples":136428,"opsSec":272820.14052072994}]}-->
