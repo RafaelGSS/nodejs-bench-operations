@@ -96,3 +96,22 @@ new Array(length)|100,000,000|4,794.319ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"new Blob (128)","samples":1994,"opsSec":3906.9962008831358},{"name":"new Blob (1024)","samples":264,"opsSec":527.7672725768808},{"name":"text (128)","samples":22088,"opsSec":44149.11689633595},{"name":"text (1024)","samples":14998,"opsSec":29994.6281056997},{"name":"arrayBuffer (128)","samples":23806,"opsSec":47559.02808868843},{"name":"arrayBuffer (1024)","samples":15110,"opsSec":30219.453874029587},{"name":"slice (0, 64)","samples":38774,"opsSec":77131.42443779942},{"name":"slice (0, 512)","samples":20849,"opsSec":41618.087944032195}]}-->
+
+## Compression algorithms
+
+|name|total time|samples|
+|-|-|-|
+|Deflate|135.77 ms|1|
+|Gzip|135.21 ms|1|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue May 06 2025 18:19:51 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v18.20.8`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Deflate","samples":1,"totalTime":0.135768861},{"name":"Gzip","samples":1,"totalTime":0.135214537}]}-->
