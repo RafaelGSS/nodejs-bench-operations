@@ -1,48 +1,55 @@
 import { mkdir, rename } from 'node:fs/promises';
-import { basename, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import { existAsync, rootFolder } from './utils.mjs';
+import { readdir } from 'node:fs/promises';
+
+const artifactsDir = './temp-reports';
+const benchFile = process.env.BENCH_FILE;
 
 /**
- * The object result with the artifacts names
- * The result will be a record with the possible states:
- * 
- * ```js
- * // when is called by bench.yml
- * { '18.18.0': 'result-1-18.18.0-add-property.js.md' }
- * // when is called by watch_bench.yml
- * { 'add-property.js:18.18.0': 'result-1-18.18.0-add-property.js.md' }
- * ```
- * 
- * @type {{ result: { [nodeVersion: string]: string } }}
+ * Get all benchmark report files from the temp-reports directory
+ * Parse the node version from the filename format: report-runid-nodeversion-benchfile.md
+ * @returns {Promise<{ [nodeVersion: string]: string }>} Map of node version to report filename
  */
-const benchResult = JSON.parse(process.env.BENCH_ARTIFACTS);
-
-function getBenchmarkFile(key) {
-  const filepath = process.env.BENCH_FILE || key.split(':')[0];
-
-  return basename(filepath, '.mjs');
-}
-
-function getBenchmarkNodeVersion(key) {
-  return process.env.BENCH_FILE ? key : key.split(':')[1];
-}
-
-for (const key of Object.keys(benchResult.result)) {
-  const benchFile = getBenchmarkFile(key);
-  const nodeVersion = getBenchmarkNodeVersion(key).replace(/\./g, '_');
-
-  const major = nodeVersion.split('_')[0];
-  const reportFilepath = benchResult.result[key];
-
-  const outputFolder = resolve(rootFolder, `./v${major}/v${nodeVersion}`);
-
-  const outputFolderExist = await existAsync(outputFolder);
-
-  if (!outputFolderExist) {
-    await mkdir(outputFolder, {
-      recursive: true,
-    });
+async function getBenchmarkFiles() {
+  const files = await readdir(artifactsDir);
+  const benchFiles = {};
+  
+  for (const file of files) {
+    // Only process files related to the current benchmark
+    if (file.includes(benchFile)) {
+      // Extract the node version from the filename pattern: report-runid-nodeversion-benchfile.md
+      const parts = file.split('-');
+      // The node version should be the third part (index 2) in the filename
+      if (parts.length >= 3) {
+        const nodeVersion = parts[2];
+        benchFiles[nodeVersion] = file;
+      }
+    }
   }
-
-  await rename(`./temp-reports/${reportFilepath}`, `${outputFolder}/${benchFile}.md`, 'utf-8');
+  
+  return benchFiles;
 }
+
+async function processBenchmarks() {
+  const benchFiles = await getBenchmarkFiles();
+  
+  for (const nodeVersion of Object.keys(benchFiles)) {
+    const benchmarkFile = benchFile;
+    const reportFilepath = resolve(artifactsDir, benchFiles[nodeVersion]);
+    
+    const normalizedNodeVersion = nodeVersion.replace(/\./g, '_');
+    const major = normalizedNodeVersion.split('_')[0];
+    const outputFolder = resolve(rootFolder, `./v${major}/v${normalizedNodeVersion}`);
+    
+    if (!await existAsync(outputFolder)) {
+      await mkdir(outputFolder, { recursive: true });
+    }
+    
+    const outputFilepath = resolve(outputFolder, benchmarkFile.replace('.mjs', '.md'));
+    await rename(reportFilepath, outputFilepath);
+    console.log(`Moved ${benchmarkFile} report for Node.js v${nodeVersion} to ${outputFilepath}`);
+  }
+}
+
+processBenchmarks().catch(console.error);
