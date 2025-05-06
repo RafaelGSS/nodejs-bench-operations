@@ -422,22 +422,22 @@ new Array(length)|100,000,000|4,944.698ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|129,739,690|64975525|
-|Using parseInt(x, 10) - big number (10 len)|99,082,733|49541390|
-|Using + - small number (2 len)|96,304,636|48153182|
-|Using + - big number (10 len)|96,747,534|48373789|
+|Using parseInt(x, 10) - small number (2 len)|88,223,738|44112789|
+|Using parseInt(x, 10) - big number (10 len)|96,926,716|48467001|
+|Using + - small number (2 len)|94,810,706|47405372|
+|Using + - big number (10 len)|92,989,718|46803380|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 18:30:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue May 06 2025 19:09:47 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","opsSec":129739690.81022167,"samples":64975525},{"name":"Using parseInt(x, 10) - big number (10 len)","opsSec":99082733.03478456,"samples":49541390},{"name":"Using + - small number (2 len)","opsSec":96304636.48743068,"samples":48153182},{"name":"Using + - big number (10 len)","opsSec":96747534.4636095,"samples":48373789}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","samples":44112789,"opsSec":88223738.18216395},{"name":"Using parseInt(x, 10) - big number (10 len)","samples":48467001,"opsSec":96926716.98795119},{"name":"Using + - small number (2 len)","samples":47405372,"opsSec":94810706.83420292},{"name":"Using + - big number (10 len)","samples":46803380,"opsSec":92989718.53953569}]}-->
 
 ## Possible undefined Function
 
