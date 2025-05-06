@@ -296,22 +296,22 @@ new Array(length)|100,000,000|5,077.977ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|81,174,777|40605056|
-|using Array.includes (first item)|88,020,490|44069235|
-|Using raw comparison|100,284,789|50152599|
-|Using raw comparison (first item)|100,740,858|50370437|
+|using Array.includes|69,386,957|34702648|
+|using Array.includes (first item)|77,454,939|38732851|
+|Using raw comparison|100,964,754|50493343|
+|Using raw comparison (first item)|101,206,309|50616428|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 17:55:57 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Tue May 06 2025 18:50:02 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v20.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"using Array.includes","opsSec":81174777.91796876,"samples":40605056},{"name":"using Array.includes (first item)","opsSec":88020490.50326708,"samples":44069235},{"name":"Using raw comparison","opsSec":100284789.44363947,"samples":50152599},{"name":"Using raw comparison (first item)","opsSec":100740858.6873895,"samples":50370437}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"using Array.includes","samples":34702648,"opsSec":69386957.30473217},{"name":"using Array.includes (first item)","samples":38732851,"opsSec":77454939.79102592},{"name":"Using raw comparison","samples":50493343,"opsSec":100964754.63792706},{"name":"Using raw comparison (first item)","samples":50616428,"opsSec":101206309.18027677}]}-->
 
 ## Object.keys vs Object.getOwnPropertyNames comparison
 
