@@ -458,3 +458,23 @@
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"Setter (class)","samples":44825092,"opsSec":89640828.3660251},{"name":"Setter","samples":5326206,"opsSec":10652405.416813452},{"name":"Method","samples":43995154,"opsSec":86468376.88783985},{"name":"DefineProperty (setter)","samples":44967386,"opsSec":89784356.44721268},{"name":"DefineProperty (setter & enumerable=false)","samples":5322117,"opsSec":10635296.670983726},{"name":"DefineProperty (setter & configurable=false)","samples":5321268,"opsSec":10642531.359856326},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","samples":5329338,"opsSec":10657902.982296694},{"name":"DefineProperty (writable)","samples":44542119,"opsSec":89084186.68750848},{"name":"DefineProperty (writable & enumerable=false)","samples":45017145,"opsSec":90034267.85157011},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","samples":45145762,"opsSec":90291475.96493478},{"name":"DefineProperties (setter)","samples":45808531,"opsSec":91596796.02568573},{"name":"DefineProperties (setter & enumerable=false)","samples":5206989,"opsSec":10413976.250451991},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","samples":5168242,"opsSec":10336479.183200702}]}-->
+
+## replace vs replaceAll comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|Using replace(//g)|4,041,836|2021113|
+|Using replaceAll()|3,047,726|1523864|
+|Using replaceAll(//g)|3,430,851|1715716|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Tue Aug 05 2025 14:37:45 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v24.5.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"Using replace(//g)","samples":2021113,"opsSec":4041836.439720267},{"name":"Using replaceAll()","samples":1523864,"opsSec":3047726.451754962},{"name":"Using replaceAll(//g)","samples":1715716,"opsSec":3430851.170620219}]}-->
