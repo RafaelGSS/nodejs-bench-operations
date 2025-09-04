@@ -484,24 +484,24 @@ new Array(length)|10,000,000|69.876ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Adding property after object creation - small object|7,609,346|3804674|
-|Adding property in the object creation - small object|7,539,906|3776265|
-|Adding property after the function creation - small class|239,523|119764|
-|Adding property in the function creation - small class|244,614|123637|
-|Adding property after the class creation - small class|209,477|104740|
-|Adding property in the class creation - small class|210,474|107142|
+|Adding property after object creation - small object|7,686,479|3843241|
+|Adding property in the object creation - small object|7,715,122|3857635|
+|Adding property after the function creation - small class|242,546|122453|
+|Adding property in the function creation - small class|246,484|123683|
+|Adding property after the class creation - small class|209,053|104544|
+|Adding property in the class creation - small class|206,221|106957|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 19:22:43 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 18:47:39 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v20.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Adding property after object creation - small object","samples":3804674,"opsSec":7609346.173756918},{"name":"Adding property in the object creation - small object","samples":3776265,"opsSec":7539906.628004142},{"name":"Adding property after the function creation - small class","samples":119764,"opsSec":239523.47013213285},{"name":"Adding property in the function creation - small class","samples":123637,"opsSec":244614.60868191632},{"name":"Adding property after the class creation - small class","samples":104740,"opsSec":209477.21060146362},{"name":"Adding property in the class creation - small class","samples":107142,"opsSec":210474.25063082116}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Adding property after object creation - small object","samples":3843241,"opsSec":7686479.217494523},{"name":"Adding property in the object creation - small object","samples":3857635,"opsSec":7715122.594867702},{"name":"Adding property after the function creation - small class","samples":122453,"opsSec":242546.02379285122},{"name":"Adding property in the function creation - small class","samples":123683,"opsSec":246484.25434178568},{"name":"Adding property after the class creation - small class","samples":104544,"opsSec":209053.22483226203},{"name":"Adding property in the class creation - small class","samples":106957,"opsSec":206221.22449002412}]}-->
 
 ## Property Getter Access
 
