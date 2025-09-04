@@ -76,26 +76,26 @@ new Array(length)|10,000,000|67.104ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|3,929|1965|
-|new Blob (1024)|559|282|
-|text (128)|45,917|22959|
-|text (1024)|30,015|15021|
-|arrayBuffer (128)|48,398|24200|
-|arrayBuffer (1024)|29,094|14549|
-|slice (0, 64)|76,741|38371|
-|slice (0, 512)|39,400|19702|
+|new Blob (128)|3,918|2010|
+|new Blob (1024)|494|253|
+|text (128)|42,190|21106|
+|text (1024)|29,193|14597|
+|arrayBuffer (128)|43,652|21842|
+|arrayBuffer (1024)|27,760|13881|
+|slice (0, 64)|76,417|38828|
+|slice (0, 512)|41,982|21046|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 18:12:44 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 17:27:03 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v18.20.7`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"new Blob (128)","samples":1965,"opsSec":3929.319174725234},{"name":"new Blob (1024)","samples":282,"opsSec":559.0874561851635},{"name":"text (128)","samples":22959,"opsSec":45917.604373920716},{"name":"text (1024)","samples":15021,"opsSec":30015.436398817918},{"name":"arrayBuffer (128)","samples":24200,"opsSec":48398.954388989376},{"name":"arrayBuffer (1024)","samples":14549,"opsSec":29094.78008068847},{"name":"slice (0, 64)","samples":38371,"opsSec":76741.80599671444},{"name":"slice (0, 512)","samples":19702,"opsSec":39400.779380293454}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Blob (128)","samples":2010,"opsSec":3918.3726481401022},{"name":"new Blob (1024)","samples":253,"opsSec":494.0079134405192},{"name":"text (128)","samples":21106,"opsSec":42190.109914611465},{"name":"text (1024)","samples":14597,"opsSec":29193.109084696953},{"name":"arrayBuffer (128)","samples":21842,"opsSec":43652.50995237056},{"name":"arrayBuffer (1024)","samples":13881,"opsSec":27760.37851629086},{"name":"slice (0, 64)","samples":38828,"opsSec":76417.28076943345},{"name":"slice (0, 512)","samples":21046,"opsSec":41982.39178377743}]}-->
 
 ## Compression algorithms
 

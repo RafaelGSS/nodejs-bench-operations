@@ -2,23 +2,23 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Blob (128)|4,443|2233|
-|new Blob (1024)|584|298|
-|text (128)|4,165|2085|
-|text (1024)|521|263|
-|arrayBuffer (128)|4,167|2088|
-|arrayBuffer (1024)|528|265|
-|slice (0, 64)|149,377|86862|
-|slice (0, 512)|31,791|15896|
+|new Blob (128)|4,241|2121|
+|new Blob (1024)|573|287|
+|text (128)|4,091|2046|
+|text (1024)|508|255|
+|arrayBuffer (128)|4,055|2028|
+|arrayBuffer (1024)|512|257|
+|slice (0, 64)|149,281|87488|
+|slice (0, 512)|31,606|15813|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 18:15:38 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 17:26:06 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v23.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"new Blob (128)","samples":2233,"opsSec":4443.500159203864},{"name":"new Blob (1024)","samples":298,"opsSec":584.2751724939122},{"name":"text (128)","samples":2085,"opsSec":4165.679615375069},{"name":"text (1024)","samples":263,"opsSec":521.0890204964264},{"name":"arrayBuffer (128)","samples":2088,"opsSec":4167.241333836955},{"name":"arrayBuffer (1024)","samples":265,"opsSec":528.2097155697919},{"name":"slice (0, 64)","samples":86862,"opsSec":149377.82413095722},{"name":"slice (0, 512)","samples":15896,"opsSec":31791.27172554731}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Blob (128)","samples":2121,"opsSec":4241.582382281805},{"name":"new Blob (1024)","samples":287,"opsSec":573.234583935923},{"name":"text (128)","samples":2046,"opsSec":4091.1738365377973},{"name":"text (1024)","samples":255,"opsSec":508.9818307099206},{"name":"arrayBuffer (128)","samples":2028,"opsSec":4055.5478956316906},{"name":"arrayBuffer (1024)","samples":257,"opsSec":512.3898681279542},{"name":"slice (0, 64)","samples":87488,"opsSec":149281.90537112023},{"name":"slice (0, 512)","samples":15813,"opsSec":31606.74536036694}]}-->
