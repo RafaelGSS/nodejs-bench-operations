@@ -2,20 +2,20 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Raw usage private field|89,564,272|44784421|
-|Raw usage underscore usage|93,725,119|46862566|
-|Manipulating private properties using #|93,879,467|46945423|
-|Manipulating private properties using underscore(_)|93,910,832|46955419|
-|Manipulating private properties using Symbol|93,950,413|46975210|
+|Raw usage private field|91,746,091|45873058|
+|Raw usage underscore usage|89,227,562|44616982|
+|Manipulating private properties using #|84,700,838|42352641|
+|Manipulating private properties using underscore(_)|93,987,366|46993690|
+|Manipulating private properties using Symbol|94,017,697|47008869|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 19:17:51 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 18:42:21 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v23.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Raw usage private field","samples":44784421,"opsSec":89564272.78905939},{"name":"Raw usage underscore usage","samples":46862566,"opsSec":93725119.81573442},{"name":"Manipulating private properties using #","samples":46945423,"opsSec":93879467.80850162},{"name":"Manipulating private properties using underscore(_)","samples":46955419,"opsSec":93910832.74099337},{"name":"Manipulating private properties using Symbol","samples":46975210,"opsSec":93950413.61137187}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Raw usage private field","samples":45873058,"opsSec":91746091.77903177},{"name":"Raw usage underscore usage","samples":44616982,"opsSec":89227562.27931671},{"name":"Manipulating private properties using #","samples":42352641,"opsSec":84700838.25522178},{"name":"Manipulating private properties using underscore(_)","samples":46993690,"opsSec":93987366.46581924},{"name":"Manipulating private properties using Symbol","samples":47008869,"opsSec":94017697.76042534}]}-->
