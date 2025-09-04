@@ -124,20 +124,20 @@ new Array(length)|10,000,000|65.185ms
 
 |name|total time|samples|
 |-|-|-|
-|Deflate|163.79 ms|1|
-|Gzip|164.42 ms|1|
+|Deflate|163.62 ms|1|
+|Gzip|163.76 ms|1|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 18:21:47 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 17:32:43 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v18.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Deflate","samples":1,"totalTime":0.163789453},{"name":"Gzip","samples":1,"totalTime":0.164419278}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Deflate","samples":1,"totalTime":0.163617533},{"name":"Gzip","samples":1,"totalTime":0.16375766}]}-->
 
 ## Crypto Verify
 
