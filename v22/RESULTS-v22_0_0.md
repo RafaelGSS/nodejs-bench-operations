@@ -57,7 +57,7 @@ new Array(length)|10,000,000|80.276ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|262|132|
+|new Array|280|141|
 |Array.from|23|12|
 
 
@@ -65,12 +65,12 @@ new Array(length)|10,000,000|80.276ms
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 18:09:42 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 17:20:24 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"new Array","samples":132,"opsSec":262.29553541404033},{"name":"Array.from","samples":12,"opsSec":23.765974170806544}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Array","samples":141,"opsSec":280.32071130748284},{"name":"Array.from","samples":12,"opsSec":23.727330641372763}]}-->
 
 ## Blob
 

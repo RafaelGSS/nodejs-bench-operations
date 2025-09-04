@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Array|255|129|
-|Array.from|23|12|
+|new Array|262|133|
+|Array.from|22|12|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 18:08:29 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 17:23:13 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v23.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"new Array","samples":129,"opsSec":255.40349906951457},{"name":"Array.from","samples":12,"opsSec":23.21974208416063}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Array","samples":133,"opsSec":262.43467379413454},{"name":"Array.from","samples":12,"opsSec":22.995741740527457}]}-->
