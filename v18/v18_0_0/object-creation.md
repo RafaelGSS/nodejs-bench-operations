@@ -2,19 +2,19 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|31,895,098|15947725|
-|Object.create({})|1,681,846|845707|
-|new Function with empty prototype|75,901,360|37969473|
-|Empty class|76,822,675|38440997|
+|Object.create(null)|30,066,304|15051862|
+|Object.create({})|1,690,134|860172|
+|new Function with empty prototype|97,933,330|48969369|
+|Empty class|76,032,749|38024059|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 19:04:21 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 18:30:08 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v18.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Object.create(null)","samples":15947725,"opsSec":31895098.260856375},{"name":"Object.create({})","samples":845707,"opsSec":1681846.3561769857},{"name":"new Function with empty prototype","samples":37969473,"opsSec":75901360.55706847},{"name":"Empty class","samples":38440997,"opsSec":76822675.52473892}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Object.create(null)","samples":15051862,"opsSec":30066304.55973192},{"name":"Object.create({})","samples":860172,"opsSec":1690134.3626284064},{"name":"new Function with empty prototype","samples":48969369,"opsSec":97933330.70907822},{"name":"Empty class","samples":38024059,"opsSec":76032749.5003435}]}-->

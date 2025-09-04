@@ -330,22 +330,22 @@ new Array(length)|10,000,000|66.172ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|30,853,325|15440491|
-|Object.create({})|1,312,280|659631|
-|new Function with empty prototype|78,429,375|39223033|
-|Empty class|77,754,742|38936427|
+|Object.create(null)|29,945,770|15048567|
+|Object.create({})|1,280,928|644727|
+|new Function with empty prototype|77,281,432|38687301|
+|Empty class|77,449,505|38748819|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 19:04:38 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 18:27:38 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v18.20.8`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Object.create(null)","samples":15440491,"opsSec":30853325.202701602},{"name":"Object.create({})","samples":659631,"opsSec":1312280.105557986},{"name":"new Function with empty prototype","samples":39223033,"opsSec":78429375.28778626},{"name":"Empty class","samples":38936427,"opsSec":77754742.3692084}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Object.create(null)","samples":15048567,"opsSec":29945770.229580645},{"name":"Object.create({})","samples":644727,"opsSec":1280928.6512686166},{"name":"new Function with empty prototype","samples":38687301,"opsSec":77281432.74119014},{"name":"Empty class","samples":38748819,"opsSec":77449505.92025279}]}-->
 
 ## Parsing Integer
 

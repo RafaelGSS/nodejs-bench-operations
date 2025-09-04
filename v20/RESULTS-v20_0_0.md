@@ -380,22 +380,22 @@ new Array(length)|10,000,000|69.876ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Object.create(null)|31,587,886|15794018|
-|Object.create({})|1,945,485|980139|
-|new Function with empty prototype|108,287,205|54172734|
-|Empty class|78,998,897|39608163|
+|Object.create(null)|27,335,465|13668047|
+|Object.create({})|1,880,255|943237|
+|new Function with empty prototype|78,518,050|39261926|
+|Empty class|78,736,580|39392833|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue May 06 2025 19:06:02 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Thu Sep 04 2025 18:29:20 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v20.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597835540771484},"benchmarks":[{"name":"Object.create(null)","samples":15794018,"opsSec":31587886.14706812},{"name":"Object.create({})","samples":980139,"opsSec":1945485.8060603775},{"name":"new Function with empty prototype","samples":54172734,"opsSec":108287205.3685979},{"name":"Empty class","samples":39608163,"opsSec":78998897.33486524}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Object.create(null)","samples":13668047,"opsSec":27335465.229628786},{"name":"Object.create({})","samples":943237,"opsSec":1880255.858497527},{"name":"new Function with empty prototype","samples":39261926,"opsSec":78518050.92936124},{"name":"Empty class","samples":39392833,"opsSec":78736580.35602076}]}-->
 
 ## Optional Chain (?) vs && operator
 
