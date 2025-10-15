@@ -203,24 +203,24 @@ new Array(length)|10,000,000|68.347ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using delete property|4,040,063|2020734|
-|Using delete property (proto: null)|18,006,912|9003459|
-|Using delete property (cached proto: null)|4,075,069|2038333|
-|Using undefined assignment|77,322,601|38663260|
-|Using undefined assignment (proto: null)|19,071,367|9535785|
-|Using undefined property (cached proto: null)|77,240,491|38620246|
+|Using delete property|4,127,968|2063986|
+|Using delete property (proto: null)|18,154,114|9084891|
+|Using delete property (cached proto: null)|4,234,195|2117099|
+|Using undefined assignment|79,101,512|39558159|
+|Using undefined assignment (proto: null)|19,539,063|9771589|
+|Using undefined property (cached proto: null)|78,004,478|39002248|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 04 2025 17:59:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Oct 15 2025 21:30:36 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.19.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using delete property","samples":2020734,"opsSec":4040063.4719339823},{"name":"Using delete property (proto: null)","samples":9003459,"opsSec":18006912.48988478},{"name":"Using delete property (cached proto: null)","samples":2038333,"opsSec":4075069.990688007},{"name":"Using undefined assignment","samples":38663260,"opsSec":77322601.90911606},{"name":"Using undefined assignment (proto: null)","samples":9535785,"opsSec":19071367.347650565},{"name":"Using undefined property (cached proto: null)","samples":38620246,"opsSec":77240491.38207607}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using delete property","samples":2063986,"opsSec":4127968.870999595},{"name":"Using delete property (proto: null)","samples":9084891,"opsSec":18154114.889925305},{"name":"Using delete property (cached proto: null)","samples":2117099,"opsSec":4234195.823623347},{"name":"Using undefined assignment","samples":39558159,"opsSec":79101512.88623914},{"name":"Using undefined assignment (proto: null)","samples":9771589,"opsSec":19539063.151456553},{"name":"Using undefined property (cached proto: null)","samples":39002248,"opsSec":78004478.05897005}]}-->
 
 ## Node.js Error
 
