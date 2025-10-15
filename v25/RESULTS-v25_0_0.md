@@ -325,3 +325,24 @@ new Array(length)|10,000,000|51.874ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Math.floor (small)","samples":46649494,"opsSec":93257894.84121716},{"name":"~ (small)","samples":47115450,"opsSec":94225990.82587796},{"name":"Math.floor (long)","samples":46549082,"opsSec":93098156.55214748},{"name":"~ (long)","samples":46570325,"opsSec":93121463.99852946}]}-->
+
+## Object Creation
+
+|name|ops/sec|samples|
+|-|-|-|
+|Object.create(null)|35,953,295|17994572|
+|Object.create({})|2,018,703|1069274|
+|new Function with empty prototype|76,090,131|38046640|
+|Empty class|78,494,844|39258103|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Oct 15 2025 21:55:55 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v25.0.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Object.create(null)","samples":17994572,"opsSec":35953295.616100505},{"name":"Object.create({})","samples":1069274,"opsSec":2018703.0618296585},{"name":"new Function with empty prototype","samples":38046640,"opsSec":76090131.08601514},{"name":"Empty class","samples":39258103,"opsSec":78494844.41304143}]}-->
