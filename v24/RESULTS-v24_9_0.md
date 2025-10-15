@@ -690,3 +690,28 @@ new Array(length)|10,000,000|51.209ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using includes","samples":8300611,"opsSec":16601206.859699344},{"name":"Using indexof","samples":8307148,"opsSec":16611657.238247704},{"name":"Using RegExp.test","samples":6341816,"opsSec":12682624.162588295},{"name":"Using RegExp.text with cached regex pattern","samples":6768493,"opsSec":13536979.55639773},{"name":"Using new RegExp.test","samples":2320574,"opsSec":4641146.013589506},{"name":"Using new RegExp.test with cached regex pattern","samples":2638445,"opsSec":5275756.102843841}]}-->
+
+## startsWith comparison
+
+|name|ops/sec|samples|
+|-|-|-|
+|(short string) (true) String#startsWith|73,973,518|36986768|
+|(short string) (true) String#slice and strict comparison|56,174,721|28088050|
+|(long string) (true) String#startsWith|64,344,946|32175480|
+|(long string) (true) String#slice and strict comparison|52,310,438|26155228|
+|(short string) (false) String#startsWith|80,088,222|40045416|
+|(short string) (false) String#slice and strict comparison|58,149,076|29081341|
+|(long string) (false) String#startsWith|78,313,627|39158047|
+|(long string) (false) String#slice and strict comparison|52,871,014|26435517|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Oct 15 2025 23:05:03 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v24.9.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"(short string) (true) String#startsWith","samples":36986768,"opsSec":73973518.98609065},{"name":"(short string) (true) String#slice and strict comparison","samples":28088050,"opsSec":56174721.58468176},{"name":"(long string) (true) String#startsWith","samples":32175480,"opsSec":64344946.83602828},{"name":"(long string) (true) String#slice and strict comparison","samples":26155228,"opsSec":52310438.528313525},{"name":"(short string) (false) String#startsWith","samples":40045416,"opsSec":80088222.7257036},{"name":"(short string) (false) String#slice and strict comparison","samples":29081341,"opsSec":58149076.86048695},{"name":"(long string) (false) String#startsWith","samples":39158047,"opsSec":78313627.1207457},{"name":"(long string) (false) String#slice and strict comparison","samples":26435517,"opsSec":52871014.43772466}]}-->
