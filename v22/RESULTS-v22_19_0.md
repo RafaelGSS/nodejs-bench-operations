@@ -286,24 +286,24 @@ new Array(length)|10,000,000|68.347ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Length = 100 - Array.at|92,972,583|46487174|
-|Length = 10_000 - Array.at|99,184,634|49643927|
-|Length = 1_000_000 - Array.at|100,386,487|50196786|
-|Length = 100 - Array[length - 1]|99,077,098|49543792|
-|Length = 10_000 - Array[length - 1]|98,697,587|49348801|
-|Length = 1_000_000 - Array[length - 1]|99,099,881|49558382|
+|Length = 100 - Array.at|87,941,944|43970981|
+|Length = 10_000 - Array.at|89,675,773|45089542|
+|Length = 1_000_000 - Array.at|92,090,666|46046099|
+|Length = 100 - Array[length - 1]|89,327,928|44663972|
+|Length = 10_000 - Array[length - 1]|87,787,168|43893592|
+|Length = 1_000_000 - Array[length - 1]|91,032,027|45516428|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 04 2025 18:19:44 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Oct 15 2025 21:47:17 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.19.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Length = 100 - Array.at","samples":46487174,"opsSec":92972583.56630908},{"name":"Length = 10_000 - Array.at","samples":49643927,"opsSec":99184634.13820653},{"name":"Length = 1_000_000 - Array.at","samples":50196786,"opsSec":100386487.7255612},{"name":"Length = 100 - Array[length - 1]","samples":49543792,"opsSec":99077098.47251445},{"name":"Length = 10_000 - Array[length - 1]","samples":49348801,"opsSec":98697587.5901522},{"name":"Length = 1_000_000 - Array[length - 1]","samples":49558382,"opsSec":99099881.74054621}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Length = 100 - Array.at","samples":43970981,"opsSec":87941944.93926267},{"name":"Length = 10_000 - Array.at","samples":45089542,"opsSec":89675773.51992457},{"name":"Length = 1_000_000 - Array.at","samples":46046099,"opsSec":92090666.53221557},{"name":"Length = 100 - Array[length - 1]","samples":44663972,"opsSec":89327928.45694046},{"name":"Length = 10_000 - Array[length - 1]","samples":43893592,"opsSec":87787168.54945834},{"name":"Length = 1_000_000 - Array[length - 1]","samples":45516428,"opsSec":91032027.60854876}]}-->
 
 ## Math.floor vs ~
 
