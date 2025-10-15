@@ -182,22 +182,22 @@ new Array(length)|10,000,000|68.901ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using String()|1,066,400|533212|
-|Using brackets {}|1,054,316|527162|
-|Using '' + |1,023,526|511911|
-|Using date.toString()|1,170,965|585484|
+|Using String()|1,073,475|536738|
+|Using brackets {}|1,083,520|541821|
+|Using '' + |1,103,505|551753|
+|Using date.toString()|1,201,171|600587|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 04 2025 17:56:36 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Oct 15 2025 21:25:24 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v20.19.4`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using String()","samples":533212,"opsSec":1066400.1233012392},{"name":"Using brackets {}","samples":527162,"opsSec":1054316.3287943916},{"name":"Using '' + ","samples":511911,"opsSec":1023526.2459500753},{"name":"Using date.toString()","samples":585484,"opsSec":1170965.2833605427}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using String()","samples":536738,"opsSec":1073475.8346847214},{"name":"Using brackets {}","samples":541821,"opsSec":1083520.6846900594},{"name":"Using '' + ","samples":551753,"opsSec":1103505.3445178252},{"name":"Using date.toString()","samples":600587,"opsSec":1201171.1099823094}]}-->
 
 ## Deleting properties
 
