@@ -30,7 +30,7 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
 `;
 });
 
-const MAJORS = [18, 20, 22, 23, 24];
+const MAJORS = [18, 20, 22, 24, 25];
 const nodeVersions = []
 const allVersions = await nv('all');
 for (const m of MAJORS) {
