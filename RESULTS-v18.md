@@ -226,21 +226,21 @@ new Array(length)|10,000,000|60.956ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Error|298,614|149308|
-|NodeError|289,628|144834|
-|NodeError Range|264,488|132245|
+|Error|295,088|147545|
+|NodeError|277,167|138601|
+|NodeError Range|261,261|130669|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 04 2025 18:03:16 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Oct 15 2025 21:35:17 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v18.20.8`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Error","samples":149308,"opsSec":298614.37195444416},{"name":"NodeError","samples":144834,"opsSec":289628.9846587346},{"name":"NodeError Range","samples":132245,"opsSec":264488.448510761}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Error","samples":147545,"opsSec":295088.01346749335},{"name":"NodeError","samples":138601,"opsSec":277167.058103319},{"name":"NodeError Range","samples":130669,"opsSec":261261.4247989143}]}-->
 
 ## Array.includes vs raw comparison
 
