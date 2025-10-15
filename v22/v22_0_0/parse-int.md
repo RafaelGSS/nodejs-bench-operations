@@ -2,19 +2,19 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using parseInt(x, 10) - small number (2 len)|91,021,958|45510993|
-|Using parseInt(x, 10) - big number (10 len)|90,877,800|45560025|
-|Using + - small number (2 len)|91,838,153|45919869|
-|Using + - big number (10 len)|90,669,952|45340409|
+|Using parseInt(x, 10) - small number (2 len)|97,292,842|48646762|
+|Using parseInt(x, 10) - big number (10 len)|96,822,870|48411445|
+|Using + - small number (2 len)|97,811,689|48906425|
+|Using + - big number (10 len)|93,991,373|46995791|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Thu Sep 04 2025 18:33:07 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Wed Oct 15 2025 22:01:35 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","samples":45510993,"opsSec":91021958.87545626},{"name":"Using parseInt(x, 10) - big number (10 len)","samples":45560025,"opsSec":90877800.68183447},{"name":"Using + - small number (2 len)","samples":45919869,"opsSec":91838153.05715454},{"name":"Using + - big number (10 len)","samples":45340409,"opsSec":90669952.65689331}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using parseInt(x, 10) - small number (2 len)","samples":48646762,"opsSec":97292842.17176205},{"name":"Using parseInt(x, 10) - big number (10 len)","samples":48411445,"opsSec":96822870.63542588},{"name":"Using + - small number (2 len)","samples":48906425,"opsSec":97811689.75773609},{"name":"Using + - big number (10 len)","samples":46995791,"opsSec":93991373.90309818}]}-->
