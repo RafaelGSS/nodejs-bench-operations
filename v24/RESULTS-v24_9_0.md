@@ -304,3 +304,24 @@ new Array(length)|10,000,000|51.209ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Length = 100 - Array.at","samples":45806576,"opsSec":91613130.56252745},{"name":"Length = 10_000 - Array.at","samples":45452473,"opsSec":90904931.6370208},{"name":"Length = 1_000_000 - Array.at","samples":45832921,"opsSec":91665790.8504887},{"name":"Length = 100 - Array[length - 1]","samples":44764291,"opsSec":89528530.2525095},{"name":"Length = 10_000 - Array[length - 1]","samples":45383290,"opsSec":90686142.47985408},{"name":"Length = 1_000_000 - Array[length - 1]","samples":45335179,"opsSec":90670134.95146802}]}-->
+
+## Math.floor vs ~
+
+|name|ops/sec|samples|
+|-|-|-|
+|Math.floor (small)|89,274,994|44650992|
+|~ (small)|95,382,162|47691099|
+|Math.floor (long)|95,054,380|47535973|
+|~ (long)|95,733,572|47866795|
+
+
+<details>
+<summary>Environment</summary>
+
+* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
+* __Run:__ Wed Oct 15 2025 21:53:16 GMT+0000 (Coordinated Universal Time)
+* __Node:__ `v24.9.0`
+</details>
+
+<!--
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Math.floor (small)","samples":44650992,"opsSec":89274994.38369791},{"name":"~ (small)","samples":47691099,"opsSec":95382162.89936405},{"name":"Math.floor (long)","samples":47535973,"opsSec":95054380.71087968},{"name":"~ (long)","samples":47866795,"opsSec":95733572.00208846}]}-->
