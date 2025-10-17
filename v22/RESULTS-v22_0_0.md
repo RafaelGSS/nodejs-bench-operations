@@ -537,31 +537,31 @@ new Array(length)|10,000,000|78.288ms
 
 |name|ops/sec|samples|
 |-|-|-|
-|Setter (class)|93,549,373|46774702|
-|Setter|11,489,770|5744890|
-|Method|90,735,819|45367929|
-|DefineProperty (setter)|91,360,059|45680054|
-|DefineProperty (setter & enumerable=false)|11,664,602|5832305|
-|DefineProperty (setter & configurable=false)|11,823,151|5911702|
-|DefineProperty (setter & enumerable=false & configurable=false)|11,691,729|5845867|
-|DefineProperty (writable)|85,880,979|43144480|
-|DefineProperty (writable & enumerable=false)|93,805,778|46902901|
-|DefineProperty (writable & enumerable=false & configurable=false)|93,256,700|46628363|
-|DefineProperties (setter)|91,389,653|45756791|
-|DefineProperties (setter & enumerable=false)|11,689,719|5844865|
-|DefineProperties (setter & enumerable=false & configurable=false)|11,607,144|5803576|
+|Setter (class)|93,452,460|46728349|
+|Setter|11,568,815|5785366|
+|Method|90,783,559|45556830|
+|DefineProperty (setter)|93,885,319|46956185|
+|DefineProperty (setter & enumerable=false)|11,645,545|5822880|
+|DefineProperty (setter & configurable=false)|11,734,695|5867590|
+|DefineProperty (setter & enumerable=false & configurable=false)|11,711,792|5856048|
+|DefineProperty (writable)|93,746,017|46933518|
+|DefineProperty (writable & enumerable=false)|93,579,336|46798000|
+|DefineProperty (writable & enumerable=false & configurable=false)|93,639,524|46830959|
+|DefineProperties (setter)|91,550,884|45775473|
+|DefineProperties (setter & enumerable=false)|11,466,690|5733347|
+|DefineProperties (setter & enumerable=false & configurable=false)|11,538,382|5769262|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Oct 15 2025 22:23:30 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 17 2025 16:51:08 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v22.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Setter (class)","samples":46774702,"opsSec":93549373.12870687},{"name":"Setter","samples":5744890,"opsSec":11489770.049859138},{"name":"Method","samples":45367929,"opsSec":90735819.70948407},{"name":"DefineProperty (setter)","samples":45680054,"opsSec":91360059.21372838},{"name":"DefineProperty (setter & enumerable=false)","samples":5832305,"opsSec":11664602.231374914},{"name":"DefineProperty (setter & configurable=false)","samples":5911702,"opsSec":11823151.008214727},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","samples":5845867,"opsSec":11691729.32330827},{"name":"DefineProperty (writable)","samples":43144480,"opsSec":85880979.65794358},{"name":"DefineProperty (writable & enumerable=false)","samples":46902901,"opsSec":93805778.54855536},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","samples":46628363,"opsSec":93256700.07463738},{"name":"DefineProperties (setter)","samples":45756791,"opsSec":91389653.06096667},{"name":"DefineProperties (setter & enumerable=false)","samples":5844865,"opsSec":11689719.689667234},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","samples":5803576,"opsSec":11607144.664284574}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"Setter (class)","samples":46728349,"opsSec":93452460.86542436},{"name":"Setter","samples":5785366,"opsSec":11568815.093614249},{"name":"Method","samples":45556830,"opsSec":90783559.17696984},{"name":"DefineProperty (setter)","samples":46956185,"opsSec":93885319.01080406},{"name":"DefineProperty (setter & enumerable=false)","samples":5822880,"opsSec":11645545.186273495},{"name":"DefineProperty (setter & configurable=false)","samples":5867590,"opsSec":11734695.310144909},{"name":"DefineProperty (setter & enumerable=false & configurable=false)","samples":5856048,"opsSec":11711792.664569987},{"name":"DefineProperty (writable)","samples":46933518,"opsSec":93746017.95298025},{"name":"DefineProperty (writable & enumerable=false)","samples":46798000,"opsSec":93579336.1404548},{"name":"DefineProperty (writable & enumerable=false & configurable=false)","samples":46830959,"opsSec":93639524.2950439},{"name":"DefineProperties (setter)","samples":45775473,"opsSec":91550884.66090728},{"name":"DefineProperties (setter & enumerable=false)","samples":5733347,"opsSec":11466690.949860208},{"name":"DefineProperties (setter & enumerable=false & configurable=false)","samples":5769262,"opsSec":11538382.216359327}]}-->
 
 ## replace vs replaceAll comparison
 
