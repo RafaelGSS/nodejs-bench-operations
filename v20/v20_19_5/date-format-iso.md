@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|new Date().toISOString()|1,490,771|746188|
-|fromUnixToISOString(new Date())|2,190,376|1095189|
+|new Date().toISOString()|1,407,893|704024|
+|fromUnixToISOString(new Date())|2,100,419|1050210|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Oct 15 2025 21:18:43 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 17 2025 16:02:04 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v20.19.5`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Date().toISOString()","samples":746188,"opsSec":1490771.601786725},{"name":"fromUnixToISOString(new Date())","samples":1095189,"opsSec":2190376.2214145083}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"new Date().toISOString()","samples":704024,"opsSec":1407893.663880778},{"name":"fromUnixToISOString(new Date())","samples":1050210,"opsSec":2100419.5967194377}]}-->
