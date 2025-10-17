@@ -2,21 +2,21 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|Using includes|16,229,067|8114537|
-|Using indexof|16,299,638|8149850|
-|Using RegExp.test|12,752,789|6377793|
-|Using RegExp.text with cached regex pattern|13,984,258|6992134|
-|Using new RegExp.test|4,950,517|2475741|
-|Using new RegExp.test with cached regex pattern|5,506,047|2753025|
+|Using includes|16,369,227|8184615|
+|Using indexof|16,300,793|8153426|
+|Using RegExp.test|13,004,360|6502188|
+|Using RegExp.text with cached regex pattern|13,910,579|6955292|
+|Using new RegExp.test|4,999,623|2500499|
+|Using new RegExp.test with cached regex pattern|5,382,070|2691093|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Oct 15 2025 23:03:19 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 17 2025 17:21:03 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v25.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Using includes","samples":8114537,"opsSec":16229067.34608239},{"name":"Using indexof","samples":8149850,"opsSec":16299638.941552525},{"name":"Using RegExp.test","samples":6377793,"opsSec":12752789.950803285},{"name":"Using RegExp.text with cached regex pattern","samples":6992134,"opsSec":13984258.770389212},{"name":"Using new RegExp.test","samples":2475741,"opsSec":4950517.243199646},{"name":"Using new RegExp.test with cached regex pattern","samples":2753025,"opsSec":5506047.830617155}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"Using includes","samples":8184615,"opsSec":16369227.217231372},{"name":"Using indexof","samples":8153426,"opsSec":16300793.712212095},{"name":"Using RegExp.test","samples":6502188,"opsSec":13004360.654854428},{"name":"Using RegExp.text with cached regex pattern","samples":6955292,"opsSec":13910579.576435693},{"name":"Using new RegExp.test","samples":2500499,"opsSec":4999623.003681528},{"name":"Using new RegExp.test with cached regex pattern","samples":2691093,"opsSec":5382070.565350514}]}-->
