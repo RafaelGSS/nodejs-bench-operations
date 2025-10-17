@@ -97,29 +97,6 @@ new Array(length)|10,000,000|64.484ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"new Blob (128)","samples":1947,"opsSec":3893.3234104710814},{"name":"new Blob (1024)","samples":253,"opsSec":493.57932408619166},{"name":"text (128)","samples":16165,"opsSec":32329.03071100122},{"name":"text (1024)","samples":6608,"opsSec":13175.776094785067},{"name":"arrayBuffer (128)","samples":20641,"opsSec":40736.288370782175},{"name":"arrayBuffer (1024)","samples":7789,"opsSec":15577.905037090895},{"name":"slice (0, 64)","samples":37419,"opsSec":74222.18270652618},{"name":"slice (0, 512)","samples":12815,"opsSec":25629.428104941268}]}-->
 
-## Comparison using `instanceof`
-
-|name|ops/sec|samples|
-|-|-|-|
-|[True conditional] Using instanceof only|392,757|196767|
-|[True conditional] Using constructor name|320,605|160304|
-|[True conditional] Check if property is valid then instanceof |322,167|161118|
-|[False conditional] Using instanceof only|39,452,793|19727708|
-|[False conditional] Using constructor name|105,521,557|52768615|
-|[False conditional] Check if property is valid then instanceof |105,741,810|52870920|
-
-
-<details>
-<summary>Environment</summary>
-
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 17:08:36 GMT+0000 (Coordinated Universal Time)
-* __Node:__ `v18.0.0`
-</details>
-
-<!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"[True conditional] Using instanceof only","opsSec":392757.58580716397,"samples":196767},{"name":"[True conditional] Using constructor name","opsSec":320605.8647649407,"samples":160304},{"name":"[True conditional] Check if property is valid then instanceof ","opsSec":322167.0498080001,"samples":161118},{"name":"[False conditional] Using instanceof only","opsSec":39452793.80951224,"samples":19727708},{"name":"[False conditional] Using constructor name","opsSec":105521557.72720325,"samples":52768615},{"name":"[False conditional] Check if property is valid then instanceof ","opsSec":105741810.81526022,"samples":52870920}]}-->
-
 ## Compression algorithms
 
 |name|total time|samples|
@@ -265,33 +242,6 @@ new Array(length)|10,000,000|64.484ms
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Error","samples":147493,"opsSec":294535.7390921495},{"name":"NodeError","samples":146991,"opsSec":293981.4643657719},{"name":"NodeError Range","samples":134563,"opsSec":269076.9079944441}]}-->
 
-## Function return
-
-|name|ops/sec|samples|
-|-|-|-|
-|Function returning null|1,891,460|945731|
-|Function returning explicitly undefined|1,826,097|913701|
-|Function returning implicitly undefined|1,911,986|956042|
-|Function returning string|1,874,292|937310|
-|Function returning integer|1,915,848|957925|
-|Function returning float|1,891,441|945749|
-|Function returning functions|1,828,238|914241|
-|Function returning arrow functions|1,830,240|915162|
-|Function returning empty object|1,931,854|965987|
-|Function returning empty array|1,924,723|962539|
-
-
-<details>
-<summary>Environment</summary>
-
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 17:48:45 GMT+0000 (Coordinated Universal Time)
-* __Node:__ `v18.0.0`
-</details>
-
-<!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Function returning null","opsSec":1891460.1236715575,"samples":945731},{"name":"Function returning explicitly undefined","opsSec":1826097.5272314223,"samples":913701},{"name":"Function returning implicitly undefined","opsSec":1911986.0030693987,"samples":956042},{"name":"Function returning string","opsSec":1874292.3287179244,"samples":937310},{"name":"Function returning integer","opsSec":1915848.6435791603,"samples":957925},{"name":"Function returning float","opsSec":1891441.6312565051,"samples":945749},{"name":"Function returning functions","opsSec":1828238.8003618207,"samples":914241},{"name":"Function returning arrow functions","opsSec":1830240.7533295758,"samples":915162},{"name":"Function returning empty object","opsSec":1931854.4027576342,"samples":965987},{"name":"Function returning empty array","opsSec":1924723.0541226969,"samples":962539}]}-->
-
 ## Array.includes vs raw comparison
 
 |name|ops/sec|samples|
@@ -396,27 +346,6 @@ new Array(length)|10,000,000|64.484ms
 
 <!--
 {"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"Object.create(null)","samples":15051862,"opsSec":30066304.55973192},{"name":"Object.create({})","samples":860172,"opsSec":1690134.3626284064},{"name":"new Function with empty prototype","samples":48969369,"opsSec":97933330.70907822},{"name":"Empty class","samples":38024059,"opsSec":76032749.5003435}]}-->
-
-## Optional Chain (?) vs && operator
-
-|name|ops/sec|samples|
-|-|-|-|
-|Using optional chain (obj.field?.field2) (Valid)|158,384,726|79219969|
-|Using optional chain (obj.field?.field2) (undefined)|103,294,308|51649092|
-|Using and operator (obj.field && obj.field.field2) (Valid)|104,959,953|52479987|
-|Using and operator (obj.field && obj.field.field2) (undefined)|105,414,143|52707081|
-
-
-<details>
-<summary>Environment</summary>
-
-* __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Tue Oct 29 2024 18:22:19 GMT+0000 (Coordinated Universal Time)
-* __Node:__ `v18.0.0`
-</details>
-
-<!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597877502441406},"benchmarks":[{"name":"Using optional chain (obj.field?.field2) (Valid)","opsSec":158384726.66813076,"samples":79219969},{"name":"Using optional chain (obj.field?.field2) (undefined)","opsSec":103294308.19096807,"samples":51649092},{"name":"Using and operator (obj.field && obj.field.field2) (Valid)","opsSec":104959953.0080094,"samples":52479987},{"name":"Using and operator (obj.field && obj.field.field2) (undefined)","opsSec":105414143.657939,"samples":52707081}]}-->
 
 ## Parsing Integer
 
