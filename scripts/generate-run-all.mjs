@@ -30,15 +30,18 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
 `;
 });
 
-const MAJORS = [18, 20, 22, 24, 25];
+const MAJORS = [20, 22, 24, 25];
 const nodeVersions = []
 const allVersions = await nv('all');
 for (const m of MAJORS) {
   nodeVersions.push(`${m}.0.0`);
-  nodeVersions.push(
-    // 😨
-    ...allVersions.filter((v) => v.major === m).slice(-2).map((v) => v.version),
-  );
+  const lastTwoVersions = allVersions.filter((v) => {
+    // Ignore X.0.0
+    return v.major === m && (v.minor !== 0 && v.patch !== 0);
+  }).slice(-2).map((v) => v.version)
+
+  if (lastTwoVersions.length)
+    nodeVersions.push(...lastTwoVersions);
 }
 
 const template = `
