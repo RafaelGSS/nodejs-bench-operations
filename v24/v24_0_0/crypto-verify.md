@@ -2,17 +2,17 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|crypto.createVerify('RSA-SHA256')|6,872|3437|
-|crypto.verify('RSA-SHA256')|6,868|3435|
+|crypto.createVerify('RSA-SHA256')|6,888|3445|
+|crypto.verify('RSA-SHA256')|6,783|3392|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Oct 15 2025 21:14:45 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 17 2025 16:00:26 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v24.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","samples":3437,"opsSec":6872.007942337676},{"name":"crypto.verify('RSA-SHA256')","samples":3435,"opsSec":6868.372758862716}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"crypto.createVerify('RSA-SHA256')","samples":3445,"opsSec":6888.427413352096},{"name":"crypto.verify('RSA-SHA256')","samples":3392,"opsSec":6783.289952340948}]}-->
