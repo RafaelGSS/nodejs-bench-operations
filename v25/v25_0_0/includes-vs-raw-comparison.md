@@ -2,19 +2,19 @@
 
 |name|ops/sec|samples|
 |-|-|-|
-|using Array.includes|68,960,181|34480097|
-|using Array.includes (first item)|78,306,012|39374881|
-|Using raw comparison|97,704,766|48852390|
-|Using raw comparison (first item)|90,634,373|45317193|
+|using Array.includes|68,825,574|34413476|
+|using Array.includes (first item)|78,707,323|39353669|
+|Using raw comparison|99,090,813|49545512|
+|Using raw comparison (first item)|90,371,844|45186727|
 
 
 <details>
 <summary>Environment</summary>
 
 * __Machine:__ linux x64 | 4 vCPUs | 7.6GB Mem
-* __Run:__ Wed Oct 15 2025 21:40:56 GMT+0000 (Coordinated Universal Time)
+* __Run:__ Fri Oct 17 2025 16:18:02 GMT+0000 (Coordinated Universal Time)
 * __Node:__ `v25.0.0`
 </details>
 
 <!--
-{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.597843170166016},"benchmarks":[{"name":"using Array.includes","samples":34480097,"opsSec":68960181.31132665},{"name":"using Array.includes (first item)","samples":39374881,"opsSec":78306012.16545199},{"name":"Using raw comparison","samples":48852390,"opsSec":97704766.90756124},{"name":"Using raw comparison (first item)","samples":45317193,"opsSec":90634373.67372519}]}-->
+{"environment":{"platform":"linux","arch":"x64","cpus":4,"totalMemory":7.59783935546875},"benchmarks":[{"name":"using Array.includes","samples":34413476,"opsSec":68825574.66259985},{"name":"using Array.includes (first item)","samples":39353669,"opsSec":78707323.83268172},{"name":"Using raw comparison","samples":49545512,"opsSec":99090813.72929327},{"name":"Using raw comparison (first item)","samples":45186727,"opsSec":90371844.47744986}]}-->
