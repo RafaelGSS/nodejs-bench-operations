@@ -9,21 +9,17 @@ This repository provides benchmarks for basic operations to aid in determining a
 
 All the benchmarks are stored in `RESULTS-{Node-Version}.md`
 
-- [v18](./RESULTS-v18.md)
 - [v20](./RESULTS-v20.md)
-- [v21](./RESULTS-v21.md)
 - [v22](./RESULTS-v22.md)
-- [v23](./RESULTS-v23.md)
 - [v24](./RESULTS-v24.md)
+- [v25](./RESULTS-v25.md)
 
 It also stores the last 3 versions of each active release line. You can check it inside its respective folder:
 
-- [v18](./v18)
 - [v20](./v20)
-- [v21](./v21)
 - [v22](./v22)
-- [v23](./v23)
 - [v24](./v24)
+- [v24](./v25)
 
 This is useful to identify regressions in minor/patch versions.
 
