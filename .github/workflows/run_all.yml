@@ -8,7 +8,7 @@ on:
       node-versions:
         required: true
         type: string
-        default: '["20.0.0","20.19.4","20.19.5","22.0.0","22.15.1","22.17.1","24.0.0","24.4.1","25.0.0"]'
+        default: '["20.0.0","20.19.6","20.20.1","22.0.0","22.21.1","22.22.1","24.0.0","24.11.1","24.13.1","25.0.0","25.2.1","25.6.1"]'
         description: 'The Node.js Versions (should be a JSON array)'
 
 permissions:
@@ -71,8 +71,17 @@ jobs:
       node-versions: ${{ inputs.node-versions }}
       run-start-stop: false
 
-  compression:
+  buffer:
     needs: blob
+    name: Running "buffer.mjs"
+    uses: ./.github/workflows/bench.yml
+    with:
+      bench-file: buffer.mjs
+      node-versions: ${{ inputs.node-versions }}
+      run-start-stop: false
+
+  compression:
+    needs: buffer
     name: Running "compression.mjs"
     uses: ./.github/workflows/bench.yml
     with:
