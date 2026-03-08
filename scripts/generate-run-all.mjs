@@ -30,6 +30,16 @@ const benchJobs = allBenches.map((benchFile, index, array) => {
 `;
 });
 
+const poopJob = `
+  poop_benchmarks:
+    needs: ${lastJobName}
+    name: Running "poop benchmarks"
+    uses: ./.github/workflows/poop-bench.yml
+    with:
+      node-versions: \${{ inputs.node-versions }}
+      run-start-stop: false
+`;
+
 const MAJORS = [20, 22, 24, 25];
 const nodeVersions = []
 const allVersions = await nv('all');
@@ -80,11 +90,11 @@ jobs:
           instances_id: '["i-065f0f848eb1615ae"]'
           action: 'start'
           aws_default_region: 'us-west-2'
-  ${benchJobs.join('')}
+  ${benchJobs.join('')}${poopJob}
   ## Stop Runner
   runner-stop:
     runs-on: ubuntu-latest
-    needs: [${lastJobName}]
+    needs: [poop_benchmarks]
     steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4

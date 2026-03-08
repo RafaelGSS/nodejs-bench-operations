@@ -1,0 +1,10 @@
+[
+  {
+    "name": "node version",
+    "command": ["node", "-v"]
+  },
+  {
+    "name": "node run empty script",
+    "command": ["node", "./fixtures/empty.js"]
+  }
+]

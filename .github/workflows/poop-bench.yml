@@ -1,0 +1,190 @@
+name: 'Run Poop Benchmarks'
+
+on:
+  workflow_dispatch:
+    inputs:
+      node-versions:
+        required: true
+        type: string
+        default: '["18.0.0","18.20.7","18.20.8","20.0.0","20.19.0","20.19.1","21.0.0","21.7.2","21.7.3","22.0.0","22.14.0","22.15.0","23.0.0","23.10.0","23.11.0"]'
+        description: 'The Node.js Versions (should be a JSON array)'
+      run-start-stop:
+        required: false
+        type: boolean
+        default: true
+        description: 'When false, starting and stopping the runner machine is skipped'
+  workflow_call:
+    inputs:
+      node-versions:
+        required: true
+        type: string
+        default: '["18.0.0","18.20.0","18.20.4","20.0.0","20.17.0","20.18.0","21.0.0","21.7.3","22.0.0","22.9.0","22.11.0", "23.0.0"]'
+        description: 'The Node.js Versions (should be a JSON array)'
+      run-start-stop:
+        required: false
+        type: boolean
+        default: true
+        description: 'When false, starting and stopping the runner machine is skipped'
+
+permissions:
+  issues: write
+  contents: read
+  id-token: write
+
+jobs:
+  runner-start:
+    if: ${{ inputs.run-start-stop == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::800406105498:role/RafaelGSS-nodejs-bench-operations
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start Runner
+        uses: nodesource/aws-eco-runner@v1.0.0-beta.3
+        with:
+          instances_id: '["i-065f0f848eb1615ae"]'
+          action: 'start'
+          aws_default_region: 'us-west-2'
+
+  poop-benchmark:
+    continue-on-error: true
+    runs-on: self-hosted
+    # needs: runner-start
+    if: always()
+    strategy:
+      matrix:
+        node-version: ${{ fromJson(inputs.node-versions) }}
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: NPM Install
+        run: npm install
+
+      - name: Download poop binary
+        run: node scripts/download-poop.mjs
+
+      - name: Report Filename
+        run: echo "POOP_REPORT_FILE=poop-report-${{github.run_id}}-${{ matrix.node-version }}.md" >> $GITHUB_ENV
+
+      - name: Run Poop Benchmarks
+        run: node scripts/run-poop-benchmarks.mjs > ./${{ env.POOP_REPORT_FILE }}
+        env:
+          CI: true
+          POOP_BINARY: ./poop
+          POOP_DURATION: '5000'
+
+      - name: Notify on Error
+        if: ${{ failure() }}
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: Poop benchmark failed on v${{ matrix.node-version }}
+          body: |
+            ### Context
+            [Failed Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            [Codebase](https://github.com/${{ github.repository }}/tree/${{ github.sha }})
+            Workflow name - `${{ github.workflow }}`
+            Job -           `${{ github.job }}`
+            status -        `${{ job.status }}`
+          assignees: RafaelGSS
+          labels: bug
+
+      - name: Output Failure
+        if: ${{ failure() }}
+        uses: cloudposse/github-action-matrix-outputs-write@main
+        with:
+          matrix-step-name: poop-benchmark
+          matrix-key: ${{ matrix.node-version }}
+          outputs: |-
+            failure: 'true'
+            result: ''
+
+      - name: Add Job Summary
+        run: |
+          result=$(cat ./${{ env.POOP_REPORT_FILE }})
+          echo "$result" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Poop Result
+        uses: actions/upload-artifact@v4
+        with:
+          name: poop-artifacts-${{github.run_id}}-${{ matrix.node-version }}
+          retention-days: 1
+          if-no-files-found: error
+          path: ./${{ env.POOP_REPORT_FILE }}
+
+  commit:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: [poop-benchmark]
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Use Node.js v22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Create temporary report folder
+        run: mkdir ./temp-reports
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: poop-artifacts-*
+          merge-multiple: true
+          path: ./temp-reports
+
+      - name: Write Poop Reports
+        run: |
+          node scripts/write-poop-results.mjs
+          node scripts/generate-reports.mjs
+
+      - name: Clean temporary report folder
+        run: rm -r ./temp-reports
+
+      - name: Commit and Push Updated Results
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: ${{ github.ref }}
+          commit_message: 'chore(poop): update benchmark results'
+          commit_author: Github Actions <actions@github.com>
+
+  ## Stop Runner
+  runner-stop:
+    if: ${{ inputs.run-start-stop == true }}
+    runs-on: ubuntu-latest
+    needs: [poop-benchmark]
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stop Runner
+        uses: nodesource/aws-eco-runner@v1.0.0-beta.3
+        with:
+          instances_id: '["i-065f0f848eb1615ae"]'
+          action: 'stop'
+          aws_default_region: 'us-west-2'
