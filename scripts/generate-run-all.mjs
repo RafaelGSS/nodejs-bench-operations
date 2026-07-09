@@ -40,7 +40,7 @@ const poopJob = `
       run-start-stop: false
 `;
 
-const MAJORS = [20, 22, 24, 25];
+const MAJORS = [20, 22, 24, 25, 26];
 const nodeVersions = []
 const allVersions = await nv('all');
 for (const m of MAJORS) {
