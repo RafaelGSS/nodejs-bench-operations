@@ -19,7 +19,7 @@ It also stores the last 3 versions of each active release line. You can check it
 - [v20](./v20)
 - [v22](./v22)
 - [v24](./v24)
-- [v24](./v25)
+- [v25](./v25)
 
 This is useful to identify regressions in minor/patch versions.
 
