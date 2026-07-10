@@ -6,7 +6,7 @@ on:
       versions:
         required: true
         type: string
-        default: 'v20,v22,v24,v25'
+        default: 'v20,v22,v24,v25,v26'
         description: 'The Node.js Versions (the folder must exist)'
       major-only:
         required: true
