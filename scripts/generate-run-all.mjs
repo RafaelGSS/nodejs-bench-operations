@@ -40,14 +40,14 @@ const poopJob = `
       run-start-stop: false
 `;
 
-const MAJORS = [20, 22, 24, 25];
+const MAJORS = [22, 24, 26];
 const nodeVersions = []
 const allVersions = await nv('all');
 for (const m of MAJORS) {
   nodeVersions.push(`${m}.0.0`);
   const lastTwoVersions = allVersions.filter((v) => {
     // Ignore X.0.0
-    return v.major === m && (v.minor !== 0 && v.patch !== 0);
+    return v.major === m && !(v.minor === 0 && v.patch === 0);
   }).slice(-2).map((v) => v.version)
 
   if (lastTwoVersions.length)
